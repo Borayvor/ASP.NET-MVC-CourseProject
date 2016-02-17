@@ -2,10 +2,10 @@
 {
     using System;
     using AngleSharp;
-    using MvcTemplate.Data;
-    using MvcTemplate.Data.Common;
-    using MvcTemplate.Data.Models;
-    using MvcTemplate.Services.Data;
+    using InteractiveLearningSystem.Data;
+    using InteractiveLearningSystem.Data.Common;
+    using InteractiveLearningSystem.Data.Models;
+    using InteractiveLearningSystem.Services.Data;
 
     public static class Program
     {
