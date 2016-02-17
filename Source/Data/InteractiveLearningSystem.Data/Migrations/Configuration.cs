@@ -7,7 +7,7 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public sealed class Configuration : DbMigrationsConfiguration<ApplicationDbContext>
+    public sealed class Configuration : DbMigrationsConfiguration<InteractiveLearningSystemDbContext>
     {
         public Configuration()
         {
@@ -15,7 +15,7 @@
             this.AutomaticMigrationDataLossAllowed = false;
         }
 
-        protected override void Seed(ApplicationDbContext context)
+        protected override void Seed(InteractiveLearningSystemDbContext context)
         {
             const string AdministratorUserName = "admin@admin.com";
             const string AdministratorPassword = AdministratorUserName;

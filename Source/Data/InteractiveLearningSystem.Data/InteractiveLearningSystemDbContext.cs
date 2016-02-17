@@ -7,20 +7,16 @@
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
 
-    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
+    public class InteractiveLearningSystemDbContext : IdentityDbContext<ApplicationUser>
     {
-        public ApplicationDbContext()
+        public InteractiveLearningSystemDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 
-        public IDbSet<Joke> Jokes { get; set; }
-
-        public IDbSet<JokeCategory> JokesCategories { get; set; }
-
-        public static ApplicationDbContext Create()
+        public static InteractiveLearningSystemDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new InteractiveLearningSystemDbContext();
         }
 
         public override int SaveChanges()

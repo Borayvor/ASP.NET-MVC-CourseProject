@@ -11,8 +11,6 @@
 
     using Data;
     using Data.Common;
-
-    using Services.Data;
     using Services.Web;
 
     public static class AutofacConfig
@@ -47,7 +45,7 @@
 
         private static void RegisterServices(ContainerBuilder builder)
         {
-            builder.Register(x => new ApplicationDbContext())
+            builder.Register(x => new InteractiveLearningSystemDbContext())
                 .As<DbContext>()
                 .InstancePerRequest();
             builder.Register(x => new HttpCacheService())
@@ -57,8 +55,8 @@
                 .As<IIdentifierProvider>()
                 .InstancePerRequest();
 
-            var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
-            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+            //var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
+            //builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))

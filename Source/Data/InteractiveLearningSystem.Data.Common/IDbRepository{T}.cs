@@ -2,7 +2,7 @@
 {
     using System.Linq;
 
-    using InteractiveLearningSystem.Data.Common.Models;
+    using Models;
 
     public interface IDbRepository<T> : IDbRepository<T, int>
         where T : BaseModel<int>

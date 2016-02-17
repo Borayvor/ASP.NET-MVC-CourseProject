@@ -4,7 +4,7 @@
     using System.Data.Entity;
     using System.Linq;
 
-    using InteractiveLearningSystem.Data.Common.Models;
+    using Models;
 
     // TODO: Why BaseModel<int> instead BaseModel<TKey>?
     public class DbRepository<T> : IDbRepository<T>
