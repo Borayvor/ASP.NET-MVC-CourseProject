@@ -42,7 +42,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Contracts\IBulgarianWordService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="BulgarianWordService.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json">

@@ -1,14 +1,11 @@
 ﻿namespace InteractiveLearningSystem.Web
 {
-    using System.Data.Entity;
     using System.Reflection;
     using System.Web;
     using System.Web.Mvc;
     using System.Web.Optimization;
     using System.Web.Routing;
-
-    using Data;
-    using Data.Migrations;
+    using App_Start;
 
     using Infrastructure.Mapping;
 
@@ -21,7 +18,7 @@
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
 
-            Database.SetInitializer(new MigrateDatabaseToLatestVersion<InteractiveLearningSystemDbContext, Configuration>());
+            DatabaseConfig.RegisterDatabase();
             AutofacConfig.RegisterAutofac();
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);

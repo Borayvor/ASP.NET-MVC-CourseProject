@@ -60,9 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
-    <Compile Include="Question.cs" />
-    <Compile Include="Word.cs" />
-    <Compile Include="Crossword.cs" />
+    <Compile Include="CrosswordModels\English\EnglishQuestion.cs" />
+    <Compile Include="CrosswordModels\English\EnglishWord.cs" />
+    <Compile Include="CrosswordModels\Language.cs" />
+    <Compile Include="CrosswordModels\Bulgarian\BulgarianQuestion.cs" />
+    <Compile Include="CrosswordModels\Bulgarian\BulgarianWord.cs" />
+    <Compile Include="CrosswordModels\Crossword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

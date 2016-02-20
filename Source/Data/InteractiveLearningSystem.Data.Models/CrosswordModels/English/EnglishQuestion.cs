@@ -1,12 +1,10 @@
-﻿namespace InteractiveLearningSystem.Data.Models
+﻿namespace InteractiveLearningSystem.Data.Models.CrosswordModels.English
 {
     using System.ComponentModel.DataAnnotations;
+    using Common.Models;
 
-    public class Question
+    public class EnglishQuestion : BaseModel<int>
     {
-        [Key]
-        public int Id { get; set; }
-
         [Required]
         [MinLength(1)]
         [MaxLength(500)]
@@ -14,6 +12,6 @@
 
         public int WordId { get; set; }
 
-        public virtual Word Word { get; set; }
+        public virtual EnglishWord Word { get; set; }
     }
 }

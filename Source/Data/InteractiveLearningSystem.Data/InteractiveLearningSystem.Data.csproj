@@ -60,10 +60,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="InteractiveLearningSystemDbContext.cs" />
-    <Compile Include="Migrations\201602100916387_InitialCreate.cs" />
-    <Compile Include="Migrations\201602100916387_InitialCreate.Designer.cs">
-      <DependentUpon>201602100916387_InitialCreate.cs</DependentUpon>
-    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -84,11 +80,6 @@
       <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
       <Name>InteractiveLearningSystem.Data.Models</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201602100916387_InitialCreate.resx">
-      <DependentUpon>201602100916387_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json">

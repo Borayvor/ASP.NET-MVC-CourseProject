@@ -6,6 +6,8 @@
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
+    using Models.CrosswordModels;
+    using Models.CrosswordModels.Bulgarian;
 
     public class InteractiveLearningSystemDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -13,6 +15,14 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public IDbSet<Crossword> Crosswords { get; set; }
+
+        public IDbSet<Language> Languages { get; set; }
+
+        public IDbSet<BulgarianWord> Words { get; set; }
+
+        public IDbSet<BulgarianQuestion> BulgarianQuestions { get; set; }
 
         public static InteractiveLearningSystemDbContext Create()
         {
