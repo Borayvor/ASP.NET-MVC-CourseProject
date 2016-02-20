@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
     public class BulgarianWord : BaseModel<int>
@@ -15,7 +16,8 @@
 
         [Required]
         [MinLength(1)]
-        [MaxLength(50)]
+        [MaxLength(60)]
+        [Index(IsUnique = true)]
         [RegularExpression(@"\b[а-яА-Я]+\b", ErrorMessage = "Думата трябва да съдържа само Български букви !")]
         public string Name { get; set; }
 

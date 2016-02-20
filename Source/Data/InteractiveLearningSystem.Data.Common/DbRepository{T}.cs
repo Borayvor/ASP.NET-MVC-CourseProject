@@ -42,13 +42,14 @@
 
         public void Add(T entity)
         {
+            entity.CreatedOn = DateTime.UtcNow;
             this.DbSet.Add(entity);
         }
 
         public void Delete(T entity)
         {
             entity.IsDeleted = true;
-            entity.DeletedOn = DateTime.Now;
+            entity.DeletedOn = DateTime.UtcNow;
         }
 
         public void HardDelete(T entity)

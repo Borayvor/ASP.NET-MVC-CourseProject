@@ -1,6 +1,7 @@
 ﻿namespace InteractiveLearningSystem.Data.Models.CrosswordModels
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using Bulgarian;
     using Common.Models;
     using English;
@@ -15,6 +16,11 @@
             this.bulgarianWords = new HashSet<BulgarianWord>();
             this.englishWords = new HashSet<EnglishWord>();
         }
+
+        [Required]
+        [MinLength(1)]
+        [MaxLength(60)]
+        public string Name { get; set; }
 
         public virtual ICollection<BulgarianWord> BulgarianWords
         {

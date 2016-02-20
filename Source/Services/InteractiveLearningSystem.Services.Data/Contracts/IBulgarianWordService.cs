@@ -7,6 +7,12 @@
     {
         BulgarianWord GetById(string id);
 
-        IQueryable<BulgarianWord> GetRandomWords(int count);
+        BulgarianWord GetByName(string name);
+
+        IQueryable<BulgarianWord> GetAll();
+
+        void Add(string name);
+
+        void Delete(BulgarianWord word);
     }
 }

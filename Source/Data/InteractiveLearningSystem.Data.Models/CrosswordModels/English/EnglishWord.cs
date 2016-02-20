@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
     public class EnglishWord : BaseModel<int>
@@ -15,7 +16,8 @@
 
         [Required]
         [MinLength(1)]
-        [MaxLength(50)]
+        [MaxLength(60)]
+        [Index(IsUnique = true)]
         [RegularExpression(@"\b[a-zA-Z]+\b", ErrorMessage = "The word should contain only English letters !")]
         public string Name { get; set; }
 

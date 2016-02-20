@@ -1,0 +1,16 @@
+﻿@model InteractiveLearningSystem.Web.Areas.Administration.Models.IndexViewModel
+
+@{
+    ViewBag.Title = "Words";
+}
+
+<div class="row">
+    @foreach (var word in Model.Words)
+    {
+        <div class="col-md-4">
+            <a href="@word.Url">
+                @Html.DisplayText(word.Name)
+            </a>            
+        </div>
+    }
+</div>
