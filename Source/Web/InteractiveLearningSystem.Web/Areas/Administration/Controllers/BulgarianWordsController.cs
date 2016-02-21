@@ -1,6 +1,7 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Controllers
 {
     using System.Linq;
+    using System.Net;
     using System.Web.Mvc;
     using Common;
     using Infrastructure.Mapping;
@@ -18,13 +19,10 @@
             this.words = words;
         }
 
-        public ActionResult Words()
+        [HttpGet]
+        public ActionResult Index()
         {
-            var words =
-                this.Cache.Get(
-                    "words",
-                    () => this.words.GetAll().To<BulgarianWordViewModel>().ToList(),
-                    30 * 60);
+            var words = this.words.GetAll().To<BulgarianWordViewModel>().ToList();
 
             var viewModel = new IndexViewModel
             {
@@ -32,6 +30,56 @@
             };
 
             return this.View(viewModel);
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(BulgarianWordInputModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            this.words.Add(model.Name);
+
+            return this.RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Edit(string id)
+        {
+            if (id == null)
+            {
+                return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+            }
+
+            var word = this.words.GetById(id);
+
+            if (word == null)
+            {
+                return this.HttpNotFound();
+            }
+
+            return this.View();
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(BulgarianWordInputModel model)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                return this.View(model);
+            }
+
+            return this.View();
         }
     }
 }

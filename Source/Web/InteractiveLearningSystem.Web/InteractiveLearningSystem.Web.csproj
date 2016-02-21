@@ -201,6 +201,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\BulgarianWordsController.cs" />
+    <Compile Include="Areas\Administration\Models\BulgarianWordInputModel.cs" />
     <Compile Include="Areas\Administration\Models\IndexViewModel.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianWordViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
@@ -253,7 +254,11 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\Words.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\Delete.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\Details.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\Edit.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
