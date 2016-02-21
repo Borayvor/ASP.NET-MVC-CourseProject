@@ -18,7 +18,6 @@
         [MinLength(1)]
         [MaxLength(60)]
         [Index(IsUnique = true)]
-        [RegularExpression(@"\b[а-яА-Я]+\b", ErrorMessage = "Думата трябва да съдържа само Български букви !")]
         public string Name { get; set; }
 
         public virtual ICollection<BulgarianQuestion> Questions

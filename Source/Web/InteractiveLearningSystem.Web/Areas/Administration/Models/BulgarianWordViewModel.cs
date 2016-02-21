@@ -1,12 +1,11 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using AutoMapper;
     using Data.Models.CrosswordModels.Bulgarian;
     using Infrastructure.Mapping;
     using Services.Web;
 
-    public class BulgarianWordViewModel : IMapFrom<BulgarianWord>, IHaveCustomMappings
+    public class BulgarianWordViewModel : IMapFrom<BulgarianWord>
     {
         public int Id { get; set; }
 
@@ -21,14 +20,8 @@
             {
                 IIdentifierProvider identifier = new IdentifierProvider();
 
-                return string.Format("/Questions/{0}", identifier.EncodeId(this.Id));
+                return string.Format("/Administration/Words/{0}", identifier.EncodeId(this.Id));
             }
-        }
-
-        public void CreateMappings(IMapperConfiguration configuration)
-        {
-            configuration.CreateMap<BulgarianWord, BulgarianWordViewModel>()
-                .ForMember(x => x.Name, opt => opt.MapFrom(x => x.Name));
         }
     }
 }
