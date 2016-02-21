@@ -11,6 +11,7 @@
 
     using Data;
     using Data.Common;
+    using Services.Data.Contracts;
     using Services.Web;
 
     public static class AutofacConfig
@@ -48,15 +49,17 @@
             builder.Register(x => new InteractiveLearningSystemDbContext())
                 .As<DbContext>()
                 .InstancePerRequest();
+
             builder.Register(x => new HttpCacheService())
                 .As<ICacheService>()
                 .InstancePerRequest();
+
             builder.Register(x => new IdentifierProvider())
                 .As<IIdentifierProvider>()
                 .InstancePerRequest();
 
-            //var servicesAssembly = Assembly.GetAssembly(typeof(IJokesService));
-            //builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
+            var servicesAssembly = Assembly.GetAssembly(typeof(IBulgarianWordService));
+            builder.RegisterAssemblyTypes(servicesAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))

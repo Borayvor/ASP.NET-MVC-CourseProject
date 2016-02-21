@@ -4,6 +4,6 @@
 
     public class IndexViewModel
     {
-        public IEnumerable<WordViewModel> Words { get; set; }
+        public IEnumerable<BulgarianWordViewModel> Words { get; set; }
     }
 }

@@ -9,11 +9,11 @@
     using Web.Controllers;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
-    public class AdministrationController : BaseController
+    public class BulgarianWordsController : BaseController
     {
         private readonly IBulgarianWordService words;
 
-        public AdministrationController(IBulgarianWordService words)
+        public BulgarianWordsController(IBulgarianWordService words)
         {
             this.words = words;
         }
@@ -23,7 +23,7 @@
             var words =
                 this.Cache.Get(
                     "words",
-                    () => this.words.GetAll().To<WordViewModel>().ToList(),
+                    () => this.words.GetAll().To<BulgarianWordViewModel>().ToList(),
                     30 * 60);
 
             var viewModel = new IndexViewModel
