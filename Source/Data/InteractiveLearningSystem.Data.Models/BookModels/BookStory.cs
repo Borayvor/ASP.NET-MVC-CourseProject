@@ -8,10 +8,12 @@
     public class BookStory
     {
         private ICollection<BookImage> bookImages;
+        private ICollection<BookInnerStory> bookInnerStories;
 
         public BookStory()
         {
             this.bookImages = new HashSet<BookImage>();
+            this.bookInnerStories = new HashSet<BookInnerStory>();
         }
 
         [Required]
@@ -28,6 +30,12 @@
         {
             get { return this.bookImages; }
             set { this.bookImages = value; }
+        }
+
+        public virtual ICollection<BookInnerStory> BookInnerStories
+        {
+            get { return this.bookInnerStories; }
+            set { this.bookInnerStories = value; }
         }
     }
 }
