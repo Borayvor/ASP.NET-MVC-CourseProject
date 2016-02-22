@@ -8,7 +8,7 @@
         [Required]
         [MinLength(1)]
         [MaxLength(500)]
-        public string Name { get; set; }
+        public string Content { get; set; }
 
         public int WordId { get; set; }
 
