@@ -11,7 +11,7 @@
 
         IQueryable<BulgarianWord> GetAll();
 
-        void Add(string name);
+        void Add(string name, int languageId);
 
         void Delete(BulgarianWord word);
     }

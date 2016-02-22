@@ -18,7 +18,12 @@
         [MinLength(1)]
         [MaxLength(60)]
         [Index(IsUnique = true)]
+        [RegularExpression(@"[а-яА-Я]+", ErrorMessage = "Only Cyrillic alphabet !")]
         public string Name { get; set; }
+
+        public int LanguageId { get; set; }
+
+        public Language Language { get; set; }
 
         public virtual ICollection<BulgarianQuestion> Questions
         {

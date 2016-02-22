@@ -4,6 +4,7 @@
     using System.Net;
     using System.Web.Mvc;
     using Common;
+    using Data.Models.CrosswordModels.Bulgarian;
     using Infrastructure.Mapping;
     using Models;
     using Services.Data.Contracts;
@@ -42,12 +43,13 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(BulgarianWordInputModel model)
         {
+            // TODO: Fix problems
             if (!this.ModelState.IsValid)
             {
                 return this.View(model);
             }
 
-            this.words.Add(model.Name);
+            this.words.Add(model.Name, model.Language.Id);
 
             return this.RedirectToAction("Index");
         }
@@ -67,6 +69,7 @@
                 return this.HttpNotFound();
             }
 
+            // TODO: Edit Not Work !
             return this.View();
         }
 
@@ -79,7 +82,18 @@
                 return this.View(model);
             }
 
+            // TODO: Edit Not Work !
             return this.View();
+        }
+
+        [HttpPost]
+        [ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteConfirmed(BulgarianWord word)
+        {
+            this.words.Delete(word);
+
+            return this.RedirectToAction("Index");
         }
     }
 }
