@@ -1,4 +1,6 @@
-﻿@model InteractiveLearningSystem.Web.Areas.Administration.Models.IndexViewModel
+﻿
+@using InteractiveLearningSystem.Web.Areas.Administration.Models
+@model IQueryable<BulgarianWordViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -6,32 +8,23 @@
 
 <h2>Words</h2>
 
-@*<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Words)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Content)
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model.Words) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>        
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
-
-</table>*@
-
+@(Html.Kendo().Grid<BulgarianWordViewModel>()
+        .Name("grid")
+        .Columns(columns =>
+        {           
+            columns.Bound(c => c.Name).Title("Word Name").Width(150);
+        })
+        .HtmlAttributes(new { style = "height: 550px;" })
+        .Scrollable()
+        .Groupable()
+        .Sortable()
+        .Pageable(pageable => pageable
+            .Refresh(true)
+            .PageSizes(true)
+            .ButtonCount(5))
+        .DataSource(dataSource => dataSource
+            .Ajax()
+            .Read(read => read.Action("BulgarianWords_Read", "BulgarianWords"))
+            .PageSize(20)
+        )
+)

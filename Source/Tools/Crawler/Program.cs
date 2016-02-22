@@ -38,7 +38,6 @@
                     Console.WriteLine(ex.Message);
                 }
 
-
                 for (int index = 0; index < name.Length; index++)
                 {
                     if (!string.IsNullOrWhiteSpace(name[index]) &&
@@ -48,7 +47,6 @@
                         db.Words.Add(wordName);
                     }
                 }
-
 
                 db.SaveChanges();
                 Console.WriteLine(i);

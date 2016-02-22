@@ -205,7 +205,6 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\BulgarianWordsController.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianWordInputModel.cs" />
-    <Compile Include="Areas\Administration\Models\IndexViewModel.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianWordViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -309,10 +308,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\Delete.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\Details.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\Edit.cshtml" />
     <Content Include="Areas\Administration\Views\BulgarianWords\Index.cshtml" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />

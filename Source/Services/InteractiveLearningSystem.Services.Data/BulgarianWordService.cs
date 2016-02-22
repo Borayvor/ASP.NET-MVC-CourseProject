@@ -37,15 +37,23 @@
             return this.words.All().OrderBy(x => x.Name);
         }
 
-        public void Add(string name, int languageId)
+        public void Add(BulgarianWord word)
         {
-            this.words.Add(new BulgarianWord() { Name = name, LanguageId = languageId });
-            this.words.Save();
+            this.words.Add(word);
+        }
+
+        public void Update(BulgarianWord word)
+        {
+            this.words.Update(word);
         }
 
         public void Delete(BulgarianWord word)
         {
             this.words.Delete(word);
+        }
+
+        public void SaveChanges()
+        {
             this.words.Save();
         }
     }
