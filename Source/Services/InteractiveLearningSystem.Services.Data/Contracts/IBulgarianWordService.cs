@@ -1,7 +1,7 @@
 ﻿namespace InteractiveLearningSystem.Services.Data.Contracts
 {
     using System.Linq;
-    using InteractiveLearningSystem.Data.Models.CrosswordModels.Bulgarian;
+    using InteractiveLearningSystem.Data.Models.WordModels.Bulgarian;
 
     public interface IBulgarianWordService
     {

@@ -1,4 +1,4 @@
-﻿namespace InteractiveLearningSystem.Data.Models.CrosswordModels
+﻿namespace InteractiveLearningSystem.Data.Models.WordModels
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;

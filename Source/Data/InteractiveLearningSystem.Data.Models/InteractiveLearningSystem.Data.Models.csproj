@@ -60,11 +60,17 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
-    <Compile Include="CrosswordModels\English\EnglishQuestion.cs" />
-    <Compile Include="CrosswordModels\English\EnglishWord.cs" />
-    <Compile Include="CrosswordModels\Language.cs" />
-    <Compile Include="CrosswordModels\Bulgarian\BulgarianQuestion.cs" />
-    <Compile Include="CrosswordModels\Bulgarian\BulgarianWord.cs" />
+    <Compile Include="BookModels\Book.cs" />
+    <Compile Include="ComicsModels\Comics.cs" />
+    <Compile Include="ImageModels\BookImage.cs" />
+    <Compile Include="ImageModels\ComicsImage.cs" />
+    <Compile Include="MoveModels\Move.cs" />
+    <Compile Include="MoveModels\MoveCategory.cs" />
+    <Compile Include="WordModels\English\EnglishQuestion.cs" />
+    <Compile Include="WordModels\English\EnglishWord.cs" />
+    <Compile Include="WordModels\Language.cs" />
+    <Compile Include="WordModels\Bulgarian\BulgarianQuestion.cs" />
+    <Compile Include="WordModels\Bulgarian\BulgarianWord.cs" />
     <Compile Include="CrosswordModels\Crossword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -88,6 +94,7 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

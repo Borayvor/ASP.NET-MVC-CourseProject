@@ -3,7 +3,7 @@
     using System.Linq;
     using Contracts;
     using InteractiveLearningSystem.Data.Common;
-    using InteractiveLearningSystem.Data.Models.CrosswordModels.Bulgarian;
+    using InteractiveLearningSystem.Data.Models.WordModels.Bulgarian;
 
     public class EnsureWordsService : IEnsureWordsService
     {

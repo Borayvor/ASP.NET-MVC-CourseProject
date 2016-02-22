@@ -1,7 +1,7 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Models
 {
     using System.ComponentModel.DataAnnotations;
-    using Data.Models.CrosswordModels;
+    using Data.Models.WordModels;
 
     public class BulgarianWordInputModel
     {

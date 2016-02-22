@@ -4,7 +4,7 @@
     using System.Net;
     using System.Web.Mvc;
     using Common;
-    using Data.Models.CrosswordModels.Bulgarian;
+    using Data.Models.WordModels.Bulgarian;
     using Infrastructure.Mapping;
     using Models;
     using Services.Data.Contracts;

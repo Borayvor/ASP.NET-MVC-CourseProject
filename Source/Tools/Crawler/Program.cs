@@ -5,7 +5,7 @@
     using AngleSharp;
     using InteractiveLearningSystem.Data;
     using InteractiveLearningSystem.Data.Common;
-    using InteractiveLearningSystem.Data.Models.CrosswordModels.Bulgarian;
+    using InteractiveLearningSystem.Data.Models.WordModels.Bulgarian;
     using InteractiveLearningSystem.Services.Data;
 
     public static class Program

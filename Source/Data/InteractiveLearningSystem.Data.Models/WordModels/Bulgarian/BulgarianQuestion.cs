@@ -1,4 +1,4 @@
-﻿namespace InteractiveLearningSystem.Data.Models.CrosswordModels.Bulgarian
+﻿namespace InteractiveLearningSystem.Data.Models.WordModels.Bulgarian
 {
     using System.ComponentModel.DataAnnotations;
     using Common.Models;

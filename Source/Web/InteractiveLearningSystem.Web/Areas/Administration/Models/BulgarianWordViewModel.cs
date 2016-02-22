@@ -1,6 +1,6 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Models
 {
-    using Data.Models.CrosswordModels.Bulgarian;
+    using Data.Models.WordModels.Bulgarian;
     using Infrastructure.Mapping;
     using Services.Web;
 

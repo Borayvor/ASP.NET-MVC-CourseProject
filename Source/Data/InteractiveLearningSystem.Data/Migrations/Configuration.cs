@@ -7,7 +7,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
-    using Models.CrosswordModels;
+    using Models.WordModels;
 
     public sealed class Configuration : DbMigrationsConfiguration<InteractiveLearningSystemDbContext>
     {
