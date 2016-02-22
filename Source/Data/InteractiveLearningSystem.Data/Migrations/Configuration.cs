@@ -83,6 +83,7 @@
 
             word.Questions.Add(question);
             bulgarianLanguage.BulgarianWords.Add(word);
+            context.Languages.Add(bulgarianLanguage);
 
             word = new BulgarianWord
             {
@@ -100,6 +101,7 @@
 
             word.Questions.Add(question);
             bulgarianLanguage.BulgarianWords.Add(word);
+            context.Languages.Add(bulgarianLanguage);
 
             word = new BulgarianWord
             {
@@ -117,6 +119,7 @@
 
             word.Questions.Add(question);
             bulgarianLanguage.BulgarianWords.Add(word);
+            context.Languages.Add(bulgarianLanguage);
 
             context.Languages.Add(new Language() { Name = "English", CreatedOn = DateTime.UtcNow, IsDeleted = false });
 
