@@ -7,11 +7,11 @@
 
     public class Comics
     {
-        private ICollection<ComicsImage> comicsImages;
+        private ICollection<ComicsStory> comicsStories;
 
         public Comics()
         {
-            this.comicsImages = new HashSet<ComicsImage>();
+            this.comicsStories = new HashSet<ComicsStory>();
         }
 
         [Required]
@@ -20,10 +20,10 @@
         [MaxLength(60)]
         public string Title { get; set; }
 
-        public virtual ICollection<ComicsImage> ComicsImages
+        public virtual ICollection<ComicsStory> ComicsStories
         {
-            get { return this.comicsImages; }
-            set { this.comicsImages = value; }
+            get { return this.comicsStories; }
+            set { this.comicsStories = value; }
         }
     }
 }

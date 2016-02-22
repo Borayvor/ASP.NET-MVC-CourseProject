@@ -61,7 +61,9 @@
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="BookModels\Book.cs" />
+    <Compile Include="BookModels\BookStory.cs" />
     <Compile Include="ComicsModels\Comics.cs" />
+    <Compile Include="ComicsModels\ComicsStory.cs" />
     <Compile Include="ImageModels\BookImage.cs" />
     <Compile Include="ImageModels\ComicsImage.cs" />
     <Compile Include="MoveModels\Move.cs" />

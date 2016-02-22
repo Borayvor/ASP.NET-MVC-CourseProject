@@ -13,6 +13,6 @@
 
         public int ComicsId { get; set; }
 
-        public Comics Comics { get; set; }
+        public virtual Comics Comics { get; set; }
     }
 }

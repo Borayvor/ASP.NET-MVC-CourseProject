@@ -21,6 +21,10 @@
         [RegularExpression(@"\b[a-zA-Z]+\b", ErrorMessage = "The word should contain only English letters !")]
         public string Name { get; set; }
 
+        public int LanguageId { get; set; }
+
+        public virtual Language Language { get; set; }
+
         public virtual ICollection<EnglishQuestion> Questions
         {
             get { return this.questions; }

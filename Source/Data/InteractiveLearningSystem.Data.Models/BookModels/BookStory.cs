@@ -5,13 +5,13 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using ImageModels;
 
-    public class Book
+    public class BookStory
     {
-        private ICollection<BookStory> bookStories;
+        private ICollection<BookImage> bookImages;
 
-        public Book()
+        public BookStory()
         {
-            this.bookStories = new HashSet<BookStory>();
+            this.bookImages = new HashSet<BookImage>();
         }
 
         [Required]
@@ -20,10 +20,14 @@
         [MaxLength(60)]
         public string Title { get; set; }
 
-        public virtual ICollection<BookStory> BookStories
+        public int BookId { get; set; }
+
+        public virtual Book Book { get; set; }
+
+        public virtual ICollection<BookImage> BookImages
         {
-            get { return this.bookStories; }
-            set { this.bookStories = value; }
+            get { return this.bookImages; }
+            set { this.bookImages = value; }
         }
     }
 }

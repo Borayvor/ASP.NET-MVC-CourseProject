@@ -19,6 +19,6 @@
 
         public int CategoryId { get; set; }
 
-        public MoveCategory Category { get; set; }
+        public virtual MoveCategory Category { get; set; }
     }
 }
