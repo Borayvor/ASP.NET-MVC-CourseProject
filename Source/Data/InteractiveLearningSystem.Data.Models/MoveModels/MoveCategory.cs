@@ -1,6 +1,7 @@
 ﻿namespace InteractiveLearningSystem.Data.Models.MoveModels
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
     public class MoveCategory : BaseModel<int>
@@ -12,6 +13,9 @@
             this.moves = new HashSet<Move>();
         }
 
+        [Required]
+        [MinLength(1)]
+        [MaxLength(100)]
         public string Name { get; set; }
 
         public virtual ICollection<Move> Moves
