@@ -49,7 +49,7 @@
                 return this.View(model);
             }
 
-            this.words.Add(model.Name, model.Language.Id);
+            this.words.Add(model);
 
             return this.RedirectToAction("Index");
         }
