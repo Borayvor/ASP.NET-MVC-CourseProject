@@ -25,13 +25,13 @@
             this.identifier = identifier;
         }
 
-        public ActionResult Index()
+        public ActionResult BulgarianWordsIndex()
         {
             return this.View();
         }
 
         [HttpPost]
-        public ActionResult BulgarianWords_Read([DataSourceRequest] DataSourceRequest request)
+        public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
             var words = this.words.GetAll()
                 .To<BulgarianWordViewModel>()
@@ -43,10 +43,10 @@
         [AcceptVerbs(HttpVerbs.Post)]
         public ActionResult Create([DataSourceRequest] DataSourceRequest request, BulgarianWordInputModel word)
         {
-            var newId = 0;
-
             if (this.ModelState.IsValid)
             {
+                var newId = 0;
+
                 var entity = new BulgarianWord
                 {
                     Name = word.Name,

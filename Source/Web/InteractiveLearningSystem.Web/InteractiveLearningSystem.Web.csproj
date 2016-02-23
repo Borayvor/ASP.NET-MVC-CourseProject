@@ -204,9 +204,13 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\BulgarianWordsController.cs" />
+    <Compile Include="Areas\Administration\Controllers\LanguagesController.cs" />
+    <Compile Include="Areas\Administration\Controllers\BulgarianQuestionsController.cs" />
+    <Compile Include="Areas\Administration\Models\BulgarianQuestionInputModel.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianQuestionViewModel.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianWordInputModel.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianWordViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\LanguageInputModel.cs" />
     <Compile Include="Areas\Administration\Models\LanguageViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -310,7 +314,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\BulgarianWordsIndex.cshtml" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -330,6 +334,8 @@
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Content\KendoUI\kendo.metro.min.css.map" />
+    <Content Include="Areas\Administration\Views\Languages\LanguagesIndex.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianQuestions\BulgarianQuestionsIndex.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

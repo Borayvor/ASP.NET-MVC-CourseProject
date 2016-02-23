@@ -1,6 +1,6 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Models
 {
-    using System.ComponentModel.DataAnnotations;
+    using System;
     using System.Web.Mvc;
     using Data.Models.WordModels;
     using Infrastructure.Mapping;
@@ -10,9 +10,15 @@
         [HiddenInput(DisplayValue = false)]
         public int Id { get; set; }
 
-        [Required]
-        [MinLength(1)]
-        [MaxLength(60)]
         public string Name { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public DateTime CreatedOn { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public bool IsDeleted { get; set; }
+
+        [HiddenInput(DisplayValue = false)]
+        public DateTime? ModifiedOn { get; set; }
     }
 }

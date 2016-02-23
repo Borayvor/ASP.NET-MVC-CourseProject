@@ -33,7 +33,9 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="Administration">
-                                <li>@Html.ActionLink("Words", "Index", "BulgarianWords", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("Languages", "LanguagesIndex", "Languages", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("Words", "BulgarianWordsIndex", "BulgarianWords", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("Questions", "BulgarianQuestionsIndex", "BulgarianQuestions", new { area = "Administration" }, null)</li>
                             </ul>
                         </li>
                     }

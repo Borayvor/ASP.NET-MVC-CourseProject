@@ -3,14 +3,15 @@
 @model IQueryable<BulgarianWordViewModel>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Words";
 }
-<h2>Words</h2>
+<h2>@ViewBag.Title</h2>
 <div>
     @(Html.Kendo().Grid<BulgarianWordViewModel>()
-            .Name("wordsGrid")
+            .Name("WordsGrid")
             .Columns(columns =>
             {
+                columns.Bound(c => c.Id);
                 columns.Bound(c => c.Name);
                 columns.Bound(c => c.Language);
                 columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
@@ -36,7 +37,7 @@
                 .Events(events => events.Error("error_handler"))
                 .PageSize(10)
                 .Model(model => model.Id(m => m.Id))
-                .Read(read => read.Action("BulgarianWords_Read", "BulgarianWords"))
+                .Read(read => read.Action("Read", "BulgarianWords"))
                 .Create(update => update.Action("Create", "BulgarianWords"))
                 .Update(update => update.Action("Update", "BulgarianWords"))
                 .Destroy(update => update.Action("Destroy", "BulgarianWords"))
