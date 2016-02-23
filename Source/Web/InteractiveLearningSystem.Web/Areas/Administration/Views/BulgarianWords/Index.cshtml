@@ -8,45 +8,39 @@
 <h2>Words</h2>
 <div>
     @(Html.Kendo().Grid<BulgarianWordViewModel>()
-        .Name("grid")
-        .Columns(columns =>
-        {
-            columns.Bound(c => c.Name).Title("Words").Width(150);
-            columns.Bound(c => c.Language).ClientTemplate("#=Language.Name#").Title("Language").Width(150);
-            columns.Command(command => { command.Destroy(); }).Width(150);
-        })
-        .ToolBar(toolbar =>
-        {
-            toolbar.Create();
-            toolbar.Save();
-        })
-        .HtmlAttributes(new { style = "height: 550px;" })
-        .Editable(editable => editable.Mode(GridEditMode.InCell))
-        .Scrollable()
-        .Groupable()
-        .Sortable()
-        .Pageable(pageable => pageable
-            .Refresh(true)
-            .PageSizes(true)
-            .ButtonCount(5))
-        .DataSource(dataSource => dataSource
-            .Ajax()
-            .Batch(true)
-            .ServerOperation(false)
-            .Events(events => events.Error("error_handler"))
-            .PageSize(20)
-            .Model(model =>
+            .Name("wordsGrid")
+            .Columns(columns =>
             {
-                model.Id(m => m.Id);
-                model.Field(m => m.Id).Editable(false);
-                model.Field(m => m.Language.Name).DefaultValue(
-                ViewData["defaultLanguage"] as LanguageViewModel);
+                columns.Bound(c => c.Name);
+                columns.Bound(c => c.Language);
+                columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
+                columns.Bound(c => c.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm}");                
+                columns.Command(command => { command.Edit(); command.Destroy(); }).Width(180);
             })
-            .Read(read => read.Action("BulgarianWords_Read", "BulgarianWords"))
-            .Create(update => update.Action("Create", "Home"))
-            .Update(update => update.Action("Update", "Home"))
-            .Destroy(update => update.Action("Delete", "Home"))
-        )
+            .ToolBar(toolbar =>
+            {
+                toolbar.Create();
+            })
+            .ColumnMenu()
+            .Editable(editable => editable.Mode(GridEditMode.PopUp))
+            .Scrollable()
+            .Groupable()
+            .Sortable()
+            .Pageable(pageable => pageable
+                .Refresh(true)
+                .PageSizes(true)
+                .ButtonCount(5))
+            .DataSource(dataSource => dataSource
+                .Ajax()
+                .ServerOperation(false)
+                .Events(events => events.Error("error_handler"))
+                .PageSize(10)
+                .Model(model => model.Id(m => m.Id))
+                .Read(read => read.Action("BulgarianWords_Read", "BulgarianWords"))
+                .Create(update => update.Action("Create", "BulgarianWords"))
+                .Update(update => update.Action("Update", "BulgarianWords"))
+                .Destroy(update => update.Action("Destroy", "BulgarianWords"))
+            )
     )
 </div>
 
@@ -67,3 +61,4 @@
         }
     </script>
 }
+

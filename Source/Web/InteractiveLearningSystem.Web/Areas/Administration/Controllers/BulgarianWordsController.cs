@@ -1,59 +1,92 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Controllers
 {
-    using System.Linq;
     using System.Web.Mvc;
     using Common;
+    using Data.Models.WordModels.Bulgarian;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Models;
     using Services.Data.Contracts;
+    using Services.Web;
     using Web.Controllers;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     public class BulgarianWordsController : BaseController
     {
         private readonly IBulgarianWordService words;
-        private readonly ILanguagesService languages;
-        private readonly IBulgarianQuestionsService questions;
+        private readonly IIdentifierProvider identifier;
 
         public BulgarianWordsController(
             IBulgarianWordService words,
-            ILanguagesService languages,
-            IBulgarianQuestionsService questions)
+            IIdentifierProvider identifier)
         {
             this.words = words;
-            this.languages = languages;
-            this.questions = questions;
+            this.identifier = identifier;
         }
 
         public ActionResult Index()
         {
-            this.PopulateDropDowns();
-
             return this.View();
         }
 
         [HttpPost]
         public ActionResult BulgarianWords_Read([DataSourceRequest] DataSourceRequest request)
         {
-            return this.Json(this.words.GetAll()
+            var words = this.words.GetAll()
                 .To<BulgarianWordViewModel>()
-                .ToDataSourceResult(request));
+                .ToDataSourceResult(request);
+
+            return this.Json(words);
         }
 
-        private void PopulateDropDowns()
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Create([DataSourceRequest] DataSourceRequest request, BulgarianWordInputModel word)
         {
-            var languages =
-               this.languages.GetAll().To<LanguageViewModel>().OrderBy(x => x.Name);
+            var newId = 0;
 
-            var questions =
-               this.questions.GetAll().To<BulgarianQuestionViewModel>().OrderBy(x => x.Id);
+            if (this.ModelState.IsValid)
+            {
+                var entity = new BulgarianWord
+                {
+                    Name = word.Name,
+                    LanguageId = 1
+                };
 
-            this.ViewData["languages"] = languages;
-            this.ViewData["defaultLanguage"] = languages.First();
-            this.ViewData["bulgarianQuestions"] = questions;
-            this.ViewData["defaultBulgarianQuestion"] = questions.First();
+                this.words.Add(entity);
+                newId = entity.Id;
+            }
+
+            var wordsToDisplay = this.words.GetAll()
+                .To<BulgarianWordViewModel>();
+
+            return this.Json(wordsToDisplay.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Update([DataSourceRequest] DataSourceRequest request, BulgarianWordInputModel word)
+        {
+            if (this.ModelState.IsValid)
+            {
+                var entity = this.words.GetById(this.identifier.EncodeId(word.Id));
+                entity.Name = word.Name;
+
+                this.words.Update(entity);
+            }
+
+            return this.Json(new[] { word }.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [AcceptVerbs(HttpVerbs.Post)]
+        public ActionResult Destroy([DataSourceRequest] DataSourceRequest request, BulgarianWord word)
+        {
+            var wordToDelete = this.words.GetById(this.identifier.EncodeId(word.Id));
+            this.words.Delete(wordToDelete);
+
+            var wordsToDisplay = this.words.GetAll()
+                .To<BulgarianWordViewModel>();
+
+            return this.Json(wordsToDisplay.ToDataSourceResult(request, this.ModelState));
         }
     }
 }

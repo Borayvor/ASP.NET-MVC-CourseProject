@@ -16,7 +16,5 @@
         void Update(Language language);
 
         void Delete(Language language);
-
-        void SaveChanges();
     }
 }

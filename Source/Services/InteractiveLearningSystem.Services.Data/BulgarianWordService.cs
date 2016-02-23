@@ -39,23 +39,24 @@
 
         public void Add(BulgarianWord word)
         {
-            // TODO: Encode Id ?
-            ////var intId = this.identifierProvider.EncodeId(word.Id);
             this.words.Add(word);
+            this.words.Save();
         }
 
         public void Update(BulgarianWord word)
         {
             this.words.Update(word);
+            this.words.Save();
         }
 
         public void Delete(BulgarianWord word)
         {
-            this.words.Delete(word);
-        }
+            if (this.words.GetById(word.Id) == null)
+            {
+                return;
+            }
 
-        public void SaveChanges()
-        {
+            this.words.Delete(word);
             this.words.Save();
         }
     }

@@ -33,20 +33,18 @@
         public void Add(BulgarianQuestion question)
         {
             this.questions.Add(question);
+            this.questions.Save();
         }
 
         public void Update(BulgarianQuestion question)
         {
             this.questions.Update(question);
+            this.questions.Save();
         }
 
         public void Delete(BulgarianQuestion question)
         {
             this.questions.Delete(question);
-        }
-
-        public void SaveChanges()
-        {
             this.questions.Save();
         }
     }

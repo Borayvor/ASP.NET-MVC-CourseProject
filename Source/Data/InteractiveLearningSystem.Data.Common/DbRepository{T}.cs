@@ -41,7 +41,6 @@
 
         public void Add(T entity)
         {
-            entity.CreatedOn = DateTime.UtcNow;
             this.DbSet.Add(entity);
         }
 
@@ -59,7 +58,7 @@
         public void Delete(T entity)
         {
             entity.IsDeleted = true;
-            entity.DeletedOn = DateTime.UtcNow;
+            entity.DeletedOn = DateTime.Now;
         }
 
         public void HardDelete(T entity)

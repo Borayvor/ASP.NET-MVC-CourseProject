@@ -1,8 +1,0 @@
-﻿@using System.Collections
-@model InteractiveLearningSystem.Web.Areas.Administration.Models.BulgarianWordViewModel
-
-@(Html.Kendo().DropDownListFor(m => m)
-        .DataValueField("Id")
-        .DataTextField("Name")
-        .BindTo((IEnumerable)ViewData["bulgarianWords"])
-)

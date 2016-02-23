@@ -14,7 +14,5 @@
         void Update(BulgarianQuestion question);
 
         void Delete(BulgarianQuestion question);
-
-        void SaveChanges();
     }
 }

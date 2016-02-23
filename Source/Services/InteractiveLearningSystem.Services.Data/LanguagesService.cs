@@ -40,20 +40,18 @@
         public void Add(Language language)
         {
             this.languages.Add(language);
+            this.languages.Save();
         }
 
         public void Update(Language language)
         {
             this.languages.Update(language);
+            this.languages.Save();
         }
 
         public void Delete(Language language)
         {
             this.languages.Delete(language);
-        }
-
-        public void SaveChanges()
-        {
             this.languages.Save();
         }
     }

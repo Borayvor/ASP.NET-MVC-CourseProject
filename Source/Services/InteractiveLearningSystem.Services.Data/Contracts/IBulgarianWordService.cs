@@ -16,7 +16,5 @@
         void Update(BulgarianWord word);
 
         void Delete(BulgarianWord word);
-
-        void SaveChanges();
     }
 }
