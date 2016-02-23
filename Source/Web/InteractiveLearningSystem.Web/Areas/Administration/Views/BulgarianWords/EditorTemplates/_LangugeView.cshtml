@@ -1,0 +1,8 @@
+﻿@using System.Collections
+@model InteractiveLearningSystem.Web.Areas.Administration.Models.LanguageViewModel
+
+@(Html.Kendo().DropDownListFor(m => m)
+        .DataValueField("Id")
+        .DataTextField("Name")
+        .BindTo((IEnumerable)ViewData["languages"])
+)

@@ -5,8 +5,6 @@
 
     public class EnglishQuestion : BaseModel<int>
     {
-        [Required]
-        [MinLength(1)]
         [MaxLength(500)]
         public string Content { get; set; }
 

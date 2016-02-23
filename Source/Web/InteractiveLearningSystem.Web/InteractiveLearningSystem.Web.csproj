@@ -204,8 +204,10 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\BulgarianWordsController.cs" />
-    <Compile Include="Areas\Administration\Models\BulgarianWordInputModel.cs" />
+    <Compile Include="Areas\Administration\Models\BulgarianQuestionViewModel.cs" />
     <Compile Include="Areas\Administration\Models\BulgarianWordViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\LanguageViewModel.cs" />
+    <Compile Include="Areas\Administration\Models\WordsTestViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -328,6 +330,9 @@
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Content\KendoUI\kendo.metro.min.css.map" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\EditorTemplates\_LangugeView.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\EditorTemplates\_BulgarianQuestionView.cshtml" />
+    <Content Include="Areas\Administration\Views\BulgarianWords\EditorTemplates\_BulgarianWordView.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

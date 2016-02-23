@@ -2,16 +2,15 @@
 {
     using System.ComponentModel.DataAnnotations;
     using Data.Models.WordModels;
+    using Infrastructure.Mapping;
 
-    public class BulgarianWordInputModel
+    public class LanguageViewModel : IMapFrom<Language>
     {
+        public int Id { get; set; }
+
         [Required]
         [MinLength(1)]
         [MaxLength(60)]
-        [RegularExpression(@"[а-яА-Я]+", ErrorMessage = "Only Cyrillic alphabet !")]
         public string Name { get; set; }
-
-        [Required]
-        public Language Language { get; set; }
     }
 }

@@ -39,6 +39,8 @@
 
         public void Add(BulgarianWord word)
         {
+            // TODO: Encode Id ?
+            ////var intId = this.identifierProvider.EncodeId(word.Id);
             this.words.Add(word);
         }
 
