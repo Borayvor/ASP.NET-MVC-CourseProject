@@ -28,6 +28,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
             var languages = this.languages.GetAll()
@@ -38,6 +39,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([DataSourceRequest] DataSourceRequest request, LanguageInputModel language)
         {
             if (this.ModelState.IsValid)
@@ -60,6 +62,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest] DataSourceRequest request, LanguageInputModel language)
         {
             if (this.ModelState.IsValid)
@@ -74,6 +77,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public ActionResult Destroy([DataSourceRequest] DataSourceRequest request, Language language)
         {
             var languageToDelete = this.languages.GetById(this.identifier.EncodeId(language.Id));

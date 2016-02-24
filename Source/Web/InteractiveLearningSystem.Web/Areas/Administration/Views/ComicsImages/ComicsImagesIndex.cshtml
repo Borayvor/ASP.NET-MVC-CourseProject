@@ -1,0 +1,10 @@
+﻿@using InteractiveLearningSystem.Web.Areas.Administration.Models
+@model IQueryable<ComicsImageInputModel>
+
+<div class="row">   
+    <form method="post" enctype="multipart/form-data">
+        @Html.AntiForgeryToken()
+        <input type="file" name="comicsImages" multiple="multiple"/>
+        <input type="submit" value="Upload" />
+    </form>
+</div>

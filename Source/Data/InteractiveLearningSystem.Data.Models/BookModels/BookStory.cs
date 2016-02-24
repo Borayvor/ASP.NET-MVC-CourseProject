@@ -3,9 +3,10 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using Common.Models;
     using ImageModels;
 
-    public class BookStory
+    public class BookStory : BaseModel<int>
     {
         private ICollection<BookImage> bookImages;
         private ICollection<BookInnerStory> bookInnerStories;

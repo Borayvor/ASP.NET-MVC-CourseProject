@@ -34,7 +34,7 @@
 
         public IQueryable<BulgarianWord> GetAll()
         {
-            return this.words.All().OrderBy(x => x.Name);
+            return this.words.All().OrderBy(x => x.Language.Name).ThenBy(x => x.Name);
         }
 
         public void Add(BulgarianWord word)

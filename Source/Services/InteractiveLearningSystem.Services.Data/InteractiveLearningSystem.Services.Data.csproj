@@ -43,8 +43,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BulgarianQuestionsService.cs" />
+    <Compile Include="ComicsImagesService.cs" />
     <Compile Include="Contracts\IBulgarianQuestionsService.cs" />
     <Compile Include="Contracts\IBulgarianWordService.cs" />
+    <Compile Include="Contracts\IComicsImagesService.cs" />
     <Compile Include="Contracts\IEnsureWordsService.cs" />
     <Compile Include="Contracts\ILanguagesService.cs" />
     <Compile Include="EnsureWordsService.cs" />

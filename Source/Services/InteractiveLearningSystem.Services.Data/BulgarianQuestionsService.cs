@@ -27,7 +27,7 @@
 
         public IQueryable<BulgarianQuestion> GetAll()
         {
-            return this.questions.All().OrderBy(x => x.CreatedOn);
+            return this.questions.All().OrderBy(x => x.Word.Name);
         }
 
         public void Add(BulgarianQuestion question)

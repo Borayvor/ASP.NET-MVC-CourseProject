@@ -31,6 +31,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
             var words = this.words.GetAll()
@@ -41,6 +42,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public ActionResult Create([DataSourceRequest] DataSourceRequest request, BulgarianWordInputModel word)
         {
             if (this.ModelState.IsValid)
@@ -64,6 +66,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest] DataSourceRequest request, BulgarianWordInputModel word)
         {
             if (this.ModelState.IsValid)
@@ -78,6 +81,7 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
+        [ValidateAntiForgeryToken]
         public ActionResult Destroy([DataSourceRequest] DataSourceRequest request, BulgarianWord word)
         {
             var wordToDelete = this.words.GetById(this.identifier.EncodeId(word.Id));

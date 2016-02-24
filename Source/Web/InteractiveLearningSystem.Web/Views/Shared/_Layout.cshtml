@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html>
+﻿@using InteractiveLearningSystem.Common
+
+<!DOCTYPE html>
 <html>
 <head>
     <meta charset="utf-8" />
@@ -27,6 +29,10 @@
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
                     @if (Request.IsAuthenticated)
                     {
+                        <li>@Html.ActionLink("Comics", "ComicsIndex", "Comics", new { area = string.Empty }, null)</li>
+                    }
+                    @if (Request.IsAuthenticated && User.IsInRole(GlobalConstants.AdministratorRoleName))
+                    {
                         <li>
                             <a href="" class="dropdown-toggle" id="Administration" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                                 Administration
@@ -36,6 +42,7 @@
                                 <li>@Html.ActionLink("Languages", "LanguagesIndex", "Languages", new { area = "Administration" }, null)</li>
                                 <li>@Html.ActionLink("Words", "BulgarianWordsIndex", "BulgarianWords", new { area = "Administration" }, null)</li>
                                 <li>@Html.ActionLink("Questions", "BulgarianQuestionsIndex", "BulgarianQuestions", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("ComicsImages", "ComicsImagesIndex", "ComicsImages", new { area = "Administration" }, null)</li>
                             </ul>
                         </li>
                     }
@@ -51,7 +58,7 @@
             <p>&copy; @DateTime.Now.Year - InteractiveLearningSystem</p>
         </footer>
     </div>
-    
+
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
