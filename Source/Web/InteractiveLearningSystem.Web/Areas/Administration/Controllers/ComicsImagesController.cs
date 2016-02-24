@@ -1,6 +1,5 @@
 ﻿namespace InteractiveLearningSystem.Web.Areas.Administration.Controllers
 {
-    using System;
     using System.Collections.Generic;
     using System.IO;
     using System.Web;
@@ -31,13 +30,27 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(IEnumerable<HttpPostedFileBase> comicsImages)
+        public ActionResult Create(ComicsImageInputModel comicsImageInput, IEnumerable<HttpPostedFileBase> comicsImages)
         {
             if (this.ModelState.IsValid)
             {
                 foreach (var comicsImage in comicsImages)
                 {
-                    comicsImage.SaveAs(Path.Combine(this.Server.MapPath("/uploads/comicsImages"), Guid.NewGuid() + Path.GetExtension(comicsImage.FileName)));
+                    if (comicsImage != null && comicsImage.ContentLength > 0)
+                    {
+                        var currentImage = new ComicsImage
+                        {
+                            FileName = Path.GetFileName(comicsImage.FileName),
+                            Extension = comicsImage.ContentType
+                        };
+
+                        using (var reader = new BinaryReader(comicsImage.InputStream))
+                        {
+                            currentImage.Image = reader.ReadBytes(comicsImage.ContentLength);
+                        }
+
+                        this.images.Add(currentImage);
+                    }
                 }
             }
 

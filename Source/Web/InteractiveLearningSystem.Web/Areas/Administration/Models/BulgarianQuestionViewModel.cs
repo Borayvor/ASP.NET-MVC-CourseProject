@@ -13,6 +13,8 @@
 
         public string Content { get; set; }
 
+        public int WordId { get; set; }
+
         public string Word { get; set; }
 
         [HiddenInput(DisplayValue = false)]

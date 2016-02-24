@@ -16,7 +16,6 @@
         [RegularExpression(@"[а-яА-Я]+", ErrorMessage = "Only Cyrillic alphabet !")]
         public string Name { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
         public int LanguageId { get; set; }
     }
 }

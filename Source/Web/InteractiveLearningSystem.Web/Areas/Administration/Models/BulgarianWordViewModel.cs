@@ -13,7 +13,8 @@
 
         public string Name { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
+        public int LanguageId { get; set; }
+
         public string Language { get; set; }
 
         [HiddenInput(DisplayValue = false)]

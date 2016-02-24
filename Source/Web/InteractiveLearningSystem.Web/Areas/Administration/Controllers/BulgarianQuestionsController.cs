@@ -42,8 +42,6 @@
         {
             if (this.ModelState.IsValid)
             {
-                var newId = 0;
-
                 var entity = new BulgarianQuestion
                 {
                     Content = questions.Content,
@@ -51,7 +49,6 @@
                 };
 
                 this.questions.Add(entity);
-                newId = entity.Id;
             }
 
             var wordsToDisplay = this.questions.GetAll()

@@ -1,7 +1,6 @@
 ﻿namespace InteractiveLearningSystem.Data.Models.ImageModels
 {
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using ComicsModels;
     using Common.Models;
 
@@ -17,9 +16,9 @@
         [MaxLength(5)]
         public string Extension { get; set; }
 
-        [Index]
-        [Range(0, int.MaxValue)]
-        public int Position { get; set; }
+        //[Index]
+        //[Range(0, int.MaxValue)]
+        //public int Position { get; set; }
 
         [Required]
         public byte[] Image { get; set; }

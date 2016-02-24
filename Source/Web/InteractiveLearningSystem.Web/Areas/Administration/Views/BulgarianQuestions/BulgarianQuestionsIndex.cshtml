@@ -11,7 +11,7 @@
             .Name("QuestionsGrid")
             .Columns(columns =>
             {
-                columns.Bound(c => c.Id);
+                columns.Bound(c => c.WordId);
                 columns.Bound(c => c.Word);
                 columns.Bound(c => c.Content);
                 columns.Bound(c => c.CreatedOn).Format("{0:yyyy-MM-dd HH:mm}");
@@ -32,8 +32,7 @@
                 .PageSizes(true)
                 .ButtonCount(5))
             .DataSource(dataSource => dataSource
-                .Ajax()
-                .ServerOperation(false)
+                .Ajax()                
                 .Events(events => events.Error("error_handler"))
                 .PageSize(10)
                 .Model(model => model.Id(m => m.Id))

@@ -13,7 +13,6 @@
         [MaxLength(500)]
         public string Content { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
         public int WordId { get; set; }
     }
 }

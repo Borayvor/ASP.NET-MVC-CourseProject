@@ -26,7 +26,6 @@
         [Required]
         public byte[] Image { get; set; }
 
-        [HiddenInput(DisplayValue = false)]
         public int ComicsId { get; set; }
     }
 }

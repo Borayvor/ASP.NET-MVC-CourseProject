@@ -27,7 +27,7 @@
 
         public IQueryable<ComicsImage> GetAll()
         {
-            return this.images.All().OrderBy(x => x.Position);
+            return this.images.All().OrderBy(x => x.Id);
         }
 
         public void Add(ComicsImage image)
