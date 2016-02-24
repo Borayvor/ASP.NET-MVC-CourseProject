@@ -11,8 +11,8 @@
 
             routes.MapRoute(
                 name: "WordsPage",
-                url: "Administration/Words/{id}",
-                defaults: new { controller = "Administration", action = "Words", id = UrlParameter.Optional });
+                url: "Administration/BulgarianWords/{id}",
+                defaults: new { controller = "Administration", action = "BulgarianWords", id = UrlParameter.Optional });
 
             routes.MapRoute(
                 name: "Default",

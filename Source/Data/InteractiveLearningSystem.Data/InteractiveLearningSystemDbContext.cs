@@ -6,7 +6,9 @@
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
+    using Models.ComicsModels;
     using Models.CrosswordModels;
+    using Models.ImageModels;
     using Models.WordModels;
     using Models.WordModels.Bulgarian;
 
@@ -21,9 +23,17 @@
 
         public IDbSet<Language> Languages { get; set; }
 
-        public IDbSet<BulgarianWord> Words { get; set; }
+        public IDbSet<BulgarianWord> BulgarianWords { get; set; }
 
         public IDbSet<BulgarianQuestion> BulgarianQuestions { get; set; }
+
+        public IDbSet<ComicsImage> ComicsImages { get; set; }
+
+        public IDbSet<BookImage> BookImages { get; set; }
+
+        public IDbSet<Comics> Comicses { get; set; }
+
+        public IDbSet<ComicsStory> ComicsStories { get; set; }
 
         public static InteractiveLearningSystemDbContext Create()
         {

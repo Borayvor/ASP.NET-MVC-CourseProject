@@ -44,7 +44,7 @@
                         regEx.IsMatch(name[index]))
                     {
                         var wordName = new BulgarianWord { Name = name[index] };
-                        db.Words.Add(wordName);
+                        db.BulgarianWords.Add(wordName);
                     }
                 }
 
