@@ -28,8 +28,7 @@
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Read([DataSourceRequest] DataSourceRequest request)
+        public ActionResult BulgarianQuestions_Read([DataSourceRequest] DataSourceRequest request)
         {
             var questions = this.questions.GetAll()
                 .To<BulgarianQuestionViewModel>()
@@ -39,7 +38,6 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        [ValidateAntiForgeryToken]
         public ActionResult Create([DataSourceRequest] DataSourceRequest request, BulgarianQuestionInputModel questions)
         {
             if (this.ModelState.IsValid)
@@ -63,7 +61,6 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest] DataSourceRequest request, BulgarianQuestionInputModel questions)
         {
             if (this.ModelState.IsValid)
@@ -78,7 +75,6 @@
         }
 
         [AcceptVerbs(HttpVerbs.Post)]
-        [ValidateAntiForgeryToken]
         public ActionResult Destroy([DataSourceRequest] DataSourceRequest request, BulgarianQuestion question)
         {
             var questionToDelete = this.questions.GetById(this.identifier.EncodeId(question.Id));

@@ -37,7 +37,7 @@
                 .Events(events => events.Error("error_handler"))
                 .PageSize(10)
                 .Model(model => model.Id(m => m.Id))
-                .Read(read => read.Action("Read", "BulgarianWords"))
+                .Read(read => read.Action("BulgarianWords_Read", "BulgarianWords"))
                 .Create(update => update.Action("Create", "BulgarianWords"))
                 .Update(update => update.Action("Update", "BulgarianWords"))
                 .Destroy(update => update.Action("Destroy", "BulgarianWords"))
