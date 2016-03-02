@@ -342,6 +342,7 @@
     <Content Include="Areas\Administration\Views\ComicsImages\ComicsImagesIndex.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\LanguageViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\BulgarianQuestionViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\ComicsImages\Create.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

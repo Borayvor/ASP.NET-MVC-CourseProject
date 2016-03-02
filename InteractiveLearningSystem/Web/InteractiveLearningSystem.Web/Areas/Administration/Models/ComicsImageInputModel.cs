@@ -11,21 +11,15 @@
         public int Id { get; set; }
 
         [Required]
-        [MinLength(1)]
         [MaxLength(500)]
-        public string FileName { get; set; }
+        public string FileFullName { get; set; }
 
         [Required]
-        [MinLength(2)]
-        [MaxLength(5)]
-        public string Extension { get; set; }
+        [MaxLength(50)]
+        public string ContentType { get; set; }
 
-        [Range(0, int.MaxValue)]
-        public int Position { get; set; }
-
-        [Required]
         public byte[] Image { get; set; }
 
-        public int ComicsId { get; set; }
+        public int ComicsStoryId { get; set; }
     }
 }

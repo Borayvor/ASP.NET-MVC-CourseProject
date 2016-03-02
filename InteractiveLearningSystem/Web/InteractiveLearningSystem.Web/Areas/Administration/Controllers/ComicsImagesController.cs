@@ -30,7 +30,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(ComicsImageInputModel comicsImageInput, IEnumerable<HttpPostedFileBase> comicsImages)
+        public ActionResult Create(IEnumerable<HttpPostedFileBase> comicsImages)
         {
             if (this.ModelState.IsValid)
             {
@@ -40,8 +40,8 @@
                     {
                         var currentImage = new ComicsImage
                         {
-                            FileName = Path.GetFileName(comicsImage.FileName),
-                            Extension = comicsImage.ContentType
+                            FileFullName = Path.GetFileName(comicsImage.FileName),
+                            ContentType = comicsImage.ContentType
                         };
 
                         using (var reader = new BinaryReader(comicsImage.InputStream))
