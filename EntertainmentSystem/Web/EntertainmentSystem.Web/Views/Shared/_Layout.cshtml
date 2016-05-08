@@ -1,0 +1,65 @@
+﻿@using EntertainmentSystem.Common
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - EntertainmentSystem</title>
+    @Styles.Render("~/Content/bootstrapCss")
+    @Styles.Render("~/Content/kendo/css")
+    @Styles.Render("~/Content/css")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("EntertainmentSystem", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
+                    @if (Request.IsAuthenticated)
+                    {
+                        <li>@Html.ActionLink("Comics", "ComicsIndex", "Comics", new { area = string.Empty }, null)</li>
+                    }
+                    @if (Request.IsAuthenticated && User.IsInRole(GlobalConstants.AdministratorRoleName))
+                    {
+                        <li>
+                            <a href="" class="dropdown-toggle" id="Administration" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Administration
+                                <span class="caret"></span>
+                            </a>
+                            <ul class="dropdown-menu" aria-labelledby="Administration">
+                                <li>@Html.ActionLink("Languages", "LanguagesIndex", "Languages", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("Words", "BulgarianWordsIndex", "BulgarianWords", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("Questions", "BulgarianQuestionsIndex", "BulgarianQuestions", new { area = "Administration" }, null)</li>
+                                <li>@Html.ActionLink("ComicsImages", "ComicsImagesIndex", "ComicsImages", new { area = "Administration" }, null)</li>
+                            </ul>
+                        </li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - EntertainmentSystem</p>
+        </footer>
+    </div>
+
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
