@@ -6,11 +6,8 @@
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
-    using Models.BookModels;
     using Models.ComicsModels;
-    using Models.CrosswordModels;
     using Models.ImageModels;
-    using Models.MoveModels;
     using Models.WordModels;
     using Models.WordModels.Bulgarian;
 
@@ -21,8 +18,6 @@
         {
         }
 
-        public IDbSet<Crossword> Crosswords { get; set; }
-
         public IDbSet<Language> Languages { get; set; }
 
         public IDbSet<BulgarianWord> BulgarianWords { get; set; }
@@ -31,21 +26,9 @@
 
         public IDbSet<ComicsImage> ComicsImages { get; set; }
 
-        public IDbSet<BookImage> BookImages { get; set; }
-
         public IDbSet<Comics> Comicses { get; set; }
 
         public IDbSet<ComicsStory> ComicsStories { get; set; }
-
-        public IDbSet<Book> Books { get; set; }
-
-        public IDbSet<BookStory> BookStories { get; set; }
-
-        public IDbSet<BookInnerStory> BookInnerStories { get; set; }
-
-        public IDbSet<MoveCategory> MoveCategories { get; set; }
-
-        public IDbSet<Move> Movies { get; set; }
 
         public static EntertainmentSystemDbContext Create()
         {

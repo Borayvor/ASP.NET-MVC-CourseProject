@@ -2,7 +2,7 @@
 {
     using System.Linq;
     using Contracts;
-    using EntertainmentSystem.Data.Common;
+    using EntertainmentSystem.Data.Common.Repositories;
     using EntertainmentSystem.Data.Models.WordModels;
     using Web;
 

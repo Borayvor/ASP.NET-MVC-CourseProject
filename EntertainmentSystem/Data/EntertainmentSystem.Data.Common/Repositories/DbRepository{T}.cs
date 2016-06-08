@@ -5,9 +5,10 @@
     using System.Linq;
 
     using Models;
+    using Repositories;
 
     public class DbRepository<T> : IDbRepository<T>
-        where T : BaseModel<int>
+        where T : class, IAuditInfo, IDeletableEntity
     {
         public DbRepository(DbContext context)
         {
@@ -34,9 +35,9 @@
             return this.DbSet;
         }
 
-        public T GetById(int id)
+        public T GetById(object id)
         {
-            return this.All().FirstOrDefault(x => x.Id == id);
+            return this.DbSet.Find(id);
         }
 
         public void Add(T entity)

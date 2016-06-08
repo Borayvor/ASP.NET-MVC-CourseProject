@@ -11,6 +11,7 @@
 
     using Data;
     using Data.Common;
+    using Data.Common.Repositories;
     using Services.Data.Contracts;
     using Services.Web;
 

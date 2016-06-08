@@ -60,21 +60,14 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
-    <Compile Include="BookModels\Book.cs" />
-    <Compile Include="BookModels\BookInnerStory.cs" />
-    <Compile Include="BookModels\BookStory.cs" />
     <Compile Include="ComicsModels\Comics.cs" />
     <Compile Include="ComicsModels\ComicsStory.cs" />
-    <Compile Include="ImageModels\BookImage.cs" />
     <Compile Include="ImageModels\ComicsImage.cs" />
-    <Compile Include="MoveModels\Move.cs" />
-    <Compile Include="MoveModels\MoveCategory.cs" />
     <Compile Include="WordModels\English\EnglishQuestion.cs" />
     <Compile Include="WordModels\English\EnglishWord.cs" />
     <Compile Include="WordModels\Language.cs" />
     <Compile Include="WordModels\Bulgarian\BulgarianQuestion.cs" />
     <Compile Include="WordModels\Bulgarian\BulgarianWord.cs" />
-    <Compile Include="CrosswordModels\Crossword.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
