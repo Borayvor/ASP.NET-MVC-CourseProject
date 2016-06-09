@@ -6,12 +6,10 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - EntertainmentSystem</title>
-    @Styles.Render("~/Content/bootstrapCss")
-    @Styles.Render("~/Content/kendo/css")
-    @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/bootstrapCss")    
+    @Styles.Render("~/Content/siteCss")
 
     @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/kendo")
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -39,10 +37,7 @@
                                 <span class="caret"></span>
                             </a>
                             <ul class="dropdown-menu" aria-labelledby="Administration">
-                                <li>@Html.ActionLink("Languages", "LanguagesIndex", "Languages", new { area = "Administration" }, null)</li>
-                                <li>@Html.ActionLink("Words", "BulgarianWordsIndex", "BulgarianWords", new { area = "Administration" }, null)</li>
-                                <li>@Html.ActionLink("Questions", "BulgarianQuestionsIndex", "BulgarianQuestions", new { area = "Administration" }, null)</li>
-                                <li>@Html.ActionLink("ComicsImages", "ComicsImagesIndex", "ComicsImages", new { area = "Administration" }, null)</li>
+                                
                             </ul>
                         </li>
                     }
@@ -59,6 +54,7 @@
         </footer>
     </div>
 
+    @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>

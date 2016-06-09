@@ -32,13 +32,13 @@
 
         private static void RegisterStyles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/css")
+            bundles.Add(new StyleBundle("~/Content/siteCss")
                 .Include("~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/bootstrapCss")
                 .Include("~/Content/bootstrap.css"));
 
-            bundles.Add(new StyleBundle("~/Content/kendo/css")
+            bundles.Add(new StyleBundle("~/Content/kendo")
                 .Include(
                 "~/Content/KendoUI/kendo.common.min.css",
                 "~/Content/KendoUI/kendo.metro.min.css"));

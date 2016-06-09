@@ -6,10 +6,6 @@
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
-    using Models.ComicsModels;
-    using Models.ImageModels;
-    using Models.WordModels;
-    using Models.WordModels.Bulgarian;
 
     public class EntertainmentSystemDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -17,18 +13,6 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
-
-        public IDbSet<Language> Languages { get; set; }
-
-        public IDbSet<BulgarianWord> BulgarianWords { get; set; }
-
-        public IDbSet<BulgarianQuestion> BulgarianQuestions { get; set; }
-
-        public IDbSet<ComicsImage> ComicsImages { get; set; }
-
-        public IDbSet<Comics> Comicses { get; set; }
-
-        public IDbSet<ComicsStory> ComicsStories { get; set; }
 
         public static EntertainmentSystemDbContext Create()
         {

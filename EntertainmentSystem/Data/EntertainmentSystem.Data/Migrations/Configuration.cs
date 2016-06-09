@@ -14,8 +14,6 @@
         protected override void Seed(EntertainmentSystemDbContext context)
         {
             StaticDataSeeder.SeedUsers(context);
-
-            StaticDataSeeder.SeedLanguagesWithWordsWithQuestions(context);
         }
     }
 }

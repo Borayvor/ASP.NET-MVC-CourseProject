@@ -1,6 +1,7 @@
 ﻿namespace EntertainmentSystem.Web
 {
     using System;
+    using Common;
     using Data;
     using Data.Models;
     using Microsoft.AspNet.Identity;
@@ -25,13 +26,15 @@
             manager.UserValidator = new UserValidator<ApplicationUser>(manager)
             {
                 AllowOnlyAlphanumericUserNames = false,
-                RequireUniqueEmail = false
+                RequireUniqueEmail = true
             };
+
+            manager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
 
             // Configure validation logic for passwords
             manager.PasswordValidator = new PasswordValidator
             {
-                RequiredLength = 3,
+                RequiredLength = GlobalConstants.PasswordMinLength,
                 RequireNonLetterOrDigit = false,
                 RequireDigit = false,
                 RequireLowercase = false,

@@ -195,6 +195,7 @@
     <Compile Include="App_Start\ApplicationSignInManager.cs" />
     <Compile Include="App_Start\ApplicationUserManager.cs" />
     <Compile Include="App_Start\AutofacConfig.cs" />
+    <Compile Include="App_Start\AutoMapperAppConfig.cs" />
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\DatabaseConfig.cs" />
     <Compile Include="App_Start\EmailService.cs" />
@@ -202,19 +203,8 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\SmsService.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
+    <Compile Include="App_Start\ViewEnginesConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
-    <Compile Include="Areas\Administration\Controllers\BulgarianWordsController.cs" />
-    <Compile Include="Areas\Administration\Controllers\ComicsImagesController.cs" />
-    <Compile Include="Areas\Administration\Controllers\LanguagesController.cs" />
-    <Compile Include="Areas\Administration\Controllers\BulgarianQuestionsController.cs" />
-    <Compile Include="Areas\Administration\Models\BulgarianQuestionInputModel.cs" />
-    <Compile Include="Areas\Administration\Models\BulgarianQuestionViewModel.cs" />
-    <Compile Include="Areas\Administration\Models\BulgarianWordInputModel.cs" />
-    <Compile Include="Areas\Administration\Models\BulgarianWordViewModel.cs" />
-    <Compile Include="Areas\Administration\Models\ComicsImageInputModel.cs" />
-    <Compile Include="Areas\Administration\Models\ComicsImageViewModel.cs" />
-    <Compile Include="Areas\Administration\Models\LanguageInputModel.cs" />
-    <Compile Include="Areas\Administration\Models\LanguageViewModel.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -317,7 +307,6 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Areas\Administration\Views\web.config" />
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianWords\BulgarianWordsIndex.cshtml" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-Bold.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-BoldOblique.ttf" />
     <Content Include="Content\KendoUI\fonts\DejaVu\DejaVuSans-ExtraLight.ttf" />
@@ -337,12 +326,7 @@
     <Content Include="Content\KendoUI\images\kendoui.ttf" />
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Content\KendoUI\kendo.metro.min.css.map" />
-    <Content Include="Areas\Administration\Views\Languages\LanguagesIndex.cshtml" />
-    <Content Include="Areas\Administration\Views\BulgarianQuestions\BulgarianQuestionsIndex.cshtml" />
-    <Content Include="Areas\Administration\Views\ComicsImages\ComicsImagesIndex.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\LanguageViewModel.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\BulgarianQuestionViewModel.cshtml" />
-    <Content Include="Areas\Administration\Views\ComicsImages\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -417,12 +401,16 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
-    <Content Include="Views\Shared\EditorTemplates\BulgarianWordViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\Shared\" />
+    <Folder Include="Areas\Administration\Controllers\" />
+    <Folder Include="Areas\Administration\ViewModels\" />
+    <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Administration\Views\Shared\EditorTemplates\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Shared\DisplayTemplates\" />
+    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
