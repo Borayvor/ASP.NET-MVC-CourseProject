@@ -14,6 +14,9 @@
         protected override void Seed(EntertainmentSystemDbContext context)
         {
             StaticDataSeeder.SeedUsers(context);
+            StaticDataSeeder.SeedPostCategories(context);
+            StaticDataSeeder.SeedPosts(context);
+            StaticDataSeeder.SeedTags(context);
         }
     }
 }

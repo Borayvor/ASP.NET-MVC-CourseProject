@@ -4,10 +4,15 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class BaseModel<TKey> : IAuditInfo, IDeletableEntity
+    public abstract class BaseModelGuid : IAuditInfo, IDeletableEntity
     {
+        public BaseModelGuid()
+        {
+            this.Id = Guid.NewGuid();
+        }
+
         [Key]
-        public TKey Id { get; set; }
+        public Guid Id { get; set; }
 
         public DateTime CreatedOn { get; set; }
 

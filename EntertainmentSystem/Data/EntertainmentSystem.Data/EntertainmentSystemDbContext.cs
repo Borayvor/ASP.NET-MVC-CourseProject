@@ -6,6 +6,8 @@
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
+    using Models.Entertainment;
+    using Models.Forum;
 
     public class EntertainmentSystemDbContext : IdentityDbContext<ApplicationUser>
     {
@@ -13,6 +15,24 @@
             : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
+
+        public IDbSet<MaediaContent> MaediaContentCollections { get; set; }
+
+        public IDbSet<MediaCategory> MediaCategories { get; set; }
+
+        public IDbSet<MediaCollection> MediaCollections { get; set; }
+
+        public IDbSet<Post> Posts { get; set; }
+
+        public IDbSet<PostCategory> PostCategories { get; set; }
+
+        public IDbSet<PostComment> PostComments { get; set; }
+
+        public IDbSet<PostReComment> PostReComments { get; set; }
+
+        public IDbSet<PostTag> PostTags { get; set; }
+
+        public IDbSet<PostVote> PostVotes { get; set; }
 
         public static EntertainmentSystemDbContext Create()
         {
