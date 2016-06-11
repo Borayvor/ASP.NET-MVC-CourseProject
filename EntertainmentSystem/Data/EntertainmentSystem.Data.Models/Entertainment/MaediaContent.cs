@@ -19,7 +19,7 @@
 
         public virtual ApplicationUser Author { get; set; }
 
-        [Required]
+        ////[Required]
         public Guid MediaCategoryId { get; set; }
 
         public virtual MediaCategory MediaCategory { get; set; }

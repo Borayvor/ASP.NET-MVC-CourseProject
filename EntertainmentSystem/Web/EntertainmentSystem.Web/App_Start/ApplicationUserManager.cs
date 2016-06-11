@@ -1,7 +1,7 @@
 ﻿namespace EntertainmentSystem.Web
 {
     using System;
-    using Common;
+    using Common.Constants;
     using Data;
     using Data.Models;
     using Microsoft.AspNet.Identity;

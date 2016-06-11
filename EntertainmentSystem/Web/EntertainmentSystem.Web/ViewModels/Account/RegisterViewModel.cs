@@ -1,7 +1,7 @@
 ﻿namespace EntertainmentSystem.Web.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
-    using Common;
+    using Common.Constants;
 
     public class RegisterViewModel
     {

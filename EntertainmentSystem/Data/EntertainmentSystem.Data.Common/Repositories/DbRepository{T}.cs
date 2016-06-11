@@ -62,7 +62,7 @@
             entity.DeletedOn = DateTime.Now;
         }
 
-        public void HardDelete(T entity)
+        public void DeletePermanent(T entity)
         {
             this.DbSet.Remove(entity);
         }

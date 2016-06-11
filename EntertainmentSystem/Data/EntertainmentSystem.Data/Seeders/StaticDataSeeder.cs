@@ -1,7 +1,7 @@
 ﻿namespace EntertainmentSystem.Data.Seeders
 {
     using System.Linq;
-    using EntertainmentSystem.Common;
+    using EntertainmentSystem.Common.Constants;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -9,9 +9,28 @@
 
     internal static class StaticDataSeeder
     {
-        internal static void SeedUsers(EntertainmentSystemDbContext context)
+        internal static void SeedRoles(EntertainmentSystemDbContext context)
         {
             if (context.Roles.Any())
+            {
+                return;
+            }
+
+            var roleStore = new RoleStore<IdentityRole>(context);
+            var roleManager = new RoleManager<IdentityRole>(roleStore);
+
+            var administratorRole = new IdentityRole { Name = GlobalConstants.AdministratorRoleName };
+            roleManager.Create(administratorRole);
+
+            var moderatorRole = new IdentityRole { Name = GlobalConstants.ModeratorRoleName };
+            roleManager.Create(moderatorRole);
+
+            context.SaveChanges();
+        }
+
+        internal static void SeedUsers(EntertainmentSystemDbContext context)
+        {
+            if (context.Users.Any())
             {
                 return;
             }
@@ -20,12 +39,6 @@
             const string AdministratorFirstName = "Admincho";
             const string AdministratorLastName = "Adminov";
             const string AdministratorPassword = "admin";
-
-            // Create admin role
-            var roleStore = new RoleStore<IdentityRole>(context);
-            var roleManager = new RoleManager<IdentityRole>(roleStore);
-            var role = new IdentityRole { Name = GlobalConstants.AdministratorRoleName };
-            roleManager.Create(role);
 
             // Create admin user
             var userStore = new UserStore<ApplicationUser>(context);
@@ -39,7 +52,6 @@
             };
 
             userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
-
             userManager.Create(user, AdministratorPassword);
 
             // Assign user to admin role

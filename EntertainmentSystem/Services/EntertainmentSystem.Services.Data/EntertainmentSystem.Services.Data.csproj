@@ -42,7 +42,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="EntertainmentServices\BaseUploadingGeneratorService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\Generators\IPictureUploadingGeneratorService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\Generators\ISoundUploadingGeneratorService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\Generators\IUploadingGeneratorService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\Generators\IVideoUploadingGeneratorService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\IMaediaContentService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\IMediaCategoryService.cs" />
+    <Compile Include="EntertainmentServices\Contracts\IMediaCollectionService.cs" />
+    <Compile Include="EntertainmentServices\MediaCategoryService.cs" />
+    <Compile Include="EntertainmentServices\MediaCollectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserServices\Contracts\IUserAdminService.cs" />
+    <Compile Include="UserServices\Contracts\IUserProfileService.cs" />
+    <Compile Include="UserServices\Contracts\IUserModeratorService.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json">
@@ -50,6 +63,10 @@
     </AdditionalFiles>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Contracts\EntertainmentSystem.CloudStorage.Contracts.csproj">
+      <Project>{c8668f96-24a7-4bf2-bc35-93cc1ceb7df3}</Project>
+      <Name>EntertainmentSystem.CloudStorage.Contracts</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\EntertainmentSystem.Data.Common\EntertainmentSystem.Data.Common.csproj">
       <Project>{edfe3c57-ef5b-4636-9ecc-d0baca6b6379}</Project>
       <Name>EntertainmentSystem.Data.Common</Name>
@@ -72,7 +89,8 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Contracts\" />
+    <Folder Include="EntertainmentServices\Contracts\Fetchers\" />
+    <Folder Include="ForumServices\Contracts\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

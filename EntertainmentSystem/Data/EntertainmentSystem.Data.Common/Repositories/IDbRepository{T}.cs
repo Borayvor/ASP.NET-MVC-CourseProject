@@ -19,7 +19,7 @@
 
         void Delete(T entity);
 
-        void HardDelete(T entity);
+        void DeletePermanent(T entity);
 
         void Save();
     }

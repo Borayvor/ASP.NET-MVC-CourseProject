@@ -13,6 +13,7 @@
 
         protected override void Seed(EntertainmentSystemDbContext context)
         {
+            StaticDataSeeder.SeedRoles(context);
             StaticDataSeeder.SeedUsers(context);
             StaticDataSeeder.SeedPostCategories(context);
             StaticDataSeeder.SeedPosts(context);

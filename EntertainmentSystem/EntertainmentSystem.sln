@@ -37,6 +37,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{2425A6
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.Common", "Common\EntertainmentSystem.Common\EntertainmentSystem.Common.csproj", "{701F322F-AA01-4DDC-90B6-6935981C1E73}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CloudStorages", "CloudStorages", "{D1690276-7A24-4AF0-AAEB-2879194AAAA9}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.CloudStorage.Dropbox", "CloudStorages\EntertainmentSystem.CloudStorage.Dropbox\EntertainmentSystem.CloudStorage.Dropbox.csproj", "{73166C82-BB30-4DEC-AADA-297BD3B2FEF1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.CloudStorage.Contracts", "CloudStorages\EntertainmentSystem.CloudStorage.Contracts\EntertainmentSystem.CloudStorage.Contracts.csproj", "{C8668F96-24A7-4BF2-BC35-93CC1CEB7DF3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -87,6 +93,14 @@ Global
 		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{701F322F-AA01-4DDC-90B6-6935981C1E73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73166C82-BB30-4DEC-AADA-297BD3B2FEF1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73166C82-BB30-4DEC-AADA-297BD3B2FEF1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73166C82-BB30-4DEC-AADA-297BD3B2FEF1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73166C82-BB30-4DEC-AADA-297BD3B2FEF1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C8668F96-24A7-4BF2-BC35-93CC1CEB7DF3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C8668F96-24A7-4BF2-BC35-93CC1CEB7DF3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C8668F96-24A7-4BF2-BC35-93CC1CEB7DF3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C8668F96-24A7-4BF2-BC35-93CC1CEB7DF3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -103,5 +117,7 @@ Global
 		{C3A300EF-D136-4334-9211-466B9E699339} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 		{7C55353F-CB74-4E8E-B272-42DA1C9C2194} = {0C12FAF3-85BC-43E1-ABB2-6799213942CB}
 		{701F322F-AA01-4DDC-90B6-6935981C1E73} = {2425A6D7-D6CC-4010-B278-04825D3C19DD}
+		{73166C82-BB30-4DEC-AADA-297BD3B2FEF1} = {D1690276-7A24-4AF0-AAEB-2879194AAAA9}
+		{C8668F96-24A7-4BF2-BC35-93CC1CEB7DF3} = {D1690276-7A24-4AF0-AAEB-2879194AAAA9}
 	EndGlobalSection
 EndGlobal
