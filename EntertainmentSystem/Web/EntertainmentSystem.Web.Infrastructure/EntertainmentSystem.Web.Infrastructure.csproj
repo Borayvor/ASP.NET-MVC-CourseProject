@@ -91,6 +91,8 @@
     <Compile Include="Filters\AjaxPostAttribute.cs" />
     <Compile Include="Filters\BaseValidateMediaFileAttribute.cs" />
     <Compile Include="Filters\ValidatePictureFileAttribute.cs" />
+    <Compile Include="Filters\ValidateSoundFileAttribute.cs" />
+    <Compile Include="Filters\ValidateVideoFileAttribute.cs" />
     <Compile Include="HtmlHelpers\KendoHelpers.cs" />
     <Compile Include="Mapping\AutoMapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
