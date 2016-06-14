@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Web.Controllers
+﻿namespace EntertainmentSystem.Web.Controllers.Account
 {
     using System.Linq;
     using System.Threading.Tasks;
