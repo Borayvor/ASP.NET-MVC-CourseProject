@@ -8,17 +8,21 @@
 
     public class DropboxCloudStorage : ICloudStorage, IPicturesCloudStorage, IVideosCloudStorage, ISoundsCloudStorage, IUserProfilePicturesCloudStorage
     {
-        //TODO: new keys
-        private const string DropboxAppKey = "jkgqqefhutacq4n";
-        private const string DropboxAppSecret = "21kf0wc1d5kn38j";
-        private const string OauthAccessTokenValue = "ra72amhofx2x56vp";
-        private const string OauthAccessTokenSecret = "cf87kxku32j17mg";
+        private const string DropboxAppKey = "jcffqmrwrodrcdr";
+        private const string DropboxAppSecret = "zt98ynzdo0i11ic";
+        ////private const string OauthAccessTokenValue = "";
+        ////private const string OauthAccessTokenSecret = "";
 
         private readonly DropNetClient client;
 
         public DropboxCloudStorage()
         {
-            this.client = new DropNetClient(DropboxAppKey, DropboxAppSecret, OauthAccessTokenValue, OauthAccessTokenSecret);
+            this.client = new DropNetClient(DropboxAppKey, DropboxAppSecret);
+
+            var accessToken = this.client.GetAccessToken();
+
+            this.client.UserLogin.Secret = accessToken.Secret;
+            this.client.UserLogin.Token = accessToken.Token;
         }
 
         public string UploadFile(Stream stream, string filename, string filetype, string path = "/")
