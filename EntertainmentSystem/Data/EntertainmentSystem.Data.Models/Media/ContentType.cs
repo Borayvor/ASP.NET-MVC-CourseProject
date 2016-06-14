@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Data.Models.Entertainment
+﻿namespace EntertainmentSystem.Data.Models.Media
 {
     public enum ContentType
     {

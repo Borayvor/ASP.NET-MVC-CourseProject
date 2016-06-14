@@ -1,8 +1,7 @@
-﻿namespace EntertainmentSystem.Services.Data.EntertainmentServices.Contracts
+﻿namespace EntertainmentSystem.Services.Data.MediaServices.Contracts
 {
-    using System;
     using System.Linq;
-    using EntertainmentSystem.Data.Models.Entertainment;
+    using EntertainmentSystem.Data.Models.Media;
 
     public interface IMediaCategoryService
     {
@@ -17,7 +16,14 @@
         /// </summary>
         /// <param name="id">The id of the category to get.</param>
         /// <returns>Category as class.</returns>
-        MediaCategory GetById(Guid id);
+        MediaCategory GetById(int id);
+
+        /// <summary>
+        /// Gets the category by name.
+        /// </summary>
+        /// <param name="name">The name of the category to get.</param>
+        /// <returns>Category as class.</returns>
+        MediaCategory GetByName(string name);
 
         /// <summary>
         /// Create new category.
@@ -26,7 +32,7 @@
         void Create(MediaCategory category);
 
         /// <summary>
-        /// Update category
+        /// Update category.
         /// </summary>
         /// <param name="category">Category to be updated.</param>
         void Update(MediaCategory category);

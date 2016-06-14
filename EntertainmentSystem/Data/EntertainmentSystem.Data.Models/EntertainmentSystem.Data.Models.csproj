@@ -60,10 +60,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
-    <Compile Include="Entertainment\MediaCategory.cs" />
-    <Compile Include="Entertainment\MediaCollection.cs" />
-    <Compile Include="Entertainment\MaediaContent.cs" />
-    <Compile Include="Entertainment\ContentType.cs" />
+    <Compile Include="Media\MediaCategory.cs" />
+    <Compile Include="Media\MediaCollection.cs" />
+    <Compile Include="Media\MaediaContent.cs" />
+    <Compile Include="Media\ContentType.cs" />
     <Compile Include="Forum\PostCategory.cs" />
     <Compile Include="Forum\VoteType.cs" />
     <Compile Include="Forum\PostComment.cs" />

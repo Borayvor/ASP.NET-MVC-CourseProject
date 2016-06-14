@@ -1,10 +1,9 @@
-﻿namespace EntertainmentSystem.Services.Data.EntertainmentServices
+﻿namespace EntertainmentSystem.Services.Data.MediaServices
 {
-    using System;
     using System.Linq;
     using Contracts;
     using EntertainmentSystem.Data.Common.Repositories;
-    using EntertainmentSystem.Data.Models.Entertainment;
+    using EntertainmentSystem.Data.Models.Media;
 
     public class MediaCategoryService : IMediaCategoryService
     {
@@ -20,9 +19,14 @@
             return this.categories.All();
         }
 
-        public MediaCategory GetById(Guid id)
+        public MediaCategory GetById(int id)
         {
             return this.categories.GetById(id);
+        }
+
+        public MediaCategory GetByName(string name)
+        {
+            return this.categories.All().FirstOrDefault(x => x.Name == name);
         }
 
         public void Create(MediaCategory category)

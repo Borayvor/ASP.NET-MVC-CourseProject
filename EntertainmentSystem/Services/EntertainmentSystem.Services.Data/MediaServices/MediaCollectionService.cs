@@ -1,10 +1,9 @@
-﻿namespace EntertainmentSystem.Services.Data.EntertainmentServices
+﻿namespace EntertainmentSystem.Services.Data.MediaServices
 {
-    using System;
     using System.Linq;
     using Contracts;
     using EntertainmentSystem.Data.Common.Repositories;
-    using EntertainmentSystem.Data.Models.Entertainment;
+    using EntertainmentSystem.Data.Models.Media;
 
     public class MediaCollectionService : IMediaCollectionService
     {
@@ -20,7 +19,7 @@
             return this.collections.All();
         }
 
-        public MediaCollection GetById(Guid id)
+        public MediaCollection GetById(int id)
         {
             return this.collections.GetById(id);
         }

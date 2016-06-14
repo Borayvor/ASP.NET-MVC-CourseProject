@@ -6,8 +6,8 @@
     using Common.Models;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
-    using Models.Entertainment;
     using Models.Forum;
+    using Models.Media;
 
     public class EntertainmentSystemDbContext : IdentityDbContext<ApplicationUser>
     {

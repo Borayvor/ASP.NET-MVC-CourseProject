@@ -42,16 +42,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntertainmentServices\BaseUploadingGeneratorService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\Generators\IPictureUploadingGeneratorService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\Generators\ISoundUploadingGeneratorService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\Generators\IUploadingGeneratorService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\Generators\IVideoUploadingGeneratorService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\IMaediaContentService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\IMediaCategoryService.cs" />
-    <Compile Include="EntertainmentServices\Contracts\IMediaCollectionService.cs" />
-    <Compile Include="EntertainmentServices\MediaCategoryService.cs" />
-    <Compile Include="EntertainmentServices\MediaCollectionService.cs" />
+    <Compile Include="MediaServices\Generators\BaseUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Contracts\Generators\IPictureUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Contracts\Generators\ISoundUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Contracts\Generators\IUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Contracts\Generators\IVideoUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Contracts\IMaediaContentService.cs" />
+    <Compile Include="MediaServices\Contracts\IMediaCategoryService.cs" />
+    <Compile Include="MediaServices\Contracts\IMediaCollectionService.cs" />
+    <Compile Include="MediaServices\Generators\PictureUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Generators\SoundUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\Generators\VideoUploadingGeneratorService.cs" />
+    <Compile Include="MediaServices\MediaCategoryService.cs" />
+    <Compile Include="MediaServices\MediaCollectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserServices\Contracts\IUserAdminService.cs" />
     <Compile Include="UserServices\Contracts\IUserProfileService.cs" />
@@ -89,8 +92,8 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="EntertainmentServices\Contracts\Fetchers\" />
     <Folder Include="ForumServices\Contracts\" />
+    <Folder Include="MediaServices\Contracts\Fetchers\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

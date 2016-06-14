@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Services.Data.EntertainmentServices.Contracts.Generators
+﻿namespace EntertainmentSystem.Services.Data.MediaServices.Contracts.Generators
 {
     public interface ISoundUploadingGeneratorService : IUploadingGeneratorService
     {

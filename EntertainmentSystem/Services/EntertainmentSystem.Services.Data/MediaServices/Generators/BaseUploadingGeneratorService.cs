@@ -1,10 +1,10 @@
-﻿namespace EntertainmentSystem.Services.Data.EntertainmentServices
+﻿namespace EntertainmentSystem.Services.Data.MediaServices.Generators
 {
     using System;
     using System.IO;
     using CloudStorage.Contracts;
     using EntertainmentSystem.Data.Common.Repositories;
-    using EntertainmentSystem.Data.Models.Entertainment;
+    using EntertainmentSystem.Data.Models.Media;
 
     public abstract class BaseUploadingGeneratorService
     {

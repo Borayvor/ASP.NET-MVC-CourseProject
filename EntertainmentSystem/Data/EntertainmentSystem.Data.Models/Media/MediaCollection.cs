@@ -1,23 +1,23 @@
-﻿namespace EntertainmentSystem.Data.Models.Entertainment
+﻿namespace EntertainmentSystem.Data.Models.Media
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
-    public class MediaCategory : BaseModelGuid
+    public class MediaCollection : BaseModel<int>
     {
         private ICollection<MaediaContent> contents;
 
-        public MediaCategory()
+        public MediaCollection()
         {
             this.contents = new HashSet<MaediaContent>();
         }
 
         [Required]
-        [MaxLength(512)]
-        [Index(IsUnique = true)]
-        public string Title { get; set; }
+        [MaxLength(500)]
+        public string Name { get; set; }
+
+        public int? Number { get; set; }
 
         public virtual ICollection<MaediaContent> MaediaContents
         {

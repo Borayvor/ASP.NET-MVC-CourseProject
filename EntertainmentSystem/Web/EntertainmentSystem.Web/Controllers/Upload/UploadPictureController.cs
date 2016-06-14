@@ -3,7 +3,7 @@
     using System;
     using System.Web.Mvc;
     using Infrastructure.Filters;
-    using Services.Data.EntertainmentServices.Contracts.Generators;
+    using Services.Data.MediaServices.Contracts.Generators;
     using ViewModels.Upload;
 
     [Authorize]

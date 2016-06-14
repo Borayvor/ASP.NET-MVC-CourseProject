@@ -1,8 +1,8 @@
-﻿namespace EntertainmentSystem.Services.Data.EntertainmentServices.Contracts
+﻿namespace EntertainmentSystem.Services.Data.MediaServices.Contracts
 {
     using System;
     using System.Linq;
-    using EntertainmentSystem.Data.Models.Entertainment;
+    using EntertainmentSystem.Data.Models.Media;
 
     public interface IMaediaContentService
     {
