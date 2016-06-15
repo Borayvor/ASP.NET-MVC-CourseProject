@@ -62,7 +62,7 @@
     <Compile Include="ApplicationUser.cs" />
     <Compile Include="Media\MediaCategory.cs" />
     <Compile Include="Media\MediaCollection.cs" />
-    <Compile Include="Media\MaediaContent.cs" />
+    <Compile Include="Media\MediaContent.cs" />
     <Compile Include="Media\ContentType.cs" />
     <Compile Include="Forum\PostCategory.cs" />
     <Compile Include="Forum\VoteType.cs" />

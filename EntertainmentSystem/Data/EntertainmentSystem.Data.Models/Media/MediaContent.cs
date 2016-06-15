@@ -3,7 +3,7 @@
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
-    public class MaediaContent : BaseModelGuid
+    public class MediaContent : BaseModelGuid
     {
         [MaxLength(250)]
         public string Title { get; set; }

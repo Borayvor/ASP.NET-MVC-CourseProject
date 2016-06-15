@@ -7,11 +7,11 @@
 
     public class MediaCategory : BaseModel<int>
     {
-        private ICollection<MaediaContent> contents;
+        private ICollection<MediaContent> contents;
 
         public MediaCategory()
         {
-            this.contents = new HashSet<MaediaContent>();
+            this.contents = new HashSet<MediaContent>();
         }
 
         [Required]
@@ -19,7 +19,7 @@
         [Index(IsUnique = true)]
         public string Name { get; set; }
 
-        public virtual ICollection<MaediaContent> MaediaContents
+        public virtual ICollection<MediaContent> MaediaContents
         {
             get { return this.contents; }
             set { this.contents = value; }

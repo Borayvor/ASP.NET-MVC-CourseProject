@@ -6,11 +6,11 @@
 
     public class MediaCollection : BaseModel<int>
     {
-        private ICollection<MaediaContent> contents;
+        private ICollection<MediaContent> contents;
 
         public MediaCollection()
         {
-            this.contents = new HashSet<MaediaContent>();
+            this.contents = new HashSet<MediaContent>();
         }
 
         [Required]
@@ -19,7 +19,7 @@
 
         public int? Number { get; set; }
 
-        public virtual ICollection<MaediaContent> MaediaContents
+        public virtual ICollection<MediaContent> MaediaContents
         {
             get { return this.contents; }
             set { this.contents = value; }

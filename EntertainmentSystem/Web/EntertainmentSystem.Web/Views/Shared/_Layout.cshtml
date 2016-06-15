@@ -5,7 +5,7 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - EntertainmentSystem</title>
+    <title>@ViewBag.Title - Entertainment System</title>
     @Styles.Render("~/Content/bootstrapCss")    
     @Styles.Render("~/Content/siteCss")
 
@@ -25,9 +25,10 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
+                    <li>@Html.ActionLink("Forum", "Index", "Forum", new { area = string.Empty }, null)</li>
                     @if (Request.IsAuthenticated)
                     {
-                        <li>@Html.ActionLink("Comics", "ComicsIndex", "Comics", new { area = string.Empty }, null)</li>
+                        <li>@Html.ActionLink("Games", "Index", "Game", new { area = string.Empty }, null)</li>
                     }
                     @if (Request.IsAuthenticated && User.IsInRole(GlobalConstants.AdministratorRoleName))
                     {

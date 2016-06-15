@@ -16,7 +16,7 @@
         {
         }
 
-        public IDbSet<MaediaContent> MaediaContentCollections { get; set; }
+        public IDbSet<MediaContent> MaediaContentCollections { get; set; }
 
         public IDbSet<MediaCategory> MediaCategories { get; set; }
 

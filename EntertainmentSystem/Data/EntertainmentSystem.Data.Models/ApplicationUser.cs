@@ -14,7 +14,7 @@
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit http://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
     public class ApplicationUser : IdentityUser, IAuditInfo, IDeletableEntity
     {
-        private ICollection<MaediaContent> mediaContentCollections;
+        private ICollection<MediaContent> mediaContentCollections;
         private ICollection<Post> posts;
         private ICollection<PostComment> comments;
         private ICollection<PostReComment> commentsOfComment;
@@ -25,7 +25,7 @@
             // This will prevent UserManager.CreateAsync from causing exception
             this.CreatedOn = DateTime.Now;
 
-            this.mediaContentCollections = new HashSet<MaediaContent>();
+            this.mediaContentCollections = new HashSet<MediaContent>();
             this.posts = new HashSet<Post>();
             this.comments = new HashSet<PostComment>();
             this.commentsOfComment = new HashSet<PostReComment>();
@@ -45,7 +45,7 @@
         [MaxLength(1024)]
         public string ImageUrl { get; set; }
 
-        public virtual ICollection<MaediaContent> MaediaContentCollections
+        public virtual ICollection<MediaContent> MaediaContentCollections
         {
             get { return this.mediaContentCollections; }
             set { this.mediaContentCollections = value; }

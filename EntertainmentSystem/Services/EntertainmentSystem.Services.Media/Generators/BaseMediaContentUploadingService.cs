@@ -26,7 +26,7 @@
 
         public Guid CreateContent(Stream file, ContentType type, string ownerId, string mimeType)
         {
-            var content = new MaediaContent()
+            var content = new MediaContent()
             {
                 ContentType = type,
                 AuthorId = ownerId

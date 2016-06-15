@@ -1,4 +1,6 @@
-﻿
+﻿@using EntertainmentSystem.Web.ViewModels.Home
+@model HomeViewModel
+
 @{
     ViewBag.Title = "Home Page";
 }
@@ -6,6 +8,14 @@
     @ViewBag.Title
 </h1>
 
-<div>
-   
-</div>
+<section id="home-sounds">
+   @Html.Partial("_SoundsHomePartial", Model.Sounds)
+</section>
+
+<section id="home-pictures">
+    @Html.Partial("_PicturesHomePartial", Model.Pictures)
+</section>
+
+<section id="home-videos">
+    @Html.Partial("_VideosHomePartial", Model.Videos)
+</section>

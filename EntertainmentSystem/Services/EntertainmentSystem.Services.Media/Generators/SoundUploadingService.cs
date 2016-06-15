@@ -5,7 +5,7 @@
     using CloudStorage.Contracts;
     using Contracts;
     using Contracts.Generators;
-    using EntertainmentSystem.Data.Models.Media;
+    using Data.Models.Media;
 
     public class SoundUploadingService : BaseMediaContentUploadingService, ISoundUploadingGeneratorService
     {

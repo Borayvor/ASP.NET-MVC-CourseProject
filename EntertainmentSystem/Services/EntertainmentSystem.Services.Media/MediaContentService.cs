@@ -3,41 +3,41 @@
     using System;
     using System.Linq;
     using Contracts;
-    using EntertainmentSystem.Data.Common.Repositories;
-    using EntertainmentSystem.Data.Models.Media;
+    using Data.Common.Repositories;
+    using Data.Models.Media;
 
-    public class MaediaContentService : IMaediaContentService
+    public class MediaContentService : IMaediaContentService
     {
-        private readonly IDbRepository<MaediaContent> contents;
+        private readonly IDbRepository<MediaContent> contents;
 
-        public MaediaContentService(IDbRepository<MaediaContent> contents)
+        public MediaContentService(IDbRepository<MediaContent> contents)
         {
             this.contents = contents;
         }
 
-        public IQueryable<MaediaContent> GetAll()
+        public IQueryable<MediaContent> GetAll()
         {
             return this.contents.All();
         }
 
-        public MaediaContent GetById(Guid id)
+        public MediaContent GetById(Guid id)
         {
             return this.contents.GetById(id);
         }
 
-        public void Create(MaediaContent content)
+        public void Create(MediaContent content)
         {
             this.contents.Add(content);
             this.contents.Save();
         }
 
-        public void Update(MaediaContent content)
+        public void Update(MediaContent content)
         {
             this.contents.Update(content);
             this.contents.Save();
         }
 
-        public void Delete(MaediaContent content)
+        public void Delete(MediaContent content)
         {
             this.contents.Delete(content);
             this.contents.Save();
