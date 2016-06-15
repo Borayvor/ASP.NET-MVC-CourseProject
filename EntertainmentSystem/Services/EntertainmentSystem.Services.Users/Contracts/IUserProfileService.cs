@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Services.Data.UserServices.Contracts
+﻿namespace EntertainmentSystem.Services.Users.Contracts
 {
     using System.IO;
     using EntertainmentSystem.Data.Models;

@@ -1,16 +1,16 @@
-﻿namespace EntertainmentSystem.Services.Data.MediaServices.Generators
+﻿namespace EntertainmentSystem.Services.Media.Generators
 {
     using System;
     using System.IO;
     using CloudStorage.Contracts;
+    using Contracts;
     using Contracts.Generators;
-    using EntertainmentSystem.Data.Common.Repositories;
     using EntertainmentSystem.Data.Models.Media;
 
-    public class PictureUploadingGeneratorService : BaseUploadingGeneratorService, IPictureUploadingGeneratorService
+    public class PictureUploadingService : BaseMediaContentUploadingService, IPictureUploadingGeneratorService
     {
-        public PictureUploadingGeneratorService(
-            IDbRepository<MaediaContent> contents,
+        public PictureUploadingService(
+            IMaediaContentService contents,
             ICloudStorage storage)
             : base(contents, storage)
         {

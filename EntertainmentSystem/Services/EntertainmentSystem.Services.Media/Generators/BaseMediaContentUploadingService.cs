@@ -1,18 +1,18 @@
-﻿namespace EntertainmentSystem.Services.Data.MediaServices.Generators
+﻿namespace EntertainmentSystem.Services.Media.Generators
 {
     using System;
     using System.IO;
     using CloudStorage.Contracts;
-    using EntertainmentSystem.Data.Common.Repositories;
-    using EntertainmentSystem.Data.Models.Media;
+    using Contracts;
+    using Data.Models.Media;
 
-    public abstract class BaseUploadingGeneratorService
+    public abstract class BaseMediaContentUploadingService
     {
-        private readonly IDbRepository<MaediaContent> contents;
+        private readonly IMaediaContentService contents;
         private readonly ICloudStorage storage;
 
-        public BaseUploadingGeneratorService(
-            IDbRepository<MaediaContent> contents,
+        public BaseMediaContentUploadingService(
+            IMaediaContentService contents,
             ICloudStorage storage)
         {
             this.contents = contents;
@@ -34,8 +34,7 @@
 
             content.ContentUrl = this.Storage.UploadFile(file, content.Id.ToString(), mimeType);
 
-            this.contents.Add(content);
-            this.contents.Save();
+            this.contents.Create(content);
 
             return content.Id;
         }

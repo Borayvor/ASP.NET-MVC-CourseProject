@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Services.Data.MediaServices.Contracts.Generators
+﻿namespace EntertainmentSystem.Services.Media.Contracts.Generators
 {
     using System;
     using System.IO;

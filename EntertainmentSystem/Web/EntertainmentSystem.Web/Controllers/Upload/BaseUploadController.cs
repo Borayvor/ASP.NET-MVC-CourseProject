@@ -4,7 +4,7 @@
     using System.Linq;
     using System.Web;
     using Microsoft.AspNet.Identity;
-    using Services.Data.MediaServices.Contracts.Generators;
+    using Services.Media.Contracts.Generators;
 
     public abstract class BaseUploadController : BaseController
     {

@@ -445,9 +445,17 @@
       <Project>{7c950cdc-9587-4b65-a204-988efed17948}</Project>
       <Name>EntertainmentSystem.Data</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Data\EntertainmentSystem.Services.Data.csproj">
-      <Project>{90fe4c4d-122a-406d-8a40-79c561fb8184}</Project>
-      <Name>EntertainmentSystem.Services.Data</Name>
+    <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Forum\EntertainmentSystem.Services.Forum.csproj">
+      <Project>{2e70fcfa-317e-42c5-920b-727639cc4980}</Project>
+      <Name>EntertainmentSystem.Services.Forum</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Media\EntertainmentSystem.Services.Media.csproj">
+      <Project>{a5e5de87-d6fe-4993-8fd1-315776fa43f8}</Project>
+      <Name>EntertainmentSystem.Services.Media</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Users\EntertainmentSystem.Services.Users.csproj">
+      <Project>{bfbdd701-316e-465d-927a-e29f62b7e419}</Project>
+      <Name>EntertainmentSystem.Services.Users</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Web\EntertainmentSystem.Services.Web.csproj">
       <Project>{deab17a2-58c1-448c-8a66-d49c3af7fc6c}</Project>

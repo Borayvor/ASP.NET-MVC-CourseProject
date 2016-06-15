@@ -1,16 +1,16 @@
-﻿namespace EntertainmentSystem.Services.Data.MediaServices.Generators
+﻿namespace EntertainmentSystem.Services.Media.Generators
 {
     using System;
     using System.IO;
     using CloudStorage.Contracts;
+    using Contracts;
     using Contracts.Generators;
-    using EntertainmentSystem.Data.Common.Repositories;
     using EntertainmentSystem.Data.Models.Media;
 
-    public class SoundUploadingGeneratorService : BaseUploadingGeneratorService, ISoundUploadingGeneratorService
+    public class SoundUploadingService : BaseMediaContentUploadingService, ISoundUploadingGeneratorService
     {
-        public SoundUploadingGeneratorService(
-            IDbRepository<MaediaContent> contents,
+        public SoundUploadingService(
+            IMaediaContentService contents,
             ICloudStorage storage)
             : base(contents, storage)
         {
