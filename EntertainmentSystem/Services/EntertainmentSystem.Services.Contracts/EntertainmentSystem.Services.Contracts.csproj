@@ -45,6 +45,7 @@
     <Compile Include="Media\Generators\ISoundUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IVideoUploadingGeneratorService.cs" />
+    <Compile Include="Media\IAdminMediaService{T}.cs" />
     <Compile Include="Media\IMaediaContentService.cs" />
     <Compile Include="Media\IMediaCategoryService.cs" />
     <Compile Include="Media\IMediaCollectionService.cs" />

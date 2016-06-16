@@ -5,7 +5,7 @@
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class MediaCategoryService : IMediaCategoryService
+    public class MediaCategoryService : IMediaCategoryService, IAdminMediaService<MediaCategory>
     {
         private readonly IDbRepository<MediaCategory> categories;
 

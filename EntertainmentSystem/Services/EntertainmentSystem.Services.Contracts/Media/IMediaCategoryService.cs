@@ -1,9 +1,9 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Media
 {
     using System.Linq;
-    using EntertainmentSystem.Data.Models.Media;
+    using Data.Models.Media;
 
-    public interface IMediaCategoryService
+    public interface IMediaCategoryService : IAdminMediaService<MediaCategory>
     {
         /// <summary>
         /// Get all categories. Without ordinary deleted.

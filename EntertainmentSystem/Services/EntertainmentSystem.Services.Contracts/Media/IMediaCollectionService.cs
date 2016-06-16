@@ -1,9 +1,9 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Media
 {
     using System.Linq;
-    using EntertainmentSystem.Data.Models.Media;
+    using Data.Models.Media;
 
-    public interface IMediaCollectionService
+    public interface IMediaCollectionService : IAdminMediaService<MediaCollection>
     {
         /// <summary>
         /// Get all collections. Without ordinary deleted.

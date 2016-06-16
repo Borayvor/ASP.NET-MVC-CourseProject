@@ -5,7 +5,7 @@
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class MediaCollectionService : IMediaCollectionService
+    public class MediaCollectionService : IMediaCollectionService, IAdminMediaService<MediaCollection>
     {
         private readonly IDbRepository<MediaCollection> collections;
 

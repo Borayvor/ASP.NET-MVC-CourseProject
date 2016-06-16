@@ -213,6 +213,7 @@
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\AdminKendoGridController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -426,7 +427,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\ViewModels\" />
     <Folder Include="Areas\Administration\Views\AdminKendoGrid\" />
     <Folder Include="Areas\Administration\Views\AdminMediaCategory\" />
     <Folder Include="Areas\Administration\Views\Admin\" />

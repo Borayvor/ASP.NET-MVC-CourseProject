@@ -2,9 +2,9 @@
 {
     using System;
     using System.Linq;
-    using EntertainmentSystem.Data.Models.Media;
+    using Data.Models.Media;
 
-    public interface IMaediaContentService
+    public interface IMaediaContentService : IAdminMediaService<MediaContent>
     {
         /// <summary>
         /// Get all contents. Without ordinary deleted.

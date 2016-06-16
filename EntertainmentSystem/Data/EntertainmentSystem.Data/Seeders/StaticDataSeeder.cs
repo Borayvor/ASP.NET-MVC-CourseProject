@@ -128,8 +128,6 @@
                 Name = "Action"
             };
 
-            MediaCetegoriesId.Add(category.Id);
-
             context.MediaCategories.Add(category);
             context.SaveChanges();
         }
