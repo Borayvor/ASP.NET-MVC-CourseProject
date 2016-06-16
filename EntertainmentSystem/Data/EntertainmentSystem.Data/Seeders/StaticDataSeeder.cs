@@ -165,7 +165,7 @@
             {
                 Title = "Test Video",
                 ContentType = ContentType.Video,
-                ContentUrl = "https://www.youtube.com/watch?v=eYNCCu0y-Is",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/bodhvtk84cgs1js/Apps/EntertainmentSystem/73d967bc-9053-487c-bc3b-2a2ab44b2bab.mp4",
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
