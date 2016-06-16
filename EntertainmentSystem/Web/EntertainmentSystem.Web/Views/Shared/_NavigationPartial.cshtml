@@ -8,10 +8,10 @@
     {
         <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Administration
+                @GlobalConstants.AreaMediaName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="Administration">
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaMediaName">
                 <li>
                     @Html.ActionLink("Music", "Index", "Music", new { area = GlobalConstants.AreaMediaName }, null)
                 </li>
@@ -29,10 +29,10 @@
     {
         <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Administration
+                @GlobalConstants.AreaAdministrationName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="Administration">
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaAdministrationName">
                 <li>
                     @Html.ActionLink("Users", "Index", "UsersAdministration", new { area = GlobalConstants.AreaAdministrationName }, null)
                 </li>
@@ -44,10 +44,10 @@
     {
         <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                Administration
+                @GlobalConstants.AreaModeratorsName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="Administration">
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaModeratorsName">
                 <li>
                     @Html.ActionLink("Users", "Index", "UsersModeration", new { area = GlobalConstants.AreaModeratorsName }, null)
                 </li>
