@@ -47,6 +47,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.Services.Users", "Services\EntertainmentSystem.Services.Users\EntertainmentSystem.Services.Users.csproj", "{BFBDD701-316E-465D-927A-E29F62B7E419}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.Services.Contracts", "Services\EntertainmentSystem.Services.Contracts\EntertainmentSystem.Services.Contracts.csproj", "{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -113,6 +115,10 @@ Global
 		{BFBDD701-316E-465D-927A-E29F62B7E419}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BFBDD701-316E-465D-927A-E29F62B7E419}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BFBDD701-316E-465D-927A-E29F62B7E419}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -133,5 +139,6 @@ Global
 		{A5E5DE87-D6FE-4993-8FD1-315776FA43F8} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
 		{2E70FCFA-317E-42C5-920B-727639CC4980} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
 		{BFBDD701-316E-465D-927A-E29F62B7E419} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
+		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
 	EndGlobalSection
 EndGlobal

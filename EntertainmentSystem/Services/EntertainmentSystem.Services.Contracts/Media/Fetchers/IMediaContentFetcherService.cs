@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Services.Media.Contracts.Fetchers
+﻿namespace EntertainmentSystem.Services.Contracts.Media.Fetchers
 {
     using System.Linq;
     using Data.Models.Media;

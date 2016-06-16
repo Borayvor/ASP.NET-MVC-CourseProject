@@ -40,9 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\IUserAdminService.cs" />
-    <Compile Include="Contracts\IUserModeratorService.cs" />
-    <Compile Include="Contracts\IUserProfileService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -57,6 +54,10 @@
     <ProjectReference Include="..\..\Data\EntertainmentSystem.Data.Models\EntertainmentSystem.Data.Models.csproj">
       <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
       <Name>EntertainmentSystem.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntertainmentSystem.Services.Contracts\EntertainmentSystem.Services.Contracts.csproj">
+      <Project>{d9d166b8-31d0-42a3-a1c7-3f2d155dad40}</Project>
+      <Name>EntertainmentSystem.Services.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

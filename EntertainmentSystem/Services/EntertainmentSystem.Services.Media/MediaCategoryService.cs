@@ -1,9 +1,9 @@
 ﻿namespace EntertainmentSystem.Services.Media
 {
     using System.Linq;
-    using Contracts;
-    using EntertainmentSystem.Data.Common.Repositories;
-    using EntertainmentSystem.Data.Models.Media;
+    using Contracts.Media;
+    using Data.Common.Repositories;
+    using Data.Models.Media;
 
     public class MediaCategoryService : IMediaCategoryService
     {

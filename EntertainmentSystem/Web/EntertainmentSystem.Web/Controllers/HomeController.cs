@@ -4,7 +4,7 @@
     using System.Web.Mvc;
     using Data.Models.Media;
     using Infrastructure.Mapping;
-    using Services.Media.Contracts.Fetchers;
+    using Services.Contracts.Media.Fetchers;
     using ViewModels.Home;
     using ViewModels.MediaContent;
 

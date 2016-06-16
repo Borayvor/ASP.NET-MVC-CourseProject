@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Services.Media.Contracts
+﻿namespace EntertainmentSystem.Services.Contracts.Media
 {
     using System;
     using System.Linq;

@@ -3,8 +3,8 @@
     using System;
     using System.IO;
     using CloudStorage.Contracts;
-    using Contracts;
-    using Contracts.Generators;
+    using Contracts.Media;
+    using Contracts.Media.Generators;
     using Data.Models.Media;
 
     public class SoundUploadingService : BaseMediaContentUploadingService, ISoundUploadingGeneratorService

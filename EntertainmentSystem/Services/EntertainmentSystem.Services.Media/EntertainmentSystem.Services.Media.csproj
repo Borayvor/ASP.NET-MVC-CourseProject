@@ -40,14 +40,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Contracts\Fetchers\IMediaContentFetcherService.cs" />
-    <Compile Include="Contracts\Generators\IPictureUploadingGeneratorService.cs" />
-    <Compile Include="Contracts\Generators\ISoundUploadingGeneratorService.cs" />
-    <Compile Include="Contracts\Generators\IUploadingGeneratorService.cs" />
-    <Compile Include="Contracts\Generators\IVideoUploadingGeneratorService.cs" />
-    <Compile Include="Contracts\IMaediaContentService.cs" />
-    <Compile Include="Contracts\IMediaCategoryService.cs" />
-    <Compile Include="Contracts\IMediaCollectionService.cs" />
     <Compile Include="Fetchers\MediaContentFetcherService.cs" />
     <Compile Include="Generators\BaseMediaContentUploadingService.cs" />
     <Compile Include="Generators\PictureUploadingService.cs" />
@@ -71,6 +63,10 @@
     <ProjectReference Include="..\..\Data\EntertainmentSystem.Data.Models\EntertainmentSystem.Data.Models.csproj">
       <Project>{048df115-fad9-4bd4-9ba0-d99dfd32a2b2}</Project>
       <Name>EntertainmentSystem.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\EntertainmentSystem.Services.Contracts\EntertainmentSystem.Services.Contracts.csproj">
+      <Project>{d9d166b8-31d0-42a3-a1c7-3f2d155dad40}</Project>
+      <Name>EntertainmentSystem.Services.Contracts</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

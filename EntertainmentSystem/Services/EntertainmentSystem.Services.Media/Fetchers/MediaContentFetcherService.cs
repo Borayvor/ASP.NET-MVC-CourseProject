@@ -1,8 +1,8 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
     using System.Linq;
-    using Contracts;
-    using Contracts.Fetchers;
+    using Contracts.Media;
+    using Contracts.Media.Fetchers;
     using Data.Models.Media;
 
     public class MediaContentFetcherService : IMediaContentFetcherService

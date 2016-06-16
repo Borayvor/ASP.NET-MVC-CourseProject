@@ -83,8 +83,9 @@
       <HintPath>..\..\packages\Glimpse.Mvc5.1.5.3\lib\net45\Glimpse.Mvc5.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Kendo.Mvc">
-      <HintPath>C:\Program Files (x86)\Telerik\UI for ASP.NET MVC Q1 2016\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    <Reference Include="Kendo.Mvc, Version=2016.2.607.545, Culture=neutral, PublicKeyToken=121fae78165ba3d4, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Libs\Kendo.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.1.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
@@ -209,6 +210,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\ViewEnginesConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
+    <Compile Include="Areas\Administration\Controllers\AdminKendoGridController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -303,6 +307,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Libs\Kendo.Mvc.dll" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -414,16 +419,20 @@
     <Content Include="Views\Shared\_PicturesHomePartial.cshtml" />
     <Content Include="Views\Shared\_VideosHomePartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\HttpPostedFileBase.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Controllers\" />
     <Folder Include="Areas\Administration\ViewModels\" />
+    <Folder Include="Areas\Administration\Views\AdminKendoGrid\" />
+    <Folder Include="Areas\Administration\Views\AdminMediaCategory\" />
+    <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Administration\Views\Shared\EditorTemplates\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Shared\DisplayTemplates\" />
-    <Folder Include="Views\Shared\EditorTemplates\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -449,6 +458,10 @@
     <ProjectReference Include="..\..\Data\EntertainmentSystem.Data\EntertainmentSystem.Data.csproj">
       <Project>{7c950cdc-9587-4b65-a204-988efed17948}</Project>
       <Name>EntertainmentSystem.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Contracts\EntertainmentSystem.Services.Contracts.csproj">
+      <Project>{d9d166b8-31d0-42a3-a1c7-3f2d155dad40}</Project>
+      <Name>EntertainmentSystem.Services.Contracts</Name>
     </ProjectReference>
     <ProjectReference Include="..\..\Services\EntertainmentSystem.Services.Forum\EntertainmentSystem.Services.Forum.csproj">
       <Project>{2e70fcfa-317e-42c5-920b-727639cc4980}</Project>

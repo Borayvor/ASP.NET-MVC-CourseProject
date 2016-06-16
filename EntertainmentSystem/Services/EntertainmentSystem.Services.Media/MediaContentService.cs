@@ -2,7 +2,7 @@
 {
     using System;
     using System.Linq;
-    using Contracts;
+    using Contracts.Media;
     using Data.Common.Repositories;
     using Data.Models.Media;
 

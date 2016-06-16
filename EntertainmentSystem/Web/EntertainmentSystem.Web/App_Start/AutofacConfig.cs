@@ -12,8 +12,7 @@
     using Data;
     using Data.Common;
     using Data.Common.Repositories;
-    using Services.Media.Contracts;
-    using Services.Users.Contracts;
+    using Services.Media;
     using Services.Web;
 
     public static class AutofacConfig
@@ -60,10 +59,7 @@
                 .As<IIdentifierProvider>()
                 .InstancePerRequest();
 
-            var userServicesAssembly = Assembly.GetAssembly(typeof(IUserModeratorService));
-            builder.RegisterAssemblyTypes(userServicesAssembly).AsImplementedInterfaces();
-
-            var mediaServicesAssembly = Assembly.GetAssembly(typeof(IMediaCategoryService));
+            var mediaServicesAssembly = Assembly.GetAssembly(typeof(MediaCategoryService));
             builder.RegisterAssemblyTypes(mediaServicesAssembly).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))

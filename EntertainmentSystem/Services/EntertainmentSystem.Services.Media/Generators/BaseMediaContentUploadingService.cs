@@ -3,7 +3,7 @@
     using System;
     using System.IO;
     using CloudStorage.Contracts;
-    using Contracts;
+    using Contracts.Media;
     using Data.Models.Media;
 
     public abstract class BaseMediaContentUploadingService
