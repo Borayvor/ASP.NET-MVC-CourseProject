@@ -413,6 +413,7 @@
     <Content Include="Views\Shared\_SoundsHomePartial.cshtml" />
     <Content Include="Views\Shared\_PicturesHomePartial.cshtml" />
     <Content Include="Views\Shared\_VideosHomePartial.cshtml" />
+    <Content Include="Views\Shared\_NavigationPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -6,5 +6,9 @@
         public const string ModeratorRoleName = "Moderator";
 
         public const int PasswordMinLength = 3;
+
+        public const string AreaAdministrationName = "Administration";
+        public const string AreaModeratorsName = "Moderators";
+        public const string AreaMediaName = "Media";
     }
 }

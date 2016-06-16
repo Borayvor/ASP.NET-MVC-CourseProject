@@ -22,27 +22,8 @@
                 </button>
                 @Html.ActionLink("EntertainmentSystem", "Index", "Home", new { area = string.Empty }, new { @class = "navbar-brand" })
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
-                    <li>@Html.ActionLink("Forum", "Index", "Forum", new { area = string.Empty }, null)</li>
-                    @if (Request.IsAuthenticated)
-                    {
-                        <li>@Html.ActionLink("Games", "Index", "Game", new { area = string.Empty }, null)</li>
-                    }
-                    @if (Request.IsAuthenticated && User.IsInRole(GlobalConstants.AdministratorRoleName))
-                    {
-                        <li>
-                            <a href="" class="dropdown-toggle" id="Administration" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                                Administration
-                                <span class="caret"></span>
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="Administration">
-                                
-                            </ul>
-                        </li>
-                    }
-                </ul>
+            <div class="navbar-collapse collapse">                                   
+                @Html.Partial("_NavigationPartial")
                 @Html.Partial("_LoginPartial")
             </div>
         </div>
