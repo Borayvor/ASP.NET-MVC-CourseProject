@@ -25,7 +25,7 @@
 
         public virtual MediaCategory MediaCategory { get; set; }
 
-        public int MediaCollectionId { get; set; }
+        public int? MediaCollectionId { get; set; }
 
         public virtual MediaCollection MediaCollection { get; set; }
     }

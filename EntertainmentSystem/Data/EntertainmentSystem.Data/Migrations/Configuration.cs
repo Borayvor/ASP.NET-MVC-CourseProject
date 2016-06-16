@@ -18,6 +18,8 @@
             StaticDataSeeder.SeedPostCategories(context);
             StaticDataSeeder.SeedPosts(context);
             StaticDataSeeder.SeedTags(context);
+            StaticDataSeeder.SeedMediaCategory(context);
+            StaticDataSeeder.SeedMediaContents(context);
         }
     }
 }
