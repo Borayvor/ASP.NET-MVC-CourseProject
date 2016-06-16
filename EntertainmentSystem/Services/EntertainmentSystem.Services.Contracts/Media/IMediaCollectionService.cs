@@ -3,7 +3,7 @@
     using System.Linq;
     using Data.Models.Media;
 
-    public interface IMediaCollectionService : IAdminMediaService<MediaCollection>
+    public interface IMediaCollectionService
     {
         /// <summary>
         /// Get all collections. Without ordinary deleted.

@@ -1,9 +1,10 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Media
 {
+    using System;
     using System.Linq;
     using Data.Models.Media;
 
-    public interface IMediaCategoryService : IAdminMediaService<MediaCategory>
+    public interface IMediaCategoryService
     {
         /// <summary>
         /// Get all categories. Without ordinary deleted.
@@ -16,7 +17,7 @@
         /// </summary>
         /// <param name="id">The id of the category to get.</param>
         /// <returns>Category as class.</returns>
-        MediaCategory GetById(int id);
+        MediaCategory GetById(Guid id);
 
         /// <summary>
         /// Gets the category by name.

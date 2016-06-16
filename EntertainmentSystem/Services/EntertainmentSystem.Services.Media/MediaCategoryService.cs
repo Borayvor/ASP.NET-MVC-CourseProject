@@ -1,13 +1,14 @@
 ﻿namespace EntertainmentSystem.Services.Media
 {
+    using System;
     using System.Linq;
     using Contracts.Media;
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class MediaCategoryService : IMediaCategoryService, IAdminMediaService<MediaCategory>
+    public class MediaCategoryService : IMediaCategoryService
     {
-        private readonly IDbRepository<MediaCategory> categories;
+        protected readonly IDbRepository<MediaCategory> categories;
 
         public MediaCategoryService(IDbRepository<MediaCategory> categories)
         {
@@ -19,7 +20,7 @@
             return this.categories.All();
         }
 
-        public MediaCategory GetById(int id)
+        public MediaCategory GetById(Guid id)
         {
             return this.categories.GetById(id);
         }

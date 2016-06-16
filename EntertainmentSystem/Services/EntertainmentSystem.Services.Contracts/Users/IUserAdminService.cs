@@ -12,7 +12,7 @@
         IQueryable<ApplicationUser> GetAllWithDeleted();
 
         /// <summary>
-        /// Delete user.
+        /// Delete user permanent.
         /// </summary>
         /// <param name="user">User to be deleted.</param>
         void DeletePermanent(ApplicationUser user);

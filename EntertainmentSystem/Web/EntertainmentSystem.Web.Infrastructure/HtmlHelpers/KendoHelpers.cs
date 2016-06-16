@@ -20,8 +20,8 @@
                 columns = cols =>
                 {
                     cols.AutoGenerate(true);
-                    cols.Command(c => c.Edit());
-                    cols.Command(c => c.Destroy());
+                    ////cols.Command(c => c.Edit());
+                    ////cols.Command(c => c.Destroy());
                 };
             }
 
@@ -35,15 +35,16 @@
                 .Groupable()
                 .Filterable()
                 .Editable(edit => edit.Mode(GridEditMode.PopUp))
-                .ToolBar(toolbar => toolbar.Create())
                 .DataSource(data =>
                     data
                         .Ajax()
                         .Model(m => m.Id(modelIdExpression))
-                        .Read(read => read.Action("Read", controllerName))
-                        .Create(create => create.Action("Create", controllerName))
-                        .Update(update => update.Action("Update", controllerName))
-                        .Destroy(destroy => destroy.Action("Destroy", controllerName)));
+                        .Read(read => read.Action("Read", controllerName)));
         }
     }
 }
+
+//// .ToolBar(toolbar => toolbar.Create())
+//// .Create(create => create.Action("Create", controllerName))
+//// .Update(update => update.Action("Update", controllerName))
+//// .Destroy(destroy => destroy.Action("Destroy", controllerName))

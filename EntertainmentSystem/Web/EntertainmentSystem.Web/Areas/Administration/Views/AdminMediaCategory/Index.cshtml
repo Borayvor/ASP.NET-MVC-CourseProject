@@ -1,0 +1,20 @@
+﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
+@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+
+@{
+    const string ControllerName = "AdminMediaCategory";
+}
+
+<h2 class="text-center">Administration Media Categories</h2>
+
+@(Html.FullFeaturedGrid<MediaCategoryAdminViewModel>(ControllerName, m => m.Id,
+    cols =>
+    {
+        cols.Bound(m => m.Id).Hidden();
+        cols.Bound(m => m.Name);
+        cols.Bound(m => m.CreatedOn);
+        cols.Bound(m => m.ModifiedOn);
+        cols.Bound(m => m.IsDeleted);
+        cols.Bound(m => m.DeletedOn);
+    }
+))

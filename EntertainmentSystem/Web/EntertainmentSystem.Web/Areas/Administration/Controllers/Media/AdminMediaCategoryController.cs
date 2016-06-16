@@ -1,10 +1,19 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Media
 {
     using System.Web.Mvc;
-    using Web.Controllers;
+    using Controllers;
+    using Services.Contracts.Media;
 
-    public class AdminMediaCategoryController : BaseController
+    using Model = Data.Models.Media.MediaCategory;
+    using ViewModel = ViewModels.MediaCategoryAdminViewModel;
+
+    public class AdminMediaCategoryController : AdminKendoGridController<Model, ViewModel>
     {
+        public AdminMediaCategoryController(IAdminMediaService<Model> administrationMediaService)
+            : base(administrationMediaService)
+        {
+        }
+
         public ActionResult Index()
         {
             return this.View();

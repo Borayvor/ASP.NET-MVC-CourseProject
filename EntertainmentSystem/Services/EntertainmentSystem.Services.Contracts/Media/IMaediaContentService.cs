@@ -4,7 +4,7 @@
     using System.Linq;
     using Data.Models.Media;
 
-    public interface IMaediaContentService : IAdminMediaService<MediaContent>
+    public interface IMaediaContentService
     {
         /// <summary>
         /// Get all contents. Without ordinary deleted.

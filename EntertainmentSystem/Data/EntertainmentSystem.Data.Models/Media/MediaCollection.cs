@@ -4,7 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
-    public class MediaCollection : BaseModel<int>
+    public class MediaCollection : BaseModelGuid
     {
         private ICollection<MediaContent> contents;
 

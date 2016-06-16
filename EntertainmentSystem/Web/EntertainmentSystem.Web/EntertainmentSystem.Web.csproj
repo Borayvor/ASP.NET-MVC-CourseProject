@@ -214,6 +214,7 @@
     <Compile Include="Areas\Administration\Controllers\AdminKendoGridController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -341,6 +342,7 @@
     <Content Include="Content\KendoUI\images\kendoui.woff" />
     <Content Include="Content\KendoUI\kendo.metro.min.css.map" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Administration\Views\AdminMediaCategory\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -428,7 +430,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\AdminKendoGrid\" />
-    <Folder Include="Areas\Administration\Views\AdminMediaCategory\" />
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Administration\Views\Shared\EditorTemplates\" />

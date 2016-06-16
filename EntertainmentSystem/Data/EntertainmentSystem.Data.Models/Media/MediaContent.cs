@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Data.Models.Media
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
@@ -21,11 +22,11 @@
 
         public virtual ApplicationUser Author { get; set; }
 
-        public int MediaCategoryId { get; set; }
+        public Guid MediaCategoryId { get; set; }
 
         public virtual MediaCategory MediaCategory { get; set; }
 
-        public int? MediaCollectionId { get; set; }
+        public Guid? MediaCollectionId { get; set; }
 
         public virtual MediaCollection MediaCollection { get; set; }
     }

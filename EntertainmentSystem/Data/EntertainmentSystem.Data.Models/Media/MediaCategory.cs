@@ -5,7 +5,7 @@
     using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
-    public class MediaCategory : BaseModel<int>
+    public class MediaCategory : BaseModelGuid
     {
         private ICollection<MediaContent> contents;
 
