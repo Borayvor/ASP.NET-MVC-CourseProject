@@ -7,7 +7,9 @@
 
 <h2 class="text-center">Administration Media Categories</h2>
 
-@(Html.FullFeaturedGrid<MediaCategoryAdminViewModel>(ControllerName, m => m.Id,
+@(Html.FullFeaturedGrid<MediaCategoryAdminViewModel>(
+    ControllerName, 
+    m => m.Id,
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();

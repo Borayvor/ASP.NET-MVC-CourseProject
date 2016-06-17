@@ -20,8 +20,8 @@
                 columns = cols =>
                 {
                     cols.AutoGenerate(true);
-                    ////cols.Command(c => c.Edit());
-                    ////cols.Command(c => c.Destroy());
+                    cols.Command(c => c.Edit());
+                    cols.Command(c => c.Destroy());
                 };
             }
 
@@ -34,7 +34,6 @@
                 .Sortable()
                 .Groupable()
                 .Filterable()
-                .Editable(edit => edit.Mode(GridEditMode.PopUp))
                 .DataSource(data =>
                     data
                         .Ajax()
@@ -44,6 +43,7 @@
     }
 }
 
+//// .Editable(edit => edit.Mode(GridEditMode.PopUp))
 //// .ToolBar(toolbar => toolbar.Create())
 //// .Create(create => create.Action("Create", controllerName))
 //// .Update(update => update.Action("Update", controllerName))

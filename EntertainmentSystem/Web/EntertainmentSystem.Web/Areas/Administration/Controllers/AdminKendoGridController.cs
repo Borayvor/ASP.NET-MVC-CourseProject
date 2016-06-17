@@ -21,6 +21,11 @@
             this.administrationMediaService = administrationMediaService;
         }
 
+        protected IAdminMediaService<TDbModel> AdministrationMediaService
+        {
+            get { return this.administrationMediaService; }
+        }
+
         [HttpPost]
         public virtual ActionResult Read([DataSourceRequest]DataSourceRequest request, Guid? id = null)
         {
