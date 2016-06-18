@@ -30,21 +30,25 @@
                 .Name("grid")
                 .Columns(columns)
                 .ColumnMenu()
-                .Pageable(page => page.Refresh(true))
+                .Pageable(pageable => pageable
+                .Refresh(true)
+                .PageSizes(true)
+                .ButtonCount(5))
+                .Scrollable()
                 .Sortable()
                 .Groupable()
                 .Filterable()
+                .ToolBar(toolbar => toolbar.Create())
+                .Editable(edit => edit.Mode(GridEditMode.PopUp))
                 .DataSource(data =>
                     data
                         .Ajax()
+                        .PageSize(10)
                         .Model(m => m.Id(modelIdExpression))
-                        .Read(read => read.Action("Read", controllerName)));
+                        .Read(read => read.Action("EditingPopupRead", controllerName))
+                        .Create(create => create.Action("EditingPopupCreate", controllerName))
+                        .Update(update => update.Action("EditingPopupUpdate", controllerName))
+                        .Destroy(destroy => destroy.Action("EditingPopupDestroy", controllerName)));
         }
     }
 }
-
-//// .Editable(edit => edit.Mode(GridEditMode.PopUp))
-//// .ToolBar(toolbar => toolbar.Create())
-//// .Create(create => create.Action("Create", controllerName))
-//// .Update(update => update.Action("Update", controllerName))
-//// .Destroy(destroy => destroy.Action("Destroy", controllerName))

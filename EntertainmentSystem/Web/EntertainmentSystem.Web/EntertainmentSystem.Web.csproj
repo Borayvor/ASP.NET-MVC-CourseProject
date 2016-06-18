@@ -211,9 +211,10 @@
     <Compile Include="App_Start\ViewEnginesConfig.cs" />
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
-    <Compile Include="Areas\Administration\Controllers\AdminKendoGridController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminInputViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
@@ -344,6 +345,7 @@
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\MediaCategoryAdminViewModel.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

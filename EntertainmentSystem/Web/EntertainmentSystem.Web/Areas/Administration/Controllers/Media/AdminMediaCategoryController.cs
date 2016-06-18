@@ -4,19 +4,20 @@
     using System.Linq;
     using System.Web.Mvc;
     using Controllers;
+    using Data.Models.Media;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Services.Contracts.Media;
+    using ViewModels;
 
-    using Model = Data.Models.Media.MediaCategory;
-    using ViewModel = ViewModels.MediaCategoryAdminViewModel;
-
-    public class AdminMediaCategoryController : AdminKendoGridController<Model, ViewModel>
+    public class AdminMediaCategoryController : AdminController
     {
-        public AdminMediaCategoryController(IAdminMediaService<Model> administrationMediaService)
-            : base(administrationMediaService)
+        private readonly IAdminMediaService<MediaCategory> administrationMediaService;
+
+        public AdminMediaCategoryController(IAdminMediaService<MediaCategory> administrationMediaService)
         {
+            this.administrationMediaService = administrationMediaService;
         }
 
         public ActionResult Index(Guid? contentId)
@@ -25,16 +26,68 @@
         }
 
         [HttpPost]
-        public override ActionResult Read(DataSourceRequest request, Guid? contentId = null)
+        public ActionResult EditingPopupRead([DataSourceRequest] DataSourceRequest request, Guid? contentId = null)
         {
-            var data = this.AdministrationMediaService.GetAllWithDeleted().AsQueryable();
+            var data = this.administrationMediaService.GetAllWithDeleted();
 
             if (contentId.HasValue)
             {
                 data = data.Where(c => c.Id == contentId.Value);
             }
 
-            return this.Json(data.To<ViewModel>().ToDataSourceResult(request));
+            var result = data
+                .To<MediaCategoryAdminViewModel>()
+                .ToDataSourceResult(request);
+
+            return this.Json(result);
+        }
+
+        [HttpPost]
+        public ActionResult EditingPopupCreate([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminCreateViewModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                var category = this.Mapper.Map<MediaCategory>(model);
+
+                this.administrationMediaService.Create(category);
+            }
+
+            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [HttpPost]
+        public ActionResult EditingPopupUpdate([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminInputViewModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                var category = this.administrationMediaService.GetById(model.Id);
+
+                this.administrationMediaService.Update(category);
+            }
+            else if (model != null)
+            {
+                var category = new MediaCategory
+                {
+                    Name = model.Name
+                };
+
+                this.administrationMediaService.Create(category);
+            }
+
+            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [HttpPost]
+        public ActionResult EditingPopupDestroy([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
+        {
+            if (model != null)
+            {
+                var currentModel = this.administrationMediaService.GetById(model.Id);
+
+                this.administrationMediaService.Delete(currentModel);
+            }
+
+            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
     }
 }
