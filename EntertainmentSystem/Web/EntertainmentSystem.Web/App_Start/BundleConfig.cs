@@ -21,13 +21,15 @@
             bundles.Add(new ScriptBundle("~/bundles/jqueryval")
                 .Include("~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/bootstrap")
-                .Include("~/Scripts/bootstrap.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/kendo")
                 .Include(
                     "~/Scripts/KendoUI/kendo.all.min.js",
                     "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/tools")
+                .Include(
+                "~/Scripts/bootstrap.js",
+                "~/Scripts/jquery.fancybox.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
@@ -35,8 +37,11 @@
             bundles.Add(new StyleBundle("~/Content/siteCss")
                 .Include("~/Content/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/bootstrapCss")
-                .Include("~/Content/bootstrap.css"));
+            bundles.Add(new StyleBundle("~/Content/tools")
+                .Include(
+                "~/Content/bootstrap.css",
+                "~/Content/jquery.fancybox.css",
+                "~/Content/font-awesome.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo")
                 .Include(

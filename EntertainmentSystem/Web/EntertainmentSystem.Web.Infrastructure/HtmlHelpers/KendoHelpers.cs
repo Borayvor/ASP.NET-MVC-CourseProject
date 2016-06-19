@@ -12,7 +12,8 @@
             this HtmlHelper helper,
             string controllerName,
             Expression<Func<T, object>> modelIdExpression,
-            Action<GridColumnFactory<T>> columns = null)
+            Action<GridColumnFactory<T>> columns = null,
+            object readRouteValues = null)
             where T : class
         {
             if (columns == null)
@@ -38,17 +39,16 @@
                 .Sortable()
                 .Groupable()
                 .Filterable()
-                .ToolBar(toolbar => toolbar.Create())
                 .Editable(edit => edit.Mode(GridEditMode.PopUp))
+                .HtmlAttributes(new { style = "height: 500px;" })
                 .DataSource(data =>
                     data
                         .Ajax()
                         .PageSize(10)
                         .Model(m => m.Id(modelIdExpression))
-                        .Read(read => read.Action("EditingPopupRead", controllerName))
-                        .Create(create => create.Action("EditingPopupCreate", controllerName))
-                        .Update(update => update.Action("EditingPopupUpdate", controllerName))
-                        .Destroy(destroy => destroy.Action("EditingPopupDestroy", controllerName)));
+                        .Read(read => read.Action("Read", controllerName, readRouteValues))
+                        .Update(update => update.Action("Update", controllerName))
+                        .Destroy(destroy => destroy.Action("Destroy", controllerName)));
         }
     }
 }

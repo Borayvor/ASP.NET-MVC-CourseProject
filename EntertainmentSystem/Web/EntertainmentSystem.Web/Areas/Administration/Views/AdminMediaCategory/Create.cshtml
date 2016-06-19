@@ -1,0 +1,16 @@
+﻿@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model MediaCategoryAdminViewModel
+
+<div class="container">
+    @using (Html.BeginForm("Create", "AdminMediaCategory", FormMethod.Post, new { @class = "form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+
+        @Html.EditorFor(m => Model)
+
+        <div class="form-group">
+            <input type="submit" class="btn btn-success" value="Create" />
+        </div>
+    }
+</div>
+<br />

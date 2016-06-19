@@ -1,11 +1,14 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
 @using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model MediaCategoryAdminViewModel
 
 @{
     const string ControllerName = "AdminMediaCategory";
 }
 
 <h2 class="text-center">Administration Media Categories</h2>
+
+@Html.Partial("Create")
 
 @(Html.FullFeaturedGrid<MediaCategoryAdminViewModel>(
     ControllerName,

@@ -49,6 +49,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.Service
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.Services.Contracts", "Services\EntertainmentSystem.Services.Contracts\EntertainmentSystem.Services.Contracts.csproj", "{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EntertainmentSystem.CloudStorage.Firebase", "CloudStorages\EntertainmentSystem.CloudStorage.Firebase\EntertainmentSystem.CloudStorage.Firebase.csproj", "{73C45D1A-1B3F-4BCA-BDB9-BA73661A2C25}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -119,6 +121,10 @@ Global
 		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40}.Release|Any CPU.Build.0 = Release|Any CPU
+		{73C45D1A-1B3F-4BCA-BDB9-BA73661A2C25}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73C45D1A-1B3F-4BCA-BDB9-BA73661A2C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73C45D1A-1B3F-4BCA-BDB9-BA73661A2C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73C45D1A-1B3F-4BCA-BDB9-BA73661A2C25}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -140,5 +146,6 @@ Global
 		{2E70FCFA-317E-42C5-920B-727639CC4980} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
 		{BFBDD701-316E-465D-927A-E29F62B7E419} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
 		{D9D166B8-31D0-42A3-A1C7-3F2D155DAD40} = {A5398FDD-2BE7-452F-9808-E5D3C5B58CC3}
+		{73C45D1A-1B3F-4BCA-BDB9-BA73661A2C25} = {D1690276-7A24-4AF0-AAEB-2879194AAAA9}
 	EndGlobalSection
 EndGlobal

@@ -25,8 +25,28 @@
             return this.View(contentId);
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.PartialView();
+        }
+
         [HttpPost]
-        public ActionResult EditingPopupRead([DataSourceRequest] DataSourceRequest request, Guid? contentId = null)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(MediaCategoryAdminCreateViewModel model)
+        {
+            if (model != null && this.ModelState.IsValid)
+            {
+                var category = this.Mapper.Map<MediaCategory>(model);
+
+                this.administrationMediaService.Create(category);
+            }
+
+            return this.RedirectToActionPermanent("Index");
+        }
+
+        [HttpPost]
+        public ActionResult Read([DataSourceRequest] DataSourceRequest request, Guid? contentId = null)
         {
             var data = this.administrationMediaService.GetAllWithDeleted();
 
@@ -43,42 +63,22 @@
         }
 
         [HttpPost]
-        public ActionResult EditingPopupCreate([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminCreateViewModel model)
-        {
-            if (model != null && this.ModelState.IsValid)
-            {
-                var category = this.Mapper.Map<MediaCategory>(model);
-
-                this.administrationMediaService.Create(category);
-            }
-
-            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
-        }
-
-        [HttpPost]
-        public ActionResult EditingPopupUpdate([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminInputViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminInputViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
                 var category = this.administrationMediaService.GetById(model.Id);
 
-                this.administrationMediaService.Update(category);
-            }
-            else if (model != null)
-            {
-                var category = new MediaCategory
-                {
-                    Name = model.Name
-                };
+                this.Mapper.Map(model, category);
 
-                this.administrationMediaService.Create(category);
+                this.administrationMediaService.Update(category);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
 
         [HttpPost]
-        public ActionResult EditingPopupDestroy([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
         {
             if (model != null)
             {
