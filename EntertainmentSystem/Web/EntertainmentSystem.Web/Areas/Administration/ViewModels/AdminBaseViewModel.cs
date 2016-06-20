@@ -3,7 +3,7 @@
     using System;
     using System.Web.Mvc;
 
-    public abstract class AdminViewModel
+    public abstract class AdminBaseViewModel
     {
         [HiddenInput(DisplayValue = false)]
         public Guid Id { get; set; }

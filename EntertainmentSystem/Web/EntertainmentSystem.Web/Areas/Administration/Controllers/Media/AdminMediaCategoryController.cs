@@ -13,11 +13,11 @@
 
     public class AdminMediaCategoryController : AdminController
     {
-        private readonly IAdminMediaService<MediaCategory> administrationMediaService;
+        private readonly IAdminMediaService<MediaCategory> adminMediaService;
 
-        public AdminMediaCategoryController(IAdminMediaService<MediaCategory> administrationMediaService)
+        public AdminMediaCategoryController(IAdminMediaService<MediaCategory> adminMediaService)
         {
-            this.administrationMediaService = administrationMediaService;
+            this.adminMediaService = adminMediaService;
         }
 
         public ActionResult Index()
@@ -33,13 +33,13 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create(MediaCategoryAdminCreateViewModel model)
+        public ActionResult Create(AdminMediaCategoryCreateViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
                 var category = this.Mapper.Map<MediaCategory>(model);
 
-                this.administrationMediaService.Create(category);
+                this.adminMediaService.Create(category);
             }
 
             return this.RedirectToActionPermanent("Index");
@@ -49,7 +49,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request, Guid? contentId = null)
         {
-            var data = this.administrationMediaService.GetAllWithDeleted();
+            var data = this.adminMediaService.GetAllWithDeleted();
 
             if (contentId.HasValue)
             {
@@ -57,7 +57,7 @@
             }
 
             var result = data
-                .To<MediaCategoryAdminViewModel>()
+                .To<AdminMediaCategoryViewModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(result);
@@ -65,17 +65,17 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminInputViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryInputViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var category = this.administrationMediaService.GetById(model.Id);
+                var category = this.adminMediaService.GetById(model.Id);
 
                 this.Mapper.Map(model, category);
 
-                this.administrationMediaService.Update(category);
+                this.adminMediaService.Update(category);
 
-                var viewModel = this.Mapper.Map<MediaCategoryAdminViewModel>(category);
+                var viewModel = this.Mapper.Map<AdminMediaCategoryViewModel>(category);
 
                 return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
@@ -85,13 +85,13 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryViewModel model)
         {
             if (model != null)
             {
-                var currentModel = this.administrationMediaService.GetById(model.Id);
+                var currentModel = this.adminMediaService.GetById(model.Id);
 
-                this.administrationMediaService.Delete(currentModel);
+                this.adminMediaService.Delete(currentModel);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

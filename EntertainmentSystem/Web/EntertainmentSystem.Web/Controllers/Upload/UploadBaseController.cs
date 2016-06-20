@@ -3,21 +3,19 @@
     using System;
     using System.Linq;
     using System.Web;
+    using System.Web.Mvc;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Media.Generators;
 
-    public abstract class BaseUploadController : BaseController
+    [Authorize]
+    [ValidateAntiForgeryToken]
+    public abstract class UploadBaseController : BaseController
     {
         private readonly IUploadingGeneratorService uploadingGeneratorService;
 
-        public BaseUploadController(IUploadingGeneratorService uploadingGeneratorService)
+        public UploadBaseController(IUploadingGeneratorService uploadingGeneratorService)
         {
             this.uploadingGeneratorService = uploadingGeneratorService;
-        }
-
-        public IUploadingGeneratorService UploadingGeneratorService
-        {
-            get { return this.uploadingGeneratorService; }
         }
 
         public Guid CreateContent(HttpPostedFileBase file)

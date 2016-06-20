@@ -212,16 +212,18 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminCreateViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminInputViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\MediaCategoryAdminViewModel.cs" />
+    <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminBaseViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryInputViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Account\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
-    <Compile Include="Controllers\Upload\BaseUploadController.cs" />
+    <Compile Include="Controllers\Upload\UploadBaseController.cs" />
     <Compile Include="Controllers\Upload\UploadPictureController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -358,13 +360,15 @@
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\DateTime.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\MediaCategoryAdminViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaCategoryViewModel.cshtml" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_UploadMediaContent.cshtml" />
+    <Content Include="Areas\Administration\Views\AdminMediaContent\Index.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -445,7 +449,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
-    <Content Include="Views\UploadPicture\Create.cshtml" />
+    <Content Include="Views\Shared\_CreateMedia.cshtml" />
     <Content Include="Views\Shared\_SoundsHomePartial.cshtml" />
     <Content Include="Views\Shared\_PicturesHomePartial.cshtml" />
     <Content Include="Views\Shared\_VideosHomePartial.cshtml" />
@@ -461,6 +465,7 @@
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\UploadPicture\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

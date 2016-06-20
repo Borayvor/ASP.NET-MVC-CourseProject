@@ -7,7 +7,7 @@
 
     public class MediaCollectionService : IMediaCollectionService
     {
-        private readonly IDbRepository<MediaCollection> collections;
+        protected readonly IDbRepository<MediaCollection> collections;
 
         public MediaCollectionService(IDbRepository<MediaCollection> collections)
         {

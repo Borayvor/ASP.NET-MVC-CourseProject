@@ -8,7 +8,7 @@
 
     public class MediaContentService : IMaediaContentService
     {
-        private readonly IDbRepository<MediaContent> contents;
+        protected readonly IDbRepository<MediaContent> contents;
 
         public MediaContentService(IDbRepository<MediaContent> contents)
         {

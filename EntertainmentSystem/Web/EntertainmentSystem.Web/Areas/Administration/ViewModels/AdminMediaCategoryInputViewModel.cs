@@ -4,7 +4,7 @@
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
-    public class MediaCategoryAdminCreateViewModel : IMapFrom<MediaCategory>, IMapTo<MediaCategory>
+    public class AdminMediaCategoryInputViewModel : AdminBaseViewModel, IMapFrom<MediaCategory>, IMapTo<MediaCategory>
     {
         [Required]
         [MaxLength(500)]

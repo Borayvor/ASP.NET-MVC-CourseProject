@@ -1,17 +1,18 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
 @using EntertainmentSystem.Web.Areas.Administration.ViewModels
-@model AdminMediaCategoryViewModel
+
 
 @{
-    const string ControllerName = "AdminMediaCategory";
+    const string ControllerName = "AdminMediaContent";
 }
 
 <h2 class="text-center">Media Categories</h2>
 <br />
-
-@Html.Partial("Create")
-
-@(Html.FullFeaturedGrid<AdminMediaCategoryViewModel>(
+<button id="create-media-button" class="btn btn-default" onclick="location.href='@Url.Action("Create", ControllerName)'">
+    Create media content
+</button>
+<br />
+@*@(Html.FullFeaturedGrid<>(
     ControllerName,
     m => m.Id,
     cols =>
@@ -22,6 +23,6 @@
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");        
+        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
     }
-))
+))*@

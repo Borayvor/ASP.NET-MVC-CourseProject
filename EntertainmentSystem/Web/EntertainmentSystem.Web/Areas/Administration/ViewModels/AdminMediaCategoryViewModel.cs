@@ -5,7 +5,7 @@
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
-    public class MediaCategoryAdminViewModel : AdminViewModel, IMapFrom<MediaCategory>
+    public class AdminMediaCategoryViewModel : AdminBaseViewModel, IMapFrom<MediaCategory>
     {
         [Display(Name = "Category name")]
         public string Name { get; set; }

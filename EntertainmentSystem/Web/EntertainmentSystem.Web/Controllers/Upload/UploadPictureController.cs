@@ -6,9 +6,7 @@
     using Services.Contracts.Media.Generators;
     using ViewModels.Upload;
 
-    [Authorize]
-    [ValidateAntiForgeryToken]
-    public class UploadPictureController : BaseUploadController
+    public class UploadPictureController : UploadBaseController
     {
         public UploadPictureController(IPictureUploadingGeneratorService pictureUploadingGeneratorService)
             : base(pictureUploadingGeneratorService)
@@ -16,7 +14,7 @@
         }
 
         [AjaxPost]
-        public ActionResult Create(PictureInputViewModel model)
+        public ActionResult CreateMedia(PictureInputViewModel model)
         {
             return this.ConditionalActionResult<Guid>(
                 () => this.CreateContent(model.File),
