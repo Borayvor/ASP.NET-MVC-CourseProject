@@ -1,7 +1,5 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Media
 {
-    using System;
-    using System.Linq;
     using System.Web.Mvc;
     using Controllers;
     using Data.Models.Media;
@@ -37,9 +35,9 @@
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var category = this.Mapper.Map<MediaCategory>(model);
+                var entity = this.Mapper.Map<MediaCategory>(model);
 
-                this.adminMediaService.Create(category);
+                this.adminMediaService.Create(entity);
             }
 
             return this.RedirectToActionPermanent("Index");
@@ -47,35 +45,29 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Read([DataSourceRequest] DataSourceRequest request, Guid? contentId = null)
+        public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var data = this.adminMediaService.GetAllWithDeleted();
-
-            if (contentId.HasValue)
-            {
-                data = data.Where(c => c.Id == contentId.Value);
-            }
-
-            var result = data
+            var data = this.adminMediaService
+                .GetAllWithDeleted()
                 .To<AdminMediaCategoryViewModel>()
                 .ToDataSourceResult(request);
 
-            return this.Json(result);
+            return this.Json(data);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryInputViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryEditViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var category = this.adminMediaService.GetById(model.Id);
+                var entity = this.adminMediaService.GetById(model.Id);
 
-                this.Mapper.Map(model, category);
+                this.Mapper.Map(model, entity);
 
-                this.adminMediaService.Update(category);
+                this.adminMediaService.Update(entity);
 
-                var viewModel = this.Mapper.Map<AdminMediaCategoryViewModel>(category);
+                var viewModel = this.Mapper.Map<AdminMediaCategoryViewModel>(entity);
 
                 return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
@@ -89,9 +81,23 @@
         {
             if (model != null)
             {
-                var currentModel = this.adminMediaService.GetById(model.Id);
+                var entity = this.adminMediaService.GetById(model.Id);
 
-                this.adminMediaService.Delete(currentModel);
+                this.adminMediaService.Delete(entity);
+            }
+
+            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryViewModel model)
+        {
+            if (model != null)
+            {
+                var entity = this.adminMediaService.GetById(model.Id);
+
+                this.adminMediaService.DeletePermanent(entity);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

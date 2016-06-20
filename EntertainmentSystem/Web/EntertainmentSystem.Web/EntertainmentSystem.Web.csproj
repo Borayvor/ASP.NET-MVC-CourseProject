@@ -216,8 +216,10 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminBaseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryInputViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentViewModel.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -367,8 +369,8 @@
     <Content Include="fonts\fontawesome-webfont.ttf" />
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Create.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\_UploadMediaContent.cshtml" />
     <Content Include="Areas\Administration\Views\AdminMediaContent\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\_UploadMediaContent.cshtml" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

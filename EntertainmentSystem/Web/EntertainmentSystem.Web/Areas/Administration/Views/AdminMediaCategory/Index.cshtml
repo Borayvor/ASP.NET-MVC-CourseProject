@@ -22,6 +22,7 @@
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");        
+        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
+        cols.Command(m => m.Custom("Permanent delete").Action("DestroyPermanent", ControllerName));
     }
 ))

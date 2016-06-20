@@ -1,28 +1,31 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
 @using EntertainmentSystem.Web.Areas.Administration.ViewModels
-
+@model AdminMediaContentViewModel
 
 @{
     const string ControllerName = "AdminMediaContent";
 }
 
-<h2 class="text-center">Media Categories</h2>
+<h2 class="text-center">Media Contents</h2>
 <br />
-<button id="create-media-button" class="btn btn-default" onclick="location.href='@Url.Action("Create", ControllerName)'">
-    Create media content
-</button>
+@Html.Partial("_UploadMediaContent")
 <br />
-@*@(Html.FullFeaturedGrid<>(
+@(Html.FullFeaturedGrid<AdminMediaContentViewModel>(
     ControllerName,
     m => m.Id,
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();
-        cols.Bound(m => m.Name);
+        cols.Bound(m => m.ContentType);
+        cols.Bound(m => m.ContentUrl).Locked().ClientTemplate("");
+        cols.Bound(m => m.Title);
+        cols.Bound(m => m.Description);
+        cols.Bound(m => m.MediaCategory);
+        cols.Bound(m => m.MediaCollection);
         cols.Bound(m => m.CreatedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
+        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");        
     }
-))*@
+))
