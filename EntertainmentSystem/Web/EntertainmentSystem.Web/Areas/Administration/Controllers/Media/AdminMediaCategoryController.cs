@@ -96,19 +96,5 @@
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
-        {
-            if (model != null)
-            {
-                var currentModel = this.administrationMediaService.GetById(model.Id);
-
-                this.administrationMediaService.DeletePermanent(currentModel);
-            }
-
-            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
-        }
     }
 }
