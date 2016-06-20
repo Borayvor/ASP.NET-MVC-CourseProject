@@ -74,6 +74,10 @@
                 this.Mapper.Map(model, category);
 
                 this.administrationMediaService.Update(category);
+
+                var viewModel = this.Mapper.Map<MediaCategoryAdminViewModel>(category);
+
+                return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
@@ -88,6 +92,20 @@
                 var currentModel = this.administrationMediaService.GetById(model.Id);
 
                 this.administrationMediaService.Delete(currentModel);
+            }
+
+            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
+        {
+            if (model != null)
+            {
+                var currentModel = this.administrationMediaService.GetById(model.Id);
+
+                this.administrationMediaService.DeletePermanent(currentModel);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

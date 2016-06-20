@@ -48,7 +48,8 @@
                         .Model(m => m.Id(modelIdExpression))
                         .Read(read => read.Action("Read", controllerName, readRouteValues).Data("sendAntiForgery"))
                         .Update(update => update.Action("Update", controllerName).Data("sendAntiForgery"))
-                        .Destroy(destroy => destroy.Action("Destroy", controllerName).Data("sendAntiForgery")));
+                        .Destroy(destroy => destroy.Action("Destroy", controllerName).Data("sendAntiForgery"))
+                        .Destroy(destroy => destroy.Action("DestroyPermanent", controllerName).Data("sendAntiForgery")));
         }
     }
 }
