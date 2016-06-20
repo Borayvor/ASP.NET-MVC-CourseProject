@@ -20,9 +20,9 @@
             this.administrationMediaService = administrationMediaService;
         }
 
-        public ActionResult Index(Guid? contentId)
+        public ActionResult Index()
         {
-            return this.View(contentId);
+            return this.View();
         }
 
         [HttpGet]
@@ -46,6 +46,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request, Guid? contentId = null)
         {
             var data = this.administrationMediaService.GetAllWithDeleted();
@@ -63,6 +64,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminInputViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
@@ -78,6 +80,7 @@
         }
 
         [HttpPost]
+        [ValidateAntiForgeryToken]
         public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, MediaCategoryAdminViewModel model)
         {
             if (model != null)

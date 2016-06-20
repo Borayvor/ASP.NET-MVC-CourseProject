@@ -1,11 +1,13 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
     public class MediaCategoryAdminViewModel : AdminViewModel, IMapFrom<MediaCategory>
     {
+        [Display(Name = "Category name")]
         public string Name { get; set; }
 
         public DateTime CreatedOn { get; set; }

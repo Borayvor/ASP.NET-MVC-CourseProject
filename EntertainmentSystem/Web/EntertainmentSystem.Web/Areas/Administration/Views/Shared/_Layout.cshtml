@@ -3,13 +3,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@*@section styles {
-    @Styles.Render("~/Content/kendo")
-    @RenderSection("styles", required: false)
-}*@
 <h1 class="text-center">Administration</h1>
+
 @RenderBody()
-@*@section scripts {
-    @Scripts.Render("~/bundles/kendo")
-    @RenderSection("scripts", required: false)
-}*@
+
+@section Scripts {
+    <script type="text/javascript">
+        function sendAntiForgery() {
+            return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() }
+        }
+    </script>
+}
