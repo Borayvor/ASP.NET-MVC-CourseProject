@@ -30,16 +30,30 @@
             </div>
         </div>
     </div>
-    <div class="body-content">
+
+    @{ var classBody = string.Empty; }
+
+    @if ((string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.AreaAdministrationName
+                                 || (string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.AreaModeratorsName)
+    {
+        classBody = "class=\"body-content\"";
+    }
+    else
+    {
+        classBody = "class=\"container body-content\"";
+    }
+
+    <div @Html.Raw(@classBody)>
         @RenderBody()
         <hr />
         <footer>
             <p>&copy; @DateTime.Now.Year - EntertainmentSystem</p>
         </footer>
-    </div>
+    </div>    
 
     @Scripts.Render("~/bundles/jqueryval")
     @Scripts.Render("~/bundles/tools")
+    @Scripts.Render("~/bundles/appJs")
     @RenderSection("scripts", required: false)
 </body>
 </html>

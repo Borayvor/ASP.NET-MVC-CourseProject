@@ -1,4 +1,5 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="app/entertainmentsystemapp.js" />
 /// <reference path="bootstrap.js" />
 /// <reference path="jquery.fancybox.js" />
 /// <reference path="jquery.fancybox.pack.js" />

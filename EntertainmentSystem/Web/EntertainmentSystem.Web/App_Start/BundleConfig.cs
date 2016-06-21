@@ -30,6 +30,10 @@
                 .Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/jquery.fancybox.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appJs")
+                .Include(
+                "~/Scripts/App/EntertainmentSystemApp.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
