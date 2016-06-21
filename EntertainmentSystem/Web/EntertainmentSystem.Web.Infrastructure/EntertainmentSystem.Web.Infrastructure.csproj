@@ -94,6 +94,7 @@
     <Compile Include="Filters\ValidatePictureFileAttribute.cs" />
     <Compile Include="Filters\ValidateSoundFileAttribute.cs" />
     <Compile Include="Filters\ValidateVideoFileAttribute.cs" />
+    <Compile Include="HtmlHelpers\FontAwesomeHelpers.cs" />
     <Compile Include="HtmlHelpers\KendoHelpers.cs" />
     <Compile Include="Mapping\AutoMapperConfig.cs" />
     <Compile Include="Mapping\IHaveCustomMappings.cs" />
