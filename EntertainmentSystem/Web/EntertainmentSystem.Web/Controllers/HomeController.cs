@@ -25,7 +25,7 @@
                 .ToList();
 
             var sounds = this.contentFetcherService
-                .GetLast(ContentType.Sound)
+                .GetLast(ContentType.Music)
                 .To<MediaContentHomeViewModel>()
                 .ToList();
 

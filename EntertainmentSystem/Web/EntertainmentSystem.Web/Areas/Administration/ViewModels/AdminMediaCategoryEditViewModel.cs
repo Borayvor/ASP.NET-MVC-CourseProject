@@ -13,7 +13,6 @@
 
         [Required]
         [MaxLength(500)]
-        [Display(Name = "Category name")]
         public string Name { get; set; }
     }
 }

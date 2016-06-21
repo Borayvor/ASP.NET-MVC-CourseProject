@@ -152,7 +152,7 @@
             var contentMusic = new MediaContent
             {
                 Title = "Test Music",
-                ContentType = ContentType.Sound,
+                ContentType = ContentType.Music,
                 ContentUrl = "https://dl.dropboxusercontent.com/1/view/4jji3780sr8r1s6/Apps/EntertainmentSystem/9dc6074e-c2e1-4c27-8afa-43d6ecefc2ef",
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };

@@ -1,10 +1,11 @@
 ﻿@using EntertainmentSystem.Web.ViewModels.MediaContent
 @model IEnumerable<MediaContentHomeViewModel>
 
-<div>
-    @foreach (var item in @Model)
-    {
+
+@foreach (var item in @Model)
+{
+    <div>
         <h3>@item.Title</h3>
-        <video src="@item.ContentUrl" controls width="1000"></video>
-    }    
-</div>
+        <video src="@item.ContentUrl" controls ></video>
+    </div>
+}

@@ -1,10 +1,12 @@
 ﻿@using EntertainmentSystem.Web.ViewModels.MediaContent
 @model IEnumerable<MediaContentHomeViewModel>
 
-<div>
-    @foreach (var item in @Model)
-    {
+
+@foreach (var item in @Model)
+{
+    <div>
         <h3>@item.Title</h3>
-        <img src="@item.ContentUrl" />
-    }    
-</div>
+        <img src="@item.ContentUrl" class="img-responsive" />
+    </div>
+}
+

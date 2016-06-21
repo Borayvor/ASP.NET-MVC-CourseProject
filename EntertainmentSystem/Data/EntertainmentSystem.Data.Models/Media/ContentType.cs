@@ -3,7 +3,7 @@
     public enum ContentType
     {
         Picture,
-        Sound,
+        Music,
         Video,
     }
 }

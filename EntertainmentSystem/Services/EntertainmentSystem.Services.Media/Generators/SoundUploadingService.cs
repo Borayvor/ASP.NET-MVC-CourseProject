@@ -18,7 +18,7 @@
 
         public Guid Create(Stream file, string ownerId, string mimeType)
         {
-            return this.CreateContent(file, ContentType.Sound, ownerId, mimeType);
+            return this.CreateContent(file, ContentType.Music, ownerId, mimeType);
         }
     }
 }

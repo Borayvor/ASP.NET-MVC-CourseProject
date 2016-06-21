@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
 {
+    using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Data.Models.Media;
     using Infrastructure.Mapping;
@@ -12,10 +13,13 @@
 
         public string ContentUrl { get; set; }
 
+        [Display(Name = "Type")]
         public string ContentType { get; set; }
 
+        [Display(Name = "Category")]
         public string MediaCategory { get; set; }
 
+        [Display(Name = "Collection")]
         public string MediaCollection { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)

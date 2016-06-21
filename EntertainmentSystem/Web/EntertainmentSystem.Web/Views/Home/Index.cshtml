@@ -2,24 +2,24 @@
 @model HomeViewModel
 
 @{
-    ViewBag.Title = "Home Page";
+    ViewBag.Title = "Media";
 }
-<h1>
-    @ViewBag.Title
-</h1>
+<div class="container">
+    <h1>
+        @ViewBag.Title
+    </h1>
+    <div class="row">
+        <section id="home-music" class="col-sm-4">
+            @Html.Partial("_SoundsHomePartial", Model.Sounds)
+        </section>
 
-<div class="row">
-    <section id="home-sounds" class="col-sm-4">
-        @Html.Partial("_SoundsHomePartial", Model.Sounds)
-    </section>
-
-    <section id="home-pictures" class="col-sm-8">
-        @Html.Partial("_PicturesHomePartial", Model.Pictures)
-    </section>
-</div>
-
-<div class="row">
-    <section id="home-videos" class="col-sm-12">
-        @Html.Partial("_VideosHomePartial", Model.Videos)
-    </section>
+        <section id="home-pictures" class="col-sm-8">
+            @Html.Partial("_PicturesHomePartial", Model.Pictures)
+        </section>
+    </div>
+    <div class="row">
+        <section id="home-videos" class="col-sm-12">
+            @Html.Partial("_VideosHomePartial", Model.Videos)
+        </section>
+    </div>
 </div>
