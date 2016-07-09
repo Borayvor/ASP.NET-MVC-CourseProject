@@ -29,11 +29,13 @@
             bundles.Add(new ScriptBundle("~/bundles/tools")
                 .Include(
                 "~/Scripts/bootstrap.js",
-                "~/Scripts/jquery.fancybox.js"));
+                "~/Scripts/jquery.fancybox.js",
+                "~/Scripts/toastr.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appJs")
                 .Include(
-                "~/Scripts/App/EntertainmentSystemApp.js"));
+                "~/Scripts/App/EntertainmentSystemApp.js",
+                "~/Scripts/App/EntertainmentSystemAjax.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
@@ -45,7 +47,8 @@
                 .Include(
                 "~/Content/bootstrap.css",
                 "~/Content/jquery.fancybox.css",
-                "~/Content/font-awesome.css"));
+                "~/Content/font-awesome.css",
+                "~/Content/toastr.css"));
 
             bundles.Add(new StyleBundle("~/Content/kendo")
                 .Include(

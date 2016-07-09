@@ -11,8 +11,9 @@
     {
         public SoundUploadingService(
             IMaediaContentService contents,
+            IMediaCategoryService categories,
             ICloudStorage storage)
-            : base(contents, storage)
+            : base(contents, categories, storage)
         {
         }
 

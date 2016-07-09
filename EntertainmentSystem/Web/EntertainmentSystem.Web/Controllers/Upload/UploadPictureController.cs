@@ -14,7 +14,7 @@
         }
 
         [AjaxPost]
-        public ActionResult CreateMedia(PictureInputViewModel model)
+        public ActionResult Create(PictureInputViewModel model)
         {
             return this.ConditionalActionResult<Guid>(
                 () => this.CreateContent(model.File),

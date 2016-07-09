@@ -213,6 +213,7 @@
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Media\MediaItemPartialController.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminBaseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
@@ -322,12 +323,15 @@
     <Content Include="Content\KendoUI\textures\stripe6.png" />
     <Content Include="Content\KendoUI\textures\transparency.png" />
     <Content Include="Content\KendoUI\textures\transtexture.png" />
+    <Content Include="Content\toastr.css" />
+    <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
     <Content Include="Libs\Kendo.Mvc.dll" />
+    <Content Include="Scripts\App\EntertainmentSystemAjax.js" />
     <Content Include="Scripts\App\EntertainmentSystemApp.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -370,8 +374,10 @@
     <Content Include="fonts\fontawesome-webfont.eot" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Create.cshtml" />
     <Content Include="Areas\Administration\Views\AdminMediaContent\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\_UploadMediaContent.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\_CreateMediaContent.cshtml" />
+    <Content Include="Views\Shared\_UploadMediaContent.cshtml" />
+    <Content Include="Views\Shared\_CreateMediaContent.cshtml" />
+    <Content Include="Content\toastr.scss" />
+    <Content Include="Content\toastr.less" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -418,6 +424,8 @@
     <Content Include="Scripts\KendoUI\messages\kendo.messages.en-US.min.js" />
     <Content Include="Scripts\KendoUI\messages\kendo.messages.uk-UA.min.js" />
     <Content Include="Scripts\KendoUI\pako_deflate.min.js" />
+    <Content Include="Scripts\toastr.js" />
+    <Content Include="Scripts\toastr.min.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -452,7 +460,7 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
-    <Content Include="Views\Shared\_CreateMedia.cshtml" />
+    <Content Include="Views\Shared\Create.cshtml" />
     <Content Include="Views\Shared\_SoundsHomePartial.cshtml" />
     <Content Include="Views\Shared\_PicturesHomePartial.cshtml" />
     <Content Include="Views\Shared\_VideosHomePartial.cshtml" />
@@ -465,6 +473,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Views\AdminKendoGrid\" />
     <Folder Include="Areas\Administration\Views\Admin\" />
+    <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\UploadPicture\" />
@@ -478,6 +487,18 @@
     </AdditionalFiles>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Contracts\EntertainmentSystem.CloudStorage.Contracts.csproj">
+      <Project>{c8668f96-24a7-4bf2-bc35-93cc1ceb7df3}</Project>
+      <Name>EntertainmentSystem.CloudStorage.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Dropbox\EntertainmentSystem.CloudStorage.Dropbox.csproj">
+      <Project>{73166c82-bb30-4dec-aada-297bd3b2fef1}</Project>
+      <Name>EntertainmentSystem.CloudStorage.Dropbox</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Firebase\EntertainmentSystem.CloudStorage.Firebase.csproj">
+      <Project>{73c45d1a-1b3f-4bca-bdb9-ba73661a2c25}</Project>
+      <Name>EntertainmentSystem.CloudStorage.Firebase</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Common\EntertainmentSystem.Common\EntertainmentSystem.Common.csproj">
       <Project>{701f322f-aa01-4ddc-90b6-6935981c1e73}</Project>
       <Name>EntertainmentSystem.Common</Name>

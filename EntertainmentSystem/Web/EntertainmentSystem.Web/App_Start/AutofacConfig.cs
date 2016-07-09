@@ -6,7 +6,7 @@
 
     using Autofac;
     using Autofac.Integration.Mvc;
-
+    using CloudStorage.Dropbox;
     using Controllers;
 
     using Data;
@@ -61,6 +61,9 @@
 
             var mediaServicesAssembly = Assembly.GetAssembly(typeof(MediaCategoryService));
             builder.RegisterAssemblyTypes(mediaServicesAssembly).AsImplementedInterfaces();
+
+            var dropboxCloudStorage = Assembly.GetAssembly(typeof(DropboxCloudStorage));
+            builder.RegisterAssemblyTypes(dropboxCloudStorage).AsImplementedInterfaces();
 
             builder.RegisterGeneric(typeof(DbRepository<>))
                 .As(typeof(IDbRepository<>))

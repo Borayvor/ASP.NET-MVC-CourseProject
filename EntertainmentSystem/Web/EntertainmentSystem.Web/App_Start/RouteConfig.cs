@@ -9,11 +9,6 @@
         {
             routes.IgnoreRoute("{resource}.axd/{*pathInfo}");
 
-            ////routes.MapRoute(
-            ////    name: "Administration",
-            ////    url: "Administration/{action}/{id}",
-            ////    defaults: new { controller = "Languages", action = "LanguagesIndex", id = UrlParameter.Optional });
-
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",

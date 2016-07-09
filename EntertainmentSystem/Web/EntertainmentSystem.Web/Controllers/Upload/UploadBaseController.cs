@@ -4,10 +4,11 @@
     using System.Linq;
     using System.Web;
     using System.Web.Mvc;
+    using Common.Constants;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Media.Generators;
 
-    [Authorize]
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
     [ValidateAntiForgeryToken]
     public abstract class UploadBaseController : BaseController
     {

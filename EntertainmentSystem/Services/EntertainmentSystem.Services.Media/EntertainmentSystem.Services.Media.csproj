@@ -52,7 +52,6 @@
     <Compile Include="MediaCollectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Contracts\EntertainmentSystem.CloudStorage.Contracts.csproj">
       <Project>{c8668f96-24a7-4bf2-bc35-93cc1ceb7df3}</Project>
