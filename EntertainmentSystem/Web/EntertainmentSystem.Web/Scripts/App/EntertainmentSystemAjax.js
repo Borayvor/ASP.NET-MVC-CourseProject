@@ -12,9 +12,7 @@
         if (id) {
             form.append("Id", id);
         }
-
-        error = error || function (error) { toastr.error("Invalid data") };
-
+        
         $.ajax({
             type: 'POST',
             url: url,
@@ -27,7 +25,7 @@
     function create(url, fileSrc) {
         send(url, fileSrc, null, function (response) {
 
-            toastr.success("Successfully created a post!");
+            toastr.success("Successfully created !");
             
         }, function (error) {
             toastr.error("Invalid data");

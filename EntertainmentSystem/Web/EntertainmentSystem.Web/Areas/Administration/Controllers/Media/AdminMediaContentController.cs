@@ -17,6 +17,7 @@
             this.adminMediaService = adminMediaService;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
             return this.View();

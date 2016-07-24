@@ -1,7 +1,7 @@
 ﻿namespace EntertainmentSystem.Web.Controllers.Upload
 {
-    using System;
     using System.Web.Mvc;
+    using Common.Constants;
     using Infrastructure.Filters;
     using Services.Contracts.Media.Generators;
     using ViewModels.Upload;
@@ -16,9 +16,9 @@
         [AjaxPost]
         public ActionResult Create(PictureInputViewModel model)
         {
-            return this.ConditionalActionResult<Guid>(
+            return this.ConditionalActionResult(
                 () => this.CreateContent(model.File),
-                (id) => this.PartialView(id));
+                () => this.RedirectToAction("Index", "AdminMediaContent", new { area = GlobalConstants.AreaAdministrationName }));
         }
     }
 }

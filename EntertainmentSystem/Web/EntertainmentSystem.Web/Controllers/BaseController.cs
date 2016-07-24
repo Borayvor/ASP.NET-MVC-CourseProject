@@ -19,14 +19,14 @@
             }
         }
 
-        protected ActionResult ConditionalActionResult<T>(Func<T> funcToPerform, Func<T, ActionResult> resultToReturn)
+        protected ActionResult ConditionalActionResult(Action actionToPerform, Func<ActionResult> resultToReturn)
         {
             if (this.ModelState.IsValid)
             {
                 try
                 {
-                    var result = funcToPerform();
-                    return resultToReturn(result);
+                    actionToPerform();
+                    return resultToReturn();
                 }
                 catch (Exception ex)
                 {

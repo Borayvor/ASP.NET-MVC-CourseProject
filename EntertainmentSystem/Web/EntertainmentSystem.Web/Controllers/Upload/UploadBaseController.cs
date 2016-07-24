@@ -8,7 +8,7 @@
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Media.Generators;
 
-    [Authorize(Roles = GlobalConstants.AdministratorRoleName)]
+    [Authorize(Roles = GlobalConstants.AdministratorRoleName + "," + GlobalConstants.ModeratorRoleName)]
     [ValidateAntiForgeryToken]
     public abstract class UploadBaseController : BaseController
     {
@@ -19,7 +19,7 @@
             this.uploadingGeneratorService = uploadingGeneratorService;
         }
 
-        public Guid CreateContent(HttpPostedFileBase file)
+        public void CreateContent(HttpPostedFileBase file)
         {
             if (!this.ModelState.IsValid)
             {
@@ -27,7 +27,7 @@
                     : this.ModelState.Values.FirstOrDefault().Errors.FirstOrDefault().ErrorMessage);
             }
 
-            return this.uploadingGeneratorService.Create(
+            this.uploadingGeneratorService.Create(
                 file.InputStream,
                 this.HttpContext.User.Identity.GetUserId(),
                 file.ContentType);
