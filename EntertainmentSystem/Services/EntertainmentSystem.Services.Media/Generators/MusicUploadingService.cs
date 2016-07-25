@@ -7,9 +7,9 @@
     using Contracts.Media.Generators;
     using Data.Models.Media;
 
-    public class SoundUploadingService : BaseMediaContentUploadingService, ISoundUploadingGeneratorService
+    public class MusicUploadingService : BaseMediaContentUploadingService, IMusicUploadingGeneratorService
     {
-        public SoundUploadingService(
+        public MusicUploadingService(
             IMaediaContentService contents,
             IMediaCategoryService categories,
             ICloudStorage storage)

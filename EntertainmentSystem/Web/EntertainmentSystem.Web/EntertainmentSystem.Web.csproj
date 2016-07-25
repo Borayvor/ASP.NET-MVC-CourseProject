@@ -226,7 +226,9 @@
     <Compile Include="Controllers\Account\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
     <Compile Include="Controllers\Upload\UploadBaseController.cs" />
+    <Compile Include="Controllers\Upload\UploadMusicController.cs" />
     <Compile Include="Controllers\Upload\UploadPictureController.cs" />
+    <Compile Include="Controllers\Upload\UploadVideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -251,7 +253,9 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Upload\MusicInputViewModel.cs" />
     <Compile Include="ViewModels\Upload\PictureInputViewModel.cs" />
+    <Compile Include="ViewModels\Upload\VideoInputViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -459,13 +463,13 @@
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Scripts\jquery-2.2.0.min.map" />
-    <Content Include="Views\Shared\_SoundsHomePartial.cshtml" />
     <Content Include="Views\Shared\_PicturesHomePartial.cshtml" />
     <Content Include="Views\Shared\_VideosHomePartial.cshtml" />
     <Content Include="Views\Shared\_NavigationPartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\HttpPostedFileBase.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
+    <Content Include="Views\Shared\_MusicsHomePartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -474,7 +478,9 @@
     <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\UploadMusic\" />
     <Folder Include="Views\UploadPicture\" />
+    <Folder Include="Views\UploadVideo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

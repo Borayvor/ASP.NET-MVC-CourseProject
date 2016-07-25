@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    public class ValidateSoundFileAttribute : BaseValidateMediaFileAttribute
+    public class ValidateMusicFileAttribute : BaseValidateMediaFileAttribute
     {
         private readonly IList<string> allowedMimeTypes = new List<string>() { "audio/mpeg", "audio/wav", "audio/mp3" };
 

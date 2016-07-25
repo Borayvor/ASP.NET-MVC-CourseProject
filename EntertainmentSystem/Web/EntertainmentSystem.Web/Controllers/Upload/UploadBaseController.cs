@@ -32,5 +32,25 @@
                 this.HttpContext.User.Identity.GetUserId(),
                 file.ContentType);
         }
+
+        protected string[] GetControllerInfo()
+        {
+            var action = "Index";
+            var controller = string.Empty;
+            var currentArea = string.Empty;
+
+            if (this.User.IsInRole(GlobalConstants.ModeratorRoleName))
+            {
+                controller = "ModeratorMediaContent";
+                currentArea = GlobalConstants.AreaModeratorsName;
+            }
+            else if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+            {
+                controller = "AdminMediaContent";
+                currentArea = GlobalConstants.AreaAdministrationName;
+            }
+
+            return new string[] { action, controller, currentArea };
+        }
     }
 }

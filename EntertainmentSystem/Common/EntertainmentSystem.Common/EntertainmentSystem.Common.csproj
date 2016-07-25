@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Constants\GlobalConstants.cs" />
+    <Compile Include="Constants\HtmlConstants.cs" />
     <Compile Include="ExtensionMethods\StringExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -41,8 +41,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Media\Fetchers\IMediaContentFetcherService.cs" />
+    <Compile Include="Media\Generators\IMusicUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IPictureUploadingGeneratorService.cs" />
-    <Compile Include="Media\Generators\ISoundUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IVideoUploadingGeneratorService.cs" />
     <Compile Include="Media\IAdminMediaService{T}.cs" />
