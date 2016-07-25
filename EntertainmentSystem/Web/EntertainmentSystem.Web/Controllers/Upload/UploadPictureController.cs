@@ -16,9 +16,28 @@
         [AjaxPost]
         public ActionResult Create(PictureInputViewModel model)
         {
+            var action = "Index";
+            var controller = string.Empty;
+            var currentArea = string.Empty;
+
+            if (this.User.IsInRole(GlobalConstants.ModeratorRoleName))
+            {
+                controller = "ModeratorMediaContent";
+                currentArea = GlobalConstants.AreaModeratorsName;
+            }
+            else if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
+            {
+                controller = "AdminMediaContent";
+                currentArea = GlobalConstants.AreaAdministrationName;
+            }
+            else
+            {
+                return this.HttpNotFound();
+            }
+
             return this.ConditionalActionResult(
                 () => this.CreateContent(model.File),
-                () => this.RedirectToAction("Index", "AdminMediaContent", new { area = GlobalConstants.AreaAdministrationName }));
+                () => this.RedirectToAction(action, controller, new { area = currentArea }));
         }
     }
 }

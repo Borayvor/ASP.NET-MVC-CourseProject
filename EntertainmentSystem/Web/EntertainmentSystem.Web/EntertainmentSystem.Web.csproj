@@ -213,7 +213,6 @@
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
-    <Compile Include="Areas\Administration\Controllers\Media\MediaItemPartialController.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminBaseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
