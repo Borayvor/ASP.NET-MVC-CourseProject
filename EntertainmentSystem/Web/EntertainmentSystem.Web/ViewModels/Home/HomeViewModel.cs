@@ -5,7 +5,7 @@
 
     public class HomeViewModel
     {
-        public IEnumerable<MediaContentHomeViewModel> Sounds { get; set; }
+        public IEnumerable<MediaContentHomeViewModel> Musics { get; set; }
 
         public IEnumerable<MediaContentHomeViewModel> Pictures { get; set; }
 

@@ -24,7 +24,7 @@
                 .To<MediaContentHomeViewModel>()
                 .ToList();
 
-            var sounds = this.contentFetcherService
+            var musics = this.contentFetcherService
                 .GetLast(ContentType.Music)
                 .To<MediaContentHomeViewModel>()
                 .ToList();
@@ -37,7 +37,7 @@
             var viewModel = new HomeViewModel
             {
                 Pictures = pictures,
-                Sounds = sounds,
+                Musics = musics,
                 Videos = videos
             };
 

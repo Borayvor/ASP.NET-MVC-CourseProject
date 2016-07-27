@@ -37,20 +37,20 @@
         {
             var action = "Index";
             var controller = string.Empty;
-            var currentArea = string.Empty;
+            var area = string.Empty;
 
             if (this.User.IsInRole(GlobalConstants.ModeratorRoleName))
             {
                 controller = "ModeratorMediaContent";
-                currentArea = GlobalConstants.AreaModeratorsName;
+                area = GlobalConstants.AreaModeratorsName;
             }
             else if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
             {
                 controller = "AdminMediaContent";
-                currentArea = GlobalConstants.AreaAdministrationName;
+                area = GlobalConstants.AreaAdministrationName;
             }
 
-            return new string[] { action, controller, currentArea };
+            return new string[] { action, controller, area };
         }
     }
 }

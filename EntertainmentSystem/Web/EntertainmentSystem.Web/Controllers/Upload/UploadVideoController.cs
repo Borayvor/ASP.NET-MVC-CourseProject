@@ -19,7 +19,10 @@
 
             return this.ConditionalActionResult(
                 () => this.CreateContent(model.File),
-                () => this.RedirectToAction(controllerInfo[0], controllerInfo[1], new { area = controllerInfo[2] }));
+                () => this.RedirectToAction(
+                    controllerInfo[0],
+                    controllerInfo[1],
+                    new { area = controllerInfo[2] }));
         }
     }
 }
