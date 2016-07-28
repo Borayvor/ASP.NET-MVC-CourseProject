@@ -139,6 +139,7 @@
                 return;
             }
 
+            // add pictures
             var contentPicture = new MediaContent
             {
                 Title = "Test Picture",
@@ -149,6 +150,40 @@
 
             context.MediaContents.Add(contentPicture);
 
+            var contentPicture_1 = new MediaContent
+            {
+                Title = "pic1",
+                Description = "111",
+                ContentUrl = "http://i2.wp.com/www.cgmeetup.net/home/wp-content/uploads/2015/11/World-of-Warcraft-Legion-Cinematic-Trailer-3.jpg?resize=960%2C398",
+                ContentType = ContentType.Picture,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentPicture_1);
+
+            var contentPicture_2 = new MediaContent
+            {
+                Title = "pic2",
+                Description = "222",
+                ContentUrl = "http://blogs-images.forbes.com/scottmendelson/files/2016/05/Warcraft-Movie-Mobile-Wallpapers-1200x675.jpg",
+                ContentType = ContentType.Picture,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentPicture_2);
+
+            var contentPicture_3 = new MediaContent
+            {
+                Title = "pic3",
+                Description = "333",
+                ContentUrl = "http://www.hdwallpapers.in/download/garona_warcraft_movie-720x1280.jpg",
+                ContentType = ContentType.Picture,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentPicture_3);
+
+            // add music
             var contentMusic = new MediaContent
             {
                 Title = "Test Music",
@@ -159,6 +194,40 @@
 
             context.MediaContents.Add(contentMusic);
 
+            var contentMusic_1 = new MediaContent
+            {
+                Title = "music1",
+                Description = "111",
+                ContentUrl = "http://downloads.khinsider.com/game-soundtracks/album/warcraft-orcs-and-humans/02-intro.mp3",
+                ContentType = ContentType.Music,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentMusic_1);
+
+            var contentMusic_2 = new MediaContent
+            {
+                Title = "music2",
+                Description = "222",
+                ContentUrl = "http://downloads.khinsider.com/game-soundtracks/album/warcraft-orcs-and-humans/17-retrobution.mp3",
+                ContentType = ContentType.Music,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentMusic_2);
+
+            var contentMusic_3 = new MediaContent
+            {
+                Title = "music3",
+                Description = "333",
+                ContentUrl = "http://downloads.khinsider.com/game-soundtracks/album/warcraft-orcs-and-humans/22-of-battle-and-ancient-warcraft.mp3",
+                ContentType = ContentType.Music,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentMusic_3);
+
+            // add videos
             var contentVideo = new MediaContent
             {
                 Title = "Test Video",
@@ -168,6 +237,39 @@
             };
 
             context.MediaContents.Add(contentVideo);
+
+            var contentVideo_1 = new MediaContent
+            {
+                Title = "video1",
+                Description = "111",
+                ContentUrl = "http://video.webmfiles.org/big-buck-bunny_trailer.webm",
+                ContentType = ContentType.Video,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentVideo_1);
+
+            var contentVideo_2 = new MediaContent
+            {
+                Title = "video2",
+                Description = "222",
+                ContentUrl = "http://easyhtml5video.com/images/happyfit2.webm",
+                ContentType = ContentType.Video,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentVideo_2);
+
+            var contentVideo_3 = new MediaContent
+            {
+                Title = "video3",
+                Description = "333",
+                ContentUrl = "http://techslides.com/demos/sample-videos/small.webm",
+                ContentType = ContentType.Video,
+                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
+            };
+
+            context.MediaContents.Add(contentVideo_3);
 
             context.SaveChanges();
         }

@@ -1,7 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Controllers.Tests
 {
     using System.Collections.Generic;
-    using System.Linq;
     using Data.Models.Media;
     using Infrastructure.Mapping;
     using Moq;
@@ -97,7 +96,7 @@
 
             var mediaContentFetcherServiceMock = new Mock<IMediaContentFetcherService>();
             mediaContentFetcherServiceMock
-                .Setup(x => x.GetLast(ContentType.Picture, 3)).Verifiable();
+                .Setup(x => x.GetLast(ContentType.Picture, 3));
 
             var controller = new HomeController(mediaContentFetcherServiceMock.Object);
 
