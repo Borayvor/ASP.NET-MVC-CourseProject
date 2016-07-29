@@ -140,16 +140,6 @@
             }
 
             // add pictures
-            var contentPicture = new MediaContent
-            {
-                Title = "Test Picture",
-                ContentType = ContentType.Picture,
-                ContentUrl = "http://i2.wp.com/www.cgmeetup.net/home/wp-content/uploads/2015/11/World-of-Warcraft-Legion-Cinematic-Trailer-3.jpg?resize=960%2C398",
-                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
-            };
-
-            context.MediaContents.Add(contentPicture);
-
             var contentPicture_1 = new MediaContent
             {
                 Title = "pic1",
@@ -184,21 +174,11 @@
             context.MediaContents.Add(contentPicture_3);
 
             // add music
-            var contentMusic = new MediaContent
-            {
-                Title = "Test Music",
-                ContentType = ContentType.Music,
-                ContentUrl = "https://dl.dropboxusercontent.com/1/view/4jji3780sr8r1s6/Apps/EntertainmentSystem/9dc6074e-c2e1-4c27-8afa-43d6ecefc2ef",
-                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
-            };
-
-            context.MediaContents.Add(contentMusic);
-
             var contentMusic_1 = new MediaContent
             {
                 Title = "music1",
                 Description = "111",
-                ContentUrl = "http://downloads.khinsider.com/game-soundtracks/album/warcraft-orcs-and-humans/02-intro.mp3",
+                ContentUrl = "http://216.227.134.162/ost/warcraft-orcs-and-humans/tvtqaoxrcx/02-intro.mp3",
                 ContentType = ContentType.Music,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
@@ -209,7 +189,7 @@
             {
                 Title = "music2",
                 Description = "222",
-                ContentUrl = "http://downloads.khinsider.com/game-soundtracks/album/warcraft-orcs-and-humans/17-retrobution.mp3",
+                ContentUrl = "http://216.227.134.162/ost/warcraft-orcs-and-humans/umshkychig/17-retrobution.mp3",
                 ContentType = ContentType.Music,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
@@ -220,7 +200,7 @@
             {
                 Title = "music3",
                 Description = "333",
-                ContentUrl = "http://downloads.khinsider.com/game-soundtracks/album/warcraft-orcs-and-humans/22-of-battle-and-ancient-warcraft.mp3",
+                ContentUrl = "http://216.227.134.162/ost/warcraft-orcs-and-humans/nlttbhwsce/22-of-battle-and-ancient-warcraft.mp3",
                 ContentType = ContentType.Music,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
@@ -228,16 +208,6 @@
             context.MediaContents.Add(contentMusic_3);
 
             // add videos
-            var contentVideo = new MediaContent
-            {
-                Title = "Test Video",
-                ContentType = ContentType.Video,
-                ContentUrl = "https://dl.dropboxusercontent.com/1/view/bodhvtk84cgs1js/Apps/EntertainmentSystem/73d967bc-9053-487c-bc3b-2a2ab44b2bab.mp4",
-                MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
-            };
-
-            context.MediaContents.Add(contentVideo);
-
             var contentVideo_1 = new MediaContent
             {
                 Title = "video1",

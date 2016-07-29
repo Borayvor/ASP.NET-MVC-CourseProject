@@ -26,3 +26,12 @@ textarea {
 .display-none {
     display:none!important;
 }
+
+#carousel-ES-home-pictures .carousel-inner .item img{    
+    height: 200px;
+    display: inline-block;
+}
+
+#carousel-ES-home-videos .carousel-inner .item video{   
+    height: 300px;
+}
