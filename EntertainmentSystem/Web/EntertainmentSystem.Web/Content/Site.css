@@ -19,10 +19,10 @@ body {
   body select,
   body textarea {
     max-width: 280px; }
+  body .display-none {
+    display: none !important; }
   body #ES-home .row {
     margin-bottom: 20px; }
-  body #ES-home .display-none {
-    display: none !important; }
   body #ES-home #carousel-ES-home-pictures .carousel-inner .item img {
     display: inline-flex;
     height: 20em; }

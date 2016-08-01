@@ -5,10 +5,11 @@
     ViewBag.Title = "Media";
 }
 
-<h1>
-    @ViewBag.Title
-</h1>
 <div id="ES-home">
+    <h1>
+        @ViewBag.Title
+    </h1>
+
     <div class="row">
         <section class="col-md-4">
             @Html.Partial("_MusicsHomePartial", Model.Musics)

@@ -2,20 +2,12 @@
 @model IEnumerable<MediaContentHomeViewModel>
 
 <div id="carousel-ES-home-musics">
-    @foreach (var item in @Model)
+
+    @for (var i = 0; i < @Model.Count(); i++)
     {
         <div>
-            <h3>@item.Title</h3>
-            <audio src="@item.ContentUrl" controls></audio>
+            <h3>@Model.ElementAt(i).Title</h3>
+            <audio src="@Model.ElementAt(i).ContentUrl" controls></audio>
         </div>
     }
-
-    <div>
-        <h3>dsada</h3>
-        <audio src="" controls></audio>
-    </div>
-    <div>
-        <h3>dgfgfdgfd</h3>
-        <audio src="" controls></audio>
-    </div>
 </div>

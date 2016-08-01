@@ -49,14 +49,14 @@ body {
         max-width: 280px;
     }
 
+    .display-none {
+            display: none !important;
+        }
+
     #ES-home {
         .row {
             margin-bottom: 20px;
-        }
-
-        .display-none {
-            display: none !important;
-        }
+        }        
 
         #carousel-ES-home-musics {
         }
