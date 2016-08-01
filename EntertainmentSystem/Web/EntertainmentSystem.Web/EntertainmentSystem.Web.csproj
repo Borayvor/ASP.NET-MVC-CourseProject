@@ -326,13 +326,18 @@
     <Content Include="Content\KendoUI\textures\stripe6.png" />
     <Content Include="Content\KendoUI\textures\transparency.png" />
     <Content Include="Content\KendoUI\textures\transtexture.png" />
+    <Content Include="Content\site.css">
+      <DependentUpon>site.scss</DependentUpon>
+    </Content>
+    <Content Include="Content\site.min.css">
+      <DependentUpon>site.css</DependentUpon>
+    </Content>
     <Content Include="Content\toastr.css" />
     <Content Include="Content\toastr.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\fontawesome-webfont.svg" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
     <Content Include="Libs\Kendo.Mvc.dll" />
     <Content Include="Scripts\App\EntertainmentSystemAjax.js" />
     <Content Include="Scripts\App\EntertainmentSystemApp.js" />
@@ -381,6 +386,11 @@
     <Content Include="Views\Shared\_CreateMediaContent.cshtml" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
+    <Content Include="Content\site.scss" />
+    <None Include="compilerconfig.json" />
+    <None Include="compilerconfig.json.defaults">
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </None>
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />

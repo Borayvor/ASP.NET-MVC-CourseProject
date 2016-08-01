@@ -1,12 +1,21 @@
 ﻿@using EntertainmentSystem.Web.ViewModels.MediaContent
 @model IEnumerable<MediaContentHomeViewModel>
 
+<div id="carousel-ES-home-musics">
+    @foreach (var item in @Model)
+    {
+        <div>
+            <h3>@item.Title</h3>
+            <audio src="@item.ContentUrl" controls></audio>
+        </div>
+    }
 
-@foreach (var item in @Model)
-{
     <div>
-        <h3>@item.Title</h3>
-        <audio src="@item.ContentUrl" controls></audio>
+        <h3>dsada</h3>
+        <audio src="" controls></audio>
     </div>
-}
-
+    <div>
+        <h3>dgfgfdgfd</h3>
+        <audio src="" controls></audio>
+    </div>
+</div>

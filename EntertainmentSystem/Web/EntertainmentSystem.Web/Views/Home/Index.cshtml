@@ -8,17 +8,19 @@
 <h1>
     @ViewBag.Title
 </h1>
-<div class="row">
-    <section id="home-music" class="col-sm-4">
-        @Html.Partial("_MusicsHomePartial", Model.Musics)
-    </section>
+<div id="ES-home">
+    <div class="row">
+        <section class="col-md-4">
+            @Html.Partial("_MusicsHomePartial", Model.Musics)
+        </section>
 
-    <section id="home-pictures" class="col-sm-8">
-        @Html.Partial("_PicturesHomePartial", Model.Pictures)
-    </section>
-</div>
-<div class="row">
-    <section id="home-videos" class="col-sm-12">
-        @Html.Partial("_VideosHomePartial", Model.Videos)
-    </section>
+        <section class="col-md-8">
+            @Html.Partial("_PicturesHomePartial", Model.Pictures)
+        </section>
+    </div>
+    <div class="row">
+        <section class="col-xs-12">
+            @Html.Partial("_VideosHomePartial", Model.Videos)
+        </section>
+    </div>
 </div>

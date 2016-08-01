@@ -1,37 +1,32 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
+﻿@media (max-width: 991px) {
+  body #ES-home #carousel-ES-home-pictures {
+    margin-top: 20px; } }
 
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
+body {
+  padding-top: 50px;
+  padding-bottom: 20px;
+  /* Set padding to keep content from hitting the edges */
+  /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
 */
-.dl-horizontal dt {
-    white-space: normal;
-}
+  /* Set width on the form input elements since they're 100% wide by default */ }
+  body .body-content {
+    padding-left: 15px;
+    padding-right: 15px; }
+  body .dl-horizontal dt {
+    white-space: normal; }
+  body input,
+  body select,
+  body textarea {
+    max-width: 280px; }
+  body #ES-home .row {
+    margin-bottom: 20px; }
+  body #ES-home .display-none {
+    display: none !important; }
+  body #ES-home #carousel-ES-home-pictures .carousel-inner .item img {
+    display: inline-flex;
+    height: 20em; }
+  body #ES-home #carousel-ES-home-videos .carousel-inner .item .video {
+    display: inline-flex;
+    height: 30em; }
 
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-.display-none {
-    display:none!important;
-}
-
-#carousel-ES-home-pictures .carousel-inner .item img{    
-    height: 200px;
-    display: inline-block;
-}
-
-#carousel-ES-home-videos .carousel-inner .item video{   
-    height: 300px;
-}

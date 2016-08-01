@@ -24,13 +24,13 @@
             if (i == 0)
             {
                 <div class="item active text-center">
-                    <video src="@Model.ElementAt(i).ContentUrl" alt="@Model.ElementAt(i).Title" loop="loop" controls="controls"></video>
+                    <video class="video" src="@Model.ElementAt(i).ContentUrl" alt="@Model.ElementAt(i).Title" loop="loop" controls="controls"></video>
                 </div>
             }
             else
             {
                 <div class="item text-center">
-                    <video src="@Model.ElementAt(i).ContentUrl" alt="@Model.ElementAt(i).Title" loop="loop" controls="controls"></video>
+                    <video class="video" src="@Model.ElementAt(i).ContentUrl" alt="@Model.ElementAt(i).Title" loop="loop" controls="controls"></video>
                 </div>
             }
         }
