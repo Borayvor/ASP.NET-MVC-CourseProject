@@ -35,7 +35,7 @@
                 ContentType = type,
                 AuthorId = ownerId,
                 CreatedOn = DateTime.Now,
-                MediaCategoryId = this.categories.GetByName("Unknown").Id
+                MediaCategoryId = this.categories.GetByName("Action").Id
             };
 
             content.ContentUrl = this.Storage.UploadFile(file, content.Id.ToString(), mimeType);

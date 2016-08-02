@@ -8,6 +8,8 @@
         @Html.AntiForgeryToken()
     }
 
+    
+
     <div id="create-media-content">
         <div id="modalMisicWindowMain" class="modal">
             <div class="modal-dialog text-center">
@@ -31,10 +33,27 @@
                     <div class="modal-header">
                         <button class="btn btn-danger pull-right" data-dismiss="modal"><i class="fa fa-times fa-1x"></i></button>
                         <h4><i class="fa fa-upload fa-2x"> Upload</i></h4>
-                    </div>
+                    </div>                   
                     <div class="modal-body">
-                        @Html.FontAwesomeButton("Choose File", "upload", new { @class = HtmlConstants.PictureChooseUploadClass })
-                        @Html.TextBox("File", "", new { name = "File", type = "file", @class = HtmlConstants.PictureInputUploadClass + " display-none" })
+                        <div>
+                            @Html.FontAwesomeButton("Choose File", "upload", new { @class = HtmlConstants.PictureChooseUploadClass })
+                            @Html.TextBox("File", "", new { name = "File", type = "file", @class = HtmlConstants.PictureInputUploadClass + " display-none" })
+                        </div>
+                        <br />
+                        <div class="dropdown form-inline">
+                            <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu_ES_AddCategory" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                Category
+                                <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu" aria-labelledby="dropdownMenu_ES_AddCategory">
+
+                                <li><a href="#">Action</a></li>
+                                <li><a href="#">Another action</a></li>
+                                <li><a href="#">Something else here</a></li>
+                            </ul>
+                        </div>                        
+                    </div>
+                    <div class="modal-footer">
                         @Html.FontAwesomeButton("Send", "send", new { data_dismiss = "modal", @class = "col-md-offset-2 btn btn-success " + HtmlConstants.PictureSendUploadClass })
                     </div>
                 </div>
