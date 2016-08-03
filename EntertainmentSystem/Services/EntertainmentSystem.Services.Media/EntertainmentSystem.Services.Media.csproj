@@ -43,6 +43,9 @@
     <Compile Include="Admin\AdminMediaCategoryService.cs" />
     <Compile Include="Admin\AdminMediaContentService.cs" />
     <Compile Include="Fetchers\MediaContentFetcherService.cs" />
+    <Compile Include="Fetchers\MusicFetcherService.cs" />
+    <Compile Include="Fetchers\PictureFetcherService.cs" />
+    <Compile Include="Fetchers\VideoFetcherService.cs" />
     <Compile Include="Generators\BaseMediaContentUploadingService.cs" />
     <Compile Include="Generators\MusicUploadingService.cs" />
     <Compile Include="Generators\PictureUploadingService.cs" />

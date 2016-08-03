@@ -1,0 +1,16 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1 class="text-center">Moderators</h1>
+
+@RenderBody()
+
+@section Scripts {
+    <script type="text/javascript">
+        function sendAntiForgery() {
+            return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() }
+        }
+    </script>
+}

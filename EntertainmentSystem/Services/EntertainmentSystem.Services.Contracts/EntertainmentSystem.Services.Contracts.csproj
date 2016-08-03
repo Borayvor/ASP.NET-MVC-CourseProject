@@ -40,7 +40,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Media\Fetchers\IBaseMediaFetcherService.cs" />
     <Compile Include="Media\Fetchers\IMediaContentFetcherService.cs" />
+    <Compile Include="Media\Fetchers\IMusicFetcherService.cs" />
+    <Compile Include="Media\Fetchers\IPictureFetcherService.cs" />
+    <Compile Include="Media\Fetchers\IVideoFetcherService.cs" />
     <Compile Include="Media\Generators\IMusicUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IPictureUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IUploadingGeneratorService.cs" />

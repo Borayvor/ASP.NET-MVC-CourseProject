@@ -220,15 +220,22 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentViewModel.cs" />
+    <Compile Include="Areas\Media\Controllers\MediaController.cs" />
+    <Compile Include="Areas\Media\MediaAreaRegistration.cs" />
+    <Compile Include="Areas\Moderators\Controllers\ModeratorController.cs" />
+    <Compile Include="Areas\Moderators\ModeratorsAreaRegistration.cs" />
     <Compile Include="Controllers\Account\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\Account\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
+    <Compile Include="Areas\Media\Controllers\Music\MusicController.cs" />
+    <Compile Include="Areas\Media\Controllers\Picture\PictureController.cs" />
     <Compile Include="Controllers\Upload\UploadBaseController.cs" />
     <Compile Include="Controllers\Upload\UploadMusicController.cs" />
     <Compile Include="Controllers\Upload\UploadPictureController.cs" />
     <Compile Include="Controllers\Upload\UploadVideoController.cs" />
+    <Compile Include="Areas\Media\Controllers\Video\VideoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -384,6 +391,12 @@
     <Content Include="Content\toastr.less" />
     <Content Include="Content\site.scss" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaContentViewModel.cshtml" />
+    <Content Include="Areas\Media\Views\web.config" />
+    <Content Include="Areas\Moderators\Views\web.config" />
+    <Content Include="Areas\Media\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Media\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Moderators\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Moderators\Views\_ViewStart.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -481,6 +494,9 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
     <Content Include="Views\Shared\_MusicsHomePartial.cshtml" />
+    <Content Include="Areas\Media\Views\Music\Index.cshtml" />
+    <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
+    <Content Include="Areas\Media\Views\Video\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -488,6 +504,16 @@
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Media\ViewModels\Musics\" />
+    <Folder Include="Areas\Media\ViewModels\Pictures\" />
+    <Folder Include="Areas\Media\ViewModels\Videos\" />
+    <Folder Include="Areas\Media\Views\Media\" />
+    <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
+    <Folder Include="Areas\Moderators\ViewModels\" />
+    <Folder Include="Areas\Moderators\Views\Moderator\" />
+    <Folder Include="Areas\Moderators\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Moderators\Views\Shared\EditorTemplates\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\UploadMusic\" />
     <Folder Include="Views\UploadPicture\" />
