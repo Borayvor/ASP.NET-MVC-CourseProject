@@ -1,0 +1,13 @@
+﻿@model EntertainmentSystem.Web.Areas.Administration.ViewModels.AdminMediaContentViewModel
+
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m => m.Title)
+        @Html.EditorFor(m => m.Title)
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.Description)
+        @Html.EditorFor(m => m.Description)
+    </div>    
+</form>
