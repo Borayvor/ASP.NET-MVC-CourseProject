@@ -213,6 +213,7 @@
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Users\AdminUsersController.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminBaseViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
@@ -220,6 +221,8 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentViewModel.cs" />
+    <Compile Include="Areas\Forum\Controllers\ForumHomeController.cs" />
+    <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
     <Compile Include="Areas\Media\Controllers\MediaController.cs" />
     <Compile Include="Areas\Media\MediaAreaRegistration.cs" />
     <Compile Include="Areas\Moderators\Controllers\ModeratorController.cs" />
@@ -397,6 +400,11 @@
     <Content Include="Areas\Media\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Moderators\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Moderators\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Administration\Views\AdminUsers\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\web.config" />
+    <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
+    <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -504,6 +512,7 @@
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Forum\Models\" />
     <Folder Include="Areas\Media\ViewModels\Musics\" />
     <Folder Include="Areas\Media\ViewModels\Pictures\" />
     <Folder Include="Areas\Media\ViewModels\Videos\" />
