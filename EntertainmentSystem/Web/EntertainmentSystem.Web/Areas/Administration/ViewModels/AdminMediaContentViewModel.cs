@@ -5,7 +5,7 @@
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
-    public class AdminMediaContentViewModel : AdminBaseViewModel, IMapFrom<MediaContent>, IHaveCustomMappings
+    public class AdminMediaContentViewModel : AdminBaseGuidViewModel, IMapFrom<MediaContent>, IHaveCustomMappings
     {
         public string Title { get; set; }
 
