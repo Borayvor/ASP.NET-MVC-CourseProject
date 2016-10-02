@@ -16,7 +16,7 @@
         /// </summary>
         /// <param name="userId">The id of the user to get.</param>
         /// <returns>User as class.</returns>
-        ApplicationUser GetUser(string userId);
+        ApplicationUser GetById(string userId);
 
         /// <summary>
         /// Delete user. Not permanent.

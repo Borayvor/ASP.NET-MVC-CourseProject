@@ -1,7 +1,7 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Users
 {
     using System.Linq;
-    using EntertainmentSystem.Data.Models;
+    using Data.Models;
 
     public interface IUserAdminService : IUserModeratorService
     {

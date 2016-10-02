@@ -223,7 +223,7 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminUsersViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminUserViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\ForumHomeController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
     <Compile Include="Areas\Media\Controllers\MediaController.cs" />

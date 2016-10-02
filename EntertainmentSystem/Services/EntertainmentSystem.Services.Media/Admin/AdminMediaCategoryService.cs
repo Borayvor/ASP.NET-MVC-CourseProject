@@ -5,7 +5,7 @@
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class AdminMediaCategoryService : MediaCategoryService, IAdminMediaService<MediaCategory>
+    public class AdminMediaCategoryService : MediaCategoryService, IMediaAdminService<MediaCategory>
     {
         public AdminMediaCategoryService(IDbRepository<MediaCategory> categories)
             : base(categories)

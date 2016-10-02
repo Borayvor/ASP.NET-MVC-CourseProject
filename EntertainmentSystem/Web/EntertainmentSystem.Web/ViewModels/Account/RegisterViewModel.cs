@@ -11,6 +11,20 @@
         public string Email { get; set; }
 
         [Required]
+        [MaxLength(100)]
+        [MinLength(2)]
+        public string FirstName { get; set; }
+
+        [Required]
+        [MaxLength(100)]
+        [MinLength(2)]
+        public string LastName { get; set; }
+
+        [Display(Name = "Image url")]
+        [MaxLength(1024)]
+        public string ImageUrl { get; set; }
+
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = GlobalConstants.PasswordMinLength)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

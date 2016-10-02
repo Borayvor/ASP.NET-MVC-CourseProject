@@ -13,6 +13,7 @@
     using Data.Common;
     using Data.Common.Repositories;
     using Services.Media;
+    using Services.Users;
     using Services.Web;
 
     public static class AutofacConfig
@@ -61,6 +62,9 @@
 
             var mediaServicesAssembly = Assembly.GetAssembly(typeof(MediaCategoryService));
             builder.RegisterAssemblyTypes(mediaServicesAssembly).AsImplementedInterfaces();
+
+            var usersServicesAssembly = Assembly.GetAssembly(typeof(UsersAdminService));
+            builder.RegisterAssemblyTypes(usersServicesAssembly).AsImplementedInterfaces();
 
             var dropboxCloudStorage = Assembly.GetAssembly(typeof(DropboxCloudStorage));
             builder.RegisterAssemblyTypes(dropboxCloudStorage).AsImplementedInterfaces();

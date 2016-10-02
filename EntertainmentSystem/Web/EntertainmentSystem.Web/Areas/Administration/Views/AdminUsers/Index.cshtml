@@ -1,21 +1,25 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
 @using EntertainmentSystem.Web.Areas.Administration.ViewModels
-@model 
+@model AdminUserViewModel
 
 @{
     const string ControllerName = "AdminUsers";
 }
 
-<h2 class="text-center">Media Categories</h2>
+<h2 class="text-center">Users</h2>
 <br />
 
-@(Html.FullFeaturedGrid<>(
+@(Html.FullFeaturedGrid<AdminUserViewModel>(
     ControllerName,
     m => m.Id,
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();
-        cols.Bound(m => m.Name);
+        cols.Bound(m => m.ImageUrl);
+        cols.Bound(m => m.FirstName);
+        cols.Bound(m => m.LastName);
+        cols.Bound(m => m.UserName);
+        cols.Bound(m => m.Email);        
         cols.Bound(m => m.CreatedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);

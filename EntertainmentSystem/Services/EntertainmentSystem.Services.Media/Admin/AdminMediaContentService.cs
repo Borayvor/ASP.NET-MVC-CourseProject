@@ -5,7 +5,7 @@
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class AdminMediaContentService : MediaContentService, IAdminMediaService<MediaContent>
+    public class AdminMediaContentService : MediaContentService, IMediaAdminService<MediaContent>
     {
         public AdminMediaContentService(IDbRepository<MediaContent> contents)
             : base(contents)

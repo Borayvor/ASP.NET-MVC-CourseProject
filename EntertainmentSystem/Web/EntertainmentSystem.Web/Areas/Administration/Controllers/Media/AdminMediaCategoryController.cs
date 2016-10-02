@@ -11,9 +11,9 @@
 
     public class AdminMediaCategoryController : AdminController
     {
-        private readonly IAdminMediaService<MediaCategory> adminMediaService;
+        private readonly IMediaAdminService<MediaCategory> adminMediaService;
 
-        public AdminMediaCategoryController(IAdminMediaService<MediaCategory> adminMediaService)
+        public AdminMediaCategoryController(IMediaAdminService<MediaCategory> adminMediaService)
         {
             this.adminMediaService = adminMediaService;
         }

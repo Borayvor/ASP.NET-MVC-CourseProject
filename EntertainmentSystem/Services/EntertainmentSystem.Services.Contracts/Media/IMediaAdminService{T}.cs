@@ -4,7 +4,7 @@
     using System.Linq;
     using Data.Common.Models;
 
-    public interface IAdminMediaService<T> where T : IAuditInfo, IDeletableEntity
+    public interface IMediaAdminService<T> where T : IAuditInfo, IDeletableEntity
     {
         /// <summary>
         /// Get all <"T">. Without ordinary deleted.

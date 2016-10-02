@@ -10,9 +10,9 @@
 
     public class AdminMediaContentController : AdminController
     {
-        private readonly IAdminMediaService<MediaContent> adminMediaService;
+        private readonly IMediaAdminService<MediaContent> adminMediaService;
 
-        public AdminMediaContentController(IAdminMediaService<MediaContent> adminMediaService)
+        public AdminMediaContentController(IMediaAdminService<MediaContent> adminMediaService)
         {
             this.adminMediaService = adminMediaService;
         }
