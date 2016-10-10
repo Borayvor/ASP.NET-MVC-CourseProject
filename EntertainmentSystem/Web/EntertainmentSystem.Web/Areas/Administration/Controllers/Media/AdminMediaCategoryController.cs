@@ -77,20 +77,6 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryViewModel model)
-        {
-            if (model != null)
-            {
-                var entity = this.adminMediaService.GetById(model.Id);
-
-                this.adminMediaService.Delete(entity);
-            }
-
-            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
-        }
-
-        [HttpPost]
-        [ValidateAntiForgeryToken]
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryViewModel model)
         {
             if (model != null)

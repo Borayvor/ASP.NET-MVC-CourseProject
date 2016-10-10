@@ -9,21 +9,23 @@
 <h2 class="text-center">Users</h2>
 <br />
 
-@(Html.FullFeaturedGrid<AdminUserViewModel>(
+@(Html.FullFeaturedAdminGrid<AdminUserViewModel>(
     ControllerName,
     m => m.Id,
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();
-        cols.Bound(m => m.ImageUrl);
+        cols.Bound(m => m.ImageUrl).ClientTemplate(
+            @"<img src='#:ImageUrl#' alt='Avatar' class='img-responsive' />");
         cols.Bound(m => m.FirstName);
         cols.Bound(m => m.LastName);
         cols.Bound(m => m.UserName);
-        cols.Bound(m => m.Email);        
+        cols.Bound(m => m.Email);
         cols.Bound(m => m.CreatedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
+        cols.Command(command => command.Edit()).Title("Edit");
+        cols.Command(command => command.Destroy()).Title("Delete Permanent");
     }
 ))

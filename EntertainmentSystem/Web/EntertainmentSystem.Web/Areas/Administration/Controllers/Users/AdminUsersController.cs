@@ -36,13 +36,19 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, AdminUserViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminUserEditViewModel model)
         {
-            if (model != null)
+            if (model != null && this.ModelState.IsValid)
             {
                 var entity = this.usersAdminService.GetById(model.Id);
 
-                this.usersAdminService.Delete(entity);
+                this.Mapper.Map(model, entity);
+
+                this.usersAdminService.Update(entity);
+
+                var viewModel = this.Mapper.Map<AdminUserViewModel>(entity);
+
+                return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

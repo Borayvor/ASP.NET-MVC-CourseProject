@@ -29,6 +29,12 @@
             return this.users.GetById(userId);
         }
 
+        public void Update(ApplicationUser user)
+        {
+            this.users.Update(user);
+            this.users.Save();
+        }
+
         public void Delete(ApplicationUser user)
         {
             this.users.Delete(user);

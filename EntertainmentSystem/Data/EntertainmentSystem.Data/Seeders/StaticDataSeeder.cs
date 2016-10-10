@@ -43,6 +43,7 @@
             const string AdministratorFirstName = "Admincho";
             const string AdministratorLastName = "Adminov";
             const string AdministratorPassword = "admin";
+            const string AdministratorImageUrl = "http://vignette4.wikia.nocookie.net/marveldatabase/images/4/41/Boreas_0001.jpg/revision/latest?cb=20110201173602";
 
             // Create admin user
             var userStore = new UserStore<ApplicationUser>(context);
@@ -52,7 +53,8 @@
                 UserName = AdministratorUserName,
                 Email = AdministratorUserName,
                 FirstName = AdministratorFirstName,
-                LastName = AdministratorLastName
+                LastName = AdministratorLastName,
+                ImageUrl = AdministratorImageUrl
             };
 
             userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);

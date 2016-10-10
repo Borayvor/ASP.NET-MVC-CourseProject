@@ -57,13 +57,13 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, AdminMediaContentViewModel model)
+        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaContentViewModel model)
         {
             if (model != null)
             {
                 var entity = this.adminMediaService.GetById(model.Id);
 
-                this.adminMediaService.Delete(entity);
+                this.adminMediaService.DeletePermanent(entity);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

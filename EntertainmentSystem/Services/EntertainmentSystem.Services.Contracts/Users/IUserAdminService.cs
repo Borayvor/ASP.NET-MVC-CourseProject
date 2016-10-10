@@ -3,7 +3,7 @@
     using System.Linq;
     using Data.Models;
 
-    public interface IUserAdminService : IUserModeratorService
+    public interface IUserAdminService : IUserModeratorService, IUserProfileService
     {
         /// <summary>
         /// Get all users. With ordinary deleted.
