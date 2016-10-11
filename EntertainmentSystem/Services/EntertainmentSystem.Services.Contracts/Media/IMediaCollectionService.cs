@@ -21,19 +21,19 @@
         /// <summary>
         /// Create new collection.
         /// </summary>
-        /// <param name="collection">Collection to be created.</param>
-        void Create(MediaCollection collection);
+        /// <param name="entity">Collection to be created.</param>
+        void Create(MediaCollection entity);
 
         /// <summary>
         /// Update collection.
         /// </summary>
-        /// <param name="collection">Collection to be updated.</param>
-        void Update(MediaCollection collection);
+        /// <param name="entity">Collection to be updated.</param>
+        void Update(MediaCollection entity);
 
         /// <summary>
         /// Delete collection. Not permanent.
         /// </summary>
-        /// <param name="collection">Collection to be deleted.</param>
-        void Delete(MediaCollection collection);
+        /// <param name="entity">Collection to be deleted.</param>
+        void Delete(MediaCollection entity);
     }
 }

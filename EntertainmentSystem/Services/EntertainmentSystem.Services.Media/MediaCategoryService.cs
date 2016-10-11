@@ -30,21 +30,21 @@
             return this.categories.All().FirstOrDefault(x => x.Name == name);
         }
 
-        public void Create(MediaCategory category)
+        public void Create(MediaCategory entity)
         {
-            this.categories.Add(category);
+            this.categories.Add(entity);
             this.categories.Save();
         }
 
-        public void Update(MediaCategory category)
+        public void Update(MediaCategory entity)
         {
-            this.categories.Update(category);
+            this.categories.Update(entity);
             this.categories.Save();
         }
 
-        public void Delete(MediaCategory category)
+        public void Delete(MediaCategory entity)
         {
-            this.categories.Delete(category);
+            this.categories.Delete(entity);
             this.categories.Save();
         }
     }

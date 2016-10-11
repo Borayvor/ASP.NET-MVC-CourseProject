@@ -21,7 +21,7 @@
         /// <summary>
         /// Delete user. Not permanent.
         /// </summary>
-        /// <param name="user">User to be deleted.</param>
-        void Delete(ApplicationUser user);
+        /// <param name="entity">User to be deleted.</param>
+        void Delete(ApplicationUser entity);
     }
 }

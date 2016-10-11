@@ -24,21 +24,21 @@
             return this.collections.GetById(id);
         }
 
-        public void Create(MediaCollection collection)
+        public void Create(MediaCollection entity)
         {
-            this.collections.Add(collection);
+            this.collections.Add(entity);
             this.collections.Save();
         }
 
-        public void Update(MediaCollection collection)
+        public void Update(MediaCollection entity)
         {
-            this.collections.Update(collection);
+            this.collections.Update(entity);
             this.collections.Save();
         }
 
-        public void Delete(MediaCollection collection)
+        public void Delete(MediaCollection entity)
         {
-            this.collections.Delete(collection);
+            this.collections.Delete(entity);
             this.collections.Save();
         }
     }

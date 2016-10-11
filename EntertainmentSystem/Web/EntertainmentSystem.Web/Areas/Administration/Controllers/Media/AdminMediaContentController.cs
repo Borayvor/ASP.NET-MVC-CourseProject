@@ -59,6 +59,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaContentViewModel model)
         {
+            // TODO: implement - delete files from cdn
             if (model != null)
             {
                 var entity = this.adminMediaService.GetById(model.Id);

@@ -22,19 +22,19 @@
         /// <summary>
         /// Create new content.
         /// </summary>
-        /// <param name="content">Content to be created.</param>
-        void Create(MediaContent content);
+        /// <param name="entity">Content to be created.</param>
+        void Create(MediaContent entity);
 
         /// <summary>
         /// Update content.
         /// </summary>
-        /// <param name="content">Content to be updated.</param>
-        void Update(MediaContent content);
+        /// <param name="entity">Content to be updated.</param>
+        void Update(MediaContent entity);
 
         /// <summary>
         /// Delete content. Not permanent.
         /// </summary>
-        /// <param name="content">Content to be deleted.</param>
-        void Delete(MediaContent content);
+        /// <param name="entity">Content to be deleted.</param>
+        void Delete(MediaContent entity);
     }
 }

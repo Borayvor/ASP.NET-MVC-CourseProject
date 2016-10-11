@@ -67,6 +67,10 @@
       <Project>{c8668f96-24a7-4bf2-bc35-93cc1ceb7df3}</Project>
       <Name>EntertainmentSystem.CloudStorage.Contracts</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\Common\EntertainmentSystem.Common\EntertainmentSystem.Common.csproj">
+      <Project>{701F322F-AA01-4DDC-90B6-6935981C1E73}</Project>
+      <Name>EntertainmentSystem.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\Data\EntertainmentSystem.Data.Common\EntertainmentSystem.Data.Common.csproj">
       <Project>{edfe3c57-ef5b-4636-9ecc-d0baca6b6379}</Project>
       <Name>EntertainmentSystem.Data.Common</Name>

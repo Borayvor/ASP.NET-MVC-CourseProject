@@ -30,18 +30,18 @@
         /// Create new category.
         /// </summary>
         /// <param name="category">Category to be created.</param>
-        void Create(MediaCategory category);
+        void Create(MediaCategory entity);
 
         /// <summary>
         /// Update category.
         /// </summary>
-        /// <param name="category">Category to be updated.</param>
-        void Update(MediaCategory category);
+        /// <param name="entity">Category to be updated.</param>
+        void Update(MediaCategory entity);
 
         /// <summary>
         /// Delete category. Not permanent.
         /// </summary>
-        /// <param name="category">Category to be deleted.</param>
-        void Delete(MediaCategory category);
+        /// <param name="entity">Category to be deleted.</param>
+        void Delete(MediaCategory entity);
     }
 }

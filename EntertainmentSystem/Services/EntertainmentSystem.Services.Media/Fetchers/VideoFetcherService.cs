@@ -1,6 +1,5 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
-    using System;
     using System.Linq;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
@@ -17,7 +16,8 @@
 
         public IQueryable<MediaContent> GetAll()
         {
-            throw new NotImplementedException();
+            return this.contents.GetAll()
+                .Where(c => c.ContentType == ContentType.Video);
         }
     }
 }

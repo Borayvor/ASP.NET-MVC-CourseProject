@@ -25,21 +25,21 @@
             return this.contents.GetById(id);
         }
 
-        public void Create(MediaContent content)
+        public void Create(MediaContent entity)
         {
-            this.contents.Add(content);
+            this.contents.Add(entity);
             this.contents.Save();
         }
 
-        public void Update(MediaContent content)
+        public void Update(MediaContent entity)
         {
-            this.contents.Update(content);
+            this.contents.Update(entity);
             this.contents.Save();
         }
 
-        public void Delete(MediaContent content)
+        public void Delete(MediaContent entity)
         {
-            this.contents.Delete(content);
+            this.contents.Delete(entity);
             this.contents.Save();
         }
     }

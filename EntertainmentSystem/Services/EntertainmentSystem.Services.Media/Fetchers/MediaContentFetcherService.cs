@@ -1,6 +1,7 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
     using System.Linq;
+    using Common.Constants;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
     using Data.Models.Media;
@@ -14,7 +15,7 @@
             this.contents = contents;
         }
 
-        public IQueryable<MediaContent> GetLast(ContentType type, int count = 5)
+        public IQueryable<MediaContent> GetLast(ContentType type, int count = GlobalConstants.HomeLastContentCount)
         {
             return this.contents.GetAll()
                 .Where(c => c.ContentType == type)
