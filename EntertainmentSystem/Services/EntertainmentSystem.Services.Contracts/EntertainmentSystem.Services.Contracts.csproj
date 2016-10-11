@@ -41,6 +41,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Forum\IForumCategoryService.cs" />
+    <Compile Include="Forum\IForumCommentService.cs" />
+    <Compile Include="Forum\IForumPostService.cs" />
+    <Compile Include="Forum\IForumReCommentService.cs" />
+    <Compile Include="Forum\IForumTagService.cs" />
+    <Compile Include="Forum\IForumVoteService.cs" />
     <Compile Include="Media\Fetchers\IBaseMediaFetcherService.cs" />
     <Compile Include="Media\Fetchers\IMediaContentFetcherService.cs" />
     <Compile Include="Media\Fetchers\IMusicFetcherService.cs" />
@@ -59,9 +65,7 @@
     <Compile Include="Users\IUserModeratorService.cs" />
     <Compile Include="Users\IUserProfileService.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Forum\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Contracts\EntertainmentSystem.CloudStorage.Contracts.csproj">
       <Project>{c8668f96-24a7-4bf2-bc35-93cc1ceb7df3}</Project>
