@@ -11,6 +11,7 @@
 
         public string Description { get; set; }
 
+        [Display(Name = "File")]
         public string ContentUrl { get; set; }
 
         [Display(Name = "Type")]
