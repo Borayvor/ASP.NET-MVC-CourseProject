@@ -19,9 +19,11 @@
             return this.collections.All();
         }
 
-        public MediaCollection GetById(int id)
+        public MediaCollection GetById(object id)
         {
-            return this.collections.GetById(id);
+            var intId = (int)id;
+
+            return this.collections.GetById(intId);
         }
 
         public void Create(MediaCollection entity)

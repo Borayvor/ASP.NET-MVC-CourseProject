@@ -20,9 +20,11 @@
             return this.categories.All();
         }
 
-        public MediaCategory GetById(Guid id)
+        public MediaCategory GetById(object id)
         {
-            return this.categories.GetById(id);
+            var guidId = (Guid)id;
+
+            return this.categories.GetById(guidId);
         }
 
         public MediaCategory GetByName(string name)

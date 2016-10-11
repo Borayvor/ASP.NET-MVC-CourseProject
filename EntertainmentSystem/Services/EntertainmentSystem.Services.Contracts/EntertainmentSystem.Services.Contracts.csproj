@@ -41,6 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\IBaseAdminService{T}.cs" />
+    <Compile Include="Common\IBaseCreateService{T}.cs" />
+    <Compile Include="Common\IBaseDeleteService{T}.cs" />
+    <Compile Include="Common\IBaseGetService{T}.cs" />
+    <Compile Include="Common\IBaseUpdateService{T}.cs" />
     <Compile Include="Forum\IForumCategoryService.cs" />
     <Compile Include="Forum\IForumCommentService.cs" />
     <Compile Include="Forum\IForumPostService.cs" />

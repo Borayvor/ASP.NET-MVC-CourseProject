@@ -1,8 +1,8 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Media.Fetchers
 {
     using System.Linq;
-    using Common.Constants;
     using Data.Models.Media;
+    using EntertainmentSystem.Common.Constants;
 
     public interface IMediaContentFetcherService
     {
