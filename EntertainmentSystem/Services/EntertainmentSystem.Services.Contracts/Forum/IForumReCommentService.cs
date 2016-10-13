@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EntertainmentSystem.Services.Contracts.Forum
+﻿namespace EntertainmentSystem.Services.Contracts.Forum
 {
-    interface IForumReCommentService
+    using System;
+    using Common;
+    using Data.Models.Forum;
+
+    public interface IForumReCommentService : IBaseGetService<PostReComment, Guid>, IBaseCreateService<PostReComment>,
+        IBaseUpdateService<PostReComment>, IBaseDeleteService<PostReComment>
     {
     }
 }
