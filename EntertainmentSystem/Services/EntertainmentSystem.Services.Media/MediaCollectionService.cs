@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Services.Media
 {
+    using System;
     using System.Linq;
     using Contracts.Media;
     using Data.Common.Repositories;
@@ -19,11 +20,9 @@
             return this.collections.All();
         }
 
-        public MediaCollection GetById(object id)
+        public MediaCollection GetById(Guid id)
         {
-            var intId = (int)id;
-
-            return this.collections.GetById(intId);
+            return this.collections.GetById(id);
         }
 
         public void Create(MediaCollection entity)

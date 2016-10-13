@@ -1,20 +1,11 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Users
 {
-    using System.Linq;
+    using Common;
     using Data.Models;
 
-    public interface IUserAdminService : IUserModeratorService, IUserProfileService
+    public interface IUserAdminService : IBaseGetService<ApplicationUser, string>,
+        IBaseUpdateService<ApplicationUser>, IBaseDeleteService<ApplicationUser>,
+        IBaseAdminService<ApplicationUser>
     {
-        /// <summary>
-        /// Get all users. With ordinary deleted.
-        /// </summary>
-        /// <returns>Users as queryable.</returns>
-        IQueryable<ApplicationUser> GetAllWithDeleted();
-
-        /// <summary>
-        /// Delete user permanent.
-        /// </summary>
-        /// <param name="entity">User to be deleted.</param>
-        void DeletePermanent(ApplicationUser entity);
     }
 }

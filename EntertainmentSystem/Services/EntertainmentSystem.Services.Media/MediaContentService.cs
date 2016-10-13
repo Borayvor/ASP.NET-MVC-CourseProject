@@ -20,11 +20,9 @@
             return this.contents.All();
         }
 
-        public MediaContent GetById(object id)
+        public MediaContent GetById(Guid id)
         {
-            var guidId = (Guid)id;
-
-            return this.contents.GetById(guidId);
+            return this.contents.GetById(id);
         }
 
         public void Create(MediaContent entity)

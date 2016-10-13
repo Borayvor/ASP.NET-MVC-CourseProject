@@ -3,7 +3,7 @@
     using System.Linq;
     using Data.Common.Models;
 
-    public interface IBaseGetService<T> where T : IAuditInfo, IDeletableEntity
+    public interface IBaseGetService<T, I> where T : IAuditInfo, IDeletableEntity
     {
         /// <summary>
         /// Get all <"T">. Without ordinary deleted.
@@ -14,7 +14,8 @@
         /// <summary>
         /// Gets the <"T"> by id.
         /// </summary>
-        /// <param name="id">The id of the <"T"> to get.</param>
-        T GetById(object id);
+        /// <param name="id">The id of the <"T"> as <"I"> to get.</param>
+        /// <returns>Return <"T"> with id <"I"></returns>
+        T GetById(I id);
     }
 }
