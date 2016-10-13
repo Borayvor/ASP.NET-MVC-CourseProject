@@ -13,7 +13,7 @@
 
         T GetById(object id);
 
-        void Add(T entity);
+        void Create(T entity);
 
         void Update(T entity);
 

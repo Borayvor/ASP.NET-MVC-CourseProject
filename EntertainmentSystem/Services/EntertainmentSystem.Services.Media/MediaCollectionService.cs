@@ -27,7 +27,7 @@
 
         public void Create(MediaCollection entity)
         {
-            this.collections.Add(entity);
+            this.collections.Create(entity);
             this.collections.Save();
         }
 

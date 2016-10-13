@@ -27,7 +27,7 @@
 
         public void Create(MediaContent entity)
         {
-            this.contents.Add(entity);
+            this.contents.Create(entity);
             this.contents.Save();
         }
 

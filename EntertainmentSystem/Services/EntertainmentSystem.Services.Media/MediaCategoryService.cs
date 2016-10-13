@@ -32,7 +32,7 @@
 
         public void Create(MediaCategory entity)
         {
-            this.categories.Add(entity);
+            this.categories.Create(entity);
             this.categories.Save();
         }
 

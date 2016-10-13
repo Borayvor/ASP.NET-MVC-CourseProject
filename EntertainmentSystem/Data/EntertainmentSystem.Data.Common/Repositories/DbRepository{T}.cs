@@ -40,7 +40,7 @@
             return this.DbSet.Find(id);
         }
 
-        public void Add(T entity)
+        public void Create(T entity)
         {
             this.DbSet.Add(entity);
         }
