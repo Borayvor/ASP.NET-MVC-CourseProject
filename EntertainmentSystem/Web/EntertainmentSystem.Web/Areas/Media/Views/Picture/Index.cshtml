@@ -1,7 +1,24 @@
-﻿
+﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels.Picture
+@model IEnumerable<PictureHomeViewModel>
+
 @{
     ViewBag.Title = "Pictures";
 }
 
-<h2>@ViewBag.Title</h2>
-
+<section id="forum-home">
+    <h2>@ViewBag.Title</h2>
+    <div class="row">
+        @foreach (var picture in Model)
+        {
+            <div class="panel panel-default col-sm-3">
+                <h4 class="text-center">@picture.Title</h4>
+                <h5>Category : @picture.Category</h5>
+                <h5>Collection : @picture.Collection</h5>
+                <img src="@picture.ContentUrl" alt="Image" class="panel panel-default img-responsive" />
+                <text>@picture.Description</text>
+                <p>Author: @picture.Author</p>
+                <p>Created: @picture.CreatedOn</p>
+            </div>
+        }
+    </div>
+</section>

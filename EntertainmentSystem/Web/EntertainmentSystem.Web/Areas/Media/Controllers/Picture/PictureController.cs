@@ -1,20 +1,28 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Media.Controllers.Picture
 {
+    using System.Linq;
     using System.Web.Mvc;
+    using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
+    using ViewModels.Picture;
 
     public class PictureController : MediaController
     {
-        private readonly IMediaContentFetcherService mediaService;
+        private readonly IPictureFetcherService pictureService;
 
-        public PictureController(IMediaContentFetcherService mediaService)
+        public PictureController(IPictureFetcherService pictureService)
         {
-            this.mediaService = mediaService;
+            this.pictureService = pictureService;
         }
 
         public ActionResult Index()
         {
-            return this.View();
+            var pictures = this.pictureService
+                .GetAll()
+                .To<PictureHomeViewModel>()
+                .ToList();
+
+            return this.View(pictures);
         }
     }
 }
