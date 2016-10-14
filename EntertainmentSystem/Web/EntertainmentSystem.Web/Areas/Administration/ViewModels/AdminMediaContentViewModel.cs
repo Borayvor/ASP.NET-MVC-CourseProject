@@ -1,11 +1,13 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
 {
+    using System;
     using System.ComponentModel.DataAnnotations;
     using AutoMapper;
     using Data.Models.Media;
     using Infrastructure.Mapping;
+    using Web.ViewModels;
 
-    public class AdminMediaContentViewModel : AdminBaseGuidViewModel, IMapFrom<MediaContent>, IHaveCustomMappings
+    public class AdminMediaContentViewModel : BaseViewModel<Guid>, IMapFrom<MediaContent>, IHaveCustomMappings
     {
         public string Title { get; set; }
 

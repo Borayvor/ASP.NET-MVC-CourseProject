@@ -12,6 +12,7 @@
     using Data;
     using Data.Common;
     using Data.Common.Repositories;
+    using Services.Forum;
     using Services.Media;
     using Services.Users;
     using Services.Web;
@@ -60,11 +61,14 @@
                 .As<IIdentifierProvider>()
                 .InstancePerRequest();
 
+            var usersServicesAssembly = Assembly.GetAssembly(typeof(UsersAdminService));
+            builder.RegisterAssemblyTypes(usersServicesAssembly).AsImplementedInterfaces();
+
             var mediaServicesAssembly = Assembly.GetAssembly(typeof(MediaCategoryService));
             builder.RegisterAssemblyTypes(mediaServicesAssembly).AsImplementedInterfaces();
 
-            var usersServicesAssembly = Assembly.GetAssembly(typeof(UsersAdminService));
-            builder.RegisterAssemblyTypes(usersServicesAssembly).AsImplementedInterfaces();
+            var forumServicesAssembly = Assembly.GetAssembly(typeof(ForumPostService));
+            builder.RegisterAssemblyTypes(forumServicesAssembly).AsImplementedInterfaces();
 
             var dropboxCloudStorage = Assembly.GetAssembly(typeof(DropboxCloudStorage));
             builder.RegisterAssemblyTypes(dropboxCloudStorage).AsImplementedInterfaces();

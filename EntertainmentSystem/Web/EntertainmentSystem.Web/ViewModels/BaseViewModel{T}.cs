@@ -1,9 +1,13 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels
 {
     using System;
+    using System.Web.Mvc;
 
-    public class AdminBaseViewModel
+    public abstract class BaseViewModel<T>
     {
+        [HiddenInput(DisplayValue = false)]
+        public T Id { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }

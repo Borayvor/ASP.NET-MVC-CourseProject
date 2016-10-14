@@ -214,10 +214,9 @@
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
     <Compile Include="Areas\Administration\Controllers\Users\AdminUsersController.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminBaseStringViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminBaseViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminBaseGuidViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
@@ -517,7 +516,6 @@
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
-    <Folder Include="Areas\Forum\Models\" />
     <Folder Include="Areas\Media\ViewModels\Musics\" />
     <Folder Include="Areas\Media\ViewModels\Pictures\" />
     <Folder Include="Areas\Media\ViewModels\Videos\" />

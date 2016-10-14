@@ -1,6 +1,16 @@
-﻿
-@{
-    ViewBag.Title = "Forum";
-}
+﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model IEnumerable<PostHomeViewModel>
 
-<h2>@ViewBag.Title</h2>
+<section id="forum-home">  
+    <div class="row">
+        @foreach (var post in Model)
+        {
+            <div class="panel panel-default col-sm-3">
+                <h4 class="text-center">@post.Title</h4>
+                <h5>Category : @post.Category</h5>                
+                <p>Author: @post.Author</p>
+                <p>Created: @post.CreatedOn</p>
+            </div>
+        }
+    </div>
+</section>

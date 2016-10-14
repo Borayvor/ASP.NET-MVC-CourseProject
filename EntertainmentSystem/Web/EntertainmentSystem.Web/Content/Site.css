@@ -1,5 +1,5 @@
 ﻿@media (max-width: 991px) {
-  body #ES-home #carousel-ES-home-pictures {
+  body #es-home #carousel-es-home-pictures {
     margin-top: 20px; } }
 
 body {
@@ -21,12 +21,12 @@ body {
     max-width: 280px; }
   body .display-none {
     display: none !important; }
-  body #ES-home .row {
+  body #es-home .row {
     margin-bottom: 20px; }
-  body #ES-home #carousel-ES-home-pictures .carousel-inner .item img {
+  body #es-home #carousel-es-home-pictures .carousel-inner .item img {
     display: inline-flex;
     height: 20em; }
-  body #ES-home #carousel-ES-home-videos .carousel-inner .item .video {
+  body #es-home #carousel-es-home-videos .carousel-inner .item .video {
     display: inline-flex;
     height: 30em; }
 
