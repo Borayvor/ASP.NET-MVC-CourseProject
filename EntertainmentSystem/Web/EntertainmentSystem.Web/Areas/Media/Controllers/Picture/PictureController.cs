@@ -4,7 +4,7 @@
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
-    using ViewModels.Picture;
+    using ViewModels;
 
     public class PictureController : MediaController
     {
@@ -19,7 +19,7 @@
         {
             var pictures = this.pictureService
                 .GetAll()
-                .To<PictureHomeViewModel>()
+                .To<MediaBaseViewModel>()
                 .ToList();
 
             return this.View(pictures);

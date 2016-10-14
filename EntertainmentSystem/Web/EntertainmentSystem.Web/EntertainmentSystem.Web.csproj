@@ -215,7 +215,10 @@
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
     <Compile Include="Areas\Administration\Controllers\Users\AdminUsersController.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
+    <Compile Include="Areas\Media\ViewModels\MediaBaseViewModel.cs" />
+    <Compile Include="Areas\Media\ViewModels\Music\MusicHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Picture\PictureHomeViewModel.cs" />
+    <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
@@ -517,8 +520,6 @@
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
-    <Folder Include="Areas\Media\ViewModels\Music\" />
-    <Folder Include="Areas\Media\ViewModels\Video\" />
     <Folder Include="Areas\Media\Views\Media\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />

@@ -1,5 +1,5 @@
-﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels.Picture
-@model IEnumerable<PictureHomeViewModel>
+﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
+@model IEnumerable<MediaBaseViewModel>
 
 @{
     ViewBag.Title = "Pictures";
@@ -15,7 +15,8 @@
                 <h5>Category : @picture.Category</h5>
                 <h5>Collection : @picture.Collection</h5>
                 <img src="@picture.ContentUrl" alt="Image" class="panel panel-default img-responsive" />
-                <text>@picture.Description</text>
+                <label for="picture-description">Description: </label>
+                <text id="picture-description">@picture.Description</text>
                 <p>Author: @picture.Author</p>
                 <p>Created: @picture.CreatedOn</p>
             </div>
