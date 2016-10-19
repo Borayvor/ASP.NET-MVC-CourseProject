@@ -3,9 +3,9 @@
     using System.Web;
     using Infrastructure.Filters;
 
-    public class VideoInputViewModel
+    public class MusicUploadViewModel : IUploadViewModel
     {
-        [ValidateVideoFile]
+        [ValidateMusicFile]
         public HttpPostedFileBase File { get; set; }
     }
 }

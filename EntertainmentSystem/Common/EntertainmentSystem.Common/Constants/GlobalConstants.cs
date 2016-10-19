@@ -13,5 +13,7 @@
         public const string AreaMediaName = "Media";
 
         public const int HomeLastContentCount = 3;
+
+        public const int CacheHomeDuration = 60 * 15;
     }
 }

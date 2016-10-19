@@ -13,8 +13,6 @@
 
         public string Description { get; set; }
 
-        public string ContentUrl { get; set; }
-
         public string Category { get; set; }
 
         public string Collection { get; set; }

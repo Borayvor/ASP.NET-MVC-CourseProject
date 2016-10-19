@@ -106,7 +106,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="System.Web.Mvc.Expressions, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\..\packages\System.Web.Mvc.Expressions.1.0.1\lib\System.Web.Mvc.Expressions.dll</HintPath>
+      <HintPath>..\..\packages\System.Web.Mvc.Expressions.1.0.2\lib\System.Web.Mvc.Expressions.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="System.Xml.Linq" />
@@ -219,6 +219,8 @@
     <Compile Include="Areas\Media\ViewModels\Music\MusicHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Picture\PictureHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
+    <Compile Include="Controllers\Partials\BasePartialController.cs" />
+    <Compile Include="Controllers\Partials\MediaPartialController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
@@ -270,9 +272,10 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
-    <Compile Include="ViewModels\Upload\MusicInputViewModel.cs" />
-    <Compile Include="ViewModels\Upload\PictureInputViewModel.cs" />
-    <Compile Include="ViewModels\Upload\VideoInputViewModel.cs" />
+    <Compile Include="ViewModels\Upload\IUploadViewModel.cs" />
+    <Compile Include="ViewModels\Upload\MusicUploadViewModel.cs" />
+    <Compile Include="ViewModels\Upload\PictureUploadViewModel.cs" />
+    <Compile Include="ViewModels\Upload\VideoUploadViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Content\bootstrap-theme.css" />
@@ -413,6 +416,7 @@
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminUserViewModel.cshtml" />
+    <Content Include="Areas\Media\Views\Shared\_MediaPartial.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -509,7 +513,7 @@
     <Content Include="Views\Shared\EditorTemplates\HttpPostedFileBase.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\DateTime.cshtml" />
-    <Content Include="Views\Shared\_MusicsHomePartial.cshtml" />
+    <Content Include="Views\Shared\_MusicHomePartial.cshtml" />
     <Content Include="Areas\Media\Views\Music\Index.cshtml" />
     <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
     <Content Include="Areas\Media\Views\Video\Index.cshtml" />
@@ -527,7 +531,9 @@
     <Folder Include="Areas\Moderators\Views\Moderator\" />
     <Folder Include="Areas\Moderators\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Moderators\Views\Shared\EditorTemplates\" />
+    <Folder Include="Views\BasePartial\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\MediaPartial\" />
     <Folder Include="Views\UploadMusic\" />
     <Folder Include="Views\UploadPicture\" />
     <Folder Include="Views\UploadVideo\" />

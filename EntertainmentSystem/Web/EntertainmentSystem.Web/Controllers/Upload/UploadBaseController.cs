@@ -7,11 +7,17 @@
     using Common.Constants;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Media.Generators;
+    using ViewModels.Upload;
 
     [Authorize(Roles = GlobalConstants.AdministratorRoleName + "," + GlobalConstants.ModeratorRoleName)]
     [ValidateAntiForgeryToken]
     public abstract class UploadBaseController : BaseController
     {
+        private const string ActionName = "Index";
+        private const string AdminControllerName = "AdminMediaContent";
+        private const string ModeratorControllerName = "ModeratorMediaContent";
+        private const string ExceptionString = "Invalid file !";
+
         private readonly IUploadingGeneratorService uploadingGeneratorService;
 
         public UploadBaseController(IUploadingGeneratorService uploadingGeneratorService)
@@ -19,11 +25,23 @@
             this.uploadingGeneratorService = uploadingGeneratorService;
         }
 
-        public void CreateContent(HttpPostedFileBase file)
+        protected ActionResult CreateFromModel(IUploadViewModel model)
+        {
+            var controllerInfo = this.GetControllerInfo();
+
+            return this.ConditionalActionResult(
+                () => this.CreateContent(model.File),
+                () => this.RedirectToAction(
+                    controllerInfo[0],
+                    controllerInfo[1],
+                    new { area = controllerInfo[2] }));
+        }
+
+        private void CreateContent(HttpPostedFileBase file)
         {
             if (!this.ModelState.IsValid)
             {
-                throw new ArgumentException(this.ModelState.Values.FirstOrDefault() == null ? "Invalid file"
+                throw new ArgumentException(this.ModelState.Values.FirstOrDefault() == null ? ExceptionString
                     : this.ModelState.Values.FirstOrDefault().Errors.FirstOrDefault().ErrorMessage);
             }
 
@@ -33,20 +51,20 @@
                 file.ContentType);
         }
 
-        protected string[] GetControllerInfo()
+        private string[] GetControllerInfo()
         {
-            var action = "Index";
+            var action = ActionName;
             var controller = string.Empty;
             var area = string.Empty;
 
             if (this.User.IsInRole(GlobalConstants.ModeratorRoleName))
             {
-                controller = "ModeratorMediaContent";
+                controller = ModeratorControllerName;
                 area = GlobalConstants.AreaModeratorsName;
             }
             else if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
             {
-                controller = "AdminMediaContent";
+                controller = AdminControllerName;
                 area = GlobalConstants.AreaAdministrationName;
             }
 

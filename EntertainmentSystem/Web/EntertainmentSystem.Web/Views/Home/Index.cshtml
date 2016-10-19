@@ -1,27 +1,27 @@
-﻿@using EntertainmentSystem.Web.ViewModels.Home
-@model HomeViewModel
+﻿@using EntertainmentSystem.Web.Controllers
+@using System.Web.Mvc.Expressions
 
 @{
     ViewBag.Title = "Media";
 }
 
-<section id="es-home">
+<div id="es-home">
     <h1>
         @ViewBag.Title
     </h1>
 
     <div class="row">
         <section class="col-md-4">
-            @Html.Partial("_MusicsHomePartial", Model.Musics)
+            @(Html.Action<HomeController>(c => c.GetMusic()))
         </section>
 
         <section class="col-md-8">
-            @Html.Partial("_PicturesHomePartial", Model.Pictures)
+            @(Html.Action<HomeController>(c => c.GetPictures()))
         </section>
     </div>
     <div class="row">
         <section class="col-xs-12">
-            @Html.Partial("_VideosHomePartial", Model.Videos)
+            @(Html.Action<HomeController>(c => c.GetVideos()))
         </section>
     </div>
-</section>
+</div>

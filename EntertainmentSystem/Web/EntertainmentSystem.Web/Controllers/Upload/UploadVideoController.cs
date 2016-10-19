@@ -13,16 +13,9 @@
         }
 
         [AjaxPost]
-        public ActionResult Create(VideoInputViewModel model)
+        public ActionResult Create(VideoUploadViewModel model)
         {
-            var controllerInfo = this.GetControllerInfo();
-
-            return this.ConditionalActionResult(
-                () => this.CreateContent(model.File),
-                () => this.RedirectToAction(
-                    controllerInfo[0],
-                    controllerInfo[1],
-                    new { area = controllerInfo[2] }));
+            return this.CreateFromModel(model);
         }
     }
 }

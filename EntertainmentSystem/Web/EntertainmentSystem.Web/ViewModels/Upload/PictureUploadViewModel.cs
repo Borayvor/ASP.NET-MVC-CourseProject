@@ -3,7 +3,7 @@
     using System.Web;
     using Infrastructure.Filters;
 
-    public class PictureInputViewModel
+    public class PictureUploadViewModel : IUploadViewModel
     {
         [ValidatePictureFile]
         public HttpPostedFileBase File { get; set; }
