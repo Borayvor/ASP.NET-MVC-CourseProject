@@ -1,19 +1,17 @@
 ﻿namespace EntertainmentSystem.Web.Controllers
 {
     using System.Web.Mvc;
+    using Common.Constants;
     using Data.Models.Media;
     using Infrastructure.Mapping;
-    using Partials;
     using Services.Contracts.Media.Fetchers;
-    using Services.Web;
     using ViewModels.MediaContent;
 
-    public class HomeController : BasePartialController
+    public class HomeController : BaseController
     {
         private readonly IMediaContentFetcherService mediaFetcherService;
 
-        public HomeController(IMediaContentFetcherService mediaFetcherService, ICacheService cache)
-            : base(cache)
+        public HomeController(IMediaContentFetcherService mediaFetcherService)
         {
             this.mediaFetcherService = mediaFetcherService;
         }
@@ -26,7 +24,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = 15 * 60)]
+        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
         public ActionResult GetMusic()
         {
             return this.ConditionalActionResult(
@@ -38,7 +36,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = 15 * 60)]
+        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
         public ActionResult GetPictures()
         {
             return this.ConditionalActionResult(
@@ -50,7 +48,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = 15 * 60)]
+        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
         public ActionResult GetVideos()
         {
             return this.ConditionalActionResult(

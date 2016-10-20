@@ -8,17 +8,6 @@
 <section id="forum-home">
     <h2>@ViewBag.Title</h2>
     <div class="row">
-        @foreach (var picture in Model)
-        {
-            <div class="panel panel-default col-sm-3">
-                <h4 class="text-center">@picture.Title</h4>
-                <h5>Category : @picture.Category</h5>
-                <h5>Collection : @picture.Collection</h5>
-                <label for="picture-description">Description: </label>
-                <text id="picture-description">@picture.Description</text>
-                <p>Author: @picture.Author</p>
-                <p>Created: @picture.CreatedOn</p>
-            </div>
-        }
+       
     </div>
 </section>

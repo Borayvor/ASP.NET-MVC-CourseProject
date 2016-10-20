@@ -1,0 +1,29 @@
+﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
+@model MediaBaseViewModel
+
+<article class="card fade-in-animation col-sm-3">
+    <a class="content" href="@Model.ContentUrl">
+        <div>
+            <div class="card-image" style="background-image: url();"></div>
+            <div class="card-text flex">
+                <p class="category">@Model.Category</p>
+                <p class="collection">@Model.Collection</p>
+                <h2 class="title">@Model.Title</h2>
+                <div class="description-container">
+                    <p class="description">@Model.Description</p>
+                </div>
+            </div>
+        </div>
+        <div class="highlighter"></div>
+    </a>
+    @*<section class="addon @Model.Category.ToLower()">        
+        <div class="layout-align-start-center">
+            <div class="tab flex layout-align-start-center">
+                <span class="stat">344823</span>                
+            </div>
+            <div class="tab favorite-container md-layout-row layout-align-start-center" role="button" tabindex="0">
+                <span class="stat" aria-hidden="false">377</span>               
+            </div>
+        </div>
+    </section>*@
+</article>

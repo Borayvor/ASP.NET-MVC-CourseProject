@@ -1,10 +1,7 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Media.Controllers.Music
 {
-    using System.Linq;
     using System.Web.Mvc;
-    using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
-    using ViewModels;
 
     public class MusicController : MediaController
     {
@@ -17,12 +14,7 @@
 
         public ActionResult Index()
         {
-            var musics = this.musicService
-                .GetAll()
-                .To<MediaBaseViewModel>()
-                .ToList();
-
-            return this.View(musics);
+            return this.View();
         }
     }
 }

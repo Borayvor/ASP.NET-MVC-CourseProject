@@ -4,7 +4,7 @@
     using Web.Controllers;
 
     [Authorize]
-    public class MediaController : BaseController
+    public abstract class MediaController : BaseController
     {
     }
 }

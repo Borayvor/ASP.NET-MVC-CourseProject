@@ -17,12 +17,18 @@
 
         public ActionResult Index()
         {
-            var videos = this.videoService
-               .GetAll()
-               .To<MediaBaseViewModel>()
-               .ToList();
+            ////var actionResult = this.ConditionalActionResult(
+            ////    () => this.videoService
+            ////    .GetAll()
+            ////    .To<VideoHomeViewModel>(),
+            ////    (vodeos) => this.View(vodeos));
 
-            return this.View(videos);
+            var test = this.videoService
+                .GetAll()
+                .To<MediaBaseViewModel>()
+                .ToList();
+
+            return this.View(test);
         }
     }
 }

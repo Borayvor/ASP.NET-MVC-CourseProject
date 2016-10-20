@@ -220,7 +220,7 @@
     <Compile Include="Areas\Media\ViewModels\Picture\PictureHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
     <Compile Include="Controllers\Partials\BasePartialController.cs" />
-    <Compile Include="Controllers\Partials\MediaPartialController.cs" />
+    <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
@@ -416,7 +416,7 @@
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminUserViewModel.cshtml" />
-    <Content Include="Areas\Media\Views\Shared\_MediaPartial.cshtml" />
+    <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

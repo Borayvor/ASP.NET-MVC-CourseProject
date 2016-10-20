@@ -1,4 +1,7 @@
-﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
+﻿@using EntertainmentSystem.Common.Constants
+@using EntertainmentSystem.Web.Areas.Media.Controllers
+@using System.Web.Mvc.Expressions
+@using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model IEnumerable<MediaBaseViewModel>
 
 @{
@@ -8,18 +11,15 @@
 <section id="forum-home">
     <h2>@ViewBag.Title</h2>
     <div class="row">
-        @foreach (var video in Model)
+        @if (Model != null)
         {
-            <div class="panel panel-default col-sm-3">
-                <h4 class="text-center">@video.Title</h4>
-                <h5>Category : @video.Category</h5>
-                <h5>Collection : @video.Collection</h5>
-                <label for="video-description">Description: </label>
-                <text id="video-description">@video.Description</text>
-                <p>Author: @video.Author</p>
-                <p>Created: @video.CreatedOn</p>
-            </div>
+            if (Model.Count() > 0)
+            {
+                foreach (var video in Model)
+                {
+                    @(Html.Action<MediaPartialController>(c => c.GetFromViewModel(video, "_VideoPartial", GlobalConstants.CacheMediaHomeDuration)))
+                }
+            }
         }
     </div>
 </section>
-

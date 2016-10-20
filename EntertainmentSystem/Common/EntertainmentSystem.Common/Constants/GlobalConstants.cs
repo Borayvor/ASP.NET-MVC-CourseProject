@@ -14,6 +14,6 @@
 
         public const int HomeLastContentCount = 3;
 
-        public const int CacheHomeDuration = 60 * 15;
+        public const int CacheMediaHomeDuration = 60 * 15;
     }
 }

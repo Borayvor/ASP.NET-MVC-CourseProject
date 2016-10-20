@@ -1,9 +1,11 @@
-﻿namespace EntertainmentSystem.Web.Controllers.Partials
+﻿namespace EntertainmentSystem.Web.Areas.Media.Controllers
 {
     using System.Web.Mvc;
     using Services.Web;
-    using ViewModels.MediaContent;
+    using ViewModels;
+    using Web.Controllers.Partials;
 
+    [Authorize]
     public class MediaPartialController : BasePartialController
     {
         public MediaPartialController(ICacheService cache)
@@ -14,7 +16,7 @@
         [HttpGet]
         [ChildActionOnly]
         public ActionResult GetFromViewModel(
-            MediaContentHomeViewModel viewModel,
+            MediaBaseViewModel viewModel,
             string partialViewName,
             int durationInSeconds)
         {
