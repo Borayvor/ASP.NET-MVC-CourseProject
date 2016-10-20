@@ -43,6 +43,8 @@ body {
       box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 1px 0px; }
     body .card a {
       display: block; }
+      body .card a:hover {
+        text-decoration: none; }
     body .card .card-image {
       position: relative;
       background-position: center top;
@@ -108,8 +110,9 @@ body {
         letter-spacing: -0.1vw;
         margin-top: 2vw;
         font-size: 2.5vw;
-        line-height: 4vw; }
-        body .card .card-text .description-container .description {
+        line-height: 4vw;
+        height: 6.5vw; }
+        body .card .card-text .description-container .es-media-description {
           margin: 0;
           position: absolute;
           top: 0; }

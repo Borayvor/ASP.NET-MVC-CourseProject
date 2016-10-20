@@ -418,6 +418,7 @@
     <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminUserViewModel.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
+    <Content Include="Areas\Media\Views\Video\VideoDetails.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

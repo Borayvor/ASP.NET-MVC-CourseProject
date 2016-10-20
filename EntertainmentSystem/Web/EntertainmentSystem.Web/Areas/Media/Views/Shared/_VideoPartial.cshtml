@@ -1,8 +1,10 @@
-﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
+﻿@using System.Web.Mvc.Expressions
+@using EntertainmentSystem.Web.Areas.Media.Controllers.Video
+@using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaBaseViewModel
 
 <article class="card fade-in-animation col-sm-3">
-    <a class="content" href="@Model.ContentUrl">
+    <a class="content" href="@(Url.Action<VideoController>(c => c.VideoDetails(@Model.Id)))">
         <div>
             <div class="card-image" style="background-image: url('../../../../Images/blank-image.jpg');"></div>
             <div class="card-text">
@@ -16,14 +18,14 @@
         </div>
         <div class="highlighter"></div>
     </a>
-    @*<section class="addon @Model.Category.ToLower()">        
-        <div class="layout-align-start-center">
-            <div class="tab flex layout-align-start-center">
-                <span class="stat">344823</span>                
+    @*<section class="addon">
+            <div class="layout-align-start-center">
+                <div class="tab flex layout-align-start-center">
+                    <span class="stat">344823</span>
+                </div>
+                <div class="tab favorite-container md-layout-row layout-align-start-center" role="button" tabindex="0">
+                    <span class="stat" aria-hidden="false">377</span>
+                </div>
             </div>
-            <div class="tab favorite-container md-layout-row layout-align-start-center" role="button" tabindex="0">
-                <span class="stat" aria-hidden="false">377</span>               
-            </div>
-        </div>
-    </section>*@
+        </section>*@
 </article>

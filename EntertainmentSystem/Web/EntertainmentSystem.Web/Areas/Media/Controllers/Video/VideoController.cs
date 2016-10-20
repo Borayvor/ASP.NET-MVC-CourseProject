@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Media.Controllers.Video
 {
+    using System;
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
@@ -21,13 +22,11 @@
                 .GetAll()
                 .To<MediaBaseViewModel>(),
                 (vodeos) => this.View(vodeos));
+        }
 
-            ////var test = this.videoService
-            ////    .GetAll()
-            ////    .To<MediaBaseViewModel>()
-            ////    .ToList();
-
-            ////return this.View(test);
+        public ActionResult VideoDetails(Guid id)
+        {
+            return this.View();
         }
     }
 }
