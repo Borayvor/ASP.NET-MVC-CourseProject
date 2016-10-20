@@ -1,6 +1,5 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Media.Controllers.Video
 {
-    using System.Linq;
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
@@ -17,18 +16,18 @@
 
         public ActionResult Index()
         {
-            ////var actionResult = this.ConditionalActionResult(
-            ////    () => this.videoService
-            ////    .GetAll()
-            ////    .To<VideoHomeViewModel>(),
-            ////    (vodeos) => this.View(vodeos));
-
-            var test = this.videoService
+            return this.ConditionalActionResult(
+                () => this.videoService
                 .GetAll()
-                .To<MediaBaseViewModel>()
-                .ToList();
+                .To<MediaBaseViewModel>(),
+                (vodeos) => this.View(vodeos));
 
-            return this.View(test);
+            ////var test = this.videoService
+            ////    .GetAll()
+            ////    .To<MediaBaseViewModel>()
+            ////    .ToList();
+
+            ////return this.View(test);
         }
     }
 }
