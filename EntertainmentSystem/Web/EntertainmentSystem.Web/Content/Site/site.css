@@ -1,8 +1,4 @@
-﻿@media (max-width: 991px) {
-  body #es-home #carousel-es-home-pictures {
-    margin-top: 20px; } }
-
-body {
+﻿body {
   padding-top: 50px;
   padding-bottom: 20px;
   background-color: #fcf6ea;
@@ -30,6 +26,14 @@ body {
     transition: color 0.2s ease-in-out;
     color: #919496;
     text-decoration: none; }
+  body #es-home .row {
+    margin-bottom: 20px; }
+  body #es-home #carousel-es-home-pictures .carousel-inner .item img {
+    display: inline-flex;
+    height: 20em; }
+  body #es-home #carousel-es-home-videos .carousel-inner .item .video {
+    display: inline-flex;
+    height: 30em; }
   body .card {
     border: 0;
     position: relative;
@@ -130,12 +134,4 @@ body {
       transition: all 0.15s ease-in;
       z-index: 5;
       border-bottom: 2px solid #2e2f33; }
-  body #es-home .row {
-    margin-bottom: 20px; }
-  body #es-home #carousel-es-home-pictures .carousel-inner .item img {
-    display: inline-flex;
-    height: 20em; }
-  body #es-home #carousel-es-home-videos .carousel-inner .item .video {
-    display: inline-flex;
-    height: 30em; }
 

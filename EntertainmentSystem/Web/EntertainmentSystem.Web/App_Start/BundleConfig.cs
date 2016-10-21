@@ -42,7 +42,7 @@
         private static void RegisterStyles(BundleCollection bundles)
         {
             bundles.Add(new StyleBundle("~/Content/siteCss")
-                .Include("~/Content/site.css"));
+                .Include("~/Content/Site/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/tools")
                 .Include(

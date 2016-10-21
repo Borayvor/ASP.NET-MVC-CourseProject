@@ -1,0 +1,32 @@
+﻿#es-home {
+    .row {
+        margin-bottom: 20px;
+    }
+
+    #carousel-es-home-musics {
+    }
+
+    #carousel-es-home-pictures {
+
+        .carousel-inner {
+            .item {
+                img {
+                    display: inline-flex;
+                    height: 20em;
+                }
+            }
+        }
+    }
+
+    #carousel-es-home-videos {
+
+        .carousel-inner {
+            .item {
+                .video {
+                    display: inline-flex;
+                    height: 30em;
+                }
+            }
+        }
+    }
+}
