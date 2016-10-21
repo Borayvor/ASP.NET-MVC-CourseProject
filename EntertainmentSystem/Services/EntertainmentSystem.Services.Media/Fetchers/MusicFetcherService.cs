@@ -21,7 +21,7 @@
                 .Where(c => c.ContentType == ContentType.Music);
         }
 
-        public IQueryable<MediaContent> SearchByTitle(string search)
+        public IQueryable<MediaContent> AllByTitle(string search)
         {
             throw new NotImplementedException();
         }

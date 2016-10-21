@@ -3,7 +3,6 @@
     using System;
     using System.Web.Mvc;
     using System.Web.Mvc.Expressions;
-    using Infrastructure.Filters;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
     using ViewModels;
@@ -18,34 +17,34 @@
             this.videoService = videoService;
         }
 
-        public ActionResult Index()
+        public ActionResult Index(string search)
         {
-            return this.ConditionalActionResult(
+            if (string.IsNullOrWhiteSpace(search))
+            {
+                return this.ConditionalActionResult(
                 () => this.videoService
                 .All()
                 .To<MediaBaseViewModel>(),
-                (vodeos) => this.View(vodeos));
+                (videos) => this.View(videos));
+            }
+
+            return this.ConditionalActionResult(
+                () => this.videoService
+                .AllByTitle(search)
+                .To<MediaBaseViewModel>(),
+                (videos) => this.View("Index", videos));
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult SearchVideos(SearchViewModel search)
+        {
+            return this.RedirectToAction<VideoController>(c => c.Index(search.SearchText));
         }
 
         public ActionResult VideoDetails(Guid id)
         {
             return this.View();
-        }
-
-        [AjaxPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SearchVideos(SearchViewModel search)
-        {
-            return this.RedirectToAction<VideoController>(c => c.VideosResults(search.SearchText));
-        }
-
-        public ActionResult VideosResults(string search)
-        {
-            return this.ConditionalActionResult(
-                () => this.videoService
-                .SearchByTitle(search)
-                .To<MediaBaseViewModel>(),
-                (vodeos) => this.View(vodeos));
         }
     }
 }

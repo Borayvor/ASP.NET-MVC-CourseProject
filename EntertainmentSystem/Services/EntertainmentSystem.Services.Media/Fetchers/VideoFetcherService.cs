@@ -20,11 +20,11 @@
                 .Where(c => c.ContentType == ContentType.Video);
         }
 
-        public IQueryable<MediaContent> SearchByTitle(string search)
+        public IQueryable<MediaContent> AllByTitle(string search)
         {
             return this.contents.GetAll()
                 .Where(c => c.ContentType == ContentType.Video
-                && c.Title.ToLower() == search.ToLower())
+                && c.Title.ToLower().Contains(search.ToLower()))
                 .OrderByDescending(c => c.CreatedOn);
         }
     }

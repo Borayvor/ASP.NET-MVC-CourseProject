@@ -7,6 +7,6 @@
     {
         IQueryable<MediaContent> All();
 
-        IQueryable<MediaContent> SearchByTitle(string search);
+        IQueryable<MediaContent> AllByTitle(string search);
     }
 }
