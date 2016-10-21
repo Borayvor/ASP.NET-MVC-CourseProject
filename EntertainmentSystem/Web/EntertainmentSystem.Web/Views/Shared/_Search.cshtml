@@ -1,0 +1,12 @@
+﻿@using System.Web.Mvc.Expressions
+@using EntertainmentSystem.Web.Areas.Media.Controllers.Video
+@using EntertainmentSystem.Web.ViewModels.Search
+
+<div id="search">
+    Search
+    @using (Ajax.BeginForm<VideoController>(c => c.SearchVideos(null)))
+    {
+        @*@(Html.EditorFor<SearchViewModel>(m => m.SearchText))*@
+    }
+</div>
+

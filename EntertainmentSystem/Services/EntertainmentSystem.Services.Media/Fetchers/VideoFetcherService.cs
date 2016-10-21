@@ -14,10 +14,18 @@
             this.contents = contents;
         }
 
-        public IQueryable<MediaContent> GetAll()
+        public IQueryable<MediaContent> All()
         {
             return this.contents.GetAll()
                 .Where(c => c.ContentType == ContentType.Video);
+        }
+
+        public IQueryable<MediaContent> SearchByTitle(string search)
+        {
+            return this.contents.GetAll()
+                .Where(c => c.ContentType == ContentType.Video
+                && c.Title.ToLower() == search.ToLower())
+                .OrderByDescending(c => c.CreatedOn);
         }
     }
 }

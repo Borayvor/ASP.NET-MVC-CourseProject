@@ -272,6 +272,7 @@
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\Manage\SetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\VerifyPhoneNumberViewModel.cs" />
+    <Compile Include="ViewModels\Search\SearchViewModel.cs" />
     <Compile Include="ViewModels\Upload\IUploadViewModel.cs" />
     <Compile Include="ViewModels\Upload\MusicUploadViewModel.cs" />
     <Compile Include="ViewModels\Upload\PictureUploadViewModel.cs" />
@@ -521,6 +522,9 @@
     <Content Include="Areas\Media\Views\Music\Index.cshtml" />
     <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
     <Content Include="Areas\Media\Views\Video\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\SearchViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\SearchViewModel.cshtml" />
+    <Content Include="Views\Shared\_Search.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

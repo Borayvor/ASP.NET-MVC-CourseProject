@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
+    using System;
     using System.Linq;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
@@ -14,10 +15,15 @@
             this.contents = contents;
         }
 
-        public IQueryable<MediaContent> GetAll()
+        public IQueryable<MediaContent> All()
         {
             return this.contents.GetAll()
                 .Where(c => c.ContentType == ContentType.Picture);
+        }
+
+        public IQueryable<MediaContent> SearchByTitle(string search)
+        {
+            throw new NotImplementedException();
         }
     }
 }
