@@ -1,12 +1,11 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
-    using System;
     using System.Linq;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
     using Data.Models.Media;
 
-    public class MusicFetcherService : IMusicFetcherService
+    public class MusicFetcherService : IBaseMediaFetcherService
     {
         private readonly IMaediaContentService contents;
 
@@ -23,7 +22,10 @@
 
         public IQueryable<MediaContent> AllByTitle(string search)
         {
-            throw new NotImplementedException();
+            return this.contents.GetAll()
+                .Where(c => c.ContentType == ContentType.Music
+                && c.Title.ToLower().Contains(search.ToLower()))
+                .OrderByDescending(c => c.CreatedOn);
         }
     }
 }

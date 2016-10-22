@@ -1,0 +1,31 @@
+﻿@using System.Web.Mvc.Expressions
+@using EntertainmentSystem.Web.Areas.Media.Controllers.Music
+@using EntertainmentSystem.Web.Areas.Media.ViewModels
+@model MediaBaseViewModel
+
+<article class="card fade-in-animation col-sm-3">
+    <a class="content" href="@(Url.Action<MusicController>(c => c.MusicDetails(@Model.Id)))">
+        <div>
+            <div class="card-image" style="background-image: url('../../../../Images/blank-image.jpg');"></div>
+            <div class="card-text">
+                <p class="es-media-category">@Model.Category</p>
+                <p class="es-media-collection">@Model.Collection</p>
+                <h2 class="es-media-title">@Model.Title</h2>
+                <div class="description-container">
+                    <p class="es-media-description">@Model.Description</p>
+                </div>
+            </div>
+        </div>
+        <div class="highlighter"></div>
+    </a>
+    @*<section class="addon">
+            <div class="layout-align-start-center">
+                <div class="tab flex layout-align-start-center">
+                    <span class="stat">344823</span>
+                </div>
+                <div class="tab favorite-container md-layout-row layout-align-start-center" role="button" tabindex="0">
+                    <span class="stat" aria-hidden="false">377</span>
+                </div>
+            </div>
+        </section>*@
+</article>

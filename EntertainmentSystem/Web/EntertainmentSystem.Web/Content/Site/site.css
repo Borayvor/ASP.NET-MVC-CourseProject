@@ -75,7 +75,7 @@
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: -0.2vw;
-        font-size: 2.3vw;
+        font-size: 1.3vw;
         line-height: 2vw;
         height: 2vw;
         overflow: visible; }
@@ -88,7 +88,7 @@
         font-weight: 500;
         text-transform: uppercase;
         letter-spacing: -0.2vw;
-        font-size: 2.3vw;
+        font-size: 1.3vw;
         line-height: 2vw;
         height: 2vw;
         overflow: visible; }
@@ -100,9 +100,9 @@
         overflow: hidden;
         letter-spacing: -0.15vw;
         margin-top: 0.25vw;
-        font-size: 1.5vw;
+        font-size: 2.5vw;
         line-height: 2vw;
-        height: 4vw; }
+        height: 2vw; }
       body .card .card-text .description-container {
         position: relative;
         color: #a5a5a5;
@@ -113,9 +113,9 @@
         font-weight: 400;
         letter-spacing: -0.1vw;
         margin-top: 2vw;
-        font-size: 2.5vw;
-        line-height: 4vw;
-        height: 6.5vw; }
+        font-size: 1.5vw;
+        line-height: 2vw;
+        height: 2vw; }
         body .card .card-text .description-container .es-media-description {
           margin: 0;
           position: absolute;

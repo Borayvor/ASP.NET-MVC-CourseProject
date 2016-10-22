@@ -12,7 +12,7 @@
         if (id) {
             form.append("Id", id);
         }
-        
+
         $.ajax({
             type: 'POST',
             url: url,
@@ -26,7 +26,7 @@
         send(url, fileSrc, null, function (response) {
 
             toastr.success("Successfully created !");
-            
+
         }, function (error) {
             toastr.error("Invalid data");
         });
@@ -44,5 +44,5 @@
                 create("/UploadPicture/Create", fileSrc);
             }
         }
-    }
-}())
+    };
+}());

@@ -221,6 +221,7 @@
     <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
     <Compile Include="Controllers\Partials\BasePartialController.cs" />
     <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
+    <Compile Include="Controllers\Search\SearchController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
@@ -419,6 +420,8 @@
     <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminUserViewModel.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
     <Content Include="Areas\Media\Views\Video\VideoDetails.cshtml" />
+    <Content Include="Areas\Media\Views\Shared\_PicturePartial.cshtml" />
+    <Content Include="Areas\Media\Views\Shared\_MusicPartial.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -522,7 +525,7 @@
     <Content Include="Areas\Media\Views\Music\Index.cshtml" />
     <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
     <Content Include="Areas\Media\Views\Video\Index.cshtml" />
-    <Content Include="Views\Shared\_SearchForm.cshtml" />
+    <Content Include="Areas\Media\Views\Shared\_SearchForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -530,7 +533,6 @@
     <Folder Include="Areas\Administration\Views\Admin\" />
     <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
-    <Folder Include="Areas\Media\Views\Media\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Moderators\ViewModels\" />
@@ -540,6 +542,7 @@
     <Folder Include="Views\BasePartial\" />
     <Folder Include="Views\Base\" />
     <Folder Include="Views\MediaPartial\" />
+    <Folder Include="Views\Search\" />
     <Folder Include="Views\UploadMusic\" />
     <Folder Include="Views\UploadPicture\" />
     <Folder Include="Views\UploadVideo\" />

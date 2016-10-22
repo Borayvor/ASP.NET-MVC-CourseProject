@@ -28,4 +28,6 @@
     $('.sendUploadVideoBtn').click(function () {
         window.entertainmentSystemAjax.create.video($(".inputUploadVideoBtn")[0].files[0]);
     });
+
+    // test
 });

@@ -5,7 +5,7 @@
     using Contracts.Media.Fetchers;
     using Data.Models.Media;
 
-    public class VideoFetcherService : IVideoFetcherService
+    public class VideoFetcherService : IBaseMediaFetcherService
     {
         private readonly IMaediaContentService contents;
 

@@ -6,7 +6,7 @@
     {
         [Required]
         [DataType(DataType.Text)]
-        [MinLength(1, ErrorMessage = "Search text must be at least 1 characters !")]
+        [MinLength(1)]
         [MaxLength(250)]
         public string SearchText { get; set; }
     }
