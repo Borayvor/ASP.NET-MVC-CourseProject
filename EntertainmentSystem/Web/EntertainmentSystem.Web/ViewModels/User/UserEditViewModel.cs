@@ -1,11 +1,11 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels.User
 {
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
     using Data.Models;
     using Infrastructure.Mapping;
 
-    public class AdminUserEditViewModel : IMapFrom<ApplicationUser>, IMapTo<ApplicationUser>
+    public class UserEditViewModel : IMapFrom<ApplicationUser>, IMapTo<ApplicationUser>
     {
         [HiddenInput(DisplayValue = false)]
         public string Id { get; set; }

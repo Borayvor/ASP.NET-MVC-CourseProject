@@ -5,7 +5,7 @@
     using Data.Models.Media;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
-    using ViewModels.MediaContent;
+    using ViewModels.Media;
 
     public class HomeController : BaseController
     {

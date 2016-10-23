@@ -10,8 +10,12 @@
         public const string MusicInputUploadClass = "inputUploadMusicBtn";
         public const string MusicSendUploadClass = "sendUploadMusicBtn";
 
-        public const string ViseoChooseUploadClass = "chooseUploadVideoBtn";
-        public const string ViseoInputUploadClass = "inputUploadVideoBtn";
-        public const string ViseoSendUploadClass = "sendUploadVideoBtn";
+        public const string VideoChooseUploadClass = "chooseUploadVideoBtn";
+        public const string VideoInputUploadClass = "inputUploadVideoBtn";
+        public const string VideoSendUploadClass = "sendUploadVideoBtn";
+
+        public const string MediaMusicHomeTitle = "Music";
+        public const string MediaPicturesHomeTitle = "Pictures";
+        public const string MediaVideosHomeTitle = "Videos";
     }
 }

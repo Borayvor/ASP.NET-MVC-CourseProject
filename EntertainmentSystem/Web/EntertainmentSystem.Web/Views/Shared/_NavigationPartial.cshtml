@@ -55,7 +55,13 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaModeratorsName">
                 <li>
-                    @Html.ActionLink("Users", "Index", "UsersModeration", new { area = GlobalConstants.AreaModeratorsName }, null)
+                    @Html.ActionLink("Users", "Index", "ModeratorUsers", new { area = GlobalConstants.AreaModeratorsName }, null)
+                </li>
+                <li>
+                    @Html.ActionLink("Media Categories", "Index", "ModeratorMediaCategory", new { area = GlobalConstants.AreaModeratorsName }, null)
+                </li>
+                <li>
+                    @Html.ActionLink("Media Contents", "Index", "ModeratorMediaContent", new { area = GlobalConstants.AreaModeratorsName }, null)
                 </li>
             </ul>
         </li>

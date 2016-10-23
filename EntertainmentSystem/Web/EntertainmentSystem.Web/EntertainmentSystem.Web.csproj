@@ -219,18 +219,20 @@
     <Compile Include="Areas\Media\ViewModels\Music\MusicHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Picture\PictureHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
+    <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCategoryController.cs" />
+    <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaContentController.cs" />
+    <Compile Include="Areas\Moderators\Controllers\Users\ModeratorUsersController.cs" />
     <Compile Include="Controllers\Partials\BasePartialController.cs" />
     <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
     <Compile Include="Controllers\Search\SearchController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentCreateViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryCreateViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryEditViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
-    <Compile Include="Areas\Administration\ViewModels\AdminUserViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCategoryCreateViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCategoryEditViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaContentEditViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaContentViewModel.cs" />
+    <Compile Include="ViewModels\User\UserEditViewModel.cs" />
+    <Compile Include="ViewModels\User\UserViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\ForumHomeController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
     <Compile Include="Areas\Media\Controllers\MediaController.cs" />
@@ -261,8 +263,7 @@
     <Compile Include="ViewModels\Account\ResetPasswordViewModel.cs" />
     <Compile Include="ViewModels\Account\SendCodeViewModel.cs" />
     <Compile Include="ViewModels\Account\VerifyCodeViewModel.cs" />
-    <Compile Include="ViewModels\Home\HomeViewModel.cs" />
-    <Compile Include="ViewModels\MediaContent\MediaContentHomeViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaContentHomeViewModel.cs" />
     <Compile Include="ViewModels\Manage\AddPhoneNumberViewModel.cs" />
     <Compile Include="ViewModels\Manage\ChangePasswordViewModel.cs" />
     <Compile Include="ViewModels\Manage\FactorViewModel.cs" />
@@ -391,7 +392,7 @@
     <Content Include="Content\KendoUI\kendo.metro.min.css.map" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaCategoryViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MediaCategoryViewModel.cshtml" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -405,7 +406,7 @@
     <Content Include="Views\Shared\_CreateMediaContent.cshtml" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaContentViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MediaContentViewModel.cshtml" />
     <Content Include="Areas\Media\Views\web.config" />
     <Content Include="Areas\Moderators\Views\web.config" />
     <Content Include="Areas\Media\Views\_ViewStart.cshtml" />
@@ -417,11 +418,15 @@
     <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
-    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminUserViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UserViewModel.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
     <Content Include="Areas\Media\Views\Video\VideoDetails.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_PicturePartial.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_MusicPartial.cshtml" />
+    <Content Include="Areas\Moderators\Views\ModeratorMediaCategory\_Create.cshtml" />
+    <Content Include="Areas\Moderators\Views\ModeratorMediaCategory\Index.cshtml" />
+    <Content Include="Areas\Moderators\Views\ModeratorMediaContent\Index.cshtml" />
+    <Content Include="Areas\Moderators\Views\ModeratorUsers\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -529,23 +534,16 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Areas\Administration\Views\AdminKendoGrid\" />
-    <Folder Include="Areas\Administration\Views\Admin\" />
-    <Folder Include="Areas\Administration\Views\MediaItemPartial\" />
+    <Folder Include="Areas\Administration\Controllers\Forum\" />
+    <Folder Include="Areas\Administration\ViewModels\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Administration\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
+    <Folder Include="Areas\Moderators\Controllers\Forum\" />
     <Folder Include="Areas\Moderators\ViewModels\" />
-    <Folder Include="Areas\Moderators\Views\Moderator\" />
     <Folder Include="Areas\Moderators\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Moderators\Views\Shared\EditorTemplates\" />
-    <Folder Include="Views\BasePartial\" />
-    <Folder Include="Views\Base\" />
-    <Folder Include="Views\MediaPartial\" />
-    <Folder Include="Views\Search\" />
-    <Folder Include="Views\UploadMusic\" />
-    <Folder Include="Views\UploadPicture\" />
-    <Folder Include="Views\UploadVideo\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Users
+﻿namespace EntertainmentSystem.Web.Areas.Moderators.Controllers.Users
 {
     using System.Web.Mvc;
     using Infrastructure.Mapping;
@@ -7,13 +7,13 @@
     using Services.Contracts.Users;
     using ViewModels.User;
 
-    public class AdminUsersController : AdminController
+    public class ModeratorUsersController : ModeratorController
     {
-        private readonly IUserAdminService usersAdminService;
+        private readonly IUserModeratorService moderatorService;
 
-        public AdminUsersController(IUserAdminService usersAdminService)
+        public ModeratorUsersController(IUserModeratorService moderatorService)
         {
-            this.usersAdminService = usersAdminService;
+            this.moderatorService = moderatorService;
         }
 
         [HttpGet]
@@ -26,8 +26,8 @@
         [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var data = this.usersAdminService
-                .GetAllWithDeleted()
+            var data = this.moderatorService
+                .GetAll()
                 .To<UserViewModel>()
                 .ToDataSourceResult(request);
 
@@ -40,11 +40,11 @@
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var entity = this.usersAdminService.GetById(model.Id);
+                var entity = this.moderatorService.GetById(model.Id);
 
                 this.Mapper.Map(model, entity);
 
-                this.usersAdminService.Update(entity);
+                this.moderatorService.Update(entity);
 
                 var viewModel = this.Mapper.Map<UserViewModel>(entity);
 
@@ -56,13 +56,13 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, UserViewModel model)
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, UserViewModel model)
         {
             if (model != null)
             {
-                var entity = this.usersAdminService.GetById(model.Id);
+                var entity = this.moderatorService.GetById(model.Id);
 
-                this.usersAdminService.DeletePermanent(entity);
+                this.moderatorService.Delete(entity);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

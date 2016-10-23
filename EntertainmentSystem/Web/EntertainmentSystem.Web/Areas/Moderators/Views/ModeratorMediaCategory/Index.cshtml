@@ -3,7 +3,7 @@
 @model MediaCategoryViewModel
 
 @{
-    const string ControllerName = "AdminMediaCategory";
+    const string ControllerName = "ModeratorMediaCategory";
 }
 
 <h2 class="text-center">Media Categories</h2>
@@ -11,7 +11,7 @@
 
 @Html.Partial("_Create")
 
-@(Html.FullFeaturedAdminGrid<MediaCategoryViewModel>(
+@(Html.FullFeaturedGrid<MediaCategoryViewModel>(
     ControllerName,
     m => m.Id,
     cols =>
@@ -22,7 +22,6 @@
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => command.Edit()).Title("Edit");
-        cols.Command(command => command.Destroy()).Title("Delete Permanent");
+        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
     }
 ))

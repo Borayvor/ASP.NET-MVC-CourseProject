@@ -1,19 +1,19 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Users
+﻿namespace EntertainmentSystem.Web.Areas.Moderators.Controllers.Media
 {
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using Services.Contracts.Users;
-    using ViewModels.User;
+    using Services.Contracts.Media;
+    using ViewModels.Media;
 
-    public class AdminUsersController : AdminController
+    public class ModeratorMediaContentController : ModeratorController
     {
-        private readonly IUserAdminService usersAdminService;
+        private readonly IMaediaContentService contentService;
 
-        public AdminUsersController(IUserAdminService usersAdminService)
+        public ModeratorMediaContentController(IMaediaContentService contentService)
         {
-            this.usersAdminService = usersAdminService;
+            this.contentService = contentService;
         }
 
         [HttpGet]
@@ -26,9 +26,9 @@
         [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var data = this.usersAdminService
-                .GetAllWithDeleted()
-                .To<UserViewModel>()
+            var data = this.contentService
+                .GetAll()
+                .To<MediaContentViewModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(data);
@@ -36,17 +36,17 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update([DataSourceRequest]DataSourceRequest request, UserEditViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, MediaContentEditViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var entity = this.usersAdminService.GetById(model.Id);
+                var entity = this.contentService.GetById(model.Id);
 
                 this.Mapper.Map(model, entity);
 
-                this.usersAdminService.Update(entity);
+                this.contentService.Update(entity);
 
-                var viewModel = this.Mapper.Map<UserViewModel>(entity);
+                var viewModel = this.Mapper.Map<MediaContentViewModel>(entity);
 
                 return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
@@ -56,13 +56,13 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, UserViewModel model)
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, MediaContentViewModel model)
         {
             if (model != null)
             {
-                var entity = this.usersAdminService.GetById(model.Id);
+                var entity = this.contentService.GetById(model.Id);
 
-                this.usersAdminService.DeletePermanent(entity);
+                this.contentService.Delete(entity);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

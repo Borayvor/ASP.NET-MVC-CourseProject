@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Web.ViewModels.MediaContent
+﻿namespace EntertainmentSystem.Web.ViewModels.Media
 {
     using System;
     using Data.Models.Media;

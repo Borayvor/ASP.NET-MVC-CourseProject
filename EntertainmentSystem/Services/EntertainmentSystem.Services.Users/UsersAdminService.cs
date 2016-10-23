@@ -5,40 +5,16 @@
     using Data.Common.Repositories;
     using Data.Models;
 
-    public class UsersAdminService : IUserAdminService
+    public class UsersAdminService : UserModeratorService, IUserAdminService
     {
-        protected readonly IDbRepository<ApplicationUser> users;
-
         public UsersAdminService(IDbRepository<ApplicationUser> users)
+            : base(users)
         {
-            this.users = users;
-        }
-
-        public IQueryable<ApplicationUser> GetAll()
-        {
-            return this.users.All();
         }
 
         public IQueryable<ApplicationUser> GetAllWithDeleted()
         {
             return this.users.AllWithDeleted();
-        }
-
-        public ApplicationUser GetById(string userId)
-        {
-            return this.users.GetById(userId);
-        }
-
-        public void Update(ApplicationUser user)
-        {
-            this.users.Update(user);
-            this.users.Save();
-        }
-
-        public void Delete(ApplicationUser user)
-        {
-            this.users.Delete(user);
-            this.users.Save();
         }
 
         public void DeletePermanent(ApplicationUser user)

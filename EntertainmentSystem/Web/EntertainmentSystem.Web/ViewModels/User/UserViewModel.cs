@@ -1,11 +1,11 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels.User
 {
     using System.ComponentModel.DataAnnotations;
     using Data.Models;
     using Infrastructure.Mapping;
     using Web.ViewModels;
 
-    public class AdminUserViewModel : BaseViewModel<string>, IMapFrom<ApplicationUser>
+    public class UserViewModel : BaseViewModel<string>, IMapFrom<ApplicationUser>
     {
         [Display(Name = "First name")]
         public string FirstName { get; set; }

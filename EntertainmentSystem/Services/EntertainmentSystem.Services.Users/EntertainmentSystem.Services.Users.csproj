@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserModeratorService.cs" />
     <Compile Include="UsersAdminService.cs" />
   </ItemGroup>
   <ItemGroup>

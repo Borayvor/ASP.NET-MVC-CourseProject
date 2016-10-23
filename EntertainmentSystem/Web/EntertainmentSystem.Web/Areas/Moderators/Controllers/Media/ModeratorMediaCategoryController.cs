@@ -1,22 +1,20 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Media
+﻿namespace EntertainmentSystem.Web.Areas.Moderators.Controllers.Media
 {
     using System.Web.Mvc;
-    using Controllers;
     using Data.Models.Media;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Services.Contracts.Media;
-    using ViewModels;
-    using Web.ViewModels.Media;
+    using ViewModels.Media;
 
-    public class AdminMediaCategoryController : AdminController
+    public class ModeratorMediaCategoryController : ModeratorController
     {
-        private readonly IMediaAdminService<MediaCategory> adminMediaService;
+        private readonly IMediaCategoryService categoryService;
 
-        public AdminMediaCategoryController(IMediaAdminService<MediaCategory> adminMediaService)
+        public ModeratorMediaCategoryController(IMediaCategoryService categoryService)
         {
-            this.adminMediaService = adminMediaService;
+            this.categoryService = categoryService;
         }
 
         public ActionResult Index()
@@ -38,7 +36,7 @@
             {
                 var entity = this.Mapper.Map<MediaCategory>(model);
 
-                this.adminMediaService.Create(entity);
+                this.categoryService.Create(entity);
             }
 
             return this.RedirectToActionPermanent("Index");
@@ -48,8 +46,8 @@
         [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var data = this.adminMediaService
-                .GetAllWithDeleted()
+            var data = this.categoryService
+                .GetAll()
                 .To<MediaCategoryViewModel>()
                 .ToDataSourceResult(request);
 
@@ -62,11 +60,11 @@
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var entity = this.adminMediaService.GetById(model.Id);
+                var entity = this.categoryService.GetById(model.Id);
 
                 this.Mapper.Map(model, entity);
 
-                this.adminMediaService.Update(entity);
+                this.categoryService.Update(entity);
 
                 var viewModel = this.Mapper.Map<MediaCategoryViewModel>(entity);
 
@@ -78,13 +76,13 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, MediaCategoryViewModel model)
+        public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, MediaCategoryViewModel model)
         {
             if (model != null)
             {
-                var entity = this.adminMediaService.GetById(model.Id);
+                var entity = this.categoryService.GetById(model.Id);
 
-                this.adminMediaService.DeletePermanent(entity);
+                this.categoryService.Delete(entity);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

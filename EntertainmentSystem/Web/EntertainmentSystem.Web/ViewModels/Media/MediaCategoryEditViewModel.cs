@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels.Media
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
-    public class AdminMediaCategoryEditViewModel : IMapFrom<MediaCategory>, IMapTo<MediaCategory>
+    public class MediaCategoryEditViewModel : IMapFrom<MediaCategory>, IMapTo<MediaCategory>
     {
         [HiddenInput(DisplayValue = false)]
         public Guid Id { get; set; }

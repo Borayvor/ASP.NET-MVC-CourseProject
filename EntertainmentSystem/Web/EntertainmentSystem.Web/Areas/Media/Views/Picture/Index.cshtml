@@ -5,12 +5,12 @@
 @model IEnumerable<MediaBaseViewModel>
 
 @{
-    ViewBag.Title = "Pictures";
+    ViewBag.Title = HtmlConstants.MediaPicturesHomeTitle;
 }
 
 <section id="forum-home">
     <h2 class="text-center">@ViewBag.Title</h2>
-    @Html.Partial("_SearchForm", @Model)
+    @Html.Partial("_SearchForm")
     <div class="row">
         @if (Model != null)
         {

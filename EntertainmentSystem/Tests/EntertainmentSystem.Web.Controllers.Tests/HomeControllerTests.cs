@@ -3,7 +3,7 @@
     using System.Collections.Generic;
     using Data.Models.Media;
     using NUnit.Framework;
-    using ViewModels.MediaContent;
+    using ViewModels.Media;
 
     [TestFixture]
     public class HomeControllerTests

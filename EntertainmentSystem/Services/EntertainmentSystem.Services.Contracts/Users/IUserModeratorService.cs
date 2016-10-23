@@ -4,7 +4,7 @@
     using Data.Models;
 
     public interface IUserModeratorService : IBaseGetService<ApplicationUser, string>,
-        IBaseDeleteService<ApplicationUser>
+        IBaseUpdateService<ApplicationUser>, IBaseDeleteService<ApplicationUser>
     {
     }
 }

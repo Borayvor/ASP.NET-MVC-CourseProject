@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels.Media
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -6,7 +6,7 @@
     using Infrastructure.Mapping;
     using Web.ViewModels;
 
-    public class AdminMediaCategoryViewModel : BaseViewModel<Guid>, IMapFrom<MediaCategory>
+    public class MediaCategoryViewModel : BaseViewModel<Guid>, IMapFrom<MediaCategory>
     {
         [Display(Name = "Category name")]
         public string Name { get; set; }

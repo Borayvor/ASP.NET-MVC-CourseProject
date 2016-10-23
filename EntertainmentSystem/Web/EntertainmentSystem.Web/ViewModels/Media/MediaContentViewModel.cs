@@ -1,4 +1,4 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels.Media
 {
     using System;
     using System.ComponentModel.DataAnnotations;
@@ -7,7 +7,7 @@
     using Infrastructure.Mapping;
     using Web.ViewModels;
 
-    public class AdminMediaContentViewModel : BaseViewModel<Guid>, IMapFrom<MediaContent>, IHaveCustomMappings
+    public class MediaContentViewModel : BaseViewModel<Guid>, IMapFrom<MediaContent>, IHaveCustomMappings
     {
         public string Title { get; set; }
 
@@ -27,7 +27,7 @@
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
-            configuration.CreateMap<MediaContent, AdminMediaContentViewModel>()
+            configuration.CreateMap<MediaContent, MediaContentViewModel>()
                 .ForMember(m => m.ContentType, opt => opt.MapFrom(x => x.ContentType.ToString()))
                 .ForMember(m => m.MediaCategory, opt => opt.MapFrom(x => x.MediaCategory.Name))
                 .ForMember(m => m.MediaCollection, opt => opt.MapFrom(x => x.MediaCollection.Name))

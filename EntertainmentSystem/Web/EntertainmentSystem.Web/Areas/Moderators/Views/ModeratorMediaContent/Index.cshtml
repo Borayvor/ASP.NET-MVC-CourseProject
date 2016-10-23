@@ -3,7 +3,7 @@
 @model MediaContentViewModel
 
 @{
-    const string ControllerName = "AdminMediaContent";
+    const string ControllerName = "ModeratorMediaContent";
 }
 
 <h2 class="text-center">Media Contents</h2>
@@ -11,7 +11,7 @@
 @Html.Partial("_UploadMediaContent")
 @Html.Partial("_CreateMediaContent")
 
-@(Html.FullFeaturedAdminGrid<MediaContentViewModel>(
+@(Html.FullFeaturedGrid<MediaContentViewModel>(
     ControllerName,
     m => m.Id,
     cols =>
@@ -19,10 +19,10 @@
         cols.Bound(m => m.Id).Hidden();
         cols.Bound(m => m.ContentType);
         cols.Bound(m => m.ContentUrl).ClientTemplate(
-            @"# if (ContentType === 'Picture') { # 
-            <img src='#:ContentUrl#' alt='Avatar' class='img-responsive' /> 
+            @"# if (ContentType === 'Picture') { #
+            <img src='#:ContentUrl#' alt='Avatar' class='img-responsive' />
             # } #
-            # if (ContentType === 'Video') { # 
+            # if (ContentType === 'Video') { #
             <video class='video img-responsive' src='#:ContentUrl#' alt='Avatar' controls='controls'></video>
             # } #");
         cols.Bound(m => m.Title);
@@ -33,7 +33,6 @@
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => command.Edit()).Title("Edit");
-        cols.Command(command => command.Destroy()).Title("Delete Permanent");
+        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
     }
 ))

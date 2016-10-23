@@ -1,14 +1,14 @@
 ﻿@using System.Web.Mvc.Expressions
-@using EntertainmentSystem.Web.Areas.Administration.Controllers.Media
+@using EntertainmentSystem.Web.Areas.Moderators.Controllers.Media
 @using EntertainmentSystem.Web.ViewModels.Media
 @model MediaCategoryViewModel
 
 <div>
-    @using (Html.BeginForm<AdminMediaCategoryController>(c => c.Create(), FormMethod.Post, null, new { @class = "form-inline" }))
+    @using (Html.BeginForm<ModeratorMediaCategoryController>(c => c.Create(), FormMethod.Post, null, new { @class = "form-inline" }))
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-group">           
+        <div class="form-group">
             @Html.EditorFor(m => Model)
             <input type="submit" class="btn btn-success" value="Create" />
         </div>

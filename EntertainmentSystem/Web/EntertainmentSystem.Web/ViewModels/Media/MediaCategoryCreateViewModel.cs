@@ -1,10 +1,10 @@
-﻿namespace EntertainmentSystem.Web.Areas.Administration.ViewModels
+﻿namespace EntertainmentSystem.Web.ViewModels.Media
 {
     using System.ComponentModel.DataAnnotations;
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
-    public class AdminMediaCategoryCreateViewModel : IMapFrom<MediaCategory>, IMapTo<MediaCategory>
+    public class MediaCategoryCreateViewModel : IMapFrom<MediaCategory>, IMapTo<MediaCategory>
     {
         [Required]
         [MaxLength(500)]

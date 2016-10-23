@@ -45,10 +45,16 @@
             const string AdministratorPassword = "admin";
             const string AdministratorImageUrl = "http://vignette4.wikia.nocookie.net/marveldatabase/images/4/41/Boreas_0001.jpg/revision/latest?cb=20110201173602";
 
+            const string ModeratorUserName = "moderator@moderator.com";
+            const string ModeratorFirstName = "Gosho";
+            const string ModeratorLastName = "Peshev";
+            const string ModeratorPassword = "moderator";
+            const string ModeratorImageUrl = "http://batman-news.com/wp-content/uploads/2014/01/logo-snb.png";
+
             // Create admin user
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
-            var user = new ApplicationUser
+            var userAdmin = new ApplicationUser
             {
                 UserName = AdministratorUserName,
                 Email = AdministratorUserName,
@@ -58,10 +64,26 @@
             };
 
             userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
-            userManager.Create(user, AdministratorPassword);
+            userManager.Create(userAdmin, AdministratorPassword);
 
             // Assign user to admin role
-            userManager.AddToRole(user.Id, GlobalConstants.AdministratorRoleName);
+            userManager.AddToRole(userAdmin.Id, GlobalConstants.AdministratorRoleName);
+
+            // Create moderator user
+            var userModerator = new ApplicationUser
+            {
+                UserName = ModeratorUserName,
+                Email = ModeratorUserName,
+                FirstName = ModeratorFirstName,
+                LastName = ModeratorLastName,
+                ImageUrl = ModeratorImageUrl
+            };
+
+            userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
+            userManager.Create(userModerator, ModeratorPassword);
+
+            // Assign user to moderator role
+            userManager.AddToRole(userModerator.Id, GlobalConstants.ModeratorRoleName);
 
             context.SaveChanges();
         }
@@ -144,8 +166,8 @@
             // add pictures
             var contentPicture_1 = new MediaContent
             {
-                Title = "pic1",
-                Description = "111",
+                Title = "Legion",
+                Description = "kjdiouiow fsdiodasp",
                 ContentUrl = "http://i2.wp.com/www.cgmeetup.net/home/wp-content/uploads/2015/11/World-of-Warcraft-Legion-Cinematic-Trailer-3.jpg?resize=960%2C398",
                 ContentType = ContentType.Picture,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -155,8 +177,8 @@
 
             var contentPicture_2 = new MediaContent
             {
-                Title = "pic2",
-                Description = "222",
+                Title = "Warcraft movie",
+                Description = "totireo cxlkjasda",
                 ContentUrl = "http://blogs-images.forbes.com/scottmendelson/files/2016/05/Warcraft-Movie-Mobile-Wallpapers-1200x675.jpg",
                 ContentType = ContentType.Picture,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -166,8 +188,8 @@
 
             var contentPicture_3 = new MediaContent
             {
-                Title = "pic3",
-                Description = "333",
+                Title = "garona",
+                Description = "weqe cposp[d",
                 ContentUrl = "http://www.hdwallpapers.in/download/garona_warcraft_movie-720x1280.jpg",
                 ContentType = ContentType.Picture,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -178,9 +200,9 @@
             // add music
             var contentMusic_1 = new MediaContent
             {
-                Title = "music1",
-                Description = "111",
-                ContentUrl = "http://216.227.134.162/ost/warcraft-orcs-and-humans/tvtqaoxrcx/02-intro.mp3",
+                Title = "if i could fly",
+                Description = "helloween-if_i_could_fly.mp3",
+                ContentUrl = "http://tones.mob.org/ringtone/Zv3QhDrqVx2Dt7cCBM3wQA/1477294611/fa77442020a94667c2767228643a645c/helloween-if_i_could_fly.mp3",
                 ContentType = ContentType.Music,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
@@ -189,9 +211,9 @@
 
             var contentMusic_2 = new MediaContent
             {
-                Title = "music2",
-                Description = "222",
-                ContentUrl = "http://216.227.134.162/ost/warcraft-orcs-and-humans/umshkychig/17-retrobution.mp3",
+                Title = "Future world",
+                Description = "helloween-future_world.mp3",
+                ContentUrl = "http://tones.mob.org/ringtone/eCue1_rfgV5wKT6OR0khNg/1477295076/38378_wapres_ru/helloween-future_world.mp3",
                 ContentType = ContentType.Music,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
@@ -200,9 +222,9 @@
 
             var contentMusic_3 = new MediaContent
             {
-                Title = "music3",
-                Description = "333",
-                ContentUrl = "http://216.227.134.162/ost/warcraft-orcs-and-humans/nlttbhwsce/22-of-battle-and-ancient-warcraft.mp3",
+                Title = "hocus pocus",
+                Description = "helloween-hocus_pocus.mp3",
+                ContentUrl = "http://tones.mob.org/ringtone/J5mRGlQakIE_SqvLxckD_A/1477295523/22212cc9c43e1694633c7c4eb68ce1d3/helloween-hocus_pocus.mp3",
                 ContentType = ContentType.Music,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
@@ -212,8 +234,8 @@
             // add videos
             var contentVideo_1 = new MediaContent
             {
-                Title = "video1",
-                Description = "111",
+                Title = "bunny",
+                Description = "qpqop sdopdd",
                 ContentUrl = "http://video.webmfiles.org/big-buck-bunny_trailer.webm",
                 ContentType = ContentType.Video,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -223,8 +245,8 @@
 
             var contentVideo_2 = new MediaContent
             {
-                Title = "video2",
-                Description = "222",
+                Title = "happyfit2",
+                Description = "cxzcpoiwewne csddqweqw",
                 ContentUrl = "http://easyhtml5video.com/images/happyfit2.webm",
                 ContentType = ContentType.Video,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -234,8 +256,8 @@
 
             var contentVideo_3 = new MediaContent
             {
-                Title = "video3",
-                Description = "333",
+                Title = "techslides",
+                Description = "techslides techslides techslides",
                 ContentUrl = "http://techslides.com/demos/sample-videos/small.webm",
                 ContentType = ContentType.Video,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
