@@ -8,9 +8,9 @@
 
     public class PictureController : MediaController
     {
-        private readonly IBaseMediaFetcherService pictureService;
+        private readonly IPictureFetcherService pictureService;
 
-        public PictureController(IBaseMediaFetcherService pictureService)
+        public PictureController(IPictureFetcherService pictureService)
         {
             this.pictureService = pictureService;
         }

@@ -8,11 +8,12 @@
     public abstract class BaseFetcherService : IBaseMediaFetcherService
     {
         private readonly IMaediaContentService contentService;
-        protected readonly ContentType type;
+        private readonly ContentType type;
 
         public BaseFetcherService(IMaediaContentService contentService)
         {
             this.contentService = contentService;
+            this.type = this.GetContentType();
         }
 
         public IQueryable<MediaContent> All()
@@ -29,5 +30,7 @@
                 && c.Title.ToLower().Contains(search.ToLower()))
                 .OrderByDescending(c => c.CreatedOn);
         }
+
+        protected abstract ContentType GetContentType();
     }
 }

@@ -1,31 +1,19 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
-    using System.Linq;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
     using Data.Models.Media;
 
-    public class MusicFetcherService : IBaseMediaFetcherService
+    public class MusicFetcherService : BaseFetcherService, IMusicFetcherService
     {
-        private readonly IMaediaContentService contents;
-
-        public MusicFetcherService(IMaediaContentService contents)
+        public MusicFetcherService(IMaediaContentService contentService)
+            : base(contentService)
         {
-            this.contents = contents;
         }
 
-        public IQueryable<MediaContent> All()
+        protected override ContentType GetContentType()
         {
-            return this.contents.GetAll()
-                .Where(c => c.ContentType == ContentType.Music);
-        }
-
-        public IQueryable<MediaContent> AllByTitle(string search)
-        {
-            return this.contents.GetAll()
-                .Where(c => c.ContentType == ContentType.Music
-                && c.Title.ToLower().Contains(search.ToLower()))
-                .OrderByDescending(c => c.CreatedOn);
+            return ContentType.Music;
         }
     }
 }

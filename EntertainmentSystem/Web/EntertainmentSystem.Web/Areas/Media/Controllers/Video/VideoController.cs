@@ -8,9 +8,9 @@
 
     public class VideoController : MediaController
     {
-        private readonly IBaseMediaFetcherService videoService;
+        private readonly IVideoFetcherService videoService;
 
-        public VideoController(IBaseMediaFetcherService videoService)
+        public VideoController(IVideoFetcherService videoService)
         {
             this.videoService = videoService;
         }

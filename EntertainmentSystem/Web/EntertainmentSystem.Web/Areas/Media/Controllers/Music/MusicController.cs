@@ -8,9 +8,9 @@
 
     public class MusicController : MediaController
     {
-        private readonly IBaseMediaFetcherService musicService;
+        private readonly IMusicFetcherService musicService;
 
-        public MusicController(IBaseMediaFetcherService musicService)
+        public MusicController(IMusicFetcherService musicService)
         {
             this.musicService = musicService;
         }
