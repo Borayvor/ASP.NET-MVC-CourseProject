@@ -17,9 +17,24 @@
         {
         }
 
-        public Guid Create(Stream file, string ownerId, string mimeType)
+        public Guid Create(
+            Stream file,
+            string mimeType,
+            string ownerId,
+            string title,
+            string description,
+            Guid categoryId,
+            Guid? collectionId)
         {
-            return this.CreateContent(file, ContentType.Music, ownerId, mimeType);
+            return this.CreateContent(
+                file,
+                mimeType,
+                ownerId,
+                title,
+                description,
+                categoryId,
+                collectionId,
+                ContentType.Music);
         }
     }
 }

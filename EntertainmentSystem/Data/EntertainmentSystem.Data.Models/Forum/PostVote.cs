@@ -11,7 +11,6 @@
 
         public virtual ApplicationUser Author { get; set; }
 
-        [Required]
         public Guid PostId { get; set; }
 
         public virtual Post Post { get; set; }

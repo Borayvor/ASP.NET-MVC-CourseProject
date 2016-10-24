@@ -27,15 +27,24 @@
             get { return this.storage; }
         }
 
-        public Guid CreateContent(Stream file, ContentType type, string ownerId, string mimeType)
+        public Guid CreateContent(
+            Stream file,
+            string mimeType,
+            string ownerId,
+            string title,
+            string description,
+            Guid categoryId,
+            Guid? collectionId,
+            ContentType type)
         {
-            // TODO: refactor MediaCategoryId
             var content = new MediaContent()
             {
                 ContentType = type,
                 AuthorId = ownerId,
-                CreatedOn = DateTime.Now,
-                MediaCategoryId = this.categories.GetByName("Action").Id
+                Title = title,
+                Description = description,
+                MediaCategoryId = categoryId,
+                MediaCollectionId = collectionId
             };
 
             content.ContentUrl = this.Storage.UploadFile(file, content.Id.ToString(), mimeType);

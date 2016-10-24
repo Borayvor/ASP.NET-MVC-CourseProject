@@ -16,7 +16,8 @@
         private const string ActionName = "Index";
         private const string AdminControllerName = "AdminMediaContent";
         private const string ModeratorControllerName = "ModeratorMediaContent";
-        private const string ExceptionString = "Invalid file !";
+        private const string ExceptionForFile = "Invalid file !";
+        private const string ExceptionForFileInfo = "Invalid file info !";
 
         private readonly IUploadingGeneratorService uploadingGeneratorService;
 
@@ -30,25 +31,43 @@
             var controllerInfo = this.GetControllerInfo();
 
             return this.ConditionalActionResult(
-                () => this.CreateContent(model.File),
+                () => this.CreateContent(model.File, model.FileInfo),
                 () => this.RedirectToAction(
                     controllerInfo[0],
                     controllerInfo[1],
                     new { area = controllerInfo[2] }));
         }
 
-        private void CreateContent(HttpPostedFileBase file)
+        private void CreateContent(HttpPostedFileBase file, UploadFileInfoViewModel fileInfo)
         {
-            if (!this.ModelState.IsValid)
-            {
-                throw new ArgumentException(this.ModelState.Values.FirstOrDefault() == null ? ExceptionString
-                    : this.ModelState.Values.FirstOrDefault().Errors.FirstOrDefault().ErrorMessage);
-            }
+            this.CheckFileModel(file);
+            this.CheckFileInfoModel(fileInfo);
 
             this.uploadingGeneratorService.Create(
                 file.InputStream,
+                file.ContentType,
                 this.HttpContext.User.Identity.GetUserId(),
-                file.ContentType);
+                fileInfo.Title,
+                fileInfo.Description,
+                fileInfo.CategoryId,
+                fileInfo.CollectionId);
+        }
+
+        private void CheckFileModel(HttpPostedFileBase file)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                throw new ArgumentException(this.ModelState.Values.FirstOrDefault() == null ? ExceptionForFile
+                    : this.ModelState.Values.FirstOrDefault().Errors.FirstOrDefault().ErrorMessage);
+            }
+        }
+
+        private void CheckFileInfoModel(UploadFileInfoViewModel fileInfo)
+        {
+            if (!this.ModelState.IsValid)
+            {
+                throw new ArgumentException(ExceptionForFileInfo);
+            }
         }
 
         private string[] GetControllerInfo()

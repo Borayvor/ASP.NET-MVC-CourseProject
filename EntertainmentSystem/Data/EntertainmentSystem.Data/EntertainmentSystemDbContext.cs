@@ -28,8 +28,6 @@
 
         public IDbSet<PostComment> PostComments { get; set; }
 
-        public IDbSet<PostReComment> PostReComments { get; set; }
-
         public IDbSet<PostTag> PostTags { get; set; }
 
         public IDbSet<PostVote> PostVotes { get; set; }

@@ -51,7 +51,6 @@
     <Compile Include="Forum\IForumCategoryService.cs" />
     <Compile Include="Forum\IForumCommentService.cs" />
     <Compile Include="Forum\IForumPostService.cs" />
-    <Compile Include="Forum\IForumReCommentService.cs" />
     <Compile Include="Forum\IForumTagService.cs" />
     <Compile Include="Forum\IForumVoteService.cs" />
     <Compile Include="Media\Fetchers\IBaseMediaFetcherService.cs" />

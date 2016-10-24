@@ -30,7 +30,6 @@
 
         public virtual ApplicationUser Author { get; set; }
 
-        [Required]
         public Guid PostCategoryId { get; set; }
 
         public virtual PostCategory PostCategory { get; set; }

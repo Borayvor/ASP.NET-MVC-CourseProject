@@ -31,6 +31,8 @@
   body #es-home #carousel-es-home-pictures .carousel-inner .item img {
     display: inline-flex;
     height: 20em; }
+  body #es-home #carousel-es-home-videos .carousel-control {
+    margin-bottom: 2em !important; }
   body #es-home #carousel-es-home-videos .carousel-inner .item .video {
     display: inline-flex;
     height: 30em; }

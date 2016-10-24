@@ -231,6 +231,7 @@
     <Compile Include="ViewModels\Media\MediaCategoryViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentViewModel.cs" />
+    <Compile Include="ViewModels\Upload\UploadFileInfoViewModel.cs" />
     <Compile Include="ViewModels\User\UserEditViewModel.cs" />
     <Compile Include="ViewModels\User\UserViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\ForumHomeController.cs" />
@@ -531,6 +532,7 @@
     <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
     <Content Include="Areas\Media\Views\Video\Index.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_SearchForm.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UploadFileInfoViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

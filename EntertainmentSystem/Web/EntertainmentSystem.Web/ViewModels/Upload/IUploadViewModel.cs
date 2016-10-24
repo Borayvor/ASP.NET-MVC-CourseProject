@@ -5,5 +5,7 @@
     public interface IUploadViewModel
     {
         HttpPostedFileBase File { get; set; }
+
+        UploadFileInfoViewModel FileInfo { get; set; }
     }
 }

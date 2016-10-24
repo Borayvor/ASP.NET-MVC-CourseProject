@@ -2,6 +2,7 @@
 {
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
 
     public class MediaCollection : BaseModelGuid
@@ -15,9 +16,8 @@
 
         [Required]
         [MaxLength(500)]
+        [Index(IsUnique = true)]
         public string Name { get; set; }
-
-        public int? Number { get; set; }
 
         public virtual ICollection<MediaContent> MaediaContents
         {

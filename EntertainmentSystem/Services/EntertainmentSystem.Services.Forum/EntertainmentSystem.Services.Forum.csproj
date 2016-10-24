@@ -44,7 +44,6 @@
     <Compile Include="ForumCategoryService.cs" />
     <Compile Include="ForumCommentService.cs" />
     <Compile Include="ForumPostService.cs" />
-    <Compile Include="ForumReCommentService.cs" />
     <Compile Include="ForumTagService.cs" />
     <Compile Include="ForumVoteService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

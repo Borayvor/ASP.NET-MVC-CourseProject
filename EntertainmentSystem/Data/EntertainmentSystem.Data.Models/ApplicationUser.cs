@@ -17,7 +17,6 @@
         private ICollection<MediaContent> mediaContentCollections;
         private ICollection<Post> posts;
         private ICollection<PostComment> comments;
-        private ICollection<PostReComment> commentsOfComment;
         private ICollection<PostVote> votes;
 
         public ApplicationUser()
@@ -28,7 +27,6 @@
             this.mediaContentCollections = new HashSet<MediaContent>();
             this.posts = new HashSet<Post>();
             this.comments = new HashSet<PostComment>();
-            this.commentsOfComment = new HashSet<PostReComment>();
             this.votes = new HashSet<PostVote>();
         }
 
@@ -61,12 +59,6 @@
         {
             get { return this.comments; }
             set { this.comments = value; }
-        }
-
-        public virtual ICollection<PostReComment> ReComments
-        {
-            get { return this.commentsOfComment; }
-            set { this.commentsOfComment = value; }
         }
 
         public virtual ICollection<PostVote> Votes

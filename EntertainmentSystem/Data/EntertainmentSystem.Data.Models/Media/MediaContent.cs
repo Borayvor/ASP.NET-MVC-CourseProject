@@ -6,6 +6,7 @@
 
     public class MediaContent : BaseModelGuid
     {
+        [Required]
         [MaxLength(250)]
         public string Title { get; set; }
 

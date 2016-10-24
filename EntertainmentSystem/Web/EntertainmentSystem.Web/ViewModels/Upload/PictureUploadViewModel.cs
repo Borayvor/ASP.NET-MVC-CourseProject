@@ -7,5 +7,7 @@
     {
         [ValidatePictureFile]
         public HttpPostedFileBase File { get; set; }
+
+        public UploadFileInfoViewModel FileInfo { get; set; }
     }
 }

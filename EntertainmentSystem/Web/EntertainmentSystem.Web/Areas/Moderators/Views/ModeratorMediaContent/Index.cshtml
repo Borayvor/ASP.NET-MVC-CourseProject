@@ -17,14 +17,17 @@
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();
-        cols.Bound(m => m.ContentType);
+        cols.Bound(m => m.ContentType).Width(70);
         cols.Bound(m => m.ContentUrl).ClientTemplate(
             @"# if (ContentType === 'Picture') { #
             <img src='#:ContentUrl#' alt='Avatar' class='img-responsive' />
             # } #
             # if (ContentType === 'Video') { #
             <video class='video img-responsive' src='#:ContentUrl#' alt='Avatar' controls='controls'></video>
-            # } #");
+            # } #
+            # if (ContentType === 'Music') { # 
+            <audio class='img-responsive' src='#:ContentUrl#' controls='controls'></audio>
+            # } #").Width(250);
         cols.Bound(m => m.Title);
         cols.Bound(m => m.Description);
         cols.Bound(m => m.MediaCategory);
@@ -33,6 +36,6 @@
         cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
         cols.Bound(m => m.IsDeleted);
         cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
+        cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete").Width(100);
     }
 ))
