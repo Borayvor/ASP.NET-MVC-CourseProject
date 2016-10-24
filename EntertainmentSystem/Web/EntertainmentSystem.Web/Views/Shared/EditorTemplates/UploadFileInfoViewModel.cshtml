@@ -6,47 +6,42 @@
     @Html.LabelFor(m => m.Title)
     @Html.EditorFor(m => m.Title)
 </div>
+
 <div class="form-group">
     @Html.LabelFor(m => m.Description)
     @Html.TextAreaFor(m => m.Description, new { @class = "form-control" })
 </div>
 
-<div class="btn-group open">
-    <a class="btn btn-primary" href="#"><i class="fa fa-list fa-fw"></i> Category</a>
-    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-        <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
-    </a>
-    <ul class="dropdown-menu">
-        <li><a href="#"><i class="fa fa-pencil fa-fw"></i> All</a></li>
+<div class="form-group">
+    <label class="control-label" for="file-upload-category">Category</label>
+    <select class="form-control" id="file-upload-category">
+        <option value="" selected="selected" disabled="disabled" style="display:none;">Select category</option>
         @*@if (Model != null)
             {
                 if (Model.Count() > 0)
                 {
                     foreach (var category in Model)
                     {
-                        <li><a href="#"><i class="fa fa-pencil fa-fw"></i> @category.Name</a></li>
+                        <option value="@category.Id">@category.Name</option>
                     }
                 }
             }*@
-    </ul>
+    </select>
 </div>
 
-<div class="btn-group open">
-    <a class="btn btn-primary" href="#"><i class="fa fa-book fa-fw"></i> Collection</a>
-    <a class="btn btn-primary dropdown-toggle" data-toggle="dropdown" href="#">
-        <span class="fa fa-caret-down" title="Toggle dropdown menu"></span>
-    </a>
-    <ul class="dropdown-menu">
-        <li><a href="#"><i class="fa fa-pencil fa-fw"></i> All</a></li>
+<div class="form-group">
+    <label class="control-label" for="file-upload-collection">Collection</label>
+    <select class="form-control" id="file-upload-collection">
+        <option value="">Nothing selected</option>
         @*@if (Model != null)
             {
                 if (Model.Count() > 0)
                 {
                     foreach (var collection in Model)
                     {
-                    <li><a href="#"><i class="fa fa-pencil fa-fw"></i> @collection.Name</a></li>
+                        <option  value="@collection.Id">@collection.Name</option>
+                    }
                 }
-            }
-        }*@
-    </ul>
+            }*@
+    </select>
 </div>
