@@ -17,5 +17,9 @@
         public const string MediaMusicHomeTitle = "Music";
         public const string MediaPicturesHomeTitle = "Pictures";
         public const string MediaVideosHomeTitle = "Videos";
+
+        public const string MusicName = "Music";
+        public const string PictureName = "Picture";
+        public const string VideoName = "Video";
     }
 }

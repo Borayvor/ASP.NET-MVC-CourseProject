@@ -1,4 +1,6 @@
-﻿<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalNewMediaContentMain">
+﻿@using EntertainmentSystem.Common.Constants
+
+<button type="button" class="btn btn-success btn-lg" data-toggle="modal" data-target="#modalNewMediaContentMain">
     Create media content
 </button>
 
@@ -6,9 +8,9 @@
     <div class="modal-dialog text-center">
         <div class="modal-content">
             <div class="modal-header">
-                <button data-toggle="modal" data-dismiss="modal" data-target="#modalMisicWindowMain" class="new-content-music btn btn-default"><i class="fa fa-music fa-2x"> Music</i></button>
-                <button data-toggle="modal" data-dismiss="modal" data-target="#modalPictureWindowMain" class="new-content-picture btn btn-default"><i class="fa fa-picture-o fa-2x"> Picture</i></button>
-                <button data-toggle="modal" data-dismiss="modal" data-target="#modalVideoWindowMain" class="new-content-video btn btn-default"><i class="fa fa-video-camera fa-2x"> Video</i></button>
+                <button data-toggle="modal" data-dismiss="modal" data-target="#modalMisicWindowMain" class="new-content-music btn btn-default"><i class="fa fa-music fa-2x"> @HtmlConstants.MusicName</i></button>
+                <button data-toggle="modal" data-dismiss="modal" data-target="#modalPictureWindowMain" class="new-content-picture btn btn-default"><i class="fa fa-picture-o fa-2x"> @HtmlConstants.PictureName</i></button>
+                <button data-toggle="modal" data-dismiss="modal" data-target="#modalVideoWindowMain" class="new-content-video btn btn-default"><i class="fa fa-video-camera fa-2x"> @HtmlConstants.VideoName</i></button>
                 <button data-dismiss="modal" class="btn btn-danger pull-right"><i class="fa fa-times fa-1x"></i></button>
             </div>
         </div>
