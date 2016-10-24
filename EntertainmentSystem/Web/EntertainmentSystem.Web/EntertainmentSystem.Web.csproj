@@ -226,9 +226,11 @@
     <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
     <Compile Include="Controllers\Search\SearchController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
+    <Compile Include="ViewModels\Media\CategoryAndCollectionViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryCreateViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCollectionViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentViewModel.cs" />
     <Compile Include="ViewModels\Upload\UploadFileInfoViewModel.cs" />

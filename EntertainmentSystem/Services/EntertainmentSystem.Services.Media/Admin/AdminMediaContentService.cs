@@ -1,11 +1,11 @@
 ﻿namespace EntertainmentSystem.Services.Media.Admin
 {
     using System.Linq;
-    using Contracts.Media;
+    using Contracts.Media.Admin;
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class AdminMediaContentService : MediaContentService, IMediaAdminService<MediaContent>
+    public class AdminMediaContentService : MediaContentService, IAdminMediaContentService
     {
         public AdminMediaContentService(IDbRepository<MediaContent> contents)
             : base(contents)

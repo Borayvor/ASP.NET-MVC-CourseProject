@@ -8,9 +8,9 @@
 
     public class MediaContentFetcherService : IMediaContentFetcherService
     {
-        private readonly IMaediaContentService contents;
+        private readonly IMediaContentService contents;
 
-        public MediaContentFetcherService(IMaediaContentService contents)
+        public MediaContentFetcherService(IMediaContentService contents)
         {
             this.contents = contents;
         }

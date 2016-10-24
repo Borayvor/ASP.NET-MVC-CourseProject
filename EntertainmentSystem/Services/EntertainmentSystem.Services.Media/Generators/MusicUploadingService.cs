@@ -10,7 +10,7 @@
     public class MusicUploadingService : BaseMediaContentUploadingService, IMusicUploadingGeneratorService
     {
         public MusicUploadingService(
-            IMaediaContentService contents,
+            IMediaContentService contents,
             IMediaCategoryService categories,
             ICloudStorage storage)
             : base(contents, categories, storage)

@@ -6,7 +6,7 @@
 
     public class MusicFetcherService : BaseFetcherService, IMusicFetcherService
     {
-        public MusicFetcherService(IMaediaContentService contentService)
+        public MusicFetcherService(IMediaContentService contentService)
             : base(contentService)
         {
         }

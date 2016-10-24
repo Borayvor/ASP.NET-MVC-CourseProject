@@ -10,7 +10,7 @@
     public class PictureUploadingService : BaseMediaContentUploadingService, IPictureUploadingGeneratorService
     {
         public PictureUploadingService(
-            IMaediaContentService contents,
+            IMediaContentService contents,
             IMediaCategoryService categories,
             ICloudStorage storage)
             : base(contents, categories, storage)

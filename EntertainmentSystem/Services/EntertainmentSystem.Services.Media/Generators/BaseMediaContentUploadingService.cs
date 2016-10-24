@@ -8,12 +8,12 @@
 
     public abstract class BaseMediaContentUploadingService
     {
-        private readonly IMaediaContentService contents;
+        private readonly IMediaContentService contents;
         private readonly IMediaCategoryService categories;
         private readonly ICloudStorage storage;
 
         public BaseMediaContentUploadingService(
-            IMaediaContentService contents,
+            IMediaContentService contents,
             IMediaCategoryService categories,
             ICloudStorage storage)
         {

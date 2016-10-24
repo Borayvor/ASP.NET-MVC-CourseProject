@@ -6,15 +6,14 @@
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
-    using Services.Contracts.Media;
-    using ViewModels;
+    using Services.Contracts.Media.Admin;
     using Web.ViewModels.Media;
 
     public class AdminMediaCategoryController : AdminController
     {
-        private readonly IMediaAdminService<MediaCategory> adminMediaService;
+        private readonly IAdminMediaCategoryService adminMediaService;
 
-        public AdminMediaCategoryController(IMediaAdminService<MediaCategory> adminMediaService)
+        public AdminMediaCategoryController(IAdminMediaCategoryService adminMediaService)
         {
             this.adminMediaService = adminMediaService;
         }

@@ -53,6 +53,9 @@
     <Compile Include="Forum\IForumPostService.cs" />
     <Compile Include="Forum\IForumTagService.cs" />
     <Compile Include="Forum\IForumVoteService.cs" />
+    <Compile Include="Media\Admin\IAdminMediaCategoryService.cs" />
+    <Compile Include="Media\Admin\IAdminMediaCollectionService.cs" />
+    <Compile Include="Media\Admin\IAdminMediaContentService.cs" />
     <Compile Include="Media\Fetchers\IBaseMediaFetcherService.cs" />
     <Compile Include="Media\Fetchers\IMediaContentFetcherService.cs" />
     <Compile Include="Media\Fetchers\IMusicFetcherService.cs" />
@@ -62,8 +65,7 @@
     <Compile Include="Media\Generators\IPictureUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IUploadingGeneratorService.cs" />
     <Compile Include="Media\Generators\IVideoUploadingGeneratorService.cs" />
-    <Compile Include="Media\IMediaAdminService{T}.cs" />
-    <Compile Include="Media\IMaediaContentService.cs" />
+    <Compile Include="Media\IMediaContentService.cs" />
     <Compile Include="Media\IMediaCategoryService.cs" />
     <Compile Include="Media\IMediaCollectionService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

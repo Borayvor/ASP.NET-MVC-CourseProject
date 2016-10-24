@@ -4,7 +4,7 @@
     using Common;
     using Data.Models.Media;
 
-    public interface IMaediaContentService : IBaseGetService<MediaContent, Guid>,
+    public interface IMediaContentService : IBaseGetService<MediaContent, Guid>,
         IBaseCreateService<MediaContent>, IBaseUpdateService<MediaContent>,
         IBaseDeleteService<MediaContent>
     {

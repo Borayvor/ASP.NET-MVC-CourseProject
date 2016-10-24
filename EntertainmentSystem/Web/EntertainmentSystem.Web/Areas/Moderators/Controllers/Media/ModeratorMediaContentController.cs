@@ -9,9 +9,9 @@
 
     public class ModeratorMediaContentController : ModeratorController
     {
-        private readonly IMaediaContentService contentService;
+        private readonly IMediaContentService contentService;
 
-        public ModeratorMediaContentController(IMaediaContentService contentService)
+        public ModeratorMediaContentController(IMediaContentService contentService)
         {
             this.contentService = contentService;
         }

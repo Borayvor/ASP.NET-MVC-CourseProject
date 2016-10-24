@@ -6,7 +6,7 @@
 
     public class PictureFetcherService : BaseFetcherService, IPictureFetcherService
     {
-        public PictureFetcherService(IMaediaContentService contentService)
+        public PictureFetcherService(IMediaContentService contentService)
             : base(contentService)
         {
         }

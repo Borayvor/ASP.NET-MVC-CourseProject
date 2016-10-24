@@ -1,33 +1,61 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Media
 {
+    using System.Linq;
     using System.Web.Mvc;
-    using Data.Models.Media;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Services.Contracts.Media;
+    using Services.Contracts.Media.Admin;
     using Web.ViewModels.Media;
 
     public class AdminMediaContentController : AdminController
     {
-        private readonly IMediaAdminService<MediaContent> adminMediaService;
+        private readonly IAdminMediaContentService adminContentService;
+        private readonly IMediaCategoryService categoryService;
+        private readonly IMediaCollectionService collectionService;
 
-        public AdminMediaContentController(IMediaAdminService<MediaContent> adminMediaService)
+        public AdminMediaContentController(
+            IAdminMediaContentService adminContentService,
+            IMediaCategoryService categoryService,
+            IMediaCollectionService collectionService)
         {
-            this.adminMediaService = adminMediaService;
+            this.adminContentService = adminContentService;
+            this.categoryService = categoryService;
+            this.collectionService = collectionService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
-            return this.View();
+            var categories = this.categoryService
+                .GetAll()
+                .AsQueryable()
+                .OrderBy(c => c.Name)
+                .To<MediaCategoryViewModel>()
+                .ToList();
+
+            var collections = this.collectionService
+                .GetAll()
+                .AsQueryable()
+                .OrderBy(c => c.Name)
+                .To<MediaCollectionViewModel>()
+                .ToList();
+
+            var model = new CategoryAndCollectionViewModel
+            {
+                Categories = categories,
+                Collections = collections
+            };
+
+            return this.View(model);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Read([DataSourceRequest] DataSourceRequest request)
         {
-            var data = this.adminMediaService
+            var data = this.adminContentService
                 .GetAllWithDeleted()
                 .To<MediaContentViewModel>()
                 .ToDataSourceResult(request);
@@ -41,11 +69,11 @@
         {
             if (model != null && this.ModelState.IsValid)
             {
-                var entity = this.adminMediaService.GetById(model.Id);
+                var entity = this.adminContentService.GetById(model.Id);
 
                 this.Mapper.Map(model, entity);
 
-                this.adminMediaService.Update(entity);
+                this.adminContentService.Update(entity);
 
                 var viewModel = this.Mapper.Map<MediaContentViewModel>(entity);
 
@@ -62,9 +90,9 @@
             // TODO: implement - delete files from cdn
             if (model != null)
             {
-                var entity = this.adminMediaService.GetById(model.Id);
+                var entity = this.adminContentService.GetById(model.Id);
 
-                this.adminMediaService.DeletePermanent(entity);
+                this.adminContentService.DeletePermanent(entity);
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

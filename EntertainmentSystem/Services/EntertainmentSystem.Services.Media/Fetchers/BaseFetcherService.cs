@@ -7,10 +7,10 @@
 
     public abstract class BaseFetcherService : IBaseMediaFetcherService
     {
-        private readonly IMaediaContentService contentService;
+        private readonly IMediaContentService contentService;
         private readonly ContentType type;
 
-        public BaseFetcherService(IMaediaContentService contentService)
+        public BaseFetcherService(IMediaContentService contentService)
         {
             this.contentService = contentService;
             this.type = this.GetContentType();

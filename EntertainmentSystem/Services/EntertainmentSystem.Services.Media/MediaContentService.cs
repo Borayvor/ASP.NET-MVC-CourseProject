@@ -6,7 +6,7 @@
     using Data.Common.Repositories;
     using Data.Models.Media;
 
-    public class MediaContentService : IMaediaContentService
+    public class MediaContentService : IMediaContentService
     {
         protected readonly IDbRepository<MediaContent> contents;
 

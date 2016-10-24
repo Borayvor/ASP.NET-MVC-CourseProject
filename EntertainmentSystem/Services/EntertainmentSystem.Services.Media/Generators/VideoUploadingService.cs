@@ -10,7 +10,7 @@
     public class VideoUploadingService : BaseMediaContentUploadingService, IVideoUploadingGeneratorService
     {
         public VideoUploadingService(
-            IMaediaContentService contents,
+            IMediaContentService contents,
             IMediaCategoryService categories,
             ICloudStorage storage)
             : base(contents, categories, storage)

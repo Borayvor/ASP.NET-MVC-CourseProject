@@ -6,7 +6,7 @@
 
     public class VideoFetcherService : BaseFetcherService, IVideoFetcherService
     {
-        public VideoFetcherService(IMaediaContentService contentService)
+        public VideoFetcherService(IMediaContentService contentService)
             : base(contentService)
         {
         }
