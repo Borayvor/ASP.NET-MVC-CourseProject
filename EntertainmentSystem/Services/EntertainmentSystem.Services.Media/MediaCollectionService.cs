@@ -17,7 +17,7 @@
 
         public IQueryable<MediaCollection> GetAll()
         {
-            return this.collections.All();
+            return this.collections.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public MediaCollection GetById(Guid id)

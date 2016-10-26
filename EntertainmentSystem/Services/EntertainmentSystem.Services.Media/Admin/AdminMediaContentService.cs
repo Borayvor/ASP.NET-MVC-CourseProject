@@ -14,7 +14,7 @@
 
         public IQueryable<MediaContent> GetAllWithDeleted()
         {
-            return this.contents.AllWithDeleted();
+            return this.contents.AllWithDeleted().OrderByDescending(x => x.CreatedOn);
         }
 
         public void DeletePermanent(MediaContent entity)

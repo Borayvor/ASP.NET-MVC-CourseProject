@@ -19,7 +19,8 @@
         public IQueryable<MediaContent> All()
         {
             return this.contentService.GetAll()
-                .Where(c => c.ContentType == this.type);
+                .Where(c => c.ContentType == this.type)
+                .OrderByDescending(x => x.CreatedOn);
         }
 
         public IQueryable<MediaContent> AllByTitle(string search)

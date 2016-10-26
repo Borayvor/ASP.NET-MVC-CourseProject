@@ -17,7 +17,7 @@
 
         public IQueryable<MediaContent> GetAll()
         {
-            return this.contents.All();
+            return this.contents.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public MediaContent GetById(Guid id)

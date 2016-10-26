@@ -366,8 +366,8 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Images\blank-image.jpg" />
+    <Content Include="Images\loading.gif" />
     <Content Include="Libs\Kendo.Mvc.dll" />
-    <Content Include="Scripts\App\EntertainmentSystemAjax.js" />
     <Content Include="Scripts\App\EntertainmentSystemApp.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -439,6 +439,7 @@
     <Content Include="Content\Site\_site-media-video-home.scss" />
     <Content Include="Content\Site\_site-home.scss" />
     <Content Include="Content\Site\site.scss" />
+    <Content Include="Content\Site\_site-loading.scss" />
     <None Include="Scripts\jquery-2.2.0.intellisense.js" />
     <Content Include="Scripts\jquery-2.2.0.js" />
     <Content Include="Scripts\jquery-2.2.0.min.js" />
@@ -536,6 +537,9 @@
     <Content Include="Views\Shared\EditorTemplates\UploadFileInfoViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DropDownListCategories.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\DropDownListCollections.cshtml" />
+    <Content Include="Views\Shared\_Loading.cshtml" />
+    <Content Include="Views\Shared\_UploadVideoPartial.cshtml" />
+    <Content Include="Views\Shared\_UploadMusicPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

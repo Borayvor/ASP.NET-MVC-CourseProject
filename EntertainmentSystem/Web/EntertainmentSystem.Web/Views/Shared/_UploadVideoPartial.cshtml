@@ -1,0 +1,23 @@
+﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
+@using EntertainmentSystem.Common.Constants
+@using EntertainmentSystem.Web.Controllers.Upload
+@using EntertainmentSystem.Web.ViewModels.Upload
+@model VideoUploadViewModel
+
+@using (Ajax.BeginForm<UploadVideoController>(c => c.Create(null), new { area = string.Empty }, null, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <div class="modal-body">
+        <div>
+            @Html.FontAwesomeButton("Choose File", "upload", new { @class = HtmlConstants.VideoChooseUploadClass })
+            @Html.TextBox("File", "", new { name = "File", type = "file", @class = HtmlConstants.VideoInputUploadClass + " display-none" })
+        </div>
+        <br />
+        @Html.EditorFor(m => m.FileInfo)
+    </div>
+    <div class="modal-footer">
+        @*@Html.FontAwesomeButton("Send", "send", new { data_dismiss = "modal", @class = "col-md-offset-2 btn btn-success " + HtmlConstants.VideoSendUploadClass })*@
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+}
+

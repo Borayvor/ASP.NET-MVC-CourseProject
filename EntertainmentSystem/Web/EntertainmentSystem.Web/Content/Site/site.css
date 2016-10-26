@@ -26,6 +26,27 @@
     transition: color 0.2s ease-in-out;
     color: #919496;
     text-decoration: none; }
+  body #es-loading {
+    display: none;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1500;
+    outline: 0; }
+    body #es-loading img {
+      position: absolute;
+      margin: 0;
+      padding: 0;
+      left: 45%;
+      top: 40%;
+      width: 200px;
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 6px;
+      outline: 0; }
   body #es-home .row {
     margin-bottom: 20px; }
   body #es-home #carousel-es-home-pictures .carousel-inner .item img {
