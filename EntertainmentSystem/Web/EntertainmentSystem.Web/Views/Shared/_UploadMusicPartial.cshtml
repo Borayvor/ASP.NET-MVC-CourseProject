@@ -7,7 +7,7 @@
 @using (Ajax.BeginForm<UploadMusicController>(c => c.Create(null), new { area = string.Empty }, null, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
-    <div class="modal-body">
+    <div class="modal-body">     
         <div>
             @Html.FontAwesomeButton("Choose File", "upload", new { @class = HtmlConstants.MusicChooseUploadClass })
             @Html.TextBox("File", "", new { name = "File", type = "file", @class = HtmlConstants.MusicInputUploadClass + " display-none" })

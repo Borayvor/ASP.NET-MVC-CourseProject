@@ -9,16 +9,13 @@
     public abstract class BaseMediaContentUploadingService
     {
         private readonly IMediaContentService contents;
-        private readonly IMediaCategoryService categories;
         private readonly ICloudStorage storage;
 
         public BaseMediaContentUploadingService(
             IMediaContentService contents,
-            IMediaCategoryService categories,
             ICloudStorage storage)
         {
             this.contents = contents;
-            this.categories = categories;
             this.storage = storage;
         }
 

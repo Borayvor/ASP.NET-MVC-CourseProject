@@ -11,9 +11,8 @@
     {
         public PictureUploadingService(
             IMediaContentService contents,
-            IMediaCategoryService categories,
             ICloudStorage storage)
-            : base(contents, categories, storage)
+            : base(contents, storage)
         {
         }
 
