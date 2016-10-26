@@ -1,5 +1,5 @@
 ﻿window.entertainmentSystemAjax = (function () {
-    function send(url, fileSrc, id, cb, error) {
+    function send(url, fileSrc, title, cb, error) {
         var form = new FormData($("#hiddenAjaxPostForm"));
 
         var verificationToken = $('#hiddenAjaxPostForm input').val();
@@ -9,8 +9,8 @@
             form.append("File", fileSrc);
         }
 
-        if (id) {
-            form.append("Id", id);
+        if (title) {           
+            form.append("Title", title);
         }
 
         $.ajax({
@@ -22,8 +22,8 @@
         }).done(cb).error(error);
     }
 
-    function create(url, fileSrc) {
-        send(url, fileSrc, null, function (response) {
+    function create(url, fileSrc, title) {
+        send(url, fileSrc, title, function (response) {
 
             toastr.success("Successfully created !");
 
@@ -40,8 +40,8 @@
             music: function (fileSrc) {
                 create("/UploadMusic/Create", fileSrc);
             },
-            picture: function (fileSrc) {
-                create("/UploadPicture/Create", fileSrc);
+            picture: function (fileSrc, title) {
+                create("/UploadPicture/Create", fileSrc, title);
             }
         }
     };

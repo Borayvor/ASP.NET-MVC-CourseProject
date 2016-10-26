@@ -1,7 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Controllers.Upload
 {
     using System.Web.Mvc;
-    using Infrastructure.Filters;
     using Services.Contracts.Media.Generators;
     using ViewModels.Upload;
 
@@ -12,7 +11,7 @@
         {
         }
 
-        [AjaxPost]
+        [HttpPost]
         public ActionResult Create(PictureUploadViewModel model)
         {
             return this.CreateFromModel(model);

@@ -226,10 +226,11 @@
     <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
     <Compile Include="Controllers\Search\SearchController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
-    <Compile Include="ViewModels\Media\CategoryAndCollectionViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCategoriesViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryCreateViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCollectionEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCollectionViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentViewModel.cs" />
@@ -395,7 +396,6 @@
     <Content Include="Content\KendoUI\kendo.metro.min.css.map" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\AdminMediaCategory\Index.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\MediaCategoryViewModel.cshtml" />
     <Content Include="fonts\FontAwesome.otf" />
     <Content Include="fonts\fontawesome-webfont.woff2" />
     <Content Include="fonts\fontawesome-webfont.woff" />
@@ -409,7 +409,6 @@
     <Content Include="Views\Shared\_CreateMediaContent.cshtml" />
     <Content Include="Content\toastr.scss" />
     <Content Include="Content\toastr.less" />
-    <Content Include="Views\Shared\EditorTemplates\MediaContentViewModel.cshtml" />
     <Content Include="Areas\Media\Views\web.config" />
     <Content Include="Areas\Moderators\Views\web.config" />
     <Content Include="Areas\Media\Views\_ViewStart.cshtml" />
@@ -421,7 +420,6 @@
     <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
-    <Content Include="Views\Shared\EditorTemplates\UserViewModel.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
     <Content Include="Areas\Media\Views\Video\VideoDetails.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_PicturePartial.cshtml" />
@@ -534,7 +532,10 @@
     <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
     <Content Include="Areas\Media\Views\Video\Index.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_SearchForm.cshtml" />
+    <Content Include="Views\Shared\_UploadPicturePartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\UploadFileInfoViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DropDownListCategories.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\DropDownListCollections.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

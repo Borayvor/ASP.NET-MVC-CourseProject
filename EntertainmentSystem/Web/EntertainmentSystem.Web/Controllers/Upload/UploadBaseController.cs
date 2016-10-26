@@ -55,7 +55,8 @@
 
         private void CheckFileModel(HttpPostedFileBase file)
         {
-            if (!this.ModelState.IsValid)
+            // TODO: reafactor for null HttpPostedFileBase
+            if (file == null || !this.ModelState.IsValid)
             {
                 throw new ArgumentException(this.ModelState.Values.FirstOrDefault() == null ? ExceptionForFile
                     : this.ModelState.Values.FirstOrDefault().Errors.FirstOrDefault().ErrorMessage);
@@ -64,7 +65,8 @@
 
         private void CheckFileInfoModel(UploadFileInfoViewModel fileInfo)
         {
-            if (!this.ModelState.IsValid)
+            // TODO: reafactor for null UploadFileInfoViewModel
+            if (fileInfo == null || !this.ModelState.IsValid)
             {
                 throw new ArgumentException(ExceptionForFileInfo);
             }

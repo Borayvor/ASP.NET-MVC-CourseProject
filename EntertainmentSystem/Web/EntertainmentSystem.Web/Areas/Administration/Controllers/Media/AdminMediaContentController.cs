@@ -32,23 +32,20 @@
                 .GetAll()
                 .AsQueryable()
                 .OrderBy(c => c.Name)
-                .To<MediaCategoryViewModel>()
+                .To<MediaCategoryEditViewModel>()
                 .ToList();
 
             var collections = this.collectionService
                 .GetAll()
                 .AsQueryable()
                 .OrderBy(c => c.Name)
-                .To<MediaCollectionViewModel>()
+                .To<MediaCollectionEditViewModel>()
                 .ToList();
 
-            var model = new CategoryAndCollectionViewModel
-            {
-                Categories = categories,
-                Collections = collections
-            };
+            this.ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            this.ViewBag.Collections = new SelectList(collections, "Id", "Name");
 
-            return this.View(model);
+            return this.View();
         }
 
         [HttpPost]
