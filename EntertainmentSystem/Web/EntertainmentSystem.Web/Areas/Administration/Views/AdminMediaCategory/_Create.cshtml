@@ -8,9 +8,8 @@
     {
         @Html.AntiForgeryToken()
 
-        <div class="form-group">           
-            @Html.EditorFor(m => Model)
-            <input type="submit" class="btn btn-success" value="Create" />
-        </div>
+
+        @Html.EditorFor(m => Model)
+        <button type="submit" class="btn btn-success" >Create</button>
     }
 </div>

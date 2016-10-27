@@ -7,6 +7,7 @@
     public class MediaCategoryCreateViewModel : IMapFrom<MediaCategory>, IMapTo<MediaCategory>
     {
         [Required]
+        [MinLength(1)]
         [MaxLength(500)]
         public string Name { get; set; }
     }

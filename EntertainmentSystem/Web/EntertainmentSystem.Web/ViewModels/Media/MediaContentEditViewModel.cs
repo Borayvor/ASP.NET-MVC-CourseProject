@@ -11,6 +11,8 @@
         [HiddenInput(DisplayValue = false)]
         public Guid Id { get; set; }
 
+        [Required]
+        [MinLength(1)]
         [MaxLength(250)]
         public string Title { get; set; }
 

@@ -58,6 +58,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, UserViewModel model)
         {
+            // TODO: admin -> not Destroy
             if (model != null)
             {
                 var entity = this.moderatorService.GetById(model.Id);

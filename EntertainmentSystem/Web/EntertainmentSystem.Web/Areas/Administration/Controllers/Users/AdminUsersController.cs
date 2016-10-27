@@ -58,6 +58,7 @@
         [ValidateAntiForgeryToken]
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, UserViewModel model)
         {
+            // TODO: admin -> not delete
             if (model != null)
             {
                 var entity = this.usersAdminService.GetById(model.Id);

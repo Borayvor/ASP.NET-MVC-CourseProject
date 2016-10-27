@@ -1,14 +1,15 @@
-﻿@using EntertainmentSystem.Web.ViewModels.Media 
+﻿@using EntertainmentSystem.Web.ViewModels.Media
 @model MediaContentViewModel
 
-<form>
-    <div class="form-group">
-        @Html.LabelFor(m => m.Title)
-        @Html.EditorFor(m => m.Title)
-    </div>
-    <br />
-    <div class="form-group">
-        @Html.LabelFor(m => m.Description)
-        @Html.EditorFor(m => m.Description)
-    </div>    
-</form>
+
+<div class="form-group">
+    @Html.LabelFor(m => m.Title)
+    @Html.EditorFor(m => m.Title)
+</div>
+<br />
+<div class="form-group">
+    @Html.LabelFor(m => m.Description)
+    @Html.EditorFor(m => m.Description)
+    @Html.ValidationMessageFor(m => m.Description, string.Empty, new { @class = "text-danger" })
+</div>
+
