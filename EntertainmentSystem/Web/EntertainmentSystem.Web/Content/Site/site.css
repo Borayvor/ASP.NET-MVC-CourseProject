@@ -26,6 +26,8 @@
     transition: color 0.2s ease-in-out;
     color: #919496;
     text-decoration: none; }
+  body .es-upload-btn {
+    display: none; }
   body #es-loading {
     display: none;
     position: fixed;

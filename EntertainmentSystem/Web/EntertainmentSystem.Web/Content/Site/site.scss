@@ -34,6 +34,10 @@
         text-decoration: none;
     }
 
+    .es-upload-btn{
+        display: none;
+    }
+
     @import "_site-loading";
 
     @import "site-home"; 

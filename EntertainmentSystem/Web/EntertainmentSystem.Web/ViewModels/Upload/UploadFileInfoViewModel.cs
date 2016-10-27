@@ -13,9 +13,11 @@
         public string Description { get; set; }
 
         [UIHint("DropDownListCategories")]
+        [Display(Name = "Category")]
         public Guid CategoryId { get; set; }
 
         [UIHint("DropDownListCollections")]
+        [Display(Name = "Collection")]
         public Guid? CollectionId { get; set; }
     }
 }

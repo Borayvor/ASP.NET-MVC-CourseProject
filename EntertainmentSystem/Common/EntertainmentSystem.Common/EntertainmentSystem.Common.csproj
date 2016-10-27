@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\ExceptionMessages.cs" />
     <Compile Include="Constants\GlobalConstants.cs" />
     <Compile Include="Constants\HtmlConstants.cs" />
     <Compile Include="ExtensionMethods\StringExtensions.cs" />
