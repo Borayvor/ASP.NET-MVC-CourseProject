@@ -10,15 +10,14 @@
     <div class="modal-body">
         <div>
             @Html.FontAwesomeButton("Choose File", "upload", new { @class = HtmlConstants.MusicChooseUploadClass })
-            @Html.TextBox("File", "", new { name = "File", type = "file", @class = HtmlConstants.MusicInputUploadClass + " display-none" })           
+            @Html.HiddenFor(m => m.File, new { type = "file", @class = HtmlConstants.MusicInputUploadClass + " display-none" })           
         </div>
-        @Html.ValidationMessage("File", string.Empty, new { @class = "text-danger" })
+        @Html.ValidationMessageFor(m => m.File, string.Empty, new { @class = "text-danger" })
         <br />
         @Html.EditorFor(m => m.FileInfo)
     </div>
     <div class="modal-footer">
-        @Html.FontAwesomeButton("Send", "send", new { data_dismiss = "modal", @class = "col-md-offset-2 btn btn-success " + HtmlConstants.MusicSendUploadClass })
-        <button type="submit" class="es-upload-btn"></button>
+        @Html.FontAwesomeButton("Send", "send", new { type = "submit", data_dismiss = "modal", @class = "col-md-offset-2 btn btn-success " + HtmlConstants.MusicSendUploadClass })        
     </div>
 }
 
