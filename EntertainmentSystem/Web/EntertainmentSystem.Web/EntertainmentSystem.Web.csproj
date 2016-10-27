@@ -540,6 +540,9 @@
     <Content Include="Views\Shared\_Loading.cshtml" />
     <Content Include="Views\Shared\_UploadVideoPartial.cshtml" />
     <Content Include="Views\Shared\_UploadMusicPartial.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\UserViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MediaContentViewModel.cshtml" />
+    <Content Include="Views\Shared\EditorTemplates\MediaCategoryViewModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
