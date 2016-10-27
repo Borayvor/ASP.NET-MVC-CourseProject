@@ -1,7 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Controllers
 {
     using System;
-    using System.Linq;
     using System.Web.Mvc;
     using AutoMapper;
     using Infrastructure.Mapping;
@@ -21,55 +20,27 @@
 
         protected ActionResult ConditionalActionResult<T>(Func<T> funcToPerform, Func<T, ActionResult> resultToReturn)
         {
-            if (this.ModelState.IsValid)
+            try
             {
-                try
-                {
-                    var result = funcToPerform();
-                    return resultToReturn(result);
-                }
-                catch (Exception ex)
-                {
-                    return this.HttpNotFound(ex.Message);
-                }
+                var result = funcToPerform();
+                return resultToReturn(result);
             }
-            else
+            catch (Exception ex)
             {
-                var error = this.ModelState
-                    .Values
-                    .FirstOrDefault(m => m.Errors.Count > 0)
-                    .Errors
-                    .FirstOrDefault()
-                    .ErrorMessage;
-
-                return this.HttpNotFound(error);
+                return this.HttpNotFound(ex.Message);
             }
         }
 
         protected ActionResult ConditionalActionResult(Action actionToPerform, Func<ActionResult> resultToReturn)
         {
-            if (this.ModelState.IsValid)
+            try
             {
-                try
-                {
-                    actionToPerform();
-                    return resultToReturn();
-                }
-                catch (Exception ex)
-                {
-                    return this.HttpNotFound(ex.Message);
-                }
+                actionToPerform();
+                return resultToReturn();
             }
-            else
+            catch (Exception ex)
             {
-                var error = this.ModelState
-                    .Values
-                    .FirstOrDefault(m => m.Errors.Count > 0)
-                    .Errors
-                    .FirstOrDefault()
-                    .ErrorMessage;
-
-                return this.HttpNotFound(error);
+                return this.HttpNotFound(ex.Message);
             }
         }
 

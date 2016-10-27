@@ -43,7 +43,7 @@
             this.CheckFileModel(file);
             this.CheckFileInfoModel(fileInfo);
 
-            this.uploadingGeneratorService.Create(
+            var contentId = this.uploadingGeneratorService.Create(
                 file.InputStream,
                 file.ContentType,
                 this.HttpContext.User.Identity.GetUserId(),
@@ -59,7 +59,7 @@
             if (file == null || !this.ModelState.IsValid)
             {
                 throw new ArgumentException(this.ModelState.Values.FirstOrDefault() == null ? ExceptionForFile
-                    : this.ModelState.Values.FirstOrDefault().Errors.FirstOrDefault().ErrorMessage);
+                    : this.ModelState.Values.FirstOrDefault(m => m.Errors.Count > 0).Errors.FirstOrDefault().ErrorMessage);
             }
         }
 
