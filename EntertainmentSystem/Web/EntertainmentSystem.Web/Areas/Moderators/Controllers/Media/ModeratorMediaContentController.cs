@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Moderators.Controllers.Media
 {
+    using System.Linq;
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
@@ -10,15 +11,39 @@
     public class ModeratorMediaContentController : ModeratorController
     {
         private readonly IMediaContentService contentService;
+        private readonly IMediaCategoryService categoryService;
+        private readonly IMediaCollectionService collectionService;
 
-        public ModeratorMediaContentController(IMediaContentService contentService)
+        public ModeratorMediaContentController(
+            IMediaContentService contentService,
+            IMediaCategoryService categoryService,
+            IMediaCollectionService collectionService)
         {
             this.contentService = contentService;
+            this.categoryService = categoryService;
+            this.collectionService = collectionService;
         }
 
         [HttpGet]
         public ActionResult Index()
         {
+            var categories = this.categoryService
+                .GetAll()
+                .AsQueryable()
+                .OrderBy(c => c.Name)
+                .To<MediaCategoryEditViewModel>()
+                .ToList();
+
+            var collections = this.collectionService
+                .GetAll()
+                .AsQueryable()
+                .OrderBy(c => c.Name)
+                .To<MediaCollectionEditViewModel>()
+                .ToList();
+
+            this.ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            this.ViewBag.Collections = new SelectList(collections, "Id", "Name");
+
             return this.View();
         }
 

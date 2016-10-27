@@ -17,6 +17,7 @@
         @Html.EditorFor(m => m.FileInfo)
     </div>
     <div class="modal-footer">
-        @Html.FontAwesomeButton("Send", "send", new { type = "submit", @class = "col-md-offset-2 btn btn-success " + HtmlConstants.PictureSendUploadClass })       
+        @Html.FontAwesomeButton("Send", "send", new { @class = "col-md-offset-2 btn btn-success " + HtmlConstants.PictureSendUploadClass })       
+        <button type="submit" data-dismiss="modal" class="es-upload-btn display-none"></button>
     </div>
 }
