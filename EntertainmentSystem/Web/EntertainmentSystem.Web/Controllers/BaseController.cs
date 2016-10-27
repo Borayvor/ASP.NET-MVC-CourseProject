@@ -35,7 +35,14 @@
             }
             else
             {
-                return this.HttpNotFound(this.ModelState.Values.FirstOrDefault().ToString());
+                var error = this.ModelState
+                    .Values
+                    .FirstOrDefault(m => m.Errors.Count > 0)
+                    .Errors
+                    .FirstOrDefault()
+                    .ErrorMessage;
+
+                return this.HttpNotFound(error);
             }
         }
 
@@ -55,7 +62,14 @@
             }
             else
             {
-                return this.HttpNotFound(this.ModelState.Values.FirstOrDefault().ToString());
+                var error = this.ModelState
+                    .Values
+                    .FirstOrDefault(m => m.Errors.Count > 0)
+                    .Errors
+                    .FirstOrDefault()
+                    .ErrorMessage;
+
+                return this.HttpNotFound(error);
             }
         }
 

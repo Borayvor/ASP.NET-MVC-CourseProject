@@ -11,7 +11,7 @@
         {
             try
             {
-                this.ValidateOrThrowException(value, 1024 * 1024 * 5 /*5MB*/, this.allowedMimeTypes);
+                this.ValidateOrThrowException(value, 1024 * 1024 * 3 /* 3 MB*/, this.allowedMimeTypes);
             }
             catch (Exception ex)
             {
