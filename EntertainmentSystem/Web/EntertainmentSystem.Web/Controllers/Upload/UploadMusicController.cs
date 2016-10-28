@@ -11,6 +11,12 @@
         {
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.PartialView("_UploadMusicPartial");
+        }
+
         [HttpPost]
         public ActionResult Create(MusicUploadViewModel model)
         {

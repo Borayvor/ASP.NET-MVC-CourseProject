@@ -9,6 +9,9 @@
     public class MediaCategoryViewModel : BaseViewModel<Guid>, IMapFrom<MediaCategory>
     {
         [Display(Name = "Category name")]
+        [Required]
+        [MinLength(1)]
+        [MaxLength(500)]
         public string Name { get; set; }
     }
 }

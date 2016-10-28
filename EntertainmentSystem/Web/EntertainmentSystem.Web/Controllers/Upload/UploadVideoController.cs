@@ -11,6 +11,12 @@
         {
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.PartialView("_UploadVideoPartial");
+        }
+
         [HttpPost]
         public ActionResult Create(VideoUploadViewModel model)
         {

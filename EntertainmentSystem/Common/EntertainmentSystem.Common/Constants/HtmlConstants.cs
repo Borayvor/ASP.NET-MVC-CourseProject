@@ -2,6 +2,8 @@
 {
     public class HtmlConstants
     {
+        public const string KendoDateFormat = "{0:yyyy-MM-dd HH:mm:ss}";
+
         public const string PictureChooseUploadClass = "chooseUploadPictureBtn";
         public const string PictureInputUploadClass = "inputUploadPictureBtn";
         public const string PictureSendUploadClass = "sendUploadPictureBtn";

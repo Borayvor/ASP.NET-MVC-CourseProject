@@ -4,7 +4,7 @@
 @using EntertainmentSystem.Web.ViewModels.Upload
 @model PictureUploadViewModel
 
-@using (Ajax.BeginForm<UploadPictureController>(c => c.Create(null), new { area = string.Empty }, null, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm<UploadPictureController>(c => c.Create(), FormMethod.Post, new { area = string.Empty }, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="modal-body">

@@ -4,12 +4,13 @@
 
 <div class="form-group">
     @Html.LabelFor(m => m.Title)
-    @Html.EditorFor(m => m.Title)
+    @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Title)
 </div>
 <br />
 <div class="form-group">
     @Html.LabelFor(m => m.Description)
     @Html.EditorFor(m => m.Description)
-    @Html.ValidationMessageFor(m => m.Description, string.Empty, new { @class = "text-danger" })
+    @Html.ValidationMessageFor(m => m.Description)
 </div>
 

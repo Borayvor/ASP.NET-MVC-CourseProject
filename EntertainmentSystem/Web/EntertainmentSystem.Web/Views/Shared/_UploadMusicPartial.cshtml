@@ -4,7 +4,7 @@
 @using EntertainmentSystem.Web.ViewModels.Upload
 @model MusicUploadViewModel
 
-@using (Ajax.BeginForm<UploadMusicController>(c => c.Create(null), new { area = string.Empty }, null, new { enctype = "multipart/form-data" }))
+@using (Html.BeginForm<UploadMusicController>(c => c.Create(null), FormMethod.Post, new { area = string.Empty }, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
     <div class="modal-body">

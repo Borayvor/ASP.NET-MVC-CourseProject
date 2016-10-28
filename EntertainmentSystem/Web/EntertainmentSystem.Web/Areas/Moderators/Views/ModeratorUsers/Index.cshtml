@@ -21,10 +21,10 @@
         cols.Bound(m => m.LastName);
         cols.Bound(m => m.UserName);
         cols.Bound(m => m.Email);
-        cols.Bound(m => m.CreatedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
-        cols.Bound(m => m.ModifiedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
+        cols.Bound(m => m.CreatedOn).Format(HtmlConstants.KendoDateFormat);
+        cols.Bound(m => m.ModifiedOn).Format(HtmlConstants.KendoDateFormat);
         cols.Bound(m => m.IsDeleted);
-        cols.Bound(m => m.DeletedOn).Format("{0:yyyy-MM-dd HH:mm:ss}");
+        cols.Bound(m => m.DeletedOn).Format(HtmlConstants.KendoDateFormat);
         cols.Command(command => { command.Edit(); command.Destroy(); }).Title("Edit / Delete");
     }
 ))

@@ -4,5 +4,6 @@
 
 <div class="form-group">
     @Html.LabelFor(m => m.Name)
-    @Html.EditorFor(m => m.Name)
+    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+    @Html.ValidationMessageFor(m => m.Name)
 </div>

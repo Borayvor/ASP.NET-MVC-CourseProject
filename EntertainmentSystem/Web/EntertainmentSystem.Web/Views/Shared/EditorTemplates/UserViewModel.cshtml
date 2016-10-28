@@ -4,16 +4,19 @@
 <form>
     <div class="form-group">
         @Html.LabelFor(m => m.FirstName)
-        @Html.EditorFor(m => m.FirstName)
+        @Html.TextBoxFor(m => m.FirstName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.FirstName)
     </div>
     <br />
     <div class="form-group">
         @Html.LabelFor(m => m.LastName)
-        @Html.EditorFor(m => m.LastName)
+        @Html.TextBoxFor(m => m.LastName, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.LastName)
     </div>
     <br />
     <div class="form-group">
         @Html.LabelFor(m => m.ImageUrl)
-        @Html.EditorFor(m => m.ImageUrl)
+        @Html.TextBoxFor(m => m.ImageUrl, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.ImageUrl)
     </div>
 </form>

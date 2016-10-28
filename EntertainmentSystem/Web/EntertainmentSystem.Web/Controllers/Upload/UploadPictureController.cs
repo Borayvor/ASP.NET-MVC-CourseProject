@@ -11,6 +11,12 @@
         {
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.PartialView("_UploadPicturePartial");
+        }
+
         [HttpPost]
         public ActionResult Create(PictureUploadViewModel model)
         {
