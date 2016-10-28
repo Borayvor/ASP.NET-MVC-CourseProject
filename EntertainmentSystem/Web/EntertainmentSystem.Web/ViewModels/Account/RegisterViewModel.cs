@@ -11,6 +11,11 @@
         public string Email { get; set; }
 
         [Required]
+        [MaxLength(256)]
+        [MinLength(2)]
+        public string UserName { get; set; }
+
+        [Required]
         [MaxLength(100)]
         [MinLength(2)]
         public string FirstName { get; set; }
