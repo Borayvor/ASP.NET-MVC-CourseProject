@@ -2,24 +2,24 @@
 
 <ul class="nav navbar-nav">
     <li>@Html.ActionLink("Home", "Index", "Home", new { area = string.Empty }, null)</li>
-    <li>@Html.ActionLink("Forum", "Index", "ForumHome", new { area = GlobalConstants.AreaForumName }, null)</li>
+    <li>@Html.ActionLink("Forum", "Index", "ForumHome", new { area = GlobalConstants.ForumAreaName }, null)</li>
 
     @if (Request.IsAuthenticated)
     {
         <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                @GlobalConstants.AreaMediaName
+                @GlobalConstants.MediaAreaName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaMediaName">
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.MediaAreaName">
                 <li>
-                    @Html.ActionLink("Music", "Index", "Music", new { area = GlobalConstants.AreaMediaName }, null)
+                    @Html.ActionLink("Music", "Index", "Music", new { area = GlobalConstants.MediaAreaName }, null)
                 </li>
                 <li>
-                    @Html.ActionLink("Pictures", "Index", "Picture", new { area = GlobalConstants.AreaMediaName }, null)
+                    @Html.ActionLink("Pictures", "Index", "Picture", new { area = GlobalConstants.MediaAreaName }, null)
                 </li>
                 <li>
-                    @Html.ActionLink("Videos", "Index", "Video", new { area = GlobalConstants.AreaMediaName }, null)
+                    @Html.ActionLink("Videos", "Index", "Video", new { area = GlobalConstants.MediaAreaName }, null)
                 </li>
             </ul>
         </li>
@@ -29,18 +29,18 @@
     {
         <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                @GlobalConstants.AreaAdministrationName
+                @GlobalConstants.AdministratorAreaName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaAdministrationName">
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AdministratorAreaName">
                 <li>
-                    @Html.ActionLink("Users", "Index", "AdminUsers", new { area = GlobalConstants.AreaAdministrationName }, null)
+                    @Html.ActionLink("Users", "Index", "AdminUsers", new { area = GlobalConstants.AdministratorAreaName }, null)
                 </li>
                 <li>
-                    @Html.ActionLink("Media Categories", "Index", "AdminMediaCategory", new { area = GlobalConstants.AreaAdministrationName }, null)
+                    @Html.ActionLink("Media Categories", "Index", "AdminMediaCategory", new { area = GlobalConstants.AdministratorAreaName }, null)
                 </li>
                 <li>
-                    @Html.ActionLink("Media Contents", "Index", "AdminMediaContent", new { area = GlobalConstants.AreaAdministrationName }, null)
+                    @Html.ActionLink("Media Contents", "Index", "AdminMediaContent", new { area = GlobalConstants.AdministratorAreaName }, null)
                 </li>
             </ul>
         </li>
@@ -50,18 +50,18 @@
     {
         <li class="dropdown">
             <a href="" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
-                @GlobalConstants.AreaModeratorsName
+                @GlobalConstants.ModeratorAreaName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AreaModeratorsName">
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.ModeratorAreaName">
                 <li>
-                    @Html.ActionLink("Users", "Index", "ModeratorUsers", new { area = GlobalConstants.AreaModeratorsName }, null)
+                    @Html.ActionLink("Users", "Index", "ModeratorUsers", new { area = GlobalConstants.ModeratorAreaName }, null)
                 </li>
                 <li>
-                    @Html.ActionLink("Media Categories", "Index", "ModeratorMediaCategory", new { area = GlobalConstants.AreaModeratorsName }, null)
+                    @Html.ActionLink("Media Categories", "Index", "ModeratorMediaCategory", new { area = GlobalConstants.ModeratorAreaName }, null)
                 </li>
                 <li>
-                    @Html.ActionLink("Media Contents", "Index", "ModeratorMediaContent", new { area = GlobalConstants.AreaModeratorsName }, null)
+                    @Html.ActionLink("Media Contents", "Index", "ModeratorMediaContent", new { area = GlobalConstants.ModeratorAreaName }, null)
                 </li>
             </ul>
         </li>

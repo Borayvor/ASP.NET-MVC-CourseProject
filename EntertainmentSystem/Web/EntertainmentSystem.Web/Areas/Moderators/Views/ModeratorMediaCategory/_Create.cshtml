@@ -1,16 +1,19 @@
 ﻿@using System.Web.Mvc.Expressions
+@using EntertainmentSystem.Common.Constants
 @using EntertainmentSystem.Web.Areas.Moderators.Controllers.Media
 @using EntertainmentSystem.Web.ViewModels.Media
-@model MediaCategoryViewModel
+@model MediaCategoryCreateViewModel
 
-<div>
-    @using (Html.BeginForm<ModeratorMediaCategoryController>(c => c.Create(), FormMethod.Post, null, new { @class = "form-inline" }))
+<div class="form-group">
+    @using (Html.BeginForm<ModeratorMediaCategoryController>(c => c.Create(), FormMethod.Post, new { area = GlobalConstants.ModeratorAreaName }, new { @class = "form-inline" }))
     {
         @Html.AntiForgeryToken()
 
         <div class="form-group">
-            @Html.EditorFor(m => Model)
-            <input type="submit" class="btn btn-success" value="Create" />
+            <span>@Html.LabelFor(m => m.Name) </span>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
         </div>
+        <button type="submit" class="btn btn-success">Create</button>
+        @Html.ValidationMessageFor(m => m.Name, string.Empty, new { @class = "text-danger" })
     }
 </div>

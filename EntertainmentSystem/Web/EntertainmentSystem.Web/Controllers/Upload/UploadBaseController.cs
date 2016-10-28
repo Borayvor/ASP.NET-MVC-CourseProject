@@ -81,12 +81,12 @@
             if (this.User.IsInRole(GlobalConstants.ModeratorRoleName))
             {
                 controller = ModeratorControllerName;
-                area = GlobalConstants.AreaModeratorsName;
+                area = GlobalConstants.ModeratorAreaName;
             }
             else if (this.User.IsInRole(GlobalConstants.AdministratorRoleName))
             {
                 controller = AdminControllerName;
-                area = GlobalConstants.AreaAdministrationName;
+                area = GlobalConstants.AdministratorAreaName;
             }
 
             return new string[] { action, controller, area };
