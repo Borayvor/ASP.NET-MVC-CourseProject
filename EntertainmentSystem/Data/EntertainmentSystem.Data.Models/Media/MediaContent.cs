@@ -16,7 +16,7 @@
 
         [Required]
         [MinLength(1)]
-        [MaxLength(1000)]
+        [MaxLength(1024)]
         public string ContentUrl { get; set; }
 
         public ContentType ContentType { get; set; }

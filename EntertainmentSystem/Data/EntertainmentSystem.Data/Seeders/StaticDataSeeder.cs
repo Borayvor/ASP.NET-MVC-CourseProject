@@ -54,6 +54,8 @@
             // Create admin user
             var userStore = new UserStore<ApplicationUser>(context);
             var userManager = new UserManager<ApplicationUser>(userStore);
+            userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
+
             var userAdmin = new ApplicationUser
             {
                 UserName = AdministratorUserName,
@@ -63,7 +65,6 @@
                 ImageUrl = AdministratorImageUrl
             };
 
-            userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
             userManager.Create(userAdmin, AdministratorPassword);
 
             // Assign user to admin role
@@ -79,12 +80,24 @@
                 ImageUrl = ModeratorImageUrl
             };
 
-            userManager.PasswordValidator = new MinimumLengthValidator(GlobalConstants.PasswordMinLength);
             userManager.Create(userModerator, ModeratorPassword);
 
             // Assign user to moderator role
             userManager.AddToRole(userModerator.Id, GlobalConstants.ModeratorRoleName);
 
+            // Create ordinary user
+            var userOrdinary = new ApplicationUser
+            {
+                UserName = "TestUser",
+                Email = "TestUser@TestUser.com",
+                FirstName = "FirstName",
+                LastName = "LastName",
+                ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/eb/SupermanRoss.png"
+            };
+
+            userManager.Create(userOrdinary, "TestUser");
+
+            // End add.
             context.SaveChanges();
         }
 

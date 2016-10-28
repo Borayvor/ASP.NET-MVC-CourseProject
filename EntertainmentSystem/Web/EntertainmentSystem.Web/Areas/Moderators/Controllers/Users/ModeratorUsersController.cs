@@ -1,9 +1,12 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Moderators.Controllers.Users
 {
+    using System.Web;
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
     using Services.Contracts.Users;
     using ViewModels.User;
 
@@ -58,12 +61,18 @@
         [ValidateAntiForgeryToken]
         public ActionResult Destroy([DataSourceRequest]DataSourceRequest request, UserViewModel model)
         {
-            // TODO: admin -> not Destroy
             if (model != null)
             {
                 var entity = this.moderatorService.GetById(model.Id);
 
-                this.moderatorService.Delete(entity);
+                ApplicationUserManager userManager = this.HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+                var roles = userManager.GetRoles(model.Id);
+
+                if (roles.Count == 0)
+                {
+                    this.moderatorService.Delete(entity);
+                }
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));

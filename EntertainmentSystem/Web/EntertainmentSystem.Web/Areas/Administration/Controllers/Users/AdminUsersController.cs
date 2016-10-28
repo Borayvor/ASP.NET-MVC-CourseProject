@@ -1,9 +1,13 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Administration.Controllers.Users
 {
+    using System.Web;
     using System.Web.Mvc;
+    using Common.Constants;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
+    using Microsoft.AspNet.Identity;
+    using Microsoft.AspNet.Identity.Owin;
     using Services.Contracts.Users;
     using ViewModels.User;
 
@@ -58,12 +62,18 @@
         [ValidateAntiForgeryToken]
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, UserViewModel model)
         {
-            // TODO: admin -> not delete
             if (model != null)
             {
                 var entity = this.usersAdminService.GetById(model.Id);
 
-                this.usersAdminService.DeletePermanent(entity);
+                ApplicationUserManager userManager = this.HttpContext.GetOwinContext().GetUserManager<ApplicationUserManager>();
+
+                var roles = userManager.GetRoles(model.Id);
+
+                if (!roles.Contains(GlobalConstants.AdministratorRoleName))
+                {
+                    this.usersAdminService.DeletePermanent(entity);
+                }
             }
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
