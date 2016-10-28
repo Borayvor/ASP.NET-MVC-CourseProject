@@ -72,7 +72,7 @@
                 return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
 
-            return this.Json(new[] { model }.ToDataSourceResult(request));
+            return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
 
         [HttpPost]
