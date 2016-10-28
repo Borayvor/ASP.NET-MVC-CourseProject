@@ -2,6 +2,7 @@
 {
     using System;
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
@@ -9,8 +10,8 @@
     {
         [Display(Name = "Collection name")]
         [Required]
-        [MinLength(1)]
-        [MaxLength(500)]
+        [MinLength(GlobalConstants.MediaCollectionNameMinLength)]
+        [MaxLength(GlobalConstants.MediaCollectionNameMaxLength)]
         public string Name { get; set; }
     }
 }

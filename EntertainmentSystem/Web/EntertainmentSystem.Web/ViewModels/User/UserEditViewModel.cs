@@ -2,6 +2,7 @@
 {
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
+    using Common.Constants;
     using Data.Models;
     using Infrastructure.Mapping;
 
@@ -12,18 +13,18 @@
 
         [Display(Name = "First name")]
         [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserFirstNameMaxLength)]
+        [MinLength(GlobalConstants.UserFirstNameMinLength)]
         public string FirstName { get; set; }
 
         [Display(Name = "Last name")]
         [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserLastNameMaxLength)]
+        [MinLength(GlobalConstants.UserLastNameMinLength)]
         public string LastName { get; set; }
 
         [Display(Name = "Avatar")]
-        [MaxLength(1024)]
+        [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
         public string ImageUrl { get; set; }
     }
 }

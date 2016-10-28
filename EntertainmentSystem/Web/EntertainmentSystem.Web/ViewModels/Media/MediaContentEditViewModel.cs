@@ -3,6 +3,7 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
+    using Common.Constants;
     using Data.Models.Media;
     using Infrastructure.Mapping;
 
@@ -12,11 +13,11 @@
         public Guid Id { get; set; }
 
         [Required]
-        [MinLength(1)]
-        [MaxLength(250)]
+        [MinLength(GlobalConstants.MediaContentTitleMinLength)]
+        [MaxLength(GlobalConstants.MediaContentTitleMaxLength)]
         public string Title { get; set; }
 
-        [MaxLength(2000)]
+        [MaxLength(GlobalConstants.MediaContentDescriptionMaxLength)]
         public string Description { get; set; }
     }
 }

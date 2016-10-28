@@ -6,6 +6,7 @@
     using System.Security.Claims;
     using System.Threading.Tasks;
     using Common.Models;
+    using EntertainmentSystem.Common.Constants;
     using Forum;
     using Media;
     using Microsoft.AspNet.Identity;
@@ -31,17 +32,17 @@
         }
 
         [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserFirstNameMaxLength)]
+        [MinLength(GlobalConstants.UserFirstNameMinLength)]
         public string FirstName { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserLastNameMaxLength)]
+        [MinLength(GlobalConstants.UserLastNameMinLength)]
         public string LastName { get; set; }
 
-        [MaxLength(1024)]
-        public string ImageUrl { get; set; }
+        [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
+        public string AvatarImageUrl { get; set; }
 
         public virtual ICollection<MediaContent> MaediaContentCollections
         {

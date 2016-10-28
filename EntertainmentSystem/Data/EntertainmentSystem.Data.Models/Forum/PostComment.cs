@@ -3,12 +3,13 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
+    using EntertainmentSystem.Common.Constants;
 
     public class PostComment : BaseModelGuid
     {
         [Required]
-        [MinLength(2)]
-        [MaxLength(1000)]
+        [MinLength(GlobalConstants.PostCommentContentMinLength)]
+        [MaxLength(GlobalConstants.PostCommentContentMaxLength)]
         public string Content { get; set; }
 
         [Required]

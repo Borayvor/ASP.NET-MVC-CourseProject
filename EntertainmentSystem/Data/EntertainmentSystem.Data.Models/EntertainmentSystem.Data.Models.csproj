@@ -77,6 +77,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\Common\EntertainmentSystem.Common\EntertainmentSystem.Common.csproj">
+      <Project>{701f322f-aa01-4ddc-90b6-6935981c1e73}</Project>
+      <Name>EntertainmentSystem.Common</Name>
+    </ProjectReference>
     <ProjectReference Include="..\EntertainmentSystem.Data.Common\EntertainmentSystem.Data.Common.csproj">
       <Project>{edfe3c57-ef5b-4636-9ecc-d0baca6b6379}</Project>
       <Name>EntertainmentSystem.Data.Common</Name>

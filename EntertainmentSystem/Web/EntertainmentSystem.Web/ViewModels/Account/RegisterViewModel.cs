@@ -8,25 +8,26 @@
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
+        [MaxLength(GlobalConstants.UserEmailMaxLength)]
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(256)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserUsernameMaxLength)]
+        [MinLength(GlobalConstants.UserUsernameMinLength)]
         public string UserName { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserFirstNameMaxLength)]
+        [MinLength(GlobalConstants.UserFirstNameMinLength)]
         public string FirstName { get; set; }
 
         [Required]
-        [MaxLength(100)]
-        [MinLength(2)]
+        [MaxLength(GlobalConstants.UserLastNameMaxLength)]
+        [MinLength(GlobalConstants.UserLastNameMinLength)]
         public string LastName { get; set; }
 
         [Display(Name = "Image url")]
-        [MaxLength(1024)]
+        [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
         public string ImageUrl { get; set; }
 
         [Required]

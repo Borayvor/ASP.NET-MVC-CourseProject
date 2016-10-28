@@ -62,7 +62,7 @@
                 Email = AdministratorUserName,
                 FirstName = AdministratorFirstName,
                 LastName = AdministratorLastName,
-                ImageUrl = AdministratorImageUrl
+                AvatarImageUrl = AdministratorImageUrl
             };
 
             userManager.Create(userAdmin, AdministratorPassword);
@@ -77,7 +77,7 @@
                 Email = ModeratorUserName,
                 FirstName = ModeratorFirstName,
                 LastName = ModeratorLastName,
-                ImageUrl = ModeratorImageUrl
+                AvatarImageUrl = ModeratorImageUrl
             };
 
             userManager.Create(userModerator, ModeratorPassword);
@@ -92,7 +92,7 @@
                 Email = "TestUser@TestUser.com",
                 FirstName = "FirstName",
                 LastName = "LastName",
-                ImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/eb/SupermanRoss.png"
+                AvatarImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/eb/SupermanRoss.png"
             };
 
             userManager.Create(userOrdinary, "TestUser");

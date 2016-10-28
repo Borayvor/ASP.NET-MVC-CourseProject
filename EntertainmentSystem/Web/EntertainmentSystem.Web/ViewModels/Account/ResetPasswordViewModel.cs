@@ -1,12 +1,14 @@
 ﻿namespace EntertainmentSystem.Web.ViewModels.Account
 {
     using System.ComponentModel.DataAnnotations;
+    using Common.Constants;
 
     public class ResetPasswordViewModel
     {
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
+        [MaxLength(GlobalConstants.UserEmailMaxLength)]
         public string Email { get; set; }
 
         [Required]

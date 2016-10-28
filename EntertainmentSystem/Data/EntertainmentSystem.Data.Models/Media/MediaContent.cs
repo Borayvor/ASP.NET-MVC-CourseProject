@@ -3,21 +3,25 @@
     using System;
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
+    using EntertainmentSystem.Common.Constants;
 
     public class MediaContent : BaseModelGuid
     {
         [Required]
-        [MinLength(1)]
-        [MaxLength(250)]
+        [MinLength(GlobalConstants.MediaContentTitleMinLength)]
+        [MaxLength(GlobalConstants.MediaContentTitleMaxLength)]
         public string Title { get; set; }
 
-        [MaxLength(2000)]
+        [MaxLength(GlobalConstants.MediaContentDescriptionMaxLength)]
         public string Description { get; set; }
 
         [Required]
-        [MinLength(1)]
-        [MaxLength(1024)]
+        [MinLength(GlobalConstants.MediaContentContentUrlMinLength)]
+        [MaxLength(GlobalConstants.MediaContentContentUrlMaxLength)]
         public string ContentUrl { get; set; }
+
+        [MaxLength(GlobalConstants.MediaContentCoverImageUrlMaxLength)]
+        public string CoverImageUrl { get; set; }
 
         public ContentType ContentType { get; set; }
 

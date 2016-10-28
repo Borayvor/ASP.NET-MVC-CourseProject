@@ -174,7 +174,7 @@
                     Email = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
-                    ImageUrl = model.ImageUrl
+                    AvatarImageUrl = model.ImageUrl
                 };
 
                 var result = await this.UserManager.CreateAsync(user, model.Password);

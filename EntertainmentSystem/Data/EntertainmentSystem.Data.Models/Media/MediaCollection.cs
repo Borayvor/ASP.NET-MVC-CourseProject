@@ -4,6 +4,7 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using Common.Models;
+    using EntertainmentSystem.Common.Constants;
 
     public class MediaCollection : BaseModelGuid
     {
@@ -15,8 +16,8 @@
         }
 
         [Required]
-        [MinLength(1)]
-        [MaxLength(500)]
+        [MinLength(GlobalConstants.MediaCollectionNameMinLength)]
+        [MaxLength(GlobalConstants.MediaCollectionNameMaxLength)]
         [Index(IsUnique = true)]
         public string Name { get; set; }
 

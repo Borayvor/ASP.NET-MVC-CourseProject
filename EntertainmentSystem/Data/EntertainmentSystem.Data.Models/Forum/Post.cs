@@ -4,6 +4,7 @@
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
+    using EntertainmentSystem.Common.Constants;
 
     public class Post : BaseModelGuid
     {
@@ -19,13 +20,13 @@
         }
 
         [Required]
-        [MinLength(2)]
-        [MaxLength(250)]
+        [MinLength(GlobalConstants.PostTitleMinLength)]
+        [MaxLength(GlobalConstants.PostTitleMaxLength)]
         public string Title { get; set; }
 
         [Required]
-        [MinLength(2)]
-        [MaxLength(2000)]
+        [MinLength(GlobalConstants.PostContentMinLength)]
+        [MaxLength(GlobalConstants.PostContentMaxLength)]
         public string Content { get; set; }
 
         public string AuthorId { get; set; }
