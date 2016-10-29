@@ -6,7 +6,6 @@
     using Common.Constants;
     using Data.Models.Media;
     using Infrastructure.Mapping;
-    using Web.ViewModels;
 
     public class MediaContentViewModel : BaseViewModel<Guid>, IMapFrom<MediaContent>, IHaveCustomMappings
     {

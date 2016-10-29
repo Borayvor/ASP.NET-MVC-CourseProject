@@ -2,15 +2,11 @@
 @using EntertainmentSystem.Web.ViewModels.User
 @model UserViewModel
 
-@{
-    const string ControllerName = "ModeratorUsers";
-}
-
 <h2 class="text-center">Users</h2>
 <br />
 
 @(Html.FullFeaturedGrid<UserViewModel>(
-    ControllerName,
+    HtmlConstants.ModeratorUsersControllerName,
     m => m.Id,
     cols =>
     {

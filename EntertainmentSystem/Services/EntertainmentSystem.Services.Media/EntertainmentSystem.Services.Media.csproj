@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Admin\AdminMediaCategoryService.cs" />
+    <Compile Include="Admin\AdminMediaCollectionService.cs" />
     <Compile Include="Admin\AdminMediaContentService.cs" />
     <Compile Include="Fetchers\BaseFetcherService.cs" />
     <Compile Include="Fetchers\MediaContentFetcherService.cs" />

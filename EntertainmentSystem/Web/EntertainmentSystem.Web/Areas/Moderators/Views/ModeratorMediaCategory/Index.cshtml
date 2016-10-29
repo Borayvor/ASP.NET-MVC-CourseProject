@@ -2,17 +2,13 @@
 @using EntertainmentSystem.Web.ViewModels.Media
 @model MediaCategoryViewModel
 
-@{
-    const string ControllerName = "ModeratorMediaCategory";
-}
-
 <h2 class="text-center">Media Categories</h2>
 <br />
 
 @Html.Partial("_Create")
 
 @(Html.FullFeaturedGrid<MediaCategoryViewModel>(
-    ControllerName,
+    HtmlConstants.ModeratorMediaCategoryControllerName,
     m => m.Id,
     cols =>
     {

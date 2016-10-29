@@ -212,6 +212,7 @@
     <Compile Include="Areas\Administration\AdministrationAreaRegistration.cs" />
     <Compile Include="Areas\Administration\Controllers\AdminController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCategoryController.cs" />
+    <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCollectionController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
     <Compile Include="Areas\Administration\Controllers\Users\AdminUsersController.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
@@ -220,6 +221,7 @@
     <Compile Include="Areas\Media\ViewModels\Picture\PictureHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCategoryController.cs" />
+    <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCollectionController.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaContentController.cs" />
     <Compile Include="Areas\Moderators\Controllers\Users\ModeratorUsersController.cs" />
     <Compile Include="Controllers\Partials\BasePartialController.cs" />
@@ -230,6 +232,7 @@
     <Compile Include="ViewModels\Media\MediaCategoryCreateViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryViewModel.cs" />
+    <Compile Include="ViewModels\Media\MediaCollectionCreateViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCollectionEditViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCollectionViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaContentEditViewModel.cs" />
@@ -428,6 +431,9 @@
     <Content Include="Areas\Moderators\Views\ModeratorMediaCategory\Index.cshtml" />
     <Content Include="Areas\Moderators\Views\ModeratorMediaContent\Index.cshtml" />
     <Content Include="Areas\Moderators\Views\ModeratorUsers\Index.cshtml" />
+    <Content Include="Areas\Administration\Views\AdminMediaCollection\_Create.cshtml" />
+    <Content Include="Areas\Administration\Views\AdminMediaCollection\Index.cshtml" />
+    <Content Include="Areas\Moderators\Views\ModeratorMediaCollection\Index.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>

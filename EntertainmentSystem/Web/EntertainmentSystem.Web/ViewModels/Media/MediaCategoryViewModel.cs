@@ -5,7 +5,6 @@
     using Common.Constants;
     using Data.Models.Media;
     using Infrastructure.Mapping;
-    using Web.ViewModels;
 
     public class MediaCategoryViewModel : BaseViewModel<Guid>, IMapFrom<MediaCategory>
     {

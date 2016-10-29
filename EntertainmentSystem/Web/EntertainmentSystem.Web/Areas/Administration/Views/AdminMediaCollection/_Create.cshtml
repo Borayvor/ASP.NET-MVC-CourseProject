@@ -1,0 +1,19 @@
+﻿@using System.Web.Mvc.Expressions
+@using EntertainmentSystem.Common.Constants
+@using EntertainmentSystem.Web.Areas.Administration.Controllers.Media
+@using EntertainmentSystem.Web.ViewModels.Media
+@model MediaCollectionCreateViewModel
+
+<div class="form-group">
+    @using (Html.BeginForm<AdminMediaCollectionController>(c => c.Create(), FormMethod.Post, new { area = GlobalConstants.AdministratorAreaName }, new { @class = "form-inline" }))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-group">
+            <span>@Html.LabelFor(m => m.Name) </span>
+            @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        </div>
+        <button type="submit" class="btn btn-success">Create</button>
+        @Html.ValidationMessageFor(m => m.Name, string.Empty, new { @class = "text-danger" })
+    }
+</div>

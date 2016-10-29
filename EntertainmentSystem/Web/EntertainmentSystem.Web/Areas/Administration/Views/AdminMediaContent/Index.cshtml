@@ -1,17 +1,13 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
 @using EntertainmentSystem.Web.ViewModels.Media
 
-@{
-    const string ControllerName = "AdminMediaContent";    
-}
-
 <h2 class="text-center">Media Contents</h2>
 <br />
 @Html.Partial("_UploadMediaContent")
 @Html.Partial("_CreateMediaContent")
 
 @(Html.FullFeaturedAdminGrid<MediaContentViewModel>(
-    ControllerName,
+    HtmlConstants.AdminMediaContentControllerName,
     m => m.Id,
     cols =>
     {
