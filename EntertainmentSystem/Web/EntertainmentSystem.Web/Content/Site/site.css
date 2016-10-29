@@ -48,12 +48,12 @@
       outline: 0; }
   body #es-home .row {
     margin-bottom: 20px; }
-  body #es-home #carousel-es-home-pictures .carousel-inner .item img {
+  body #es-home #es-home-carousel-pictures .carousel-inner .item img {
     display: inline-flex;
     height: 20em; }
-  body #es-home #carousel-es-home-videos .carousel-control {
+  body #es-home #es-home-carousel-videos .carousel-control {
     margin-bottom: 1.8em !important; }
-  body #es-home #carousel-es-home-videos .carousel-inner .item .video {
+  body #es-home #es-home-carousel-videos .carousel-inner .item .video {
     display: inline-flex;
     height: 30em; }
   @media (max-width: 767px) {

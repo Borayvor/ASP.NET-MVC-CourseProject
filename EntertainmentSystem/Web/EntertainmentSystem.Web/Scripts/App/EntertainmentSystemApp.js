@@ -16,7 +16,7 @@ $(function () {
         $(this).parent().children('.inputUploadPictureBtn').click();
     });
 
-    $('.sendUploadPictureBtn').click(function (e) {        
+    $('.sendUploadPictureBtn').click(function (e) {
         $(this).parent().children('.es-upload-btn').click();
     });
 
@@ -30,5 +30,16 @@ $(function () {
         $(this).parent().children('.es-upload-btn').click();
     });
 
+    $("#es-home-carousel-videos").on('slid.bs.carousel', function () {
+        var itemActive = $(this).children(".carousel-inner").children(".item.active")
+        var itemNotActive = $(this).children(".carousel-inner").children(".item").not(".active");
+        
+        itemActive.children(".video").get(0).play();
+                
+        itemNotActive.children(".video").each(function (key, value) {
+            value.pause();
+        });
+    });
+       
     // test   
 });
