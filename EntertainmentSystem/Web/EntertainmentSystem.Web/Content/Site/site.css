@@ -114,10 +114,10 @@
         width: 100%;
         font-weight: 500;
         text-transform: uppercase;
-        font-size: 1.5vw;
-        line-height: 1.7vw;
-        height: 3.4vw;
-        overflow: visible; }
+        font-size: 1.4vw;
+        line-height: 1.5vw;
+        height: 1.7vw;
+        overflow: hidden; }
       body .es-card .es-card-text .es-media-collection {
         margin: 0;
         white-space: nowrap;
@@ -125,19 +125,19 @@
         width: 100%;
         font-weight: 500;
         text-transform: uppercase;
-        font-size: 1.5vw;
-        line-height: 1.7vw;
-        height: 3.4vw;
-        overflow: visible; }
+        font-size: 1.4vw;
+        line-height: 1.5vw;
+        height: 1.7vw;
+        overflow: hidden; }
       body .es-card .es-card-text .es-media-title {
         font-weight: 400;
         width: 100%;
         color: #2e2f33;
         text-overflow: ellipsis;
         margin-top: 0.5vw;
-        font-size: 2.5vw;
-        line-height: 3.2vw;
-        height: 6.4vw;
+        font-size: 2.3vw;
+        line-height: 2.4vw;
+        height: 4.9vw;
         overflow: visible; }
       body .es-card .es-card-text .es-description-container {
         position: relative;
@@ -146,11 +146,10 @@
         text-overflow: ellipsis;
         width: 100%;
         font-weight: 400;
-        letter-spacing: -0.1vw;
         margin-top: 1.5vw;
-        font-size: 1.75vw;
-        line-height: 2.5vw;
-        height: 7.5vw;
+        font-size: 1.3vw;
+        line-height: 1.4vw;
+        height: 4.3vw;
         overflow: hidden; }
         body .es-card .es-card-text .es-description-container .es-media-description {
           margin: 0;
