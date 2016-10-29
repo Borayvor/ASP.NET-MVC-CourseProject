@@ -43,12 +43,16 @@
             this.CheckFileModel(file);
             this.CheckFileInfoModel(fileInfo);
 
+            // TODO: refactor -> coverImageUrl
+            string coverImageUrl = "../../../../Images/blank-image.jpg";
+
             var contentId = this.uploadingGeneratorService.Create(
                 file.InputStream,
                 file.ContentType,
                 this.HttpContext.User.Identity.GetUserId(),
                 fileInfo.Title,
                 fileInfo.Description,
+                coverImageUrl,
                 fileInfo.CategoryId,
                 fileInfo.CollectionId);
         }

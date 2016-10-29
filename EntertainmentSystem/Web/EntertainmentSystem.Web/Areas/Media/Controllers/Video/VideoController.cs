@@ -35,6 +35,11 @@
 
         public ActionResult VideoDetails(Guid id)
         {
+            ////return this.ConditionalActionResult(
+            ////    () => this.videoService
+            ////    .GetById(id)
+            ////    .To<>);
+
             return this.View();
         }
     }

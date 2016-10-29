@@ -22,6 +22,7 @@
             string ownerId,
             string title,
             string description,
+            string coverImageUrl,
             Guid categoryId,
             Guid? collectionId)
         {
@@ -31,6 +32,7 @@
                 ownerId,
                 title,
                 description,
+                coverImageUrl,
                 categoryId,
                 collectionId,
                 ContentType.Video);

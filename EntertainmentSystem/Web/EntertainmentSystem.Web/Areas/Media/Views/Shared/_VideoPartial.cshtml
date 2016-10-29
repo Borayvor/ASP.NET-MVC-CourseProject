@@ -6,7 +6,7 @@
 <article class="es-card fade-in-animation col-sm-3 col-xs-2">
     <a class="content" href="@(Url.Action<VideoController>(c => c.VideoDetails(@Model.Id)))">
         <div>
-            <div class="es-card-image" style="background-image: url('../../../../Images/blank-image.jpg');"></div>
+            <div class="es-card-image" style="background-image: url(@Model.CoverImageUrl);"></div>
             <div class="es-card-text">
                 <p class="es-media-category">@Model.Category</p>
                 <p class="es-media-collection">@Model.Collection</p>

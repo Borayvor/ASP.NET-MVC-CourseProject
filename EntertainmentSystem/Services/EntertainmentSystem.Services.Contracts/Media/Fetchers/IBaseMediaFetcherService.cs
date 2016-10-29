@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Services.Contracts.Media.Fetchers
 {
+    using System;
     using System.Linq;
     using Data.Models.Media;
 
@@ -8,5 +9,7 @@
         IQueryable<MediaContent> All();
 
         IQueryable<MediaContent> AllByTitle(string search);
+
+        MediaContent GetById(Guid id);
     }
 }

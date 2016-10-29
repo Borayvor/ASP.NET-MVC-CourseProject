@@ -13,20 +13,17 @@
 
         public string Description { get; set; }
 
-        public string ContentUrl { get; set; }
-
         public string Category { get; set; }
 
         public string Collection { get; set; }
 
-        public string Author { get; set; }
+        public string CoverImageUrl { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<MediaContent, MediaBaseViewModel>()
                 .ForMember(m => m.Category, opt => opt.MapFrom(x => x.MediaCategory.Name))
                 .ForMember(m => m.Collection, opt => opt.MapFrom(x => x.MediaCollection.Name))
-                .ForMember(m => m.Author, opt => opt.MapFrom(x => x.Author.UserName))
                 .ReverseMap();
         }
     }

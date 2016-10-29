@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Services.Media.Fetchers
 {
+    using System;
     using System.Linq;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
@@ -30,6 +31,11 @@
                 .Where(c => c.ContentType == this.type
                 && c.Title.ToLower().Contains(search.ToLower()))
                 .OrderByDescending(c => c.CreatedOn);
+        }
+
+        public MediaContent GetById(Guid id)
+        {
+            return this.contentService.GetById(id);
         }
 
         protected abstract ContentType GetContentType();

@@ -30,6 +30,7 @@
             string ownerId,
             string title,
             string description,
+            string coverImageUrl,
             Guid categoryId,
             Guid? collectionId,
             ContentType type)
@@ -40,11 +41,13 @@
                 AuthorId = ownerId,
                 Title = title,
                 Description = description,
+                CoverImageUrl = coverImageUrl,
                 MediaCategoryId = categoryId,
                 MediaCollectionId = collectionId
             };
 
             content.ContentUrl = this.Storage.UploadFile(file, content.Id.ToString(), mimeType);
+            content.CoverImageUrl = "";
 
             this.contents.Create(content);
 

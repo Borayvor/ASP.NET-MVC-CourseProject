@@ -18,6 +18,7 @@
             string ownerId,
             string title,
             string description,
+            string coverImageUrl,
             Guid categoryId,
             Guid? collectionId);
 

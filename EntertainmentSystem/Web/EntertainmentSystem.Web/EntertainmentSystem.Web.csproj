@@ -225,9 +225,6 @@
     <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBaseViewModel.cs" />
-    <Compile Include="Areas\Media\ViewModels\Music\MusicHomeViewModel.cs" />
-    <Compile Include="Areas\Media\ViewModels\Picture\PictureHomeViewModel.cs" />
-    <Compile Include="Areas\Media\ViewModels\Video\VideoHomeViewModel.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCategoryController.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCollectionController.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaContentController.cs" />
