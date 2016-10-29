@@ -1,5 +1,5 @@
-﻿@using EntertainmentSystem.Web.ViewModels.Media
-@model MediaContentViewModel
+﻿@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model AdminMediaContentViewModel
 
 <div class="es-edit-form">
     <div class="form-group">
@@ -12,5 +12,10 @@
         @Html.LabelFor(m => m.Description)
         @Html.EditorFor(m => m.Description)
         @Html.ValidationMessageFor(m => m.Description)
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsDeleted)
+        @Html.EditorFor(m => m.IsDeleted)
     </div>
 </div>

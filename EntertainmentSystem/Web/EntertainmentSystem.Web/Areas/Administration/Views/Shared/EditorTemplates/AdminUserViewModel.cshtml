@@ -1,5 +1,5 @@
-﻿@using EntertainmentSystem.Web.ViewModels.User
-@model UserViewModel
+﻿@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model AdminUserViewModel
 
 <div class="es-edit-form">
     <div class="form-group">
@@ -18,5 +18,10 @@
         @Html.LabelFor(m => m.AvatarImageUrl)
         @Html.TextBoxFor(m => m.AvatarImageUrl, new { @class = "form-control" })
         @Html.ValidationMessageFor(m => m.AvatarImageUrl)
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsDeleted)
+        @Html.EditorFor(m => m.IsDeleted)
     </div>
 </div>

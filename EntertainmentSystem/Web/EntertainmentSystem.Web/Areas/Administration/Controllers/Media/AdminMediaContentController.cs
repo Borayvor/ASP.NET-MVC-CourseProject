@@ -7,6 +7,7 @@
     using Kendo.Mvc.UI;
     using Services.Contracts.Media;
     using Services.Contracts.Media.Admin;
+    using ViewModels;
     using Web.ViewModels.Media;
 
     public class AdminMediaContentController : AdminController
@@ -54,7 +55,7 @@
         {
             var data = this.adminContentService
                 .GetAllWithDeleted()
-                .To<MediaContentViewModel>()
+                .To<AdminMediaContentViewModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(data);
@@ -62,7 +63,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update([DataSourceRequest]DataSourceRequest request, MediaContentEditViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaContentEditViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -72,7 +73,7 @@
 
                 this.adminContentService.Update(entity);
 
-                var viewModel = this.Mapper.Map<MediaContentViewModel>(entity);
+                var viewModel = this.Mapper.Map<AdminMediaContentViewModel>(entity);
 
                 return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
@@ -82,7 +83,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, MediaContentViewModel model)
+        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaContentViewModel model)
         {
             // TODO: implement - delete files from cdn
             if (model != null)

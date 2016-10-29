@@ -215,6 +215,14 @@
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaCollectionController.cs" />
     <Compile Include="Areas\Administration\Controllers\Media\AdminMediaContentController.cs" />
     <Compile Include="Areas\Administration\Controllers\Users\AdminUsersController.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCollectionViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminUserViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCategoryEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaCollectionEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
+    <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBaseViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\Music\MusicHomeViewModel.cs" />
@@ -435,6 +443,10 @@
     <Content Include="Areas\Administration\Views\AdminMediaCollection\Index.cshtml" />
     <Content Include="Areas\Moderators\Views\ModeratorMediaCollection\Index.cshtml" />
     <Content Include="Areas\Moderators\Views\ModeratorMediaCollection\_Create.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaCategoryViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaCollectionViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminMediaContentViewModel.cshtml" />
+    <Content Include="Areas\Administration\Views\Shared\EditorTemplates\AdminUserViewModel.cshtml" />
     <None Include="compilerconfig.json" />
     <None Include="compilerconfig.json.defaults">
       <DependentUpon>compilerconfig.json</DependentUpon>
@@ -555,9 +567,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\Forum\" />
-    <Folder Include="Areas\Administration\ViewModels\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
-    <Folder Include="Areas\Administration\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Moderators\Controllers\Forum\" />

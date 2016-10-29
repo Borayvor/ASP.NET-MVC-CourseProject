@@ -7,6 +7,7 @@
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
     using Services.Contracts.Media.Admin;
+    using ViewModels;
     using Web.ViewModels.Media;
 
     public class AdminMediaCategoryController : AdminController
@@ -49,7 +50,7 @@
         {
             var data = this.adminMediaService
                 .GetAllWithDeleted()
-                .To<MediaCategoryViewModel>()
+                .To<AdminMediaCategoryViewModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(data);
@@ -57,7 +58,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update([DataSourceRequest]DataSourceRequest request, MediaCategoryEditViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryEditViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -67,7 +68,7 @@
 
                 this.adminMediaService.Update(entity);
 
-                var viewModel = this.Mapper.Map<MediaCategoryViewModel>(entity);
+                var viewModel = this.Mapper.Map<AdminMediaCategoryViewModel>(entity);
 
                 return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
             }
@@ -77,7 +78,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, MediaCategoryViewModel model)
+        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryViewModel model)
         {
             if (model != null)
             {

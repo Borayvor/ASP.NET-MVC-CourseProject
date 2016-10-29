@@ -25,6 +25,6 @@
 
         [Display(Name = "Avatar")]
         [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
-        public string ImageUrl { get; set; }
+        public string AvatarImageUrl { get; set; }
     }
 }

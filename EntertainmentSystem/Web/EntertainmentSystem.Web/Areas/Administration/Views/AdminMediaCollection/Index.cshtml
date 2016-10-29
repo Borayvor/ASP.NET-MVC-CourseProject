@@ -1,13 +1,13 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
-@using EntertainmentSystem.Web.ViewModels.Media
-@model MediaCollectionViewModel
+@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model AdminMediaCollectionViewModel
 
 <h2 class="text-center">Media Collection</h2>
 <br />
 
 @Html.Partial("_Create")
 
-@(Html.FullFeaturedAdminGrid<MediaCollectionViewModel>(
+@(Html.FullFeaturedAdminGrid<AdminMediaCollectionViewModel>(
     HtmlConstants.AdminMediaCollectionControllerName,
     m => m.Id,
     cols =>

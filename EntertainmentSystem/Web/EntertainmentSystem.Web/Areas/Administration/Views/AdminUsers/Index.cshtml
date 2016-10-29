@@ -1,18 +1,18 @@
 ﻿@using EntertainmentSystem.Web.Infrastructure.HtmlHelpers
-@using EntertainmentSystem.Web.ViewModels.User
-@model UserViewModel
+@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model AdminUserViewModel
 
 <h2 class="text-center">Users</h2>
 <br />
 
-@(Html.FullFeaturedAdminGrid<UserViewModel>(
+@(Html.FullFeaturedAdminGrid<AdminUserViewModel>(
     HtmlConstants.AdminUsersControllerName,
     m => m.Id,
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();
-        cols.Bound(m => m.ImageUrl).ClientTemplate(
-            @"<img src='#:ImageUrl#' alt='Avatar' class='img-responsive' />");
+        cols.Bound(m => m.AvatarImageUrl).ClientTemplate(
+            @"<img src='#:AvatarImageUrl#' alt='Avatar' class='img-responsive' />");
         cols.Bound(m => m.FirstName);
         cols.Bound(m => m.LastName);
         cols.Bound(m => m.UserName);

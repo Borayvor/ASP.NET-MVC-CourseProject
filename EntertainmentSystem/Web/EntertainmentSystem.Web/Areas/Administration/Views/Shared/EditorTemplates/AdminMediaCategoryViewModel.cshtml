@@ -1,0 +1,15 @@
+﻿@using EntertainmentSystem.Web.Areas.Administration.ViewModels
+@model AdminMediaCategoryViewModel
+
+<div class="es-edit-form">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
+    <br />
+    <div class="form-group">
+        @Html.LabelFor(m => m.IsDeleted)
+        @Html.EditorFor(m => m.IsDeleted)
+    </div>
+</div>

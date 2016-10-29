@@ -1,8 +1,10 @@
 ﻿@using EntertainmentSystem.Web.ViewModels.Media
 @model MediaCollectionViewModel
 
-<div class="form-group">
-    @Html.LabelFor(m => m.Name)
-    @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
-    @Html.ValidationMessageFor(m => m.Name)
+<div class="es-edit-form">
+    <div class="form-group">
+        @Html.LabelFor(m => m.Name)
+        @Html.TextBoxFor(m => m.Name, new { @class = "form-control" })
+        @Html.ValidationMessageFor(m => m.Name)
+    </div>
 </div>

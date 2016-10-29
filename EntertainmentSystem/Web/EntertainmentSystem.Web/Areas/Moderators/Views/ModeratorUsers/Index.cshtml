@@ -11,8 +11,8 @@
     cols =>
     {
         cols.Bound(m => m.Id).Hidden();
-        cols.Bound(m => m.ImageUrl).ClientTemplate(
-            @"<img src='#:ImageUrl#' alt='Avatar' class='img-responsive' />");
+        cols.Bound(m => m.AvatarImageUrl).ClientTemplate(
+            @"<img src='#:AvatarImageUrl#' alt='Avatar' class='img-responsive' />");
         cols.Bound(m => m.FirstName);
         cols.Bound(m => m.LastName);
         cols.Bound(m => m.UserName);

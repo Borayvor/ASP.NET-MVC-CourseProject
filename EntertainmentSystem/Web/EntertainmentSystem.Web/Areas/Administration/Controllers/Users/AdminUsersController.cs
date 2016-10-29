@@ -10,7 +10,7 @@
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.Owin;
     using Services.Contracts.Users;
-    using ViewModels.User;
+    using ViewModels;
 
     public class AdminUsersController : AdminController
     {
@@ -33,7 +33,7 @@
         {
             var data = this.usersAdminService
                 .GetAllWithDeleted()
-                .To<UserViewModel>()
+                .To<AdminUserViewModel>()
                 .ToDataSourceResult(request);
 
             return this.Json(data);
@@ -41,7 +41,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Update([DataSourceRequest]DataSourceRequest request, UserEditViewModel model)
+        public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminUserEditViewModel model)
         {
             if (model != null && this.ModelState.IsValid)
             {
@@ -55,7 +55,7 @@
 
                     this.usersAdminService.Update(entity);
 
-                    var viewModel = this.Mapper.Map<UserViewModel>(entity);
+                    var viewModel = this.Mapper.Map<AdminUserViewModel>(entity);
 
                     return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
                 }
@@ -66,7 +66,7 @@
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, UserViewModel model)
+        public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminUserViewModel model)
         {
             if (model != null)
             {

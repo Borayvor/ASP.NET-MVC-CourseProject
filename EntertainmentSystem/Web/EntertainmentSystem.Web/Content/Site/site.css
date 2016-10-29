@@ -28,6 +28,10 @@
     text-decoration: none; }
   body .es-upload-btn {
     display: none; }
+  body .es-edit-form {
+    width: 85%;
+    padding-left: 15px;
+    padding-right: 15px; }
   body #es-loading {
     display: none;
     position: fixed;
