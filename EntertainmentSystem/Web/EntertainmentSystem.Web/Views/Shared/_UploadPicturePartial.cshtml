@@ -10,7 +10,7 @@
     <div class="modal-body">
         <div>
             @Html.FontAwesomeButton("Choose File", "upload", new { @class = HtmlConstants.PictureChooseUploadClass })
-            @Html.HiddenFor(m => m.File, new { type = "file", @class = HtmlConstants.PictureInputUploadClass + " display-none" })
+            @Html.HiddenFor(m => m.File, new { type = "file", @class = HtmlConstants.PictureInputUploadClass + " hidden" })
         </div>
         @Html.ValidationMessageFor(m => m.File, string.Empty, new { @class = "text-danger" })
         <br />

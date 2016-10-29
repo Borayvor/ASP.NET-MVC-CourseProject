@@ -3,29 +3,19 @@
 @using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaBaseViewModel
 
-<article class="card fade-in-animation col-sm-3">
+<article class="es-card es-fade-in-animation col-sm-3 col-xs-6">
     <a class="content" href="@(Url.Action<PictureController>(c => c.PictureDetails(@Model.Id)))">
         <div>
-            <div class="card-image" style="background-image: url('../../../../Images/blank-image.jpg');"></div>
-            <div class="card-text">
+            <div class="es-card-image" style="background-image: url('../../../../Images/blank-image.jpg');"></div>
+            <div class="es-card-text">
                 <p class="es-media-category">@Model.Category</p>
                 <p class="es-media-collection">@Model.Collection</p>
                 <h2 class="es-media-title">@Model.Title</h2>
-                <div class="description-container">
+                <div class="es-description-container">
                     <p class="es-media-description">@Model.Description</p>
                 </div>
             </div>
         </div>
-        <div class="highlighter"></div>
-    </a>
-    @*<section class="addon">
-            <div class="layout-align-start-center">
-                <div class="tab flex layout-align-start-center">
-                    <span class="stat">344823</span>
-                </div>
-                <div class="tab favorite-container md-layout-row layout-align-start-center" role="button" tabindex="0">
-                    <span class="stat" aria-hidden="false">377</span>
-                </div>
-            </div>
-        </section>*@
+        <div class="es-highlighter"></div>
+    </a>    
 </article>

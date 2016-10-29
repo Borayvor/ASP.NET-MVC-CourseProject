@@ -16,16 +16,6 @@
     .dl-horizontal dt {
         white-space: normal;
     }
-    /* Set width on the form input elements since they're 100% wide by default */
-    input,
-    select,
-    textarea {
-        /*max-width: 280px;*/
-    }
-
-    .display-none {
-        display: none !important;
-    }
 
     a {
         -webkit-transition: color 0.2s ease-in-out;
@@ -34,11 +24,11 @@
         text-decoration: none;
     }
 
-    .es-upload-btn{
+    .es-upload-btn {
         display: none;
     }
 
-    .es-edit-form{        
+    .es-edit-form {
         width: 85%;
         padding-left: 15px;
         padding-right: 15px;
@@ -46,7 +36,7 @@
 
     @import "site-loading";
 
-    @import "site-home"; 
+    @import "site-home";
 
     @import "site-media-video-home";
 }

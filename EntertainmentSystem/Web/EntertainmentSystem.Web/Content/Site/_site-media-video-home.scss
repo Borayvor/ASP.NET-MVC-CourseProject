@@ -1,7 +1,39 @@
-﻿.card {
+﻿@media (max-width: 767px) {
+    .es-card {
+        .es-card-text {
+            padding: 2.5vw 2vw 2vw 2.5vw !important;
+
+            .es-media-category {
+                font-size: 2.3vw !important;
+                line-height: 2vw !important;
+                height: 2vw !important;
+            }
+
+            .es-media-collection {
+                font-size: 2.3vw !important;
+                line-height: 2vw !important;
+                height: 2vw !important;
+            }
+
+            .es-media-title {
+                font-size: 4vw !important;
+                line-height: 5vw !important;
+                height: 10vw !important;
+            }
+
+            .es-description-container {
+                font-size: 2.5vw !important;
+                line-height: 4vw !important;
+                height: 12vw !important;
+            }
+        }
+    }
+}
+
+.es-card {
     border: 0;
-    position: relative;
-    display: inline-block;
+    margin-top: 15px;
+    margin-bottom: 15px;
 
     .content {
         width: 100%;
@@ -20,40 +52,38 @@
         }
     }
 
-    .card-image {
+    .es-card-image {
         position: relative;
         background-position: center top;
         background-repeat: no-repeat;
         background-size: cover;
         display: block;
         width: 100%;
+
+        &:after {
+            padding-top: 150%;
+            display: block;
+            content: '';
+        }
     }
 
-    .card-image:after {
-        padding-top: 150%;
-        display: block;
-        content: '';
-    }
-
-    .card-text {
+    .es-card-text {
         position: relative;
         width: 100%;
         margin-bottom: 0;
         color: #1e3264;
-        padding: 3vw 3.5vw 3.5vw 3.5vw;
+        padding: 1.5vw 1vw 1vw 1.5vw;
 
         .es-media-category {
             margin: 0;
             white-space: nowrap;
             text-overflow: ellipsis;
-            overflow: hidden;
             width: 100%;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: -0.2vw;
-            font-size: 1.3vw;
-            line-height: 2vw;
-            height: 2vw;
+            font-size: 1.5vw;
+            line-height: 1.7vw;
+            height: 3.4vw;
             overflow: visible;
         }
 
@@ -61,14 +91,12 @@
             margin: 0;
             white-space: nowrap;
             text-overflow: ellipsis;
-            overflow: hidden;
             width: 100%;
             font-weight: 500;
             text-transform: uppercase;
-            letter-spacing: -0.2vw;
-            font-size: 1.3vw;
-            line-height: 2vw;
-            height: 2vw;
+            font-size: 1.5vw;
+            line-height: 1.7vw;
+            height: 3.4vw;
             overflow: visible;
         }
 
@@ -77,27 +105,26 @@
             width: 100%;
             color: #2e2f33;
             text-overflow: ellipsis;
-            overflow: hidden;
-            letter-spacing: -0.15vw;
-            margin-top: 0.25vw;
+            margin-top: 0.5vw;
             font-size: 2.5vw;
-            line-height: 2vw;
-            height: 2vw;
+            line-height: 3.2vw;
+            height: 6.4vw;
+            overflow: visible;
         }
 
-        .description-container {
+        .es-description-container {
             position: relative;
             color: #a5a5a5;
             font-weight: 500;
             text-overflow: ellipsis;
-            overflow: hidden;
             width: 100%;
             font-weight: 400;
             letter-spacing: -0.1vw;
-            margin-top: 2vw;
-            font-size: 1.5vw;
-            line-height: 2vw;
-            height: 2vw;
+            margin-top: 1.5vw;
+            font-size: 1.75vw;
+            line-height: 2.5vw;
+            height: 7.5vw;
+            overflow: hidden;
 
             .es-media-description {
                 margin: 0;
@@ -107,7 +134,7 @@
         }
     }
 
-    .highlighter {
+    .es-highlighter {
         display: block;
         position: absolute;
         cursor: pointer;
