@@ -35,12 +35,9 @@
 
         public ActionResult VideoDetails(Guid id)
         {
-            ////return this.ConditionalActionResult(
-            ////    () => this.videoService
-            ////    .GetById(id)
-            ////    .To<>);
-
-            return this.View();
+            return this.ConditionalActionResult(
+                () => this.Mapper.Map<MediaDetailsViewModel>(this.videoService.GetById(id)),
+                (content) => this.View(content));
         }
     }
 }
