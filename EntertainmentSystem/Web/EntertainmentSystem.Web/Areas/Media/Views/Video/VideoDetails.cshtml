@@ -1,7 +1,7 @@
 ﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaDetailsViewModel
 
-<div class="es-media-details-video es-media-details-video-show">
+<div class="es-media-details-video es-media-details-video-show "> @*noscroll*@
     <div class="container-fluid">
         <div class="row flexbox es-flex-row">
             <div class="col-xs-12">
@@ -30,12 +30,10 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-
-    @Html.Partial("_VideoPlayPartial")
+        </div>       
+    </div>    
 </div>
 
-
+@Html.Partial("_VideoPlayPartial")
 
 

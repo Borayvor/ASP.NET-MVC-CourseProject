@@ -123,7 +123,6 @@
 
                 &.es-top-bar {
                     top: -60px;
-                    background: url(/header-gradient.png) top center repeat-x;
                     display: -webkit-box;
                     display: -webkit-flex;
                     display: -moz-flex;
@@ -139,8 +138,7 @@
                         width: 60px;
                         height: 60px;
                         cursor: pointer;
-                        color: #fff;
-                        right: 0;
+                        color: #fff;                        
                         font-size: 30px;
                         -webkit-transition: all .2s cubic-bezier(.175,.885,.32,1);
                         -moz-transition: all .2s cubic-bezier(.175,.885,.32,1);
@@ -161,6 +159,8 @@
                         -webkit-align-items: center;
                         -moz-align-items: center;
                         align-items: center;
+                        position: absolute;
+                        right: 0 !important;
 
                         span {
                             position: relative;

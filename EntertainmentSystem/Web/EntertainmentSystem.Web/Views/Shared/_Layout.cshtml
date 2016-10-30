@@ -34,7 +34,7 @@
     @{ var classBody = string.Empty; }
 
     @if (!((string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.AdministratorAreaName
-                  || (string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.ModeratorAreaName))
+                          || (string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.ModeratorAreaName))
     {
         classBody = "class=\"container\"";
     }
