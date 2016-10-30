@@ -30,6 +30,7 @@ $(function () {
         $(this).parent().children('.es-upload-btn').click();
     });
 
+    // carousel auto play-pause
     $("#es-home-carousel-videos").on('slid.bs.carousel', function () {
         var itemActive = $(this).children(".carousel-inner").children(".item.active")
         var itemNotActive = $(this).children(".carousel-inner").children(".item").not(".active");
@@ -41,5 +42,17 @@ $(function () {
         });
     });
        
-    // test   
+    // test  
+
+    ////$("#es-music-upload").submit(function () {
+    ////    $('#modalMisicWindowMain').modal('hide');
+
+    ////    $('#es-loading').show();
+    ////});
+
+    ////function musicUploadSubmit () {
+    ////    $('#modalMisicWindowMain').modal('hide');
+
+    ////    $('#es-loading').show();
+    ////}
 });

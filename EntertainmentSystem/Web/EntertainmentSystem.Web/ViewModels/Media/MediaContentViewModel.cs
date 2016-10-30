@@ -17,8 +17,9 @@
         [MaxLength(GlobalConstants.MediaContentDescriptionMaxLength)]
         public string Description { get; set; }
 
-        [Display(Name = "File")]
         [Required]
+        [Display(Name = "File")]
+        [DataType(DataType.ImageUrl)]
         [MinLength(GlobalConstants.MediaContentContentUrlMinLength)]
         [MaxLength(GlobalConstants.MediaContentContentUrlMaxLength)]
         public string ContentUrl { get; set; }
@@ -26,14 +27,14 @@
         [Display(Name = "Type")]
         public string ContentType { get; set; }
 
-        [Display(Name = "Category")]
         [Required]
+        [Display(Name = "Category")]
         [MinLength(GlobalConstants.MediaCategoryNameMinLength)]
         [MaxLength(GlobalConstants.MediaCategoryNameMaxLength)]
         public string MediaCategory { get; set; }
 
-        [Display(Name = "Collection")]
         [Required]
+        [Display(Name = "Collection")]
         [MinLength(GlobalConstants.MediaCollectionNameMinLength)]
         [MaxLength(GlobalConstants.MediaCollectionNameMaxLength)]
         public string MediaCollection { get; set; }

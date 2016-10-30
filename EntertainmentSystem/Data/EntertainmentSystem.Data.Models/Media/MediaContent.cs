@@ -16,10 +16,12 @@
         public string Description { get; set; }
 
         [Required]
+        [DataType(DataType.ImageUrl)]
         [MinLength(GlobalConstants.MediaContentContentUrlMinLength)]
         [MaxLength(GlobalConstants.MediaContentContentUrlMaxLength)]
         public string ContentUrl { get; set; }
 
+        [DataType(DataType.ImageUrl)]
         [MaxLength(GlobalConstants.MediaContentCoverImageUrlMaxLength)]
         public string CoverImageUrl { get; set; }
 
