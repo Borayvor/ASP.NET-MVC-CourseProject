@@ -1,0 +1,181 @@
+﻿
+#es-video-container {
+    &.es-video-player {
+        visibility: hidden;
+        position: fixed;
+        opacity: 0;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+        background: #000;
+        transition: all .5s cubic-bezier(.5,0,.1,1);
+        -moz-transition: all .5s cubic-bezier(.5,0,.1,1);
+        -o-transition: all .5s cubic-bezier(.5,0,.1,1);
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -moz-align-items: center;
+        align-items: center;
+
+        &.es-video-active {
+            z-index: 110;
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .es-player-container {
+            width: 100%;
+            height: 100%;
+
+            video {
+                width: 100%;
+                height: auto;
+                transition: all .5s cubic-bezier(.5,0,.1,1);
+                display: inline-block;
+                vertical-align: baseline;
+            }
+
+            .es-video-paused-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                opacity: 0;
+                background: #000;
+                z-index: -1;
+                transition: all .5s cubic-bezier(.5,0,.1,1);
+
+                &.es-paused {
+                    z-index: 0;
+                    opacity: .5;
+                }
+            }
+
+            .es-giant-resume-icon {
+                width: 100%;
+                height: 100%;
+                visibility: hidden;
+                opacity: 0;
+                font-size: 72px;
+                z-index: -1;
+                display: -webkit-box;
+                display: -moz-flex;
+                display: -ms-flexbox;
+                position: fixed;
+                top: 0;
+                left: 0;
+                display: flex;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                -webkit-justify-content: center;
+                -moz-justify-content: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                align-items: center;
+
+                &.es-video-active {
+                    visibility: visible;
+                    opacity: 1;
+                    z-index: 1;
+                }
+            }
+
+            .es-player-controls {
+                top: -60px;
+                background: url(/header-gradient.png) top center repeat-x;
+                display: -webkit-box;
+                display: -webkit-flex;
+                display: -moz-flex;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                -webkit-align-items: center;
+                -moz-align-items: center;
+                align-items: center;
+                position: fixed;
+                left: 0;
+                width: 100%;
+                height: 60px;
+                visibility: hidden;
+                opacity: 0;
+                z-index: -1;
+                -webkit-transition: all .5s cubic-bezier(.5,0,.1,1);
+                -moz-transition: all .5s cubic-bezier(.5,0,.1,1);
+                -o-transition: all .5s cubic-bezier(.5,0,.1,1);
+                transition: all .5s cubic-bezier(.5,0,.1,1);
+
+                &.es-top-bar {
+                    top: -60px;
+                    background: url(/header-gradient.png) top center repeat-x;
+                    display: -webkit-box;
+                    display: -webkit-flex;
+                    display: -moz-flex;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    -webkit-align-items: center;
+                    -moz-align-items: center;
+                    align-items: center;
+
+                    .es-close-icon {
+                        width: 60px;
+                        height: 60px;
+                        cursor: pointer;
+                        color: #fff;
+                        right: 0;
+                        font-size: 30px;
+                        -webkit-transition: all .2s cubic-bezier(.175,.885,.32,1);
+                        -moz-transition: all .2s cubic-bezier(.175,.885,.32,1);
+                        -o-transition: all .2s cubic-bezier(.175,.885,.32,1);
+                        transition: all .2s cubic-bezier(.175,.885,.32,1);
+                        display: -webkit-box;
+                        display: -webkit-flex;
+                        display: -moz-flex;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        -webkit-justify-content: center;
+                        -moz-justify-content: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        -webkit-align-items: center;
+                        -moz-align-items: center;
+                        align-items: center;
+
+                        span {
+                            position: relative;
+                            top: -2px;
+                        }
+                    }
+                }
+
+                &.es-video-active {
+                    top: 0;
+                    z-index: 20;
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+    }
+}

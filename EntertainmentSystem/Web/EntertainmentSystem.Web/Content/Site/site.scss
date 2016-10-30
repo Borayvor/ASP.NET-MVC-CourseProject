@@ -1,15 +1,19 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #fcf6ea;   
+    background-color: #fcf6ea;    
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     font-weight: 300;
-    
+
     .dl-horizontal dt {
         white-space: normal;
     }
 
-    .container{
+    #es-navbar {
+        z-index: 100 !important;
+    }
+
+    .container {
         padding-left: 0 !important;
         padding-right: 0 !important;
     }
@@ -21,8 +25,15 @@
         text-decoration: none;
     }
 
-    .es-clickable{
+    .es-clickable {
         cursor: pointer;
+    }
+
+    .noscroll {
+        position: fixed !important;
+        overflow: hidden !important;
+        width: 100%;
+        height: 100%;
     }
 
     .es-flex-row {
@@ -33,6 +44,20 @@
         -moz-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
+    }
+
+    .es-flex-col {
+        display: -webkit-box;
+        display: -webkit-flex;
+        display: -moz-flex;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-direction: normal;
+        -webkit-box-orient: vertical;
+        -webkit-flex-direction: column;
+        -moz-flex-direction: column;
+        -ms-flex-direction: column;
+        flex-direction: column;
     }
 
     .es-flex-wrap {
@@ -50,20 +75,20 @@
         align-items: flex-start;
     }
 
-    .es-justify-center {
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        -moz-justify-content: center;
-        justify-content: center;
-    }
-
     .es-align-center {
         -webkit-box-align: center;
         -ms-flex-align: center;
         -webkit-align-items: center;
         -moz-align-items: center;
         align-items: center;
+    }
+
+    .es-justify-center {
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        -webkit-justify-content: center;
+        -moz-justify-content: center;
+        justify-content: center;
     }
 
     .es-upload-btn {
@@ -83,4 +108,6 @@
     @import "site-media-video-home";
 
     @import "site-media-video-details";
+
+    @import "site-media-video-play";
 }

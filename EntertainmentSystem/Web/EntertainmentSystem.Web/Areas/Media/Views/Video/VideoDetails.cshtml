@@ -1,28 +1,30 @@
 ﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaDetailsViewModel
 
-<div id="es-video-details">    
-    <div class="es-media-details-video es-media-details-video-show">
-        <div class="col-xs-12">
-            <div class="es-media-details-bg" style="background-image:url(@Model.CoverImageUrl);">
-                <div class="es-media-details-bg-gradient"></div>
-            </div>
-            <div class="es-media-details-play-container">
-                <em class="fa fa-play play"></em>
-            </div>
-            <div class="es-media-details-content es-flex-row es-align-top es-flex-wrap">                
-                <div class="es-media-details-info-container">
-                    <div class="es-media-details-info-padding">
-                        <h1 class="es-media-details-title">@Model.Title</h1>
-                        <h3 class="es-media-details-category">@Model.Category</h3>
-                        <h3 class="es-media-details-collection">@Model.Collection</h3>
-                        <p class="es-media-details-date"><span>Upload date: </span><span>@Model.CreatedOn</span></p>
-                        <div class="es-media-details-description-container">
-                            <div class="es-media-details-description">
-                                <p>@Model.Description</p>
-                            </div>
-                            <div class="es-media-details-more es-flex-row es-justify-center es-align-center es-clickable">
-                                <em class="fa fa-angle-down"></em>
+<div class="es-media-details-video es-media-details-video-show">
+    <div class="container-fluid">
+        <div class="row flexbox es-flex-row">
+            <div class="col-xs-12">
+                <div class="es-media-details-bg" style="background-image:url(@Model.CoverImageUrl);">
+                    <div class="es-media-details-bg-gradient"></div>
+                </div>
+                <div class="es-media-details-play-container">
+                    <em class="fa fa-play play"></em>
+                </div>
+                <div class="es-media-details-content es-flex-row es-align-top es-flex-wrap">
+                    <div class="es-media-details-info-container">
+                        <div class="es-media-details-info-padding">
+                            <h1 class="es-media-details-title">@Model.Title</h1>
+                            <h3 class="es-media-details-category">@Model.Category</h3>
+                            <h3 class="es-media-details-collection">@Model.Collection</h3>
+                            <p class="es-media-details-date"><span>Upload date: </span><span>@Model.CreatedOn</span></p>
+                            <div class="es-media-details-description-container">
+                                <div class="es-media-details-description">
+                                    <p>@Model.Description</p>
+                                </div>
+                                <div class="es-media-details-more es-flex-row es-justify-center es-align-center es-clickable">
+                                    <em class="fa fa-angle-down"></em>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -30,5 +32,10 @@
             </div>
         </div>
     </div>
+
+    @Html.Partial("_VideoPlayPartial")
 </div>
+
+
+
 

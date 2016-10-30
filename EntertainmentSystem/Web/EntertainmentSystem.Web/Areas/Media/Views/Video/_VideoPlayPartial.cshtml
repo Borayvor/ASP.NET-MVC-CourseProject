@@ -1,0 +1,18 @@
+﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
+@model MediaDetailsViewModel
+
+<div id="es-video-container" class="es-video-player es-video-active">
+    <div class="es-player-container es-flex-col es-justify-center">
+        <video id="es-video-element" preload="auto" src="@Model.ContentUrl"></video>
+        <div class="es-video-paused-overlay es-paused"></div>
+        <div class="es-giant-resume-icon es-video-active">
+            <em class="fa fa-play"></em>
+        </div>
+        <div class="es-player-controls es-top-bar es-video-active">
+            <div class="es-close-icon">
+                <span>x</span>
+            </div>
+        </div>
+    </div>
+</div>
+
