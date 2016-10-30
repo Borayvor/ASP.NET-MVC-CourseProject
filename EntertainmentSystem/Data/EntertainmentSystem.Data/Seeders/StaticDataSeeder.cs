@@ -169,8 +169,26 @@
             context.SaveChanges();
         }
 
+        internal static void SeedMediaCollection(EntertainmentSystemDbContext context)
+        {
+            if (context.MediaCollections.Any())
+            {
+                return;
+            }
+
+            var collection = new MediaCollection
+            {
+                Name = "Warcraft"
+            };
+
+            context.MediaCollections.Add(collection);
+            context.SaveChanges();
+        }
+
         internal static void SeedMediaContents(EntertainmentSystemDbContext context)
         {
+            const string DefaultCoverImageUrl = "~/Images/blank-image.jpg";
+
             if (context.MediaContents.Any())
             {
                 return;
@@ -183,6 +201,8 @@
                 Description = "kjdiouiow fsdiodasp",
                 ContentUrl = "http://i2.wp.com/www.cgmeetup.net/home/wp-content/uploads/2015/11/World-of-Warcraft-Legion-Cinematic-Trailer-3.jpg?resize=960%2C398",
                 ContentType = ContentType.Picture,
+                CoverImageUrl = DefaultCoverImageUrl,
+                MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -194,6 +214,8 @@
                 Description = "totireo cxlkjasda",
                 ContentUrl = "http://blogs-images.forbes.com/scottmendelson/files/2016/05/Warcraft-Movie-Mobile-Wallpapers-1200x675.jpg",
                 ContentType = ContentType.Picture,
+                CoverImageUrl = DefaultCoverImageUrl,
+                MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -205,6 +227,8 @@
                 Description = "weqe cposp[d",
                 ContentUrl = "http://www.hdwallpapers.in/download/garona_warcraft_movie-720x1280.jpg",
                 ContentType = ContentType.Picture,
+                CoverImageUrl = DefaultCoverImageUrl,
+                MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -217,6 +241,7 @@
                 Description = "helloween-if_i_could_fly.mp3",
                 ContentUrl = "http://tones.mob.org/ringtone/Zv3QhDrqVx2Dt7cCBM3wQA/1477294611/fa77442020a94667c2767228643a645c/helloween-if_i_could_fly.mp3",
                 ContentType = ContentType.Music,
+                CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -228,6 +253,7 @@
                 Description = "helloween-future_world.mp3",
                 ContentUrl = "http://tones.mob.org/ringtone/eCue1_rfgV5wKT6OR0khNg/1477295076/38378_wapres_ru/helloween-future_world.mp3",
                 ContentType = ContentType.Music,
+                CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -239,6 +265,7 @@
                 Description = "helloween-hocus_pocus.mp3",
                 ContentUrl = "http://tones.mob.org/ringtone/J5mRGlQakIE_SqvLxckD_A/1477295523/22212cc9c43e1694633c7c4eb68ce1d3/helloween-hocus_pocus.mp3",
                 ContentType = ContentType.Music,
+                CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -248,9 +275,10 @@
             var contentVideo_1 = new MediaContent
             {
                 Title = "bunny",
-                Description = "qpqop sdopdd",
+                Description = "big-buck-bunny_trailer",
                 ContentUrl = "http://video.webmfiles.org/big-buck-bunny_trailer.webm",
                 ContentType = ContentType.Video,
+                CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -259,9 +287,10 @@
             var contentVideo_2 = new MediaContent
             {
                 Title = "happyfit2",
-                Description = "cxzcpoiwewne csddqweqw",
+                Description = "lorem ipsum",
                 ContentUrl = "http://easyhtml5video.com/images/happyfit2.webm",
                 ContentType = ContentType.Video,
+                CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 
@@ -269,10 +298,20 @@
 
             var contentVideo_3 = new MediaContent
             {
-                Title = "techslides",
-                Description = "techslides techslides techslides",
-                ContentUrl = "http://techslides.com/demos/sample-videos/small.webm",
+                Title = "Warcraft",
+                Description = "From Legendary Pictures and Universal Pictures comes Warcraft," +
+                " an epic adventure of world-colliding conflict based on Blizzard" +
+                " Entertainment’s global phenomenon. The peaceful realm of Azeroth stands on" +
+                " the brink of war as its civilization faces a fearsome race of invaders: Orc" +
+                " warriors fleeing their dying home to colonize another. As a portal opens to" +
+                " connect the two worlds, one army faces destruction and the other faces extinction." +
+                " From opposing sides, two heroes are set on a collision course that will decide the" +
+                " fate of their family, their people and their home. So begins a spectacular saga" +
+                " of power and sacrifice in which war has many faces, and everyone fights for something.",
+                ContentUrl = "http://files.ausgamers.com/downloads/1477839004/worldofwarcraftmistsofpandaria_introcg.mp4",
                 ContentType = ContentType.Video,
+                CoverImageUrl = DefaultCoverImageUrl,
+                MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
             };
 

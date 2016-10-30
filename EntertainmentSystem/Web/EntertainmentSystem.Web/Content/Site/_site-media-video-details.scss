@@ -1,4 +1,71 @@
-﻿
+﻿@media (max-width: 767px) {
+    #es-video-details {
+        .es-media-details-video {
+            &.es-media-details-video-show {
+                .es-media-details-content {
+                    .es-media-details-info-container {
+                        .es-media-details-title {
+                            font-size: 28px !important;
+                        }
+
+                        .es-media-details-category {
+                            font-size: 16px !important;
+                        }
+
+                        .es-media-details-collection {
+                            font-size: 16px !important;
+                        }
+
+                        .es-media-details-date {
+                            font-size: 14px !important;
+                        }
+
+                        .es-media-details-description-container {
+                            .es-media-details-description {
+                                font-size: 16px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 767px) and (max-width: 991px) {
+    #es-video-details {
+        .es-media-details-video {
+            &.es-media-details-video-show {
+                .es-media-details-content {
+                    .es-media-details-info-container {
+                        .es-media-details-title {
+                            font-size: 30px !important;
+                        }
+
+                        .es-media-details-category {
+                            font-size: 18px !important;
+                        }
+
+                        .es-media-details-collection {
+                            font-size: 18px !important;
+                        }
+
+                        .es-media-details-date {
+                            font-size: 16px !important;
+                        }
+
+                        .es-media-details-description-container {
+                            .es-media-details-description {
+                                font-size: 18px !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
 #es-video-details {
     color: #fff;
     background-color: #1e2124;
@@ -66,58 +133,6 @@
             .es-media-details-content {
                 position: relative;
 
-                .es-media-details-metadata-container {
-                    -webkit-box-flex: 1;
-                    -webkit-flex: 1 1 25%;
-                    -moz-box-flex: 1;
-                    -moz-flex: 1 1 25%;
-                    -ms-flex: 1 1 25%;
-                    flex: 1 1 25%;
-
-                    .es-media-details-metadata-padding {
-                        padding: 0 2% 4% 0;
-                    }
-
-                    .es-media-details-cover {
-                        padding: 0;
-                        -webkit-box-flex: 1;
-                        -webkit-flex: 1 1 100%;
-                        -moz-box-flex: 1;
-                        -moz-flex: 1 1 100%;
-                        -ms-flex: 1 1 100%;
-                        flex: 1 1 100%;
-
-                        .es-media-details-outer {
-                            border-radius: 3px;
-                            width: 100%;
-                            padding-top: 147%;
-                            position: relative;
-
-                            .es-media-details-inner {
-                                border-radius: 3px;
-                                position: absolute;
-                                top: 0;
-                                right: 0;
-                                bottom: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                border: 1px solid #000;
-                                -webkit-box-shadow: rgba(0,0,0,.4) 0 2px 12px 0;
-                                box-shadow: rgba(0,0,0,.4) 0 2px 12px 0;
-
-                                img {
-                                    border-radius: 3px;
-                                    background-color: transparent;
-                                    border: none;
-                                    outline: 0;
-                                    vertical-align: middle;
-                                }
-                            }
-                        }
-                    }
-                }
-
                 .es-media-details-info-container {
                     -webkit-box-flex: 1;
                     -webkit-flex: 1 1 75%;
@@ -131,15 +146,15 @@
                     }
 
                     .es-media-details-title {
-                        font-size: 3.2vw;
-                        letter-spacing: -.5px;                        
+                        font-size: 32px;
+                        letter-spacing: -.5px;
                         font-weight: 400;
                         margin: 0;
                     }
 
                     .es-media-details-category {
-                        font-size: 1.5vw;
-                        color: #ff962f;                        
+                        font-size: 20px;
+                        color: #ff962f;
                         text-transform: uppercase;
                         letter-spacing: -.5px;
                         font-weight: 500;
@@ -147,16 +162,16 @@
                     }
 
                     .es-media-details-collection {
-                        font-size: 1.5vw;
-                        color: #8a44fe;                        
+                        font-size: 20px;
+                        color: #8a44fe;
                         text-transform: uppercase;
                         letter-spacing: -.5px;
                         font-weight: 500;
                         margin: 0;
                     }
 
-                    .es-media-details-date{
-                        font-size: 1vw;
+                    .es-media-details-date {
+                        font-size: 18px;
                         color: rgba(255,255,255,.65);
                     }
 
@@ -168,13 +183,9 @@
                         margin: 15px 0;
 
                         .es-media-details-description {
-                            font-size: 1.5vw;
-                            font-size: 16px;
+                            font-size: 20px;
                             color: rgba(255,255,255,.75);
                             font-weight: 100;
-                            text-align: justify;
-                            -webkit-transform: scale3d(.995,.995,1);
-                            transform: scale3d(.995,.995,1);
                         }
 
                         .es-media-details-more {

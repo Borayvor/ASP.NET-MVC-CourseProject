@@ -22,7 +22,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
-                </button>                
+                </button>
             </div>
             <div class="navbar-collapse collapse">
                 @Html.Partial("_NavigationPartial")
@@ -33,14 +33,10 @@
 
     @{ var classBody = string.Empty; }
 
-    @if ((string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.AdministratorAreaName
-                                 || (string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.ModeratorAreaName)
+    @if (!((string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.AdministratorAreaName
+                  || (string)ViewContext.RouteData.DataTokens["area"] == GlobalConstants.ModeratorAreaName))
     {
-        classBody = "class=\"body-content\"";
-    }
-    else
-    {
-        classBody = "class=\"container body-content\"";
+        classBody = "class=\"container\"";
     }
 
     <div @Html.Raw(@classBody)>
@@ -49,8 +45,8 @@
         <footer>
             <p>&copy; @DateTime.Now.Year - EntertainmentSystem</p>
         </footer>
-    </div>    
-        
+    </div>
+
     @Scripts.Render("~/bundles/tools")
     @Scripts.Render("~/bundles/appJs")
     @RenderSection("scripts", required: false)

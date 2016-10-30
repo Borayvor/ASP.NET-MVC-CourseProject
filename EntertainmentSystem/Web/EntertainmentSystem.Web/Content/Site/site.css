@@ -2,18 +2,13 @@
   padding-top: 50px;
   padding-bottom: 20px;
   background-color: #fcf6ea;
-  background-size: cover;
-  font-family: "Gotham Rounded SSm A", "RobotoDraft", "Roboto", 'Helvetica Neue', "Helvetica", "Arial", "sans-serif";
-  font-weight: 300;
-  /* Set padding to keep content from hitting the edges */
-  /* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/ }
-  body .body-content {
-    padding-left: 15px;
-    padding-right: 15px; }
+  font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
+  font-weight: 300; }
   body .dl-horizontal dt {
     white-space: normal; }
+  body .container {
+    padding-left: 0 !important;
+    padding-right: 0 !important; }
   body a {
     -webkit-transition: color 0.2s ease-in-out;
     transition: color 0.2s ease-in-out;
@@ -202,6 +197,28 @@
       transition: all 0.15s ease-in;
       z-index: 5;
       border-bottom: 2px solid #2e2f33; }
+  @media (max-width: 767px) {
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-title {
+      font-size: 28px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-category {
+      font-size: 16px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-collection {
+      font-size: 16px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-date {
+      font-size: 14px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-description-container .es-media-details-description {
+      font-size: 16px !important; } }
+  @media (min-width: 767px) and (max-width: 991px) {
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-title {
+      font-size: 30px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-category {
+      font-size: 18px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-collection {
+      font-size: 18px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-date {
+      font-size: 16px !important; }
+    body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-description-container .es-media-details-description {
+      font-size: 18px !important; } }
   body #es-video-details {
     color: #fff;
     background-color: #1e2124;
@@ -257,46 +274,6 @@
           font-size: 60px; }
       body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content {
         position: relative; }
-        body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-metadata-container {
-          -webkit-box-flex: 1;
-          -webkit-flex: 1 1 25%;
-          -moz-box-flex: 1;
-          -moz-flex: 1 1 25%;
-          -ms-flex: 1 1 25%;
-          flex: 1 1 25%; }
-          body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-metadata-container .es-media-details-metadata-padding {
-            padding: 0 2% 4% 0; }
-          body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-metadata-container .es-media-details-cover {
-            padding: 0;
-            -webkit-box-flex: 1;
-            -webkit-flex: 1 1 100%;
-            -moz-box-flex: 1;
-            -moz-flex: 1 1 100%;
-            -ms-flex: 1 1 100%;
-            flex: 1 1 100%; }
-            body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-metadata-container .es-media-details-cover .es-media-details-outer {
-              border-radius: 3px;
-              width: 100%;
-              padding-top: 147%;
-              position: relative; }
-              body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-metadata-container .es-media-details-cover .es-media-details-outer .es-media-details-inner {
-                border-radius: 3px;
-                position: absolute;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                border: 1px solid #000;
-                -webkit-box-shadow: rgba(0, 0, 0, 0.4) 0 2px 12px 0;
-                box-shadow: rgba(0, 0, 0, 0.4) 0 2px 12px 0; }
-                body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-metadata-container .es-media-details-cover .es-media-details-outer .es-media-details-inner img {
-                  border-radius: 3px;
-                  background-color: transparent;
-                  border: none;
-                  outline: 0;
-                  vertical-align: middle; }
         body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container {
           -webkit-box-flex: 1;
           -webkit-flex: 1 1 75%;
@@ -307,26 +284,26 @@
           body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-info-padding {
             padding: 0 2% 4%; }
           body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-title {
-            font-size: 3.2vw;
+            font-size: 32px;
             letter-spacing: -.5px;
             font-weight: 400;
             margin: 0; }
           body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-category {
-            font-size: 1.5vw;
+            font-size: 20px;
             color: #ff962f;
             text-transform: uppercase;
             letter-spacing: -.5px;
             font-weight: 500;
             margin: 0; }
           body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-collection {
-            font-size: 1.5vw;
+            font-size: 20px;
             color: #8a44fe;
             text-transform: uppercase;
             letter-spacing: -.5px;
             font-weight: 500;
             margin: 0; }
           body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-date {
-            font-size: 1vw;
+            font-size: 18px;
             color: rgba(255, 255, 255, 0.65); }
           body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-description-container {
             max-height: 15vw;
@@ -335,13 +312,9 @@
             max-height: 180px;
             margin: 15px 0; }
             body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-description-container .es-media-details-description {
-              font-size: 1.5vw;
-              font-size: 16px;
+              font-size: 20px;
               color: rgba(255, 255, 255, 0.75);
-              font-weight: 100;
-              text-align: justify;
-              -webkit-transform: scale3d(0.995, 0.995, 1);
-              transform: scale3d(0.995, 0.995, 1); }
+              font-weight: 100; }
             body #es-video-details .es-media-details-video.es-media-details-video-show .es-media-details-content .es-media-details-info-container .es-media-details-description-container .es-media-details-more {
               position: absolute;
               bottom: 0;
