@@ -423,7 +423,6 @@
             z-index: 1; }
         body #es-video-container.es-video-player .es-player-container .es-player-controls {
           position: fixed;
-          /*top: -60px;*/
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -448,6 +447,59 @@
             -webkit-box-align: center;
             -ms-flex-align: center;
             align-items: center; }
+            body #es-video-container.es-video-player .es-player-container .es-player-controls.es-top-bar .es-player-volume-control {
+              min-width: 200px;
+              width: 100%;
+              max-width: 300px;
+              display: -webkit-box;
+              display: -ms-flexbox;
+              display: flex;
+              -webkit-box-align: center;
+              -ms-flex-align: center;
+              align-items: center; }
+              body #es-video-container.es-video-player .es-player-container .es-player-controls.es-top-bar .es-player-volume-control .es-volume {
+                width: 60px;
+                display: flex;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                -webkit-box-pack: center;
+                -ms-flex-pack: center;
+                justify-content: center;
+                cursor: pointer; }
+                body #es-video-container.es-video-player .es-player-container .es-player-controls.es-top-bar .es-player-volume-control .es-volume .fa {
+                  width: 60px;
+                  display: flex;
+                  -webkit-box-align: center;
+                  -ms-flex-align: center;
+                  align-items: center;
+                  -webkit-box-pack: center;
+                  -ms-flex-pack: center;
+                  justify-content: center; }
+              body #es-video-container.es-video-player .es-player-container .es-player-controls.es-top-bar .es-player-volume-control .es-volume-bar-container {
+                position: relative;
+                width: 100%;
+                display: flex;
+                margin-bottom: 0;
+                -webkit-box-align: center;
+                -ms-flex-align: center;
+                align-items: center;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                cursor: pointer;
+                border-radius: 3px;
+                border: 1px solid #fff;
+                background-color: transparent;
+                height: 6px;
+                -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+                -moz-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+                -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+                transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1); }
+                body #es-video-container.es-video-player .es-player-container .es-player-controls.es-top-bar .es-player-volume-control .es-volume-bar-container .es-volume-bar {
+                  float: none !important;
+                  height: 5px;
+                  border-radius: 3px;
+                  background-color: #fff; }
             body #es-video-container.es-video-player .es-player-container .es-player-controls.es-top-bar .es-close-icon {
               width: 60px;
               height: 60px;
@@ -513,8 +565,12 @@
               display: flex;
               -webkit-box-align: center;
               -ms-flex-align: center;
-              align-items: center; }
-              body #es-video-container.es-video-player .es-player-container .es-player-controls.es-bottom-bar .es-progress-bar-container .progress-bar {
+              align-items: center;
+              -webkit-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+              -moz-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+              -o-transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1);
+              transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1); }
+              body #es-video-container.es-video-player .es-player-container .es-player-controls.es-bottom-bar .es-progress-bar-container .es-progress-bar {
                 color: black; }
             body #es-video-container.es-video-player .es-player-container .es-player-controls.es-bottom-bar .time-remaining {
               padding-left: 15px;

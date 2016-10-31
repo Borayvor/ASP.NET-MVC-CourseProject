@@ -1,14 +1,27 @@
 ﻿@using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaDetailsViewModel
 
-<div id="es-video-container" class="es-video-player">    
+<div id="es-video-container" class="es-video-player">
     <div class="es-player-container es-flex-col es-justify-center">
         <video id="es-video-element" preload="auto" src="@Model.ContentUrl"></video>
         <div class="es-video-paused-overlay"></div>
-        <div class="es-giant-resume-icon">           
+        <div class="es-giant-resume-icon">
             <em class="fa fa-play"></em>
         </div>
-        <div class="es-player-controls es-top-bar">           
+        <div class="es-player-controls es-top-bar">
+            <div class="es-player-volume-control">
+                <div class="es-volume es-volume-down">
+                    <em class="fa fa-minus"></em>
+                </div>
+                <div class="progress es-volume-bar-container">
+                    <div class="progress-bar es-volume-bar" role="progressbar" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100" style="width: 50%">
+                        <span class="sr-only"></span>
+                    </div>
+                </div>
+                <div class="es-volume es-volume-up">
+                    <em class="fa fa-plus"></em>
+                </div>
+            </div>
             <div class="es-close-icon">
                 <em class="fa fa-close"></em>
             </div>
@@ -16,16 +29,14 @@
         <div class="es-player-controls es-bottom-bar form-inline">
             <div class="es-play-pause-icon">
                 <em class="fa fa-play"></em>
-            </div>           
+            </div>
             <div class="progress es-progress-bar-container">
-                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
+                <div class="progress-bar progress-bar-warning es-progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0">
                     <span class="sr-only"></span>
                 </div>
-            </div>           
+            </div>
             <div class="time-remaining"></div>
         </div>
     </div>
 </div>
-
-
 

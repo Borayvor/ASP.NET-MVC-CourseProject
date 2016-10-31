@@ -1,4 +1,7 @@
 ﻿$(function () {
+    var mediaPlayer = $("#es-video-element").get(0);
+    mediaPlayer.volume = 0.5;
+
     function formatTime(seconds) {
         minutes = Math.floor(seconds / 60);
         minutes = (minutes >= 10) ? minutes : "0" + minutes;
@@ -22,9 +25,25 @@
         $("#es-video-element").get(0).play();
     }
 
-    function updateProgressBar() {
-        var mediaPlayer = $("#es-video-element").get(0);
-        var progressBar = $('.progress-bar');
+    function changeVolume(direction) {
+        var percentage;
+        var progressBar = $(".es-volume-bar");
+
+        if (direction === '+') {
+            mediaPlayer.volume += mediaPlayer.volume === 1 ? 0 : 0.1;
+        }
+        else if (direction === '-') {
+            mediaPlayer.volume -= (mediaPlayer.volume === 0 ? 0 : 0.1);
+        }
+           
+        mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);        
+        percentage = Math.floor(100 * mediaPlayer.volume);
+        progressBar.attr("aria-valuenow", percentage);
+        progressBar.css("width", percentage + "%");
+    }
+
+    function updateProgressBar() {        
+        var progressBar = $('.es-progress-bar');
         var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
         var currentTimeConverted = formatTime(mediaPlayer.currentTime);
         var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
@@ -102,4 +121,13 @@
 
     // progress bar
     $("#es-video-element").get(0).addEventListener('timeupdate', updateProgressBar, false);
+
+    // volume bar
+    $(".es-volume-down").click(function () {
+        changeVolume("-");
+    });
+
+    $(".es-volume-up").click(function () {
+        changeVolume("+");
+    });
 });
