@@ -35,7 +35,8 @@
 
             bundles.Add(new ScriptBundle("~/bundles/appJs")
                 .Include(
-                "~/Scripts/App/EntertainmentSystemApp.js"));
+                "~/Scripts/App/EntertainmentSystemApp.js",
+                "~/Scripts/App/EntertainmentSystem-video.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)

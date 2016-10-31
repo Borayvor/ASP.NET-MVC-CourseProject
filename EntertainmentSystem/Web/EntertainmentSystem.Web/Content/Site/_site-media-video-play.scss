@@ -1,5 +1,8 @@
 ﻿
 #es-video-container {
+    color: #fff;
+    background-color: #1e2124;
+
     &.es-video-player {
         visibility: hidden;
         position: fixed;
@@ -14,19 +17,13 @@
         -moz-transition: all .5s cubic-bezier(.5,0,.1,1);
         -o-transition: all .5s cubic-bezier(.5,0,.1,1);
         display: -webkit-box;
-        display: -webkit-flex;
-        display: -moz-flex;
         display: -ms-flexbox;
         display: flex;
         -webkit-box-pack: center;
         -ms-flex-pack: center;
-        -webkit-justify-content: center;
-        -moz-justify-content: center;
         justify-content: center;
         -webkit-box-align: center;
         -ms-flex-align: center;
-        -webkit-align-items: center;
-        -moz-align-items: center;
         align-items: center;
 
         &.es-video-active {
@@ -72,7 +69,6 @@
                 font-size: 72px;
                 z-index: -1;
                 display: -webkit-box;
-                display: -moz-flex;
                 display: -ms-flexbox;
                 position: fixed;
                 top: 0;
@@ -80,14 +76,16 @@
                 display: flex;
                 -webkit-box-pack: center;
                 -ms-flex-pack: center;
-                -webkit-justify-content: center;
-                -moz-justify-content: center;
                 justify-content: center;
                 -webkit-box-align: center;
                 -ms-flex-align: center;
-                -webkit-align-items: center;
-                -moz-align-items: center;
                 align-items: center;
+
+                .fa {
+                    padding: 120px;
+                    cursor: pointer;
+                    transition: all .5s cubic-bezier(.5,0,.1,1);
+                }
 
                 &.es-video-active {
                     visibility: visible;
@@ -97,19 +95,14 @@
             }
 
             .es-player-controls {
-                top: -60px;
-                background: url(/header-gradient.png) top center repeat-x;
+                position: fixed;
+                /*top: -60px;*/
                 display: -webkit-box;
-                display: -webkit-flex;
-                display: -moz-flex;
                 display: -ms-flexbox;
                 display: flex;
                 -webkit-box-align: center;
                 -ms-flex-align: center;
-                -webkit-align-items: center;
-                -moz-align-items: center;
                 align-items: center;
-                position: fixed;
                 left: 0;
                 width: 100%;
                 height: 60px;
@@ -124,40 +117,30 @@
                 &.es-top-bar {
                     top: -60px;
                     display: -webkit-box;
-                    display: -webkit-flex;
-                    display: -moz-flex;
                     display: -ms-flexbox;
                     display: flex;
                     -webkit-box-align: center;
                     -ms-flex-align: center;
-                    -webkit-align-items: center;
-                    -moz-align-items: center;
                     align-items: center;
 
                     .es-close-icon {
                         width: 60px;
                         height: 60px;
                         cursor: pointer;
-                        color: #fff;                        
+                        color: #fff;
                         font-size: 30px;
                         -webkit-transition: all .2s cubic-bezier(.175,.885,.32,1);
                         -moz-transition: all .2s cubic-bezier(.175,.885,.32,1);
                         -o-transition: all .2s cubic-bezier(.175,.885,.32,1);
                         transition: all .2s cubic-bezier(.175,.885,.32,1);
                         display: -webkit-box;
-                        display: -webkit-flex;
-                        display: -moz-flex;
                         display: -ms-flexbox;
                         display: flex;
                         -webkit-box-pack: center;
                         -ms-flex-pack: center;
-                        -webkit-justify-content: center;
-                        -moz-justify-content: center;
                         justify-content: center;
                         -webkit-box-align: center;
                         -ms-flex-align: center;
-                        -webkit-align-items: center;
-                        -moz-align-items: center;
                         align-items: center;
                         position: absolute;
                         right: 0 !important;
@@ -169,8 +152,66 @@
                     }
                 }
 
-                &.es-video-active {
+                &.es-controls-top-active {
                     top: 0;
+                    z-index: 20;
+                    opacity: 1;
+                    visibility: visible;
+                }
+
+                &.es-bottom-bar {
+                    bottom: -60px;
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-align: center;
+                    -ms-flex-align: center;
+                    align-items: center;
+
+                    .es-play-pause-icon {
+                        width: 60px;
+                        height: 60px;
+                        cursor: pointer;
+                        color: #fff;
+                        font-size: 30px;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                        justify-content: center;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+
+                        em {
+                            position: relative;
+                            bottom: -2px;
+                        }
+                    }
+
+                    .es-progress-bar-container {
+                        position: relative;
+                        width: 100%;
+                        margin-bottom: -5px;
+                        cursor: pointer;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-align: center;
+                        -ms-flex-align: center;
+                        align-items: center;
+                    }
+
+                    .time-remaining {
+                        padding-left: 15px;
+                        min-width: 100px;
+                        font-size: 20px;
+                    }
+                }
+
+                &.es-controls-bottom-active {
+                    bottom: 0;
                     z-index: 20;
                     opacity: 1;
                     visibility: visible;

@@ -1,5 +1,4 @@
 ﻿@using EntertainmentSystem.Web.Controllers
-@using System.Web.Mvc.Expressions
 
 @{
     ViewBag.Title = "Media";
@@ -14,7 +13,6 @@
         <section class="col-md-4">
             @(Html.Action<HomeController>(c => c.GetMusic()))
         </section>
-
         <section class="col-md-8">
             @(Html.Action<HomeController>(c => c.GetPictures()))
         </section>
@@ -22,6 +20,6 @@
     <div class="row">
         <section class="col-xs-12">
             @(Html.Action<HomeController>(c => c.GetVideos()))
-        </section>        
+        </section>
     </div>
 </div>

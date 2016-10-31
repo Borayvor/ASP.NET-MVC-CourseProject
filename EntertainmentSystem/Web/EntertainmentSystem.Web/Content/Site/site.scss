@@ -34,6 +34,10 @@
         overflow: hidden !important;
     }
 
+    .es-flex{
+        flex: 1;
+    }
+
     .es-flex-row {
         display: flex;
         -webkit-box-direction: normal;

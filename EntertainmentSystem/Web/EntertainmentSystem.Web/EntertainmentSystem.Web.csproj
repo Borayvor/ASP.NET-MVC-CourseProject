@@ -377,6 +377,7 @@
     <Content Include="Images\blank-image.jpg" />
     <Content Include="Images\loading.gif" />
     <Content Include="Libs\Kendo.Mvc.dll" />
+    <Content Include="Scripts\App\EntertainmentSystem-video.js" />
     <Content Include="Scripts\App\EntertainmentSystemApp.js" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

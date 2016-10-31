@@ -43,16 +43,5 @@ $(function () {
     });
        
     // test  
-
-    ////$("#es-music-upload").submit(function () {
-    ////    $('#modalMisicWindowMain').modal('hide');
-
-    ////    $('#es-loading').show();
-    ////});
-
-    ////function musicUploadSubmit () {
-    ////    $('#modalMisicWindowMain').modal('hide');
-
-    ////    $('#es-loading').show();
-    ////}
+        
 });
