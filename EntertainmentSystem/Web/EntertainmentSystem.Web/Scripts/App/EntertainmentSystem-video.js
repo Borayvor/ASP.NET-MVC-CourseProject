@@ -44,12 +44,10 @@
 
     function updateProgressBar() {        
         var progressBar = $('.es-progress-bar');
-        var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
-        var currentTimeConverted = formatTime(mediaPlayer.currentTime);
+        var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);        
         var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
         progressBar.attr("aria-valuenow", percentage);
-        progressBar.css("width", percentage + "%");
-        progressBar.text(currentTimeConverted);
+        progressBar.css("width", percentage + "%");        
         $(".time-remaining").text(remainingTimeConverted);
 
         if (percentage === 100) {
