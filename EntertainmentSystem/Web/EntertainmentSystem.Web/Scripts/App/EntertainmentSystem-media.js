@@ -3,11 +3,11 @@
     var mediaPlayer = mediaPlayElement.get(0);
     var isPlay = false;
 
-    function isReadyMediaPlayer() {
-        return (mediaPlayer !== undefined && mediaPlayer !== null);
+    function isAudioVideoPlayer() {
+        return (mediaPlayer.volume !== undefined && mediaPlayer.volume !== null);
     }
 
-    if (isReadyMediaPlayer()) {
+    if (isAudioVideoPlayer()) {
         mediaPlayer.volume = 0.5;
     }
 
@@ -72,14 +72,14 @@
         $(".es-media-details-show").addClass("noscroll");
         $(".es-item-player").addClass("es-video-active");
 
-        if (isReadyMediaPlayer()) {
+        if (isAudioVideoPlayer()) {
             play();
         }
     });
 
     // play video
     $(".es-giant-resume-icon").click(function () {
-        if (isReadyMediaPlayer()) {
+        if (isAudioVideoPlayer()) {
             play();
         }
     });
@@ -93,7 +93,7 @@
     });
 
     // pause video
-    if (isReadyMediaPlayer()) {
+    if (isAudioVideoPlayer()) {
         mediaPlayElement.click(function () {
             pause();
         });
@@ -101,7 +101,7 @@
 
     // pause and exit video
     $(".es-close-icon").click(function () {
-        if (isReadyMediaPlayer()) {
+        if (isAudioVideoPlayer()) {
             pause();
         }
 
@@ -128,11 +128,9 @@
         }, 5000);
     }
 
-    if (isReadyMediaPlayer()) {
-        mediaPlayElement.mousemove(function () {
-            toggleControls();
-        });
-    }
+    mediaPlayElement.mousemove(function () {
+        toggleControls();
+    });
 
     $(".es-giant-resume-icon").mousemove(function () {
         toggleControls();
@@ -148,12 +146,12 @@
     });
 
     // progress bar
-    if (isReadyMediaPlayer()) {
+    if (isAudioVideoPlayer()) {
         mediaPlayer.addEventListener('timeupdate', updateProgressBar, false);
     }
 
     // volume bar
-    if (isReadyMediaPlayer()) {
+    if (isAudioVideoPlayer()) {
         $(".es-volume-down").click(function () {
             changeVolume("-");
         });
