@@ -1,6 +1,6 @@
 ﻿/// <autosync enabled="true" />
 /// <reference path="app/entertainmentsystemapp.js" />
-/// <reference path="app/entertainmentsystem-video.js" />
+/// <reference path="app/entertainmentsystem-media.js" />
 /// <reference path="bootstrap.min.js" />
 /// <reference path="jquery.fancybox.js" />
 /// <reference path="jquery.fancybox.pack.js" />

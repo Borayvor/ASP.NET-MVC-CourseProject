@@ -1,7 +1,15 @@
 ﻿$(function () {
     var mediaPlayElement = $("#es-media-play-element");
     var mediaPlayer = mediaPlayElement.get(0);
-    mediaPlayer.volume = 0.5;
+    var isPlay = false;
+
+    function isReadyMediaPlayer() {
+        return (mediaPlayer !== undefined && mediaPlayer !== null);
+    }
+
+    if (isReadyMediaPlayer()) {
+        mediaPlayer.volume = 0.5;
+    }
 
     function formatTime(seconds) {
         minutes = Math.floor(seconds / 60);
@@ -10,26 +18,28 @@
         seconds = (seconds >= 10) ? seconds : "0" + seconds;
         return minutes + ":" + seconds;
     }
-        
+
     function pause() {
         $(".es-video-paused-overlay").addClass("es-paused");
         $(".es-giant-resume-icon").addClass("es-video-active");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-pause");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-play");
+        isPlay = false;
         mediaPlayer.pause();
     }
 
     function play() {
+        $(".es-giant-resume-icon").removeClass("es-video-active");
         $(".es-video-paused-overlay").removeClass("es-paused");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-play");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-pause");
+        isPlay = true;
         mediaPlayer.play();
     }
 
     function changeVolume(direction) {
         var percentage;
-        var progressBar = $(".es-volume-bar");        
-
+        var progressBar = $(".es-volume-bar");
         if (direction === '+') {
             mediaPlayer.volume += mediaPlayer.volume === 1 ? 0 : 0.1;
         }
@@ -44,7 +54,8 @@
     }
 
     function updateProgressBar() {
-        var progressBar = $('.es-progress-bar');        
+        var progressBar = $('.es-progress-bar');
+
         var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
         var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
         progressBar.attr("aria-valuenow", percentage);
@@ -57,36 +68,44 @@
     }
 
     // start play
-    $(".es-media-details-play-container").click(function () {        
+    $(".es-media-details-play-container").click(function () {
         $(".es-media-details-show").addClass("noscroll");
-        $(".es-video-player").addClass("es-video-active");
-        $(".es-giant-resume-icon").removeClass("es-video-active");        
-        play();
+        $(".es-item-player").addClass("es-video-active");
+
+        if (isReadyMediaPlayer()) {
+            play();
+        }
     });
 
     // play video
     $(".es-giant-resume-icon").click(function () {
-        $(this).removeClass("es-video-active");
-        play();
+        if (isReadyMediaPlayer()) {
+            play();
+        }
     });
 
     $(".es-play-pause-icon").click(function () {
-        if ($(this).children(".fa").hasClass("fa-pause")) {
-            play();
-        } else {
+        if (isPlay) {
             pause();
+        } else {
+            play();
         }
     });
 
     // pause video
-    mediaPlayElement.click(function () {
-        pause();
-    });
+    if (isReadyMediaPlayer()) {
+        mediaPlayElement.click(function () {
+            pause();
+        });
+    }
 
     // pause and exit video
     $(".es-close-icon").click(function () {
-        pause();
-        $(".es-video-player").removeClass("es-video-active");
+        if (isReadyMediaPlayer()) {
+            pause();
+        }
+
+        $(".es-item-player").removeClass("es-video-active");
         $(".es-media-details-show").removeClass("noscroll");
     });
 
@@ -95,7 +114,7 @@
         var controlsTop = $(".es-player-controls.es-top-bar");
         var controlsBottom = $(".es-player-controls.es-bottom-bar");
 
-        if (controlsTop.hasClass("es-controls-top-active") &&
+        if (controlsTop.hasClass("es-controls-top-active") ||
             controlsBottom.hasClass("es-controls-bottom-active")) {
             return;
         }
@@ -109,9 +128,11 @@
         }, 5000);
     }
 
-    mediaPlayElement.mousemove(function () {
-        toggleControls();
-    });
+    if (isReadyMediaPlayer()) {
+        mediaPlayElement.mousemove(function () {
+            toggleControls();
+        });
+    }
 
     $(".es-giant-resume-icon").mousemove(function () {
         toggleControls();
@@ -127,14 +148,18 @@
     });
 
     // progress bar
-    mediaPlayer.addEventListener('timeupdate', updateProgressBar, false);
+    if (isReadyMediaPlayer()) {
+        mediaPlayer.addEventListener('timeupdate', updateProgressBar, false);
+    }
 
     // volume bar
-    $(".es-volume-down").click(function () {
-        changeVolume("-");
-    });
+    if (isReadyMediaPlayer()) {
+        $(".es-volume-down").click(function () {
+            changeVolume("-");
+        });
 
-    $(".es-volume-up").click(function () {
-        changeVolume("+");
-    });
+        $(".es-volume-up").click(function () {
+            changeVolume("+");
+        });
+    }
 });
