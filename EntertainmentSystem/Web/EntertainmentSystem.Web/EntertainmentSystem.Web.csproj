@@ -418,6 +418,10 @@
     <Content Include="Content\Site\_site-media-video-details.scss" />
     <Content Include="Areas\Media\Views\Video\_VideoPlayPartial.cshtml" />
     <Content Include="Content\Site\_site-media-video-play.scss" />
+    <Content Include="Content\Site\_site-media-details.scss" />
+    <Content Include="Content\Site\_site-media-picture-details.scss" />
+    <Content Include="Areas\Media\Views\Picture\_PicturePlayPartial.cshtml" />
+    <Content Include="Areas\Media\Views\Picture\PictureDetails.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

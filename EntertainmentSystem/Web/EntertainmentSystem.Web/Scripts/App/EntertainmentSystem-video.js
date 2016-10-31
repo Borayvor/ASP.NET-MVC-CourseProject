@@ -1,5 +1,6 @@
 ﻿$(function () {
-    var mediaPlayer = $("#es-video-element").get(0);
+    var mediaPlayElement = $("#es-media-play-element");
+    var mediaPlayer = mediaPlayElement.get(0);
     mediaPlayer.volume = 0.5;
 
     function formatTime(seconds) {
@@ -9,25 +10,25 @@
         seconds = (seconds >= 10) ? seconds : "0" + seconds;
         return minutes + ":" + seconds;
     }
-
+        
     function pause() {
         $(".es-video-paused-overlay").addClass("es-paused");
         $(".es-giant-resume-icon").addClass("es-video-active");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-pause");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-play");
-        $("#es-video-element").get(0).pause();
+        mediaPlayer.pause();
     }
 
     function play() {
         $(".es-video-paused-overlay").removeClass("es-paused");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-play");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-pause");
-        $("#es-video-element").get(0).play();
+        mediaPlayer.play();
     }
 
     function changeVolume(direction) {
         var percentage;
-        var progressBar = $(".es-volume-bar");
+        var progressBar = $(".es-volume-bar");        
 
         if (direction === '+') {
             mediaPlayer.volume += mediaPlayer.volume === 1 ? 0 : 0.1;
@@ -35,19 +36,19 @@
         else if (direction === '-') {
             mediaPlayer.volume -= (mediaPlayer.volume === 0 ? 0 : 0.1);
         }
-           
-        mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);        
+
+        mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);
         percentage = Math.floor(100 * mediaPlayer.volume);
         progressBar.attr("aria-valuenow", percentage);
         progressBar.css("width", percentage + "%");
     }
 
-    function updateProgressBar() {        
-        var progressBar = $('.es-progress-bar');
-        var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);        
+    function updateProgressBar() {
+        var progressBar = $('.es-progress-bar');        
+        var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
         var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
         progressBar.attr("aria-valuenow", percentage);
-        progressBar.css("width", percentage + "%");        
+        progressBar.css("width", percentage + "%");
         $(".time-remaining").text(remainingTimeConverted);
 
         if (percentage === 100) {
@@ -55,11 +56,11 @@
         }
     }
 
-    // start play video
-    $(".es-media-details-play-container").click(function () {
-        $(".es-media-details-video-show").addClass("noscroll");
-        $("#es-video-container").addClass("es-video-active");
-        $(".es-giant-resume-icon").removeClass("es-video-active");
+    // start play
+    $(".es-media-details-play-container").click(function () {        
+        $(".es-media-details-show").addClass("noscroll");
+        $(".es-video-player").addClass("es-video-active");
+        $(".es-giant-resume-icon").removeClass("es-video-active");        
         play();
     });
 
@@ -69,7 +70,7 @@
         play();
     });
 
-    $(".es-play-pause-icon").click(function () {        
+    $(".es-play-pause-icon").click(function () {
         if ($(this).children(".fa").hasClass("fa-pause")) {
             play();
         } else {
@@ -78,21 +79,29 @@
     });
 
     // pause video
-    $("#es-video-element").click(function () {
+    mediaPlayElement.click(function () {
         pause();
     });
 
     // pause and exit video
     $(".es-close-icon").click(function () {
         pause();
-        $("#es-video-container").removeClass("es-video-active");
-        $(".es-media-details-video-show").removeClass("noscroll");
+        $(".es-video-player").removeClass("es-video-active");
+        $(".es-media-details-show").removeClass("noscroll");
     });
 
     // show controls
     function toggleControls() {
-        $(".es-player-controls.es-top-bar").addClass("es-controls-top-active");
-        $(".es-player-controls.es-bottom-bar").addClass("es-controls-bottom-active");
+        var controlsTop = $(".es-player-controls.es-top-bar");
+        var controlsBottom = $(".es-player-controls.es-bottom-bar");
+
+        if (controlsTop.hasClass("es-controls-top-active") &&
+            controlsBottom.hasClass("es-controls-bottom-active")) {
+            return;
+        }
+
+        controlsTop.addClass("es-controls-top-active");
+        controlsBottom.addClass("es-controls-bottom-active");
 
         setTimeout(function () {
             $(".es-player-controls.es-top-bar").removeClass("es-controls-top-active");
@@ -100,11 +109,11 @@
         }, 5000);
     }
 
-    $("#es-video-element").mouseover(function () {
+    mediaPlayElement.mousemove(function () {
         toggleControls();
     });
 
-    $(".es-giant-resume-icon").mouseover(function () {
+    $(".es-giant-resume-icon").mousemove(function () {
         toggleControls();
     });
 
@@ -118,7 +127,7 @@
     });
 
     // progress bar
-    $("#es-video-element").get(0).addEventListener('timeupdate', updateProgressBar, false);
+    mediaPlayer.addEventListener('timeupdate', updateProgressBar, false);
 
     // volume bar
     $(".es-volume-down").click(function () {

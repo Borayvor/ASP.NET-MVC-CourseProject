@@ -5,9 +5,7 @@
     <div class="container-fluid">
         <div class="row flexbox es-flex-row">
             <div class="col-xs-12">
-                <div class="es-media-details-bg" style="background-image:url(@Model.CoverImageUrl);">
-                    <div class="es-media-details-bg-gradient"></div>
-                </div>
+                <div class="es-media-details-bg" style="background-image:url(@Model.ContentUrl);"></div> 
                 <div class="es-media-details-play-container">
                     <em class="fa fa-play fa-3x play"></em>
                 </div>
@@ -30,10 +28,10 @@
                     </div>
                 </div>
             </div>
-        </div>       
-    </div>    
+        </div>
+    </div>
 </div>
 
-@Html.Partial("_VideoPlayPartial")
+@Html.Partial("_PicturePlayPartial")
 
 

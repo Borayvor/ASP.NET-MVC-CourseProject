@@ -35,7 +35,9 @@
 
         public ActionResult PictureDetails(Guid id)
         {
-            return this.View();
+            return this.ConditionalActionResult(
+                () => this.Mapper.Map<MediaDetailsViewModel>(this.pictureService.GetById(id)),
+                (content) => this.View(content));
         }
     }
 }
