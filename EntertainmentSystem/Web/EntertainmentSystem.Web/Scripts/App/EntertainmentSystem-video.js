@@ -99,7 +99,7 @@
         setTimeout(function () {
             $(".es-player-controls.es-top-bar").removeClass("es-controls-top-active");
             $(".es-player-controls.es-bottom-bar").removeClass("es-controls-bottom-active");
-        }, 500000);
+        }, 5000);
     }
 
     $("#es-video-element").mouseover(function () {
