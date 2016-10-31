@@ -1,14 +1,20 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Media.ViewModels
 {
     using System;
+    using System.ComponentModel.DataAnnotations;
+    using System.Web.Mvc;
     using AutoMapper;
     using Data.Models.Media;
     using Infrastructure.Mapping;
-    using Web.ViewModels;
 
-    public class MediaDetailsViewModel : BaseViewModel<Guid>,
-        IMapFrom<MediaContent>, IHaveCustomMappings
+    public class MediaDetailsViewModel : IMapFrom<MediaContent>, IHaveCustomMappings
     {
+        [HiddenInput(DisplayValue = false)]
+        public Guid Id { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:dd/MMM/yyyy}")]
+        public DateTime CreatedOn { get; set; }
+
         public string Title { get; set; }
 
         public string Description { get; set; }

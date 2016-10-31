@@ -145,7 +145,7 @@
       display: block;
       width: 100%; }
       body .es-card .es-card-image:after {
-        padding-top: 150%;
+        padding-top: 100%;
         display: block;
         content: ''; }
     body .es-card .es-card-text {

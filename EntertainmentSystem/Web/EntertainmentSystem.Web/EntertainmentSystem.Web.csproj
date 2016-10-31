@@ -465,7 +465,7 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
-    <Content Include="Content\Site\_site-media-video-home.scss" />
+    <Content Include="Content\Site\_site-media-home.scss" />
     <Content Include="Content\Site\_site-home.scss" />
     <Content Include="Content\Site\site.scss" />
     <Content Include="Content\Site\_site-loading.scss" />

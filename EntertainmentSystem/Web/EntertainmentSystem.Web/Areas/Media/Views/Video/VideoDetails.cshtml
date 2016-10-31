@@ -17,7 +17,7 @@
                             <h1 class="es-media-details-title">@Model.Title</h1>
                             <h3 class="es-media-details-category">@Model.Category</h3>
                             <h3 class="es-media-details-collection">@Model.Collection</h3>
-                            <p class="es-media-details-date"><span>Upload date: </span><span>@Model.CreatedOn</span></p>
+                            <p class="es-media-details-date"><span>Upload date: </span><span>@Model.CreatedOn.ToShortDateString()</span></p>
                             <div class="es-media-details-description-container">
                                 <div class="es-media-details-description">
                                     <p>@Model.Description</p>

@@ -187,7 +187,7 @@
 
         internal static void SeedMediaContents(EntertainmentSystemDbContext context)
         {
-            const string DefaultCoverImageUrl = "~/Images/blank-image.jpg";
+            const string DefaultCoverImageUrl = "'/Images/blank-image.jpg'";
 
             if (context.MediaContents.Any())
             {
