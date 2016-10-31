@@ -1,9 +1,17 @@
 ﻿$(function () {
+    function formatTime(seconds) {
+        minutes = Math.floor(seconds / 60);
+        minutes = (minutes >= 10) ? minutes : "0" + minutes;
+        seconds = Math.floor(seconds % 60);
+        seconds = (seconds >= 10) ? seconds : "0" + seconds;
+        return minutes + ":" + seconds;
+    }
+
     function pause() {
         $(".es-video-paused-overlay").addClass("es-paused");
         $(".es-giant-resume-icon").addClass("es-video-active");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-pause");
-        $(".es-play-pause-icon").children(".fa").toggleClass("fa-play")
+        $(".es-play-pause-icon").children(".fa").toggleClass("fa-play");
         $("#es-video-element").get(0).pause();
     }
 
@@ -12,6 +20,22 @@
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-play");
         $(".es-play-pause-icon").children(".fa").toggleClass("fa-pause");
         $("#es-video-element").get(0).play();
+    }
+
+    function updateProgressBar() {
+        var mediaPlayer = $("#es-video-element").get(0);
+        var progressBar = $('.progress-bar');
+        var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
+        var currentTimeConverted = formatTime(mediaPlayer.currentTime);
+        var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
+        progressBar.attr("aria-valuenow", percentage);
+        progressBar.css("width", percentage + "%");
+        progressBar.text(currentTimeConverted);
+        $(".time-remaining").text(remainingTimeConverted);
+
+        if (percentage === 100) {
+            pause();
+        }
     }
 
     // start play video
@@ -75,4 +99,7 @@
     $(".es-giant-resume-icon em").hover(function () {
         $(this).toggleClass("fa-2x");
     });
+
+    // progress bar
+    $("#es-video-element").get(0).addEventListener('timeupdate', updateProgressBar, false);
 });
