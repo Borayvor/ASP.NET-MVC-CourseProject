@@ -261,9 +261,9 @@
 
             var contentMusic_3 = new MediaContent
             {
-                Title = "hocus pocus",
-                Description = "helloween-hocus_pocus.mp3",
-                ContentUrl = "http://tones.mob.org/ringtone/J5mRGlQakIE_SqvLxckD_A/1477295523/22212cc9c43e1694633c7c4eb68ce1d3/helloween-hocus_pocus.mp3",
+                Title = "The Sound of Silence",
+                Description = "Disturbed - Immortalized (Deluxe Edition) [2015] Immortalized(Deluxe Edition) 2015",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/3y6eo5y5gjhsqm3/Apps/EntertainmentSystem/b900d55e-c583-45f1-92d0-f7641ef4cee4.mp3",
                 ContentType = ContentType.Music,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -308,7 +308,7 @@
                 " From opposing sides, two heroes are set on a collision course that will decide the" +
                 " fate of their family, their people and their home. So begins a spectacular saga" +
                 " of power and sacrifice in which war has many faces, and everyone fights for something.",
-                ContentUrl = "https://www.dropbox.com/s/097zubv1raxzl9v/64a5a059-039f-42a8-9113-32eb451a2f99.mp4?dl=0",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/tzbpdaf6e35qztt/Apps/EntertainmentSystem/571e0b77-9176-4f71-81fa-9a73063f8ba8.mp4",
                 ContentType = ContentType.Video,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
