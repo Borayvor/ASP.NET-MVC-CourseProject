@@ -423,6 +423,9 @@
     <Content Include="Areas\Media\Views\Picture\PictureDetails.cshtml" />
     <Content Include="Areas\Media\Views\Music\MusicDetails.cshtml" />
     <Content Include="Areas\Media\Views\Music\_MusicPlayPartial.cshtml" />
+    <Content Include="Content\Site\_site-media-picture-details.scss" />
+    <Content Include="Content\Site\_site-media-picture-play.scss" />
+    <Content Include="Content\Site\_site-media-music-play.scss" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

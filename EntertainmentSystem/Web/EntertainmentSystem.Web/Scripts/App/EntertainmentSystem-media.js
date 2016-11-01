@@ -4,7 +4,10 @@
     var isPlay = false;
 
     function isAudioVideoPlayer() {
-        return (mediaPlayer.volume !== undefined && mediaPlayer.volume !== null);
+        var result = (mediaPlayer !== undefined && mediaPlayer !== null &&
+            mediaPlayer.volume !== undefined && mediaPlayer.volume !== null);
+
+        return result;
     }
 
     if (isAudioVideoPlayer()) {
@@ -81,7 +84,7 @@
         $(".es-item-player").addClass("es-item-active");
 
         play();
-    });
+    });  
 
     // play video
     $(".es-giant-resume-icon").click(function () {
@@ -113,6 +116,7 @@
     function toggleControls() {
         var controlsTop = $(".es-player-controls.es-top-bar");
         var controlsBottom = $(".es-player-controls.es-bottom-bar");
+        var timeout = 7000;
 
         if (controlsTop.hasClass("es-controls-top-active") ||
             controlsBottom.hasClass("es-controls-bottom-active")) {
@@ -120,12 +124,12 @@
         }
 
         controlsTop.addClass("es-controls-top-active");
-        controlsBottom.addClass("es-controls-bottom-active");
+        controlsBottom.addClass("es-controls-bottom-active");                
 
         setTimeout(function () {
-            $(".es-player-controls.es-top-bar").removeClass("es-controls-top-active");
-            $(".es-player-controls.es-bottom-bar").removeClass("es-controls-bottom-active");
-        }, 5000);
+            controlsTop.removeClass("es-controls-top-active");
+            controlsBottom.removeClass("es-controls-bottom-active");
+        }, timeout);
     }
 
     mediaPlayElement.mousemove(function () {
@@ -136,6 +140,10 @@
         toggleControls();
     });
 
+    $(".es-player-controls").mousemove(function () {
+        toggleControls();
+    });
+
     // play icons hover
     $(".play").hover(function () {
         $(this).toggleClass("fa-5x");
@@ -143,6 +151,11 @@
 
     $(".es-giant-resume-icon em").hover(function () {
         $(this).toggleClass("fa-2x");
+    });
+
+    // back to details hover
+    $(".es-media-details-back em").hover(function () {
+        $(this).toggleClass("fa-3x");
     });
 
     // progress bar
