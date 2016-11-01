@@ -47,7 +47,6 @@
             };
 
             content.ContentUrl = this.Storage.UploadFile(file, content.Id.ToString(), mimeType);
-            content.CoverImageUrl = "";
 
             this.contents.Create(content);
 
