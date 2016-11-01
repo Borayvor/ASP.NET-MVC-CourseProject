@@ -2,13 +2,15 @@
 @model MediaDetailsViewModel
 
 <div class="es-item-player">
-    <div class="es-player-container es-flex-col es-justify-center">
-        <img id="es-media-play-element" class="es-item-content es-picture-show" src="@Model.ContentUrl" />        
-        <div class="es-player-controls es-top-bar">            
+    <div class="es-player-container es-flex-col es-justify-center es-picture-show">
+
+        <img id="es-media-play-element" class="es-item-content img-responsive" src="@Model.ContentUrl" />
+
+        <div class="es-player-controls es-top-bar">
             <div class="es-close-icon">
                 <em class="fa fa-close"></em>
             </div>
-        </div>       
+        </div>
     </div>
 </div>
 

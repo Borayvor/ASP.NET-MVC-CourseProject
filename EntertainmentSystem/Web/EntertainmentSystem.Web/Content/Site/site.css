@@ -603,7 +603,10 @@
   body .es-item-player .es-player-container .es-item-content.es-music-show {
     width: auto;
     height: auto; }
-  body .es-item-player .es-player-container .es-item-content.es-picture-show {
-    width: auto;
-    height: auto; }
+  body .es-item-player .es-picture-show {
+    position: relative;
+    display: inline-block;
+    width: auto; }
+  body .es-item-player .es-player-container .es-item-content {
+    width: auto; }
 
