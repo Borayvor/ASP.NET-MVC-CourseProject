@@ -7,8 +7,13 @@
     {
         public Configuration()
         {
+#if DEBUG
             this.AutomaticMigrationsEnabled = true;
             this.AutomaticMigrationDataLossAllowed = true;
+#else
+            this.AutomaticMigrationsEnabled = false;
+            this.AutomaticMigrationDataLossAllowed = false;
+#endif
         }
 
         protected override void Seed(EntertainmentSystemDbContext context)
