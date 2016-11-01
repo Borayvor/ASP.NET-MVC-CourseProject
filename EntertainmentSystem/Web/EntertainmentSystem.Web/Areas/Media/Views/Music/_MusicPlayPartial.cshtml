@@ -3,7 +3,8 @@
 
 <div class="es-item-player">
     <div class="es-player-container es-flex-col es-justify-center">
-        <video id="es-media-play-element" class="es-item-content" preload="auto" src="@Model.ContentUrl"></video>
+        <div class="es-item-content" style="background-image:url(@Model.CoverImageUrl);"></div>
+        <audio id="es-media-play-element" preload="auto" src="@Model.ContentUrl"></audio>
         <div class="es-item-paused-overlay"></div>
         <div class="es-giant-resume-icon">
             <em class="fa fa-play"></em>
