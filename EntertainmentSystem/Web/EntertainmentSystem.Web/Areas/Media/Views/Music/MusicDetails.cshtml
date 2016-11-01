@@ -2,6 +2,8 @@
 @using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaDetailsViewModel
 
+@* https://dl.dropboxusercontent.com/1/view/tzbpdaf6e35qztt/Apps/EntertainmentSystem/571e0b77-9176-4f71-81fa-9a73063f8ba8.mp4 *@
+
 <div class="es-media-details es-media-details-show">
     <div class="container-fluid">
         <div class="row flexbox es-flex-row">
@@ -10,7 +12,7 @@
                     <div class="es-media-details-bg-gradient"></div>
                 </div>
                 <div class="es-media-details-play-container">
-                    <em class="fa fa-play fa-3x play"></em>
+                    <em class="fa fa-play fa-3x play transition"></em>
                 </div>
                 <a href="@(Url.Action<MusicController>(c => c.Index()))">
                     <div class="es-media-details-back">

@@ -44,7 +44,7 @@
             this.CheckFileInfoModel(fileInfo);
 
             // TODO: refactor -> coverImageUrl
-            string coverImageUrl = "'/Images/blank-image.jpg'";
+            string coverImageUrl = "https://dl.dropboxusercontent.com/1/view/jm0poduvuxj8ekh/Apps/EntertainmentSystem/88518440-dd5d-46e3-9f4a-7b2e8c3d8cec.jpg";
 
             var contentId = this.uploadingGeneratorService.Create(
                 file.InputStream,

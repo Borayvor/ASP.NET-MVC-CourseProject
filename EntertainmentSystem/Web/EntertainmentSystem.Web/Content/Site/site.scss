@@ -1,4 +1,11 @@
-﻿body {
+﻿@media (min-width: 767px) {
+    .container {
+        /*padding-left: 0 !important;
+        padding-right: 0 !important;*/
+    }
+}
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
     background-color: #fcf6ea;    
@@ -11,11 +18,6 @@
 
     #es-navbar {
         z-index: 100 !important;
-    }
-
-    .container {
-        padding-left: 0 !important;
-        padding-right: 0 !important;
     }
 
     a {

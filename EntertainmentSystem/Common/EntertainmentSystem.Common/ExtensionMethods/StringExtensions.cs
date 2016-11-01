@@ -47,7 +47,8 @@
                 case "video/webm": return ".webm";
                 case "video/mp4": return ".mp4";
                 case "audio/wav": return ".wav";
-                case "audio/mpeg": return ".mp3";
+                case "audio/mp3": return ".mp3";
+                case "audio/mpeg": return ".mpeg";
                 default: return string.Empty;
             }
         }

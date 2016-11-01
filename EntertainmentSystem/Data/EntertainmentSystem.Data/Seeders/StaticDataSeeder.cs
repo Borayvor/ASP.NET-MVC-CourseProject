@@ -187,7 +187,7 @@
 
         internal static void SeedMediaContents(EntertainmentSystemDbContext context)
         {
-            const string DefaultCoverImageUrl = "'/Images/blank-image.jpg'";
+            const string DefaultCoverImageUrl = "https://dl.dropboxusercontent.com/1/view/jm0poduvuxj8ekh/Apps/EntertainmentSystem/88518440-dd5d-46e3-9f4a-7b2e8c3d8cec.jpg";
 
             if (context.MediaContents.Any())
             {
@@ -308,7 +308,7 @@
                 " From opposing sides, two heroes are set on a collision course that will decide the" +
                 " fate of their family, their people and their home. So begins a spectacular saga" +
                 " of power and sacrifice in which war has many faces, and everyone fights for something.",
-                ContentUrl = "http://files.ausgamers.com/downloads/1477839004/worldofwarcraftmistsofpandaria_introcg.mp4",
+                ContentUrl = "https://www.dropbox.com/s/097zubv1raxzl9v/64a5a059-039f-42a8-9113-32eb451a2f99.mp4?dl=0",
                 ContentType = ContentType.Video,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,

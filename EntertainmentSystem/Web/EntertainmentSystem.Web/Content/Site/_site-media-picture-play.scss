@@ -1,14 +1,13 @@
 ﻿
 .es-item-player {
     .es-picture-show {
-        position: relative;
-        display: inline-block;        
-        width: auto;
+        width: auto !important;
+        margin: auto !important;
     }
 
     .es-player-container {
+
         .es-item-content {
-            width: auto;
         }
     }
 }

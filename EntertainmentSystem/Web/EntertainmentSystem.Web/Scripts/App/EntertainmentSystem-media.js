@@ -130,20 +130,12 @@
             controlsTop.removeClass("es-controls-top-active");
             controlsBottom.removeClass("es-controls-bottom-active");
         }, timeout);
-    }
+    }      
 
-    mediaPlayElement.mousemove(function () {
+    $(".es-item-player").mousemove(function () {
         toggleControls();
     });
-
-    $(".es-giant-resume-icon").mousemove(function () {
-        toggleControls();
-    });
-
-    $(".es-player-controls").mousemove(function () {
-        toggleControls();
-    });
-
+    
     // play icons hover
     $(".play").hover(function () {
         $(this).toggleClass("fa-5x");
