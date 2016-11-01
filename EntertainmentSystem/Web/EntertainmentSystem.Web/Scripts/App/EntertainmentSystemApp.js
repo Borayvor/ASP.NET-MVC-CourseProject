@@ -34,14 +34,25 @@ $(function () {
     $("#es-home-carousel-videos").on('slid.bs.carousel', function () {
         var itemActive = $(this).children(".carousel-inner").children(".item.active")
         var itemNotActive = $(this).children(".carousel-inner").children(".item").not(".active");
-        
+
         itemActive.children(".video").get(0).play();
-                
+
         itemNotActive.children(".video").each(function (key, value) {
             value.pause();
         });
     });
-       
+
     // test  
-        
+
+    ////$("#es-music-upload").submit(function () {
+    ////    $('#modalMisicWindowMain').modal('hide');
+
+    ////    $('#es-loading').show();
+    ////});
+
+    ////function musicUploadSubmit () {
+    ////    $('#modalMisicWindowMain').modal('hide');
+
+    ////    $('#es-loading').show();
+    ////}
 });
