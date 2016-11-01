@@ -12,22 +12,16 @@
         private const string DropboxAppSecret = "04ivc3lxrxfwmsc";
         private const string OauthAccessTokenValue = "4oy3copesu7oekui";
         private const string OauthAccessTokenSecret = "kvanplrc4y6xcnv";
-        private const string AccessToken = "JjHLq2_mvKAAAAAAAAAA0xeOPob0f9TLSPCkjnHCH1r5R_Pm01vjcPlGJxxqoK32";
 
         private readonly DropNetClient client;
 
         public DropboxCloudStorage()
         {
-            ////this.client = new DropNetClient(
-            ////    DropboxAppKey,
-            ////    DropboxAppSecret,
-            ////    OauthAccessTokenValue,
-            ////    OauthAccessTokenSecret);
-
             this.client = new DropNetClient(
                 DropboxAppKey,
                 DropboxAppSecret,
-                AccessToken);
+                OauthAccessTokenValue,
+                OauthAccessTokenSecret);
         }
 
         public string UploadFile(Stream stream, string filename, string filetype, string path = "/")
