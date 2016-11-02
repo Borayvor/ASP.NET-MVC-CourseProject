@@ -6,9 +6,7 @@
 
     public interface IBaseMediaFetcherService
     {
-        IQueryable<MediaContent> All();
-
-        IQueryable<MediaContent> AllByTitle(string search);
+        IQueryable<MediaContent> All(string title);
 
         MediaContent GetById(Guid id);
     }

@@ -5,10 +5,10 @@
 @model IEnumerable<MediaBaseViewModel>
 
 @{
-    ViewBag.Title = HtmlConstants.MediaPicturesHomeTitle;
+    ViewBag.Title = HtmlConstants.MediaVideosControllerName;
 }
 
-<section id="es-picture-home">
+<section id="es-video-home">
     <h2 class="text-center">@ViewBag.Title</h2>
     @Html.Partial("_SearchForm")
     <div class="row">
@@ -18,7 +18,7 @@
             {
                 foreach (var item in Model)
                 {
-                    @(Html.Action<MediaPartialController>(c => c.GetFromViewModel(item, "_PicturePartial", GlobalConstants.CacheMediaHomeDuration)))
+                    @(Html.Action<MediaPartialController>(c => c.GetFromViewModel(item, "_VideoPartial", GlobalConstants.CacheMediaHomeDuration)))
                 }
             }
         }

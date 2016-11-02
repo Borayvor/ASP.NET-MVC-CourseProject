@@ -2,37 +2,39 @@
 {
     using System;
     using System.Web.Mvc;
+    using System.Web.Mvc.Expressions;
+    using Common.Constants;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
     using ViewModels;
 
-    public class PictureController : MediaController
+    public class PicturesController : MediaController
     {
         private readonly IPictureFetcherService pictureService;
 
-        public PictureController(IPictureFetcherService pictureService)
+        public PicturesController(IPictureFetcherService pictureService)
         {
             this.pictureService = pictureService;
+            this.ViewBag.ControllerName = HtmlConstants.MediaPicturesControllerName;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
-            return this.ConditionalActionResult(
-                () => this.pictureService
-                .All()
-                .To<MediaBaseViewModel>(),
-                (content) => this.View(content));
+            return this.RedirectToActionPermanent(c => c.SearchByTitle(GlobalConstants.StringEmpty));
         }
 
+        [HttpGet]
         public ActionResult SearchByTitle(string search)
         {
             return this.ConditionalActionResult(
                 () => this.pictureService
-                .AllByTitle(search)
+                .All(search)
                 .To<MediaBaseViewModel>(),
                 (content) => this.View("Index", content));
         }
 
+        [HttpGet]
         public ActionResult PictureDetails(Guid id)
         {
             return this.ConditionalActionResult(

@@ -2,6 +2,8 @@
 {
     public class GlobalConstants
     {
+        public const string StringEmpty = "";
+
         public const string AdministratorRoleName = "Administrator";
         public const string AdministratorAreaName = "Administration";
 

@@ -1,11 +1,11 @@
 ﻿@using System.Web.Mvc.Expressions
-@using EntertainmentSystem.Web.Controllers.Search
+@using EntertainmentSystem.Web.Areas.Media.Controllers.Search
 
-@{string viewTitle = @ViewBag.Title; }
+@{string controllerName = @ViewBag.ControllerName; }
 
 <nav id="search-form-holder" class="navbar navbar-default">
     <div class="container-fluid">
-        @using (Ajax.BeginForm<SearchController>(c => c.SearchMedia(viewTitle, null), null, null, new { @id = "search-form", @class = "nav navbar-form navbar-left", @role = "search" }))
+        @using (Html.BeginForm<SearchController>(c => c.SearchMedia(controllerName, null), FormMethod.Post, null, new { @id = "search-form", @class = "nav navbar-form navbar-left", @role = "search" }))
         {
             @Html.AntiForgeryToken()
 
@@ -16,8 +16,10 @@
         }
 
         @* TODO: refactor and implement *@
-        @using (Ajax.BeginForm<SearchController>(c => c.SearchMedia(viewTitle, null), null, null, new { @id = "filter-collection-form", @class = "nav navbar-form navbar-right" }))
+        @using (Html.BeginForm<SearchController>(c => c.SearchMedia(controllerName, null), FormMethod.Post, null, new { @id = "filter-collection-form", @class = "nav navbar-form navbar-right" }))
         {
+            @Html.AntiForgeryToken()
+
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="es-dropdown-filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Filter by collection
@@ -29,8 +31,10 @@
             </div>
         }
 
-        @using (Ajax.BeginForm<SearchController>(c => c.SearchMedia(viewTitle, null), null, null, new { @id = "filter-category-form", @class = "nav navbar-form navbar-right" }))
+        @using (Html.BeginForm<SearchController>(c => c.SearchMedia(controllerName, null), FormMethod.Post, null, new { @id = "filter-category-form", @class = "nav navbar-form navbar-right" }))
         {
+            @Html.AntiForgeryToken()
+
             <div class="dropdown">
                 <button class="btn btn-default dropdown-toggle" type="button" id="es-dropdown-filter" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
                     Filter by category

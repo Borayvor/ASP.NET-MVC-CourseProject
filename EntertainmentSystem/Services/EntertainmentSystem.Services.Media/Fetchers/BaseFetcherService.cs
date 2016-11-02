@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Common.Constants;
     using Contracts.Media;
     using Contracts.Media.Fetchers;
     using Data.Models.Media;
@@ -17,20 +18,23 @@
             this.type = this.GetContentType();
         }
 
-        public IQueryable<MediaContent> All()
+        public IQueryable<MediaContent> All(string title = GlobalConstants.StringEmpty)
         {
-            return this.contentService.GetAll()
+            if (string.IsNullOrWhiteSpace(title))
+            {
+                return this.contentService.GetAll()
                 .Where(c => c.ContentType == this.type)
                 .OrderByDescending(x => x.CreatedOn);
-        }
-
-        public IQueryable<MediaContent> AllByTitle(string search)
-        {
-            return this.contentService
+            }
+            else
+            {
+                return this.contentService
                 .GetAll()
                 .Where(c => c.ContentType == this.type
-                && c.Title.ToLower().Contains(search.ToLower()))
+                && c.Title.ToLower().Contains(title.ToLower()))
                 .OrderByDescending(c => c.CreatedOn);
+            }
+
         }
 
         public MediaContent GetById(Guid id)

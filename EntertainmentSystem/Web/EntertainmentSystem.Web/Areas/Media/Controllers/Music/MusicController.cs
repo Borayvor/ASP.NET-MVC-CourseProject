@@ -2,6 +2,8 @@
 {
     using System;
     using System.Web.Mvc;
+    using System.Web.Mvc.Expressions;
+    using Common.Constants;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
     using ViewModels;
@@ -13,26 +15,26 @@
         public MusicController(IMusicFetcherService musicService)
         {
             this.musicService = musicService;
+            this.ViewBag.ControllerName = HtmlConstants.MediaMusicControllerName;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
-            return this.ConditionalActionResult(
-                () => this.musicService
-                .All()
-                .To<MediaBaseViewModel>(),
-                (content) => this.View(content));
+            return this.RedirectToActionPermanent(c => c.SearchByTitle(GlobalConstants.StringEmpty));
         }
 
+        [HttpGet]
         public ActionResult SearchByTitle(string search)
         {
             return this.ConditionalActionResult(
                 () => this.musicService
-                .AllByTitle(search)
+                .All(search)
                 .To<MediaBaseViewModel>(),
                 (content) => this.View("Index", content));
         }
 
+        [HttpGet]
         public ActionResult MusicDetails(Guid id)
         {
             return this.ConditionalActionResult(

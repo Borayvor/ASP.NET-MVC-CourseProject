@@ -232,7 +232,7 @@
     <Compile Include="Areas\Moderators\Controllers\Users\ModeratorUsersController.cs" />
     <Compile Include="Controllers\Partials\BasePartialController.cs" />
     <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
-    <Compile Include="Controllers\Search\SearchController.cs" />
+    <Compile Include="Areas\Media\Controllers\Search\SearchController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="ViewModels\Media\MediaCategoriesViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryCreateViewModel.cs" />
@@ -258,12 +258,12 @@
     <Compile Include="Controllers\Account\ManageController.cs" />
     <Compile Include="App_Start\GlimpseSecurityPolicy.cs" />
     <Compile Include="Areas\Media\Controllers\Music\MusicController.cs" />
-    <Compile Include="Areas\Media\Controllers\Picture\PictureController.cs" />
+    <Compile Include="Areas\Media\Controllers\Picture\PicturesController.cs" />
     <Compile Include="Controllers\Upload\UploadBaseController.cs" />
     <Compile Include="Controllers\Upload\UploadMusicController.cs" />
     <Compile Include="Controllers\Upload\UploadPictureController.cs" />
     <Compile Include="Controllers\Upload\UploadVideoController.cs" />
-    <Compile Include="Areas\Media\Controllers\Video\VideoController.cs" />
+    <Compile Include="Areas\Media\Controllers\Video\VideosController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -416,11 +416,11 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\Site\_site-media-video-details.scss" />
-    <Content Include="Areas\Media\Views\Video\_VideoPlayPartial.cshtml" />
+    <Content Include="Areas\Media\Views\Videos\_VideoPlayPartial.cshtml" />
     <Content Include="Content\Site\_site-media-item-play.scss" />
     <Content Include="Content\Site\_site-media-details.scss" />
-    <Content Include="Areas\Media\Views\Picture\_PicturePlayPartial.cshtml" />
-    <Content Include="Areas\Media\Views\Picture\PictureDetails.cshtml" />
+    <Content Include="Areas\Media\Views\Pictures\_PicturePlayPartial.cshtml" />
+    <Content Include="Areas\Media\Views\Pictures\PictureDetails.cshtml" />
     <Content Include="Areas\Media\Views\Music\MusicDetails.cshtml" />
     <Content Include="Areas\Media\Views\Music\_MusicPlayPartial.cshtml" />
     <Content Include="Content\Site\_site-media-picture-details.scss" />
@@ -450,7 +450,7 @@
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
-    <Content Include="Areas\Media\Views\Video\VideoDetails.cshtml" />
+    <Content Include="Areas\Media\Views\Videos\VideoDetails.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_PicturePartial.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_MusicPartial.cshtml" />
     <Content Include="Areas\Moderators\Views\ModeratorMediaCategory\_Create.cshtml" />
@@ -562,8 +562,8 @@
     <Content Include="Views\Shared\EditorTemplates\String.cshtml" />
     <Content Include="Views\Shared\_MusicHomePartial.cshtml" />
     <Content Include="Areas\Media\Views\Music\Index.cshtml" />
-    <Content Include="Areas\Media\Views\Picture\Index.cshtml" />
-    <Content Include="Areas\Media\Views\Video\Index.cshtml" />
+    <Content Include="Areas\Media\Views\Pictures\Index.cshtml" />
+    <Content Include="Areas\Media\Views\Videos\Index.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_SearchForm.cshtml" />
     <Content Include="Views\Shared\_UploadPicturePartial.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\UploadFileInfoViewModel.cshtml" />

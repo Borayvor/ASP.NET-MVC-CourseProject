@@ -1,24 +1,25 @@
-﻿namespace EntertainmentSystem.Web.Controllers.Search
+﻿namespace EntertainmentSystem.Web.Areas.Media.Controllers.Search
 {
     using System;
     using System.Web.Mvc;
     using System.Web.Mvc.Expressions;
-    using Areas.Media.Controllers.Music;
-    using Areas.Media.Controllers.Picture;
-    using Areas.Media.Controllers.Video;
     using Common.Constants;
-    using ViewModels.Search;
+    using Music;
+    using Picture;
+    using Video;
+    using Web.Controllers;
+    using Web.ViewModels.Search;
 
+    [Authorize]
+    [ValidateAntiForgeryToken]
     public class SearchController : BaseController
     {
-        [Authorize]
         [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult SearchMedia(string viewTitle, SearchViewModel model)
+        public ActionResult SearchMedia(string controllerName, SearchViewModel model)
         {
-            switch (viewTitle)
+            switch (controllerName)
             {
-                case HtmlConstants.MediaMusicHomeTitle:
+                case HtmlConstants.MediaMusicControllerName:
                     {
                         if (!this.ModelState.IsValid)
                         {
@@ -28,24 +29,24 @@
                         return this.RedirectToAction<MusicController>(c => c.SearchByTitle(model.SearchText));
                     }
 
-                case HtmlConstants.MediaPicturesHomeTitle:
+                case HtmlConstants.MediaPicturesControllerName:
                     {
                         if (!this.ModelState.IsValid)
                         {
-                            return this.RedirectToAction<PictureController>(c => c.Index());
+                            return this.RedirectToAction<PicturesController>(c => c.Index());
                         }
 
-                        return this.RedirectToAction<PictureController>(c => c.SearchByTitle(model.SearchText));
+                        return this.RedirectToAction<PicturesController>(c => c.SearchByTitle(model.SearchText));
                     }
 
-                case HtmlConstants.MediaVideosHomeTitle:
+                case HtmlConstants.MediaVideosControllerName:
                     {
                         if (!this.ModelState.IsValid)
                         {
-                            return this.RedirectToAction<VideoController>(c => c.Index());
+                            return this.RedirectToAction<VideosController>(c => c.Index());
                         }
 
-                        return this.RedirectToAction<VideoController>(c => c.SearchByTitle(model.SearchText));
+                        return this.RedirectToAction<VideosController>(c => c.SearchByTitle(model.SearchText));
                     }
 
                 default:
