@@ -57,5 +57,11 @@
               .To<MediaContentHomeViewModel>(),
                (videos) => this.PartialView("_VideosHomePartial", videos));
         }
+
+        [HttpGet]
+        public ActionResult Error()
+        {
+            return this.View();
+        }
     }
 }
