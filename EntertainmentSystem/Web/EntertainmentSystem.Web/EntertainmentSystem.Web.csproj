@@ -426,6 +426,7 @@
     <Content Include="Content\Site\_site-media-picture-details.scss" />
     <Content Include="Content\Site\_site-media-picture-play.scss" />
     <Content Include="Content\Site\_site-media-music-play.scss" />
+    <Content Include="Areas\Forum\Views\ForumHome\_PostHomePartial.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

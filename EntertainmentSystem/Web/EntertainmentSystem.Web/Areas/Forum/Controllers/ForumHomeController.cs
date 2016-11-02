@@ -16,6 +16,7 @@
             this.postService = postService;
         }
 
+        [HttpGet]
         public ActionResult Index()
         {
             var posts = this.postService

@@ -1,0 +1,57 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model PostHomeViewModel
+
+<div class="row hidden-lg hidden-md hidden-sm">
+    <div class="forumVoteBoxHorizontal">
+        +
+        6
+        гласа
+    </div>
+    <div class="forumVoteBoxHorizontal">
+        0
+        votes
+    </div>
+</div>
+<div class="row">
+    <div class="col-xs-1 forum-well hidden-xs">
+        <div class="well text-center forum-well-inside">
+            <div class="row font-size-24">
+                +6
+            </div>
+            <div class="row">
+                votes
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-1 forum-well hidden-xs">
+        <div class="well text-center forum-well-inside">
+            <div class="row font-size-24">0</div>
+            <div class="row">
+                answers
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-10">
+        <div class="row">
+            <h3 style="margin-left: 0">
+                <a href="">@Model.Title</a>
+            </h3>
+        </div>
+        <div class="row">
+            <p>
+                <span>posted</span>
+                <time datetime="2016-11-02T17:06:23.5770000">@Model.CreatedOn</time>
+                at <a href="">@Model.Category</a>
+                from
+                <img src="" alt="avatar" width="18">
+                <a href="">@Model.Author</a>
+            </p>
+        </div>
+        <div class="row">
+            <a href="" class="label label-default">#exam</a>
+            <a href="" class="label label-default">exam_preparation</a>
+            <a href="" class="label label-default">tasks</a>
+        </div>
+    </div>
+</div>
+<hr />
