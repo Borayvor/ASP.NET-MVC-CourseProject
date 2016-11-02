@@ -185,7 +185,7 @@
 
                 .es-close-icon {
                     width: 60px;
-                    height: 60px;
+                    /*height: 60px;*/
                     cursor: pointer;
                     color: #fff;
                     font-size: 30px;
@@ -203,6 +203,7 @@
                     -ms-flex-align: center;
                     align-items: center;
                     position: absolute;
+                    top: 12px;
                     right: 0 !important;
 
                     span {

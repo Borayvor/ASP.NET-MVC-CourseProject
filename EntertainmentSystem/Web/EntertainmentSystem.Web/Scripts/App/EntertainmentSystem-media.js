@@ -65,9 +65,9 @@
     function updateProgressBar() {
         if (isAudioVideoPlayer()) {
             var progressBar = $('.es-progress-bar');
-
             var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
             var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
+
             progressBar.attr("aria-valuenow", percentage);
             progressBar.css("width", percentage + "%");
             $(".time-remaining").text(remainingTimeConverted);
@@ -76,6 +76,21 @@
                 pause();
             }
         }
+    }
+
+    function seekVolumeBar(e) {
+        var volumeBar = $('.es-volume-bar');
+        var percent = e.offsetX / this.offsetWidth;
+        var transformedPersent = percent * 100;
+
+        mediaPlayer.volume = percent;
+        volumeBar.attr("aria-valuenow", transformedPersent);
+        volumeBar.css("width", transformedPersent + "%");
+    }
+
+    function seekProgressBar(e) {
+        var percent = e.offsetX / this.offsetWidth;
+        mediaPlayer.currentTime = percent * mediaPlayer.duration;
     }
 
     // start play
@@ -153,6 +168,9 @@
     // progress bar
     if (isAudioVideoPlayer()) {
         mediaPlayer.addEventListener('timeupdate', updateProgressBar, false);
+
+        $(".es-volume-bar-container").click(seekVolumeBar);
+        $(".es-progress-bar-container").click(seekProgressBar);
     }
 
     // volume bar

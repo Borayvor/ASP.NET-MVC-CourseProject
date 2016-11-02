@@ -3,7 +3,7 @@
 @using EntertainmentSystem.Web.Areas.Media.ViewModels
 @model MediaBaseViewModel
 
-<article class="es-card fade-in-animation col-sm-3 col-xs-6">
+<article class="es-card fade-in-animation col-md-3 col-sm-4 col-xs-6">
     <a class="content" href="@(Url.Action<VideosController>(c => c.VideoDetails(@Model.Id)))">
         <div>
             <div class="es-card-image" style="background-image: url(@Model.CoverImageUrl);"></div>

@@ -1,10 +1,4 @@
-﻿@media (min-width: 767px) {
-    .container {
-        /*padding-left: 0 !important;
-        padding-right: 0 !important;*/
-    }
-}
-
+﻿
 body {
     padding-top: 50px;
     padding-bottom: 20px;
@@ -20,11 +14,22 @@ body {
         z-index: 100 !important;
     }
 
+    #RememberMe{
+        margin-left: 0 !important;
+    }
+
     a {
         -webkit-transition: color 0.2s ease-in-out;
         transition: color 0.2s ease-in-out;
         color: #919496;
         text-decoration: none;
+    }
+
+    .es-administration-wrapper{
+        margin: 0;
+        padding: 0;
+        padding-left: 10px;
+        padding-right: 10px;
     }
 
     .es-clickable {

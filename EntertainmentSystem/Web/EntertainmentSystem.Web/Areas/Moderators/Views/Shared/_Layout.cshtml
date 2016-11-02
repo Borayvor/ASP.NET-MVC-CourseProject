@@ -3,12 +3,14 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-center">Moderators</h1>
+<div class="es-administration-wrapper">
+    <h1 class="text-center">Moderators</h1>
 
-@RenderBody()
+    @RenderBody()
+</div>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundlesJs/jqueryval")
     <script type="text/javascript">
         function sendAntiForgery() {
             return { "__RequestVerificationToken": $('input[name=__RequestVerificationToken]').val() }

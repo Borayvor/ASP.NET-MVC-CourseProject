@@ -21,25 +21,25 @@
 
         private static void RegisterScripts(BundleCollection bundles)
         {
-            bundles.Add(new ScriptBundle("~/bundles/jquery")
+            bundles.Add(new ScriptBundle("~/bundlesJs/jquery")
                 .Include(
                     "~/Scripts/KendoUI/jquery.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/jqueryval")
+            bundles.Add(new ScriptBundle("~/bundlesJs/jqueryval")
                 .Include("~/Scripts/jquery.validate*"));
 
-            bundles.Add(new ScriptBundle("~/bundles/kendo")
+            bundles.Add(new ScriptBundle("~/bundlesJs/kendo")
                 .Include(
                     "~/Scripts/KendoUI/kendo.all.min.js",
                     "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/tools")
+            bundles.Add(new ScriptBundle("~/bundlesJs/tools")
                 .Include(
                 "~/Scripts/bootstrap.js",
                 "~/Scripts/jquery.fancybox.js",
                 "~/Scripts/toastr.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/appJs")
+            bundles.Add(new ScriptBundle("~/bundlesJs/appJs")
                 .Include(
                 "~/Scripts/App/EntertainmentSystemApp.js",
                 "~/Scripts/App/EntertainmentSystem-media.js"));
@@ -47,17 +47,17 @@
 
         private static void RegisterStyles(BundleCollection bundles)
         {
-            bundles.Add(new StyleBundle("~/Content/siteCss")
+            bundles.Add(new StyleBundle("~/bundlesContent/siteCss")
                 .Include("~/Content/Site/site.css"));
 
-            bundles.Add(new StyleBundle("~/Content/tools")
+            bundles.Add(new StyleBundle("~/bundlesContent/tools")
                 .Include(
                 "~/Content/bootstrap.css",
-                "~/Content/jquery.fancybox.css",
-                "~/Content/font-awesome.css",
-                "~/Content/toastr.css"));
+                "~/Content/toastr.css",
+                "~/Content/jquery.fancybox*",
+                "~/Content/font-awesome.css"));
 
-            bundles.Add(new StyleBundle("~/Content/kendo")
+            bundles.Add(new StyleBundle("~/bundlesContent/kendo")
                 .Include(
                 "~/Content/KendoUI/kendo.common.min.css",
                 "~/Content/KendoUI/kendo.metro.min.css"));

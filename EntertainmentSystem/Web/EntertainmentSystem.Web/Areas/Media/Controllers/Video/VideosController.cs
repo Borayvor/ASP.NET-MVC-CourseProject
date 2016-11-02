@@ -2,7 +2,6 @@
 {
     using System;
     using System.Web.Mvc;
-    using System.Web.Mvc.Expressions;
     using Common.Constants;
     using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
@@ -21,7 +20,11 @@
         [HttpGet]
         public ActionResult Index()
         {
-            return this.RedirectToActionPermanent(c => c.SearchByTitle(GlobalConstants.StringEmpty));
+            return this.ConditionalActionResult(
+                () => this.videoService
+                .All()
+                .To<MediaBaseViewModel>(),
+                (content) => this.View(content));
         }
 
         [HttpGet]
