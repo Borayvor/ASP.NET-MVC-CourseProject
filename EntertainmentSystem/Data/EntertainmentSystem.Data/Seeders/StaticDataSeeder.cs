@@ -197,9 +197,9 @@
             // add pictures
             var contentPicture_1 = new MediaContent
             {
-                Title = "Legion",
-                Description = "kjdiouiow fsdiodasp",
-                ContentUrl = "http://i2.wp.com/www.cgmeetup.net/home/wp-content/uploads/2015/11/World-of-Warcraft-Legion-Cinematic-Trailer-3.jpg?resize=960%2C398",
+                Title = "Varian Wrynn",
+                Description = "World-of-Warcraft-Legion-Cinematic-Trailer-3.jpg",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/zkg913bztl4zrla/Apps/EntertainmentSystem/91cee43d-0904-4b58-983a-565e09ccd433.jpg",
                 ContentType = ContentType.Picture,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
@@ -210,9 +210,9 @@
 
             var contentPicture_2 = new MediaContent
             {
-                Title = "Warcraft movie",
-                Description = "totireo cxlkjasda",
-                ContentUrl = "http://blogs-images.forbes.com/scottmendelson/files/2016/05/Warcraft-Movie-Mobile-Wallpapers-1200x675.jpg",
+                Title = "Durotan",
+                Description = "Warcraft-Movie-Mobile-Wallpapers-1200x675.jpg",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/i1j0hpk6lpv2mjt/Apps/EntertainmentSystem/bb3f265e-6e89-4d66-9007-b0edeec2796e.jpg",
                 ContentType = ContentType.Picture,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
@@ -223,9 +223,9 @@
 
             var contentPicture_3 = new MediaContent
             {
-                Title = "garona",
-                Description = "weqe cposp[d",
-                ContentUrl = "http://www.hdwallpapers.in/download/garona_warcraft_movie-720x1280.jpg",
+                Title = "Garona",
+                Description = "garona_warcraft_movie-720x1280.jpg",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/b38orxfoi4dj82n/Apps/EntertainmentSystem/b22fc1cc-9b12-4bfe-920b-5594a97b4ab3.jpg",
                 ContentType = ContentType.Picture,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCollectionId = context.MediaCollections.FirstOrDefault().Id,
@@ -237,9 +237,9 @@
             // add music
             var contentMusic_1 = new MediaContent
             {
-                Title = "if i could fly",
-                Description = "helloween-if_i_could_fly.mp3",
-                ContentUrl = "http://tones.mob.org/ringtone/Zv3QhDrqVx2Dt7cCBM3wQA/1477294611/fa77442020a94667c2767228643a645c/helloween-if_i_could_fly.mp3",
+                Title = "Over The Hills And Far Away",
+                Description = "Nightwish - From the Tarja Turunen Era",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/jsgotquu23fqufw/Apps/EntertainmentSystem/84703708-f892-40b5-9472-597b86ab2c12.mp3",
                 ContentType = ContentType.Music,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -249,9 +249,9 @@
 
             var contentMusic_2 = new MediaContent
             {
-                Title = "Future world",
-                Description = "helloween-future_world.mp3",
-                ContentUrl = "http://tones.mob.org/ringtone/eCue1_rfgV5wKT6OR0khNg/1477295076/38378_wapres_ru/helloween-future_world.mp3",
+                Title = "Future World",
+                Description = "Helloween - 1987 - Keeper of the Seven Keys pt. 1",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/rcruqp7z3252o7v/Apps/EntertainmentSystem/eea13170-6231-43b5-8f72-6c3a799f1316.mp3",
                 ContentType = ContentType.Music,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -274,9 +274,9 @@
             // add videos
             var contentVideo_1 = new MediaContent
             {
-                Title = "bunny",
-                Description = "big-buck-bunny_trailer",
-                ContentUrl = "http://video.webmfiles.org/big-buck-bunny_trailer.webm",
+                Title = "Big buck bunny",
+                Description = "big-buck-bunny_trailer.webm",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/h1n1noiw8m5b1c6/Apps/EntertainmentSystem/43d770db-e58f-4839-96e4-75e8635f03c2.webm",
                 ContentType = ContentType.Video,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
@@ -286,9 +286,9 @@
 
             var contentVideo_2 = new MediaContent
             {
-                Title = "happyfit2",
-                Description = "lorem ipsum",
-                ContentUrl = "http://easyhtml5video.com/images/happyfit2.webm",
+                Title = "Happy feet 2",
+                Description = "happyfit2.webm",
+                ContentUrl = "https://dl.dropboxusercontent.com/1/view/8guai7hzb7bccjh/Apps/EntertainmentSystem/ef1cc222-4328-4710-a580-128019913ed4.webm",
                 ContentType = ContentType.Video,
                 CoverImageUrl = DefaultCoverImageUrl,
                 MediaCategoryId = context.MediaCategories.FirstOrDefault().Id,
