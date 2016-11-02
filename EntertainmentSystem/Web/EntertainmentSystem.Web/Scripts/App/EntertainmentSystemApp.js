@@ -35,7 +35,7 @@ $(function () {
         var itemActive = $(this).children(".carousel-inner").children(".item.active")
         var itemNotActive = $(this).children(".carousel-inner").children(".item").not(".active");
 
-        itemActive.children(".video").get(0).play();
+        ////itemActive.children(".video").get(0).play();
 
         itemNotActive.children(".video").each(function (key, value) {
             value.pause();
