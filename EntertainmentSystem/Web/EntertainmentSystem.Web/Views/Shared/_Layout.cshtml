@@ -7,12 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Entertainment System</title>
     <link href="~/favicon.ico" rel="icon" type="image/x-icon" />
-    @Styles.Render("~/bundlesContent/tools")
-    @Styles.Render("~/bundlesContent/kendo")
-    @Styles.Render("~/bundlesContent/siteCss")
+    @Styles.Render("~/Content/tools")
+    @Styles.Render("~/Content/KendoUI/kendo")
+    @Styles.Render("~/Content/siteCss")
 
-    @Scripts.Render("~/bundlesJs/jquery")
-    @Scripts.Render("~/bundlesJs/kendo")
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/kendo")
     <meta name="description" content="The description of my page" />
 </head>
 <body>
@@ -51,8 +51,8 @@
         </footer>
     </div>
 
-    @Scripts.Render("~/bundlesJs/tools")
-    @Scripts.Render("~/bundlesJs/appJs")
+    @Scripts.Render("~/bundles/tools")
+    @Scripts.Render("~/bundles/appJs")
     @RenderSection("Scripts", required: false)
 </body>
 </html>
