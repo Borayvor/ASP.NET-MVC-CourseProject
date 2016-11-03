@@ -18,7 +18,7 @@
 
         public const int HomeLastContentCount = 3;
 
-        public const int CacheMediaHomeDuration = 60 * 15; // 15 min.
+        public const int CacheMediaHomeDuration = 60 * 5; // 5 min.
 
         public const int UserFirstNameMinLength = 2;
         public const int UserFirstNameMaxLength = 100;
