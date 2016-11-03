@@ -57,7 +57,7 @@
                 "~/Content/jquery.fancybox*",
                 "~/Content/font-awesome.css"));
 
-            bundles.Add(new StyleBundle("~/bundlesContent/kendo")
+            bundles.Add(new StyleBundle("~/bundlesContent/kendo/css")
                 .Include(
                 "~/Content/KendoUI/kendo.common.min.css",
                 "~/Content/KendoUI/kendo.metro.min.css"));
