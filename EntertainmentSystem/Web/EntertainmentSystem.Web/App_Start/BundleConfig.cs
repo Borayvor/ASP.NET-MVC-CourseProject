@@ -53,13 +53,14 @@
             bundles.Add(new StyleBundle("~/bundlesContent/tools")
                 .Include(
                 "~/Content/bootstrap.css",
+                "~/Content/font-awesome.css",
                 "~/Content/toastr.css",
-                "~/Content/jquery.fancybox*",
-                "~/Content/font-awesome.css"));
+                "~/Content/jquery.fancybox.css"));
 
-            bundles.Add(new StyleBundle("~/bundlesContent/kendo/css")
+            bundles.Add(new StyleBundle("~/bundlesContent/kendo")
                 .Include(
                 "~/Content/KendoUI/kendo.common.min.css",
+                "~/Content/kendo/kendo.common-bootstrap.min.css",
                 "~/Content/KendoUI/kendo.metro.min.css"));
         }
     }
