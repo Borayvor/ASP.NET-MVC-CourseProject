@@ -460,6 +460,7 @@
     <Content Include="Content\KendoUI\kendo.bootstrap.min.css.map" />
     <Content Include="Content\KendoUI\kendo.common-bootstrap.min.css.map" />
     <Content Include="Content\KendoUI\kendo.common.min.css.map" />
+    <Content Include="Content\Site\_site-forum-home.scss" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
