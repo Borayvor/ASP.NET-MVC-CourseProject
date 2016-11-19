@@ -641,10 +641,6 @@
       <Project>{73166c82-bb30-4dec-aada-297bd3b2fef1}</Project>
       <Name>EntertainmentSystem.CloudStorage.Dropbox</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Firebase\EntertainmentSystem.CloudStorage.Firebase.csproj">
-      <Project>{73c45d1a-1b3f-4bca-bdb9-ba73661a2c25}</Project>
-      <Name>EntertainmentSystem.CloudStorage.Firebase</Name>
-    </ProjectReference>
     <ProjectReference Include="..\..\Common\EntertainmentSystem.Common\EntertainmentSystem.Common.csproj">
       <Project>{701f322f-aa01-4ddc-90b6-6935981c1e73}</Project>
       <Name>EntertainmentSystem.Common</Name>
