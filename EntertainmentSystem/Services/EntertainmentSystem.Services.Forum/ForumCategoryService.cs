@@ -8,36 +8,36 @@
 
     public class ForumCategoryService : IForumCategoryService
     {
-        private readonly IDbRepository<Category> categories;
+        private readonly IDbRepository<ForumCategory> categories;
 
-        public ForumCategoryService(IDbRepository<Category> categories)
+        public ForumCategoryService(IDbRepository<ForumCategory> categories)
         {
             this.categories = categories;
         }
 
-        public IQueryable<Category> GetAll()
+        public IQueryable<ForumCategory> GetAll()
         {
             return this.categories.All();
         }
 
-        public Category GetById(Guid id)
+        public ForumCategory GetById(Guid id)
         {
             return this.categories.GetById(id);
         }
 
-        public void Create(Category entity)
+        public void Create(ForumCategory entity)
         {
             this.categories.Create(entity);
             this.categories.Save();
         }
 
-        public void Update(Category entity)
+        public void Update(ForumCategory entity)
         {
             this.categories.Update(entity);
             this.categories.Save();
         }
 
-        public void Delete(Category entity)
+        public void Delete(ForumCategory entity)
         {
             this.categories.Delete(entity);
             this.categories.Save();

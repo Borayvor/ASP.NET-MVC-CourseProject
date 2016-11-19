@@ -16,13 +16,13 @@
 
         public ApplicationUser Author { get; set; }
 
-        public Category Category { get; set; }
+        public ForumCategory Category { get; set; }
 
         public IEnumerable<Tag> Tags { get; set; }
 
         public IEnumerable<Comment> Comments { get; set; }
 
-        public IEnumerable<Vote> Votes { get; set; }
+        public IEnumerable<VotePost> Votes { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {

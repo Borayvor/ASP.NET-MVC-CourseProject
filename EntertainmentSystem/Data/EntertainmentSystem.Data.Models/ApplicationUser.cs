@@ -18,7 +18,7 @@
         private ICollection<MediaContent> mediaContentCollections;
         private ICollection<Post> posts;
         private ICollection<Comment> comments;
-        private ICollection<Vote> votes;
+        private ICollection<VotePost> votes;
 
         public ApplicationUser()
         {
@@ -28,7 +28,7 @@
             this.mediaContentCollections = new HashSet<MediaContent>();
             this.posts = new HashSet<Post>();
             this.comments = new HashSet<Comment>();
-            this.votes = new HashSet<Vote>();
+            this.votes = new HashSet<VotePost>();
         }
 
         [Required]
@@ -62,7 +62,7 @@
             set { this.comments = value; }
         }
 
-        public virtual ICollection<Vote> Votes
+        public virtual ICollection<VotePost> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }

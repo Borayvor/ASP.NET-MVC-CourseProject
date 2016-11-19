@@ -3,8 +3,8 @@
     using Common;
     using Data.Models.Forum;
 
-    public interface IForumVoteService : IBaseGetService<Vote, int>, IBaseCreateService<Vote>,
-        IBaseUpdateService<Vote>, IBaseDeleteService<Vote>
+    public interface IForumVoteService : IBaseGetService<VotePost, int>, IBaseCreateService<VotePost>,
+        IBaseUpdateService<VotePost>, IBaseDeleteService<VotePost>
     {
     }
 }

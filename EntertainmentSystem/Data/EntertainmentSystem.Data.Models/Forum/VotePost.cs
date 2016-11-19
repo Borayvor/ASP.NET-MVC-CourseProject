@@ -4,8 +4,10 @@
     using System.ComponentModel.DataAnnotations;
     using Common.Models;
 
-    public class Vote : BaseModel<int>
+    public class VotePost : BaseModel<int>
     {
+        public VoteType Value { get; set; }
+
         [Required]
         public string AuthorId { get; set; }
 
@@ -14,7 +16,5 @@
         public Guid PostId { get; set; }
 
         public virtual Post Post { get; set; }
-
-        public VoteType Value { get; set; }
     }
 }

@@ -4,8 +4,8 @@
     using Common;
     using Data.Models.Forum;
 
-    public interface IForumCategoryService : IBaseGetService<Category, Guid>, IBaseCreateService<Category>,
-        IBaseUpdateService<Category>, IBaseDeleteService<Category>
+    public interface IForumCategoryService : IBaseGetService<ForumCategory, Guid>, IBaseCreateService<ForumCategory>,
+        IBaseUpdateService<ForumCategory>, IBaseDeleteService<ForumCategory>
     {
     }
 }

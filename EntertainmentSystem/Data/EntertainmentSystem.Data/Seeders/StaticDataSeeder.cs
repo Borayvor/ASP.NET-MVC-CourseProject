@@ -3,6 +3,7 @@
     using System.Collections.Generic;
     using System.Linq;
     using EntertainmentSystem.Common.Constants;
+    using EntertainmentSystem.Common.Generators;
     using Microsoft.AspNet.Identity;
     using Microsoft.AspNet.Identity.EntityFramework;
     using Models;
@@ -11,6 +12,10 @@
 
     internal static class StaticDataSeeder
     {
+        private const string AdministratorUserName = "Admin";
+        private const string ModeratorUserName = "Moderator";
+        private const string UserOrdinaryUserName = "TestUser";
+
         private static readonly List<int> MediaCetegoriesId = new List<int>();
 
         internal static void SeedRoles(EntertainmentSystemDbContext context)
@@ -39,17 +44,26 @@
                 return;
             }
 
-            const string AdministratorUserName = "admin@admin.com";
+            // admin
+            const string AdministratorEmail = "admin@admin.com";
             const string AdministratorFirstName = "Admincho";
             const string AdministratorLastName = "Adminov";
             const string AdministratorPassword = "admin";
             const string AdministratorImageUrl = "http://vignette4.wikia.nocookie.net/marveldatabase/images/4/41/Boreas_0001.jpg/revision/latest?cb=20110201173602";
 
-            const string ModeratorUserName = "moderator@moderator.com";
+            // moderator
+            const string ModeratorEmail = "moderator@moderator.com";
             const string ModeratorFirstName = "Gosho";
             const string ModeratorLastName = "Peshev";
             const string ModeratorPassword = "moderator";
             const string ModeratorImageUrl = "http://batman-news.com/wp-content/uploads/2014/01/logo-snb.png";
+
+            // user
+            const string UserOrdinaryEmail = "testuser@TestUser.com";
+            const string UserOrdinaryFirstName = "FirstName";
+            const string UserOrdinaryLastName = "LastName";
+            const string UserOrdinaryPassword = "testuser";
+            const string UserOrdinaryImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/eb/SupermanRoss.png";
 
             // Create admin user
             var userStore = new UserStore<ApplicationUser>(context);
@@ -59,7 +73,7 @@
             var userAdmin = new ApplicationUser
             {
                 UserName = AdministratorUserName,
-                Email = AdministratorUserName,
+                Email = AdministratorEmail,
                 FirstName = AdministratorFirstName,
                 LastName = AdministratorLastName,
                 AvatarImageUrl = AdministratorImageUrl
@@ -74,7 +88,7 @@
             var userModerator = new ApplicationUser
             {
                 UserName = ModeratorUserName,
-                Email = ModeratorUserName,
+                Email = ModeratorEmail,
                 FirstName = ModeratorFirstName,
                 LastName = ModeratorLastName,
                 AvatarImageUrl = ModeratorImageUrl
@@ -88,14 +102,14 @@
             // Create ordinary user
             var userOrdinary = new ApplicationUser
             {
-                UserName = "TestUser",
-                Email = "TestUser@TestUser.com",
-                FirstName = "FirstName",
-                LastName = "LastName",
-                AvatarImageUrl = "https://upload.wikimedia.org/wikipedia/en/e/eb/SupermanRoss.png"
+                UserName = UserOrdinaryUserName,
+                Email = UserOrdinaryEmail,
+                FirstName = UserOrdinaryFirstName,
+                LastName = UserOrdinaryLastName,
+                AvatarImageUrl = UserOrdinaryImageUrl
             };
 
-            userManager.Create(userOrdinary, "TestUser");
+            userManager.Create(userOrdinary, UserOrdinaryPassword);
 
             // End add.
             context.SaveChanges();
@@ -103,23 +117,23 @@
 
         internal static void SeedPostCategories(EntertainmentSystemDbContext context)
         {
-            if (context.PostCategories.Any())
+            if (context.ForumCategories.Any())
             {
                 return;
             }
 
-            var category = new Category
+            var category = new ForumCategory
             {
                 Name = "Unknown"
             };
 
-            context.PostCategories.Add(category);
+            context.ForumCategories.Add(category);
             context.SaveChanges();
         }
 
         internal static void SeedPosts(EntertainmentSystemDbContext context)
         {
-            if (context.Posts.Any())
+            if (context.ForumPosts.Any())
             {
                 return;
             }
@@ -128,39 +142,17 @@
             {
                 Title = "Test Post",
                 Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
-                AuthorId = context.Users.FirstOrDefault().Id,
-                PostCategoryId = context.PostCategories.FirstOrDefault().Id,
+                AuthorId = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName).Id,
+                PostCategoryId = context.ForumCategories.FirstOrDefault().Id,
             };
 
-            context.Posts.Add(post);
-            context.SaveChanges();
-        }
-
-        internal static void SeedPostComments(EntertainmentSystemDbContext context)
-        {
-            if (context.PostComments.Any())
-            {
-                return;
-            }
-
-            for (int i = 0; i < 10; i++)
-            {
-
-            }
-
-            var postComment = new Comment
-            {
-                Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
-                AuthorId = context.Users.FirstOrDefault().Id,
-            };
-
-            context.PostComments.Add(postComment);
+            context.ForumPosts.Add(post);
             context.SaveChanges();
         }
 
         internal static void SeedTags(EntertainmentSystemDbContext context)
         {
-            if (context.PostTags.Any())
+            if (context.ForumTags.Any())
             {
                 return;
             }
@@ -168,10 +160,80 @@
             var tag = new Tag
             {
                 Name = "Unknown",
-                Posts = context.Posts.ToList()
+                Posts = context.ForumPosts.ToList()
             };
 
-            context.PostTags.Add(tag);
+            context.ForumTags.Add(tag);
+            context.SaveChanges();
+        }
+
+        internal static void SeedPostComments(EntertainmentSystemDbContext context)
+        {
+            if (context.ForumComments.Any())
+            {
+                return;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+                var postComment = new Comment
+                {
+                    Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    PostId = context.ForumPosts.FirstOrDefault().Id
+                };
+
+                context.ForumComments.Add(postComment);
+            }
+
+            context.SaveChanges();
+        }
+
+        internal static void SeedPostVotes(EntertainmentSystemDbContext context)
+        {
+            if (context.ForumPostVotes.Any())
+            {
+                return;
+            }
+
+            for (int i = 0; i < 5; i++)
+            {
+                var vote = new VotePost
+                {
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    PostId = context.ForumPosts.FirstOrDefault().Id,
+                    Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
+                };
+
+                context.ForumPostVotes.Add(vote);
+            }
+
+            context.SaveChanges();
+        }
+
+        internal static void SeedCommentVotes(EntertainmentSystemDbContext context)
+        {
+            if (context.ForumCommentVotes.Any())
+            {
+                return;
+            }
+
+            var commentIds = context.ForumComments.Select(x => x.Id).ToList();
+
+            for (int i = 0; i < 5; i++)
+            {
+                var commentId = commentIds[RandomGenerator.RandomNumber(0, commentIds.Count - 1)];
+
+                var vote = new VoteComment
+                {
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    CommentId = context.ForumComments.FirstOrDefault(c => c.Id == commentId).Id,
+                    Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
+                };
+
+                context.ForumCommentVotes.Add(vote);
+            }
+
             context.SaveChanges();
         }
 

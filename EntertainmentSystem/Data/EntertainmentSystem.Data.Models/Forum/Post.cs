@@ -10,13 +10,13 @@
     {
         private ICollection<Tag> tags;
         private ICollection<Comment> comments;
-        private ICollection<Vote> votes;
+        private ICollection<VotePost> votes;
 
         public Post()
         {
             this.tags = new HashSet<Tag>();
             this.comments = new HashSet<Comment>();
-            this.votes = new HashSet<Vote>();
+            this.votes = new HashSet<VotePost>();
         }
 
         [Required]
@@ -35,7 +35,7 @@
 
         public Guid PostCategoryId { get; set; }
 
-        public virtual Category PostCategory { get; set; }
+        public virtual ForumCategory PostCategory { get; set; }
 
         public virtual ICollection<Tag> PostTags
         {
@@ -49,7 +49,7 @@
             set { this.comments = value; }
         }
 
-        public virtual ICollection<Vote> Votes
+        public virtual ICollection<VotePost> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }
