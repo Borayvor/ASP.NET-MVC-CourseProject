@@ -1,0 +1,37 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model CommentViewModel
+
+<div id="answers-203370">
+    <br>
+    <div class="row forum-post-voting-parent" id="forum-post-203372">
+        <div class="col-xs-2 forum-vote">
+            <div class="well forum-vote-well forum-vote-possible text-center" data-answer-id="203372">
+
+                <div class="forum-vote-detail forum-vote-margin">
+                    <strong id="vote-count-203372">@Model.Votes</strong>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-10 forum-topic">
+            <div class="post-content">
+                <div class="row">
+                    <p>@Model.Content</p>
+                </div>
+                <hr class="horizontal-line-question">
+                <div class="row">
+                    <p class="es-forum-post-info-color">
+                        <span>posted</span>
+                        <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
+                        from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserName</a>
+                    </p>
+                </div>
+            </div>
+            <hr class="horizontal-line-question"> 
+            <div id="answers-203372" class="row nested-posts">
+                <div id="nested-posts-203372">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

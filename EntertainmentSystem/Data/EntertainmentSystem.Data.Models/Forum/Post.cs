@@ -37,7 +37,7 @@
 
         public virtual ForumCategory PostCategory { get; set; }
 
-        public virtual ICollection<Tag> PostTags
+        public virtual ICollection<Tag> Tags
         {
             get { return this.tags; }
             set { this.tags = value; }

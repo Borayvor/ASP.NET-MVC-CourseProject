@@ -1,4 +1,5 @@
-﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model PostHomeViewModel
 
 <div class="row hidden-lg hidden-md hidden-sm forum-well">
@@ -27,7 +28,7 @@
     <div class="col-sm-9 col-xs-12 es-forum-home-post-content">
         <div class="row">
             <h3 style="margin-left: 0">
-                <a href="">@Model.Title</a>
+                @(Html.ActionLink<PostController>(Model.Title, c => c.Index()))
             </h3>
         </div>
         <div class="row">
@@ -35,7 +36,7 @@
                 <span>posted</span>
                 <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
                 at <a href="/Forum/Category/@Model.Category.Id" class="es-forum-post-info-data-color">@Model.Category.Name</a>
-                from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserNameTrue</a>
+                from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserName</a>
             </p>
         </div>
         <div class="row">

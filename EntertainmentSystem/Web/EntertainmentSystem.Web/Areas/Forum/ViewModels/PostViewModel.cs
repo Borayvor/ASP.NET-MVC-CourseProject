@@ -9,9 +9,11 @@
     using Infrastructure.Mapping;
     using Web.ViewModels;
 
-    public class PostHomeViewModel : BaseViewModel<Guid>, IMapFrom<Post>, IHaveCustomMappings
+    public class PostViewModel : BaseViewModel<Guid>, IMapFrom<Post>, IHaveCustomMappings
     {
         public string Title { get; set; }
+
+        public string Content { get; set; }
 
         public ApplicationUser Author { get; set; }
 
@@ -19,7 +21,7 @@
 
         public IEnumerable<Tag> Tags { get; set; }
 
-        public int CommentsCount { get; set; }
+        public IEnumerable<Comment> Comments { get; set; }
 
         public int Votes { get; set; }
 
@@ -27,8 +29,6 @@
         {
             configuration.CreateMap<Post, PostHomeViewModel>()
                 .ForMember(m => m.Category, opt => opt.MapFrom(x => x.PostCategory))
-                .ForMember(m => m.Tags, opt => opt.MapFrom(x => x.Tags))
-                .ForMember(m => m.CommentsCount, opt => opt.MapFrom(x => x.Comments.Count()))
                 .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int)v.Value)))
                 .ReverseMap();
         }
