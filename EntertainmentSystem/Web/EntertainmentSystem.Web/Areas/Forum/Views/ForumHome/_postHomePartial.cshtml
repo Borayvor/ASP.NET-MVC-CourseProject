@@ -3,24 +3,24 @@
 
 <div class="row hidden-lg hidden-md hidden-sm forum-well">
     <div class="well text-center pull-left">
-        @Model.Votes.Count()
+        @Model.Votes
         votes
     </div>
     <div class="well text-center pull-left">
-        @Model.Comments.Count()
+        @Model.CommentsCount
         answers
     </div>
 </div>
 <div class="row">
     <div class="col-sm-1 hidden-xs forum-well">
         <div class="well text-center forum-well-inside">
-            <div class="row">@Model.Votes.Count()</div>
+            <div class="row">@Model.Votes</div>
             <div class="row">votes</div>
         </div>
     </div>
     <div class="col-sm-1 hidden-xs forum-well">
         <div class="well text-center forum-well-inside">
-            <div class="row">@Model.Comments.Count()</div>
+            <div class="row">@Model.CommentsCount</div>
             <div class="row">answers</div>
         </div>
     </div>
@@ -35,7 +35,7 @@
                 <span>posted</span>
                 <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
                 at <a href="/Forum/Category/@Model.Category.Id" class="es-forum-post-info-data-color">@Model.Category.Name</a>
-                from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserName</a>
+                from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserNameTrue</a>
             </p>
         </div>
         <div class="row">

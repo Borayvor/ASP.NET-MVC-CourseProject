@@ -32,11 +32,6 @@
         }
 
         [Required]
-        [MaxLength(GlobalConstants.UserUserNameTrueMaxLength)]
-        [MinLength(GlobalConstants.UserUserNameTrueMinLength)]
-        public string UserNameTrue { get; set; }
-
-        [Required]
         [MaxLength(GlobalConstants.UserFirstNameMaxLength)]
         [MinLength(GlobalConstants.UserFirstNameMinLength)]
         public string FirstName { get; set; }

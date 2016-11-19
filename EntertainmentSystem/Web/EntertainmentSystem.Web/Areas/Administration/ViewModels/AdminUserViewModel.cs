@@ -21,8 +21,8 @@
         public string LastName { get; set; }
 
         [Required]
-        [MaxLength(GlobalConstants.UserUserNameTrueMaxLength)]
-        [MinLength(GlobalConstants.UserUserNameTrueMinLength)]
+        [MaxLength(GlobalConstants.UserUserNameMaxLength)]
+        [MinLength(GlobalConstants.UserUserNameMinLength)]
         [Display(Name = "User name")]
         public string UserNameTrue { get; set; }
 
