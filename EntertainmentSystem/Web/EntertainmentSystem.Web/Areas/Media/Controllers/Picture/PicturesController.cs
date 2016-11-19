@@ -23,7 +23,7 @@
             return this.ConditionalActionResult(
                 () => this.pictureService
                 .All()
-                .To<MediaBaseViewModel>(),
+                .To<MediaBasePictureViewModel>(),
                 (content) => this.View(content));
         }
 
@@ -33,7 +33,7 @@
             return this.ConditionalActionResult(
                 () => this.pictureService
                 .All(search)
-                .To<MediaBaseViewModel>(),
+                .To<MediaBasePictureViewModel>(),
                 (content) => this.View("Index", content));
         }
 

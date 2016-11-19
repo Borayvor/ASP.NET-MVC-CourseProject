@@ -12,9 +12,10 @@
         public string Email { get; set; }
 
         [Required]
-        [MaxLength(GlobalConstants.UserUsernameMaxLength)]
-        [MinLength(GlobalConstants.UserUsernameMinLength)]
-        public string UserName { get; set; }
+        [MaxLength(GlobalConstants.UserUserNameTrueMaxLength)]
+        [MinLength(GlobalConstants.UserUserNameTrueMinLength)]
+        [Display(Name = "User name")]
+        public string UserNameTrue { get; set; }
 
         [Required]
         [MaxLength(GlobalConstants.UserFirstNameMaxLength)]

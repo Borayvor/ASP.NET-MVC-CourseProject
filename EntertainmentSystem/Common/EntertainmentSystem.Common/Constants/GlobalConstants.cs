@@ -20,12 +20,12 @@
 
         public const int CacheMediaHomeDuration = 60 * 5; // 5 min.
 
+        public const int UserUserNameTrueMinLength = 2;
+        public const int UserUserNameTrueMaxLength = 50;
         public const int UserFirstNameMinLength = 2;
-        public const int UserFirstNameMaxLength = 100;
+        public const int UserFirstNameMaxLength = 50;
         public const int UserLastNameMinLength = 2;
-        public const int UserLastNameMaxLength = 100;
-        public const int UserUsernameMinLength = 2;
-        public const int UserUsernameMaxLength = 256;
+        public const int UserLastNameMaxLength = 50;
         public const int UserAvatarImageUrlMaxLength = 1024;
         public const int UserEmailMaxLength = 256;
 

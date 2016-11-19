@@ -170,8 +170,9 @@
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.UserName,
+                    UserNameTrue = model.UserNameTrue,
                     Email = model.Email,
+                    UserName = model.Email,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     AvatarImageUrl = model.ImageUrl

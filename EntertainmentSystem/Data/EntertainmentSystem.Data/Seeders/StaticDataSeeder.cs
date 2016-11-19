@@ -72,8 +72,9 @@
 
             var userAdmin = new ApplicationUser
             {
-                UserName = AdministratorUserName,
+                UserNameTrue = AdministratorUserName,
                 Email = AdministratorEmail,
+                UserName = AdministratorEmail,
                 FirstName = AdministratorFirstName,
                 LastName = AdministratorLastName,
                 AvatarImageUrl = AdministratorImageUrl
@@ -87,8 +88,9 @@
             // Create moderator user
             var userModerator = new ApplicationUser
             {
-                UserName = ModeratorUserName,
+                UserNameTrue = ModeratorUserName,
                 Email = ModeratorEmail,
+                UserName = ModeratorEmail,
                 FirstName = ModeratorFirstName,
                 LastName = ModeratorLastName,
                 AvatarImageUrl = ModeratorImageUrl
@@ -102,8 +104,9 @@
             // Create ordinary user
             var userOrdinary = new ApplicationUser
             {
-                UserName = UserOrdinaryUserName,
+                UserNameTrue = UserOrdinaryUserName,
                 Email = UserOrdinaryEmail,
+                UserName = UserOrdinaryEmail,
                 FirstName = UserOrdinaryFirstName,
                 LastName = UserOrdinaryLastName,
                 AvatarImageUrl = UserOrdinaryImageUrl
@@ -142,7 +145,7 @@
             {
                 Title = "Test Post",
                 Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
-                AuthorId = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName).Id,
+                AuthorId = context.Users.FirstOrDefault(a => a.UserNameTrue == ModeratorUserName).Id,
                 PostCategoryId = context.ForumCategories.FirstOrDefault().Id,
             };
 
@@ -179,7 +182,7 @@
                 var postComment = new Comment
                 {
                     Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
-                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserNameTrue == UserOrdinaryUserName).Id,
                     PostId = context.ForumPosts.FirstOrDefault().Id
                 };
 
@@ -200,7 +203,7 @@
             {
                 var vote = new VotePost
                 {
-                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserNameTrue == UserOrdinaryUserName).Id,
                     PostId = context.ForumPosts.FirstOrDefault().Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
@@ -220,13 +223,13 @@
 
             var commentIds = context.ForumComments.Select(x => x.Id).ToList();
 
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 30; i++)
             {
                 var commentId = commentIds[RandomGenerator.RandomNumber(0, commentIds.Count - 1)];
 
                 var vote = new VoteComment
                 {
-                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserNameTrue == UserOrdinaryUserName).Id,
                     CommentId = context.ForumComments.FirstOrDefault(c => c.Id == commentId).Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
