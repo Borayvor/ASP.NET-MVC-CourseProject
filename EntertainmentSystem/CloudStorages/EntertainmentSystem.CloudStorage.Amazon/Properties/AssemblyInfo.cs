@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following 
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("EntertainmentSystem.CloudStorage.Firebase")]
+[assembly: AssemblyTitle("EntertainmentSystem.CloudStorage.Amazon")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("EntertainmentSystem.CloudStorage.Firebase")]
+[assembly: AssemblyProduct("EntertainmentSystem.CloudStorage.Amazon")]
 [assembly: AssemblyCopyright("Copyright ©  2016")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("73c45d1a-1b3f-4bca-bdb9-ba73661a2c25")]
+[assembly: Guid("c771425b-da16-4740-83dc-f3f3670b192a")]
 
 // Version information for an assembly consists of the following four values:
 //
