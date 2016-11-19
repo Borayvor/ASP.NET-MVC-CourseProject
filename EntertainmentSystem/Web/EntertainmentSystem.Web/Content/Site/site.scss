@@ -2,7 +2,7 @@
 body {
     padding-top: 50px;
     padding-bottom: 20px;
-    background-color: #fcf6ea;    
+    background-color: #fcf6ea;
     font-family: Cambria, Cochin, Georgia, Times, Times New Roman, serif;
     font-weight: 300;
 
@@ -14,7 +14,7 @@ body {
         z-index: 100 !important;
     }
 
-    #RememberMe{
+    #RememberMe {
         margin-left: 0 !important;
     }
 
@@ -25,7 +25,7 @@ body {
         text-decoration: none;
     }
 
-    .es-administration-wrapper{
+    .es-administration-wrapper {
         margin: 0;
         padding: 0;
         padding-left: 10px;
@@ -41,7 +41,7 @@ body {
         overflow: hidden !important;
     }
 
-    .es-flex{
+    .es-flex {
         flex: 1;
     }
 
@@ -49,7 +49,7 @@ body {
         display: flex;
         -webkit-box-direction: normal;
         -webkit-box-orient: horizontal;
-        -webkit-flex-direction: row;        
+        -webkit-flex-direction: row;
         -ms-flex-direction: row;
         flex-direction: row;
     }
@@ -98,6 +98,14 @@ body {
         padding-right: 15px;
     }
 
+    .es-forum-post-info-color {
+        color: #005fb2;
+
+        .es-forum-post-info-data-color {
+            color: #a72af3;
+        }
+    }
+
     @import "site-loading";
 
     @import "site-home";
@@ -109,7 +117,7 @@ body {
     @import "site-media-details";
 
     @import "site-media-picture-details";
-   
+
     @import "site-media-video-details";
 
     @import "site-media-item-play";

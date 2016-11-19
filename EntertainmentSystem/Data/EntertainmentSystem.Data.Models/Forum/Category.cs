@@ -6,11 +6,11 @@
     using Common.Models;
     using EntertainmentSystem.Common.Constants;
 
-    public class PostCategory : BaseModelGuid
+    public class Category : BaseModelGuid
     {
         private ICollection<Post> posts;
 
-        public PostCategory()
+        public Category()
         {
             this.posts = new HashSet<Post>();
         }

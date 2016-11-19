@@ -7,36 +7,36 @@
 
     public class ForumVoteService : IForumVoteService
     {
-        private readonly IDbRepository<PostVote> votes;
+        private readonly IDbRepository<Vote> votes;
 
-        public ForumVoteService(IDbRepository<PostVote> votes)
+        public ForumVoteService(IDbRepository<Vote> votes)
         {
             this.votes = votes;
         }
 
-        public IQueryable<PostVote> GetAll()
+        public IQueryable<Vote> GetAll()
         {
             return this.votes.All();
         }
 
-        public PostVote GetById(int id)
+        public Vote GetById(int id)
         {
             return this.votes.GetById(id);
         }
 
-        public void Create(PostVote entity)
+        public void Create(Vote entity)
         {
             this.votes.Create(entity);
             this.votes.Save();
         }
 
-        public void Update(PostVote entity)
+        public void Update(Vote entity)
         {
             this.votes.Update(entity);
             this.votes.Save();
         }
 
-        public void Delete(PostVote entity)
+        public void Delete(Vote entity)
         {
             this.votes.Delete(entity);
             this.votes.Save();

@@ -7,36 +7,36 @@
 
     public class ForumTagService : IForumTagService
     {
-        private readonly IDbRepository<PostTag> tags;
+        private readonly IDbRepository<Tag> tags;
 
-        public ForumTagService(IDbRepository<PostTag> tags)
+        public ForumTagService(IDbRepository<Tag> tags)
         {
             this.tags = tags;
         }
 
-        public IQueryable<PostTag> GetAll()
+        public IQueryable<Tag> GetAll()
         {
             return this.tags.All();
         }
 
-        public PostTag GetById(int id)
+        public Tag GetById(int id)
         {
             return this.tags.GetById(id);
         }
 
-        public void Create(PostTag entity)
+        public void Create(Tag entity)
         {
             this.tags.Create(entity);
             this.tags.Save();
         }
 
-        public void Update(PostTag entity)
+        public void Update(Tag entity)
         {
             this.tags.Update(entity);
             this.tags.Save();
         }
 
-        public void Delete(PostTag entity)
+        public void Delete(Tag entity)
         {
             this.tags.Delete(entity);
             this.tags.Save();

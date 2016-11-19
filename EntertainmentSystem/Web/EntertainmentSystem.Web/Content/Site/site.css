@@ -64,6 +64,10 @@
     width: 85%;
     padding-left: 15px;
     padding-right: 15px; }
+  body .es-forum-post-info-color {
+    color: #005fb2; }
+    body .es-forum-post-info-color .es-forum-post-info-data-color {
+      color: #a72af3; }
   body #es-loading {
     display: none;
     position: fixed;
@@ -100,10 +104,6 @@
     margin-bottom: 3px !important; }
     body #es-forum-home h3 a {
       color: #454444; }
-  body #es-forum-home .es-forum-post-info-color {
-    color: #00b718; }
-    body #es-forum-home .es-forum-post-info-color .es-forum-post-info-data-color {
-      color: #a72af3; }
   body #es-forum-home .forum-well {
     font-weight: bold;
     padding: 0 !important;

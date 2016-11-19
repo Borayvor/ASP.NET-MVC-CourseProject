@@ -6,11 +6,11 @@
     using Common.Models;
     using EntertainmentSystem.Common.Constants;
 
-    public class PostTag : BaseModel<int>
+    public class Tag : BaseModel<int>
     {
         private ICollection<Post> posts;
 
-        public PostTag()
+        public Tag()
         {
             this.posts = new HashSet<Post>();
         }

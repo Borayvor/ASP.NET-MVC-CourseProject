@@ -8,15 +8,15 @@
 
     public class Post : BaseModelGuid
     {
-        private ICollection<PostTag> tags;
-        private ICollection<PostComment> comments;
-        private ICollection<PostVote> votes;
+        private ICollection<Tag> tags;
+        private ICollection<Comment> comments;
+        private ICollection<Vote> votes;
 
         public Post()
         {
-            this.tags = new HashSet<PostTag>();
-            this.comments = new HashSet<PostComment>();
-            this.votes = new HashSet<PostVote>();
+            this.tags = new HashSet<Tag>();
+            this.comments = new HashSet<Comment>();
+            this.votes = new HashSet<Vote>();
         }
 
         [Required]
@@ -35,21 +35,21 @@
 
         public Guid PostCategoryId { get; set; }
 
-        public virtual PostCategory PostCategory { get; set; }
+        public virtual Category PostCategory { get; set; }
 
-        public virtual ICollection<PostTag> PostTags
+        public virtual ICollection<Tag> PostTags
         {
             get { return this.tags; }
             set { this.tags = value; }
         }
 
-        public virtual ICollection<PostComment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
         }
 
-        public virtual ICollection<PostVote> Votes
+        public virtual ICollection<Vote> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }

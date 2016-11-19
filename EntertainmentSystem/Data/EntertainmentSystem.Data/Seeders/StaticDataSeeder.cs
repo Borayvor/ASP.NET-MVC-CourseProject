@@ -108,7 +108,7 @@
                 return;
             }
 
-            var category = new PostCategory
+            var category = new Category
             {
                 Name = "Unknown"
             };
@@ -126,13 +126,35 @@
 
             var post = new Post
             {
-                Title = "dfjdas",
-                Content = "jdskouiqweioqwueqwiopeqwiowe o9qweuqwoeq",
+                Title = "Test Post",
+                Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
                 AuthorId = context.Users.FirstOrDefault().Id,
                 PostCategoryId = context.PostCategories.FirstOrDefault().Id,
             };
 
             context.Posts.Add(post);
+            context.SaveChanges();
+        }
+
+        internal static void SeedPostComments(EntertainmentSystemDbContext context)
+        {
+            if (context.PostComments.Any())
+            {
+                return;
+            }
+
+            for (int i = 0; i < 10; i++)
+            {
+
+            }
+
+            var postComment = new Comment
+            {
+                Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
+                AuthorId = context.Users.FirstOrDefault().Id,
+            };
+
+            context.PostComments.Add(postComment);
             context.SaveChanges();
         }
 
@@ -143,7 +165,7 @@
                 return;
             }
 
-            var tag = new PostTag
+            var tag = new Tag
             {
                 Name = "Unknown",
                 Posts = context.Posts.ToList()

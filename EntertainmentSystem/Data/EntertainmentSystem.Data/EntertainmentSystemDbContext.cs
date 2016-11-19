@@ -24,13 +24,13 @@
 
         public IDbSet<Post> Posts { get; set; }
 
-        public IDbSet<PostCategory> PostCategories { get; set; }
+        public IDbSet<Category> PostCategories { get; set; }
 
-        public IDbSet<PostComment> PostComments { get; set; }
+        public IDbSet<Comment> PostComments { get; set; }
 
-        public IDbSet<PostTag> PostTags { get; set; }
+        public IDbSet<Tag> PostTags { get; set; }
 
-        public IDbSet<PostVote> PostVotes { get; set; }
+        public IDbSet<Vote> PostVotes { get; set; }
 
         public static EntertainmentSystemDbContext Create()
         {

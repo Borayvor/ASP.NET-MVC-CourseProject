@@ -3,8 +3,8 @@
     using Common;
     using Data.Models.Forum;
 
-    public interface IForumTagService : IBaseGetService<PostTag, int>, IBaseCreateService<PostTag>,
-        IBaseUpdateService<PostTag>, IBaseDeleteService<PostTag>
+    public interface IForumTagService : IBaseGetService<Tag, int>, IBaseCreateService<Tag>,
+        IBaseUpdateService<Tag>, IBaseDeleteService<Tag>
     {
     }
 }
