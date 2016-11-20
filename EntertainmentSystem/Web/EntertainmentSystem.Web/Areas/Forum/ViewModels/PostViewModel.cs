@@ -21,14 +21,15 @@
 
         public IEnumerable<Tag> Tags { get; set; }
 
-        public IEnumerable<Comment> Comments { get; set; }
+        public IEnumerable<CommentViewModel> Comments { get; set; }
 
         public int Votes { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
-            configuration.CreateMap<Post, PostHomeViewModel>()
+            configuration.CreateMap<Post, PostViewModel>()
                 .ForMember(m => m.Category, opt => opt.MapFrom(x => x.PostCategory))
+                .ForMember(m => m.Comments, opt => opt.MapFrom(x => x.Comments.AsQueryable().To<CommentViewModel>()))
                 .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int)v.Value)))
                 .ReverseMap();
         }

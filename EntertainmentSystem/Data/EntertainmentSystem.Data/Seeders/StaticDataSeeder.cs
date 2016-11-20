@@ -159,7 +159,7 @@
 
             var tag = new Tag
             {
-                Name = "Unknown",
+                Name = "Test Tag",
                 Posts = context.ForumPosts.ToList()
             };
 

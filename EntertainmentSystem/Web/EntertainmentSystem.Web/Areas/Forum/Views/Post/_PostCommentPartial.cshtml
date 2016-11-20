@@ -2,23 +2,21 @@
 @model CommentViewModel
 
 <div id="answers-203370">
-    <br>
     <div class="row forum-post-voting-parent" id="forum-post-203372">
-        <div class="col-xs-2 forum-vote">
+        <div class="col-xs-12 col-sm-2 forum-vote">
             <div class="well forum-vote-well forum-vote-possible text-center" data-answer-id="203372">
-
                 <div class="forum-vote-detail forum-vote-margin">
                     <strong id="vote-count-203372">@Model.Votes</strong>
                 </div>
             </div>
         </div>
-        <div class="col-xs-10 forum-topic">
-            <div class="post-content">
-                <div class="row">
+        <div class="col-xs-12 col-sm-10">
+            <div class="es-forum-post-content">
+                <div class="row es-forum-post-row-margin-zero">
                     <p>@Model.Content</p>
                 </div>
-                <hr class="horizontal-line-question">
-                <div class="row">
+                <hr class="es-forum-hr-in"/>
+                <div class="row es-forum-post-row-margin-zero">
                     <p class="es-forum-post-info-color">
                         <span>posted</span>
                         <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
@@ -26,12 +24,8 @@
                     </p>
                 </div>
             </div>
-            <hr class="horizontal-line-question"> 
-            <div id="answers-203372" class="row nested-posts">
-                <div id="nested-posts-203372">
-
-                </div>
-            </div>
+            <hr class="es-forum-hr-in"/>            
         </div>
     </div>
 </div>
+<hr />

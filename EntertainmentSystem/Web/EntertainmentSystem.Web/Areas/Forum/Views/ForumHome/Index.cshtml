@@ -3,9 +3,12 @@
 
 
 <section id="es-forum-home">
+    <h1 class="text-left">Forum</h1>
     <hr />
-    @foreach (var post in Model)
-    {
-        @Html.Partial("_PostHomePartial", post)
-    }
+    <div class="container">
+        @foreach (var post in Model)
+        {
+            @Html.Partial("_PostHomePartial", post)
+        }
+    </div>
 </section>

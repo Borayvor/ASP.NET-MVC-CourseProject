@@ -18,7 +18,7 @@
             this.type = this.GetContentType();
         }
 
-        public IQueryable<MediaContent> All(string title = GlobalConstants.StringEmpty)
+        public IQueryable<MediaContent> GetAll(string title = GlobalConstants.StringEmpty)
         {
             if (string.IsNullOrWhiteSpace(title))
             {

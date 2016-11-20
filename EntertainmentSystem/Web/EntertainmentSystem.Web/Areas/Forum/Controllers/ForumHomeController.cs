@@ -1,6 +1,5 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Forum.Controllers
 {
-    using System.Linq;
     using System.Web.Mvc;
     using Infrastructure.Mapping;
     using Services.Contracts.Forum;
@@ -19,12 +18,13 @@
         [HttpGet]
         public ActionResult Index()
         {
-            var posts = this.postService
+            var result = this.ConditionalActionResult(
+                () => this.postService
                 .GetAll()
-                .To<PostHomeViewModel>()
-                .ToList();
+                .To<PostHomeViewModel>(),
+                (content) => this.View(content));
 
-            return this.View(posts);
+            return result;
         }
     }
 }

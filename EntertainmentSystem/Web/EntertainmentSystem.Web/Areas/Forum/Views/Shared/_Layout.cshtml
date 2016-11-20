@@ -3,10 +3,10 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1 class="text-center">Forum</h1>
+<section id="es-forum">
+    @RenderBody()
 
-@RenderBody()
-
-@section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")    
-}
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</section>

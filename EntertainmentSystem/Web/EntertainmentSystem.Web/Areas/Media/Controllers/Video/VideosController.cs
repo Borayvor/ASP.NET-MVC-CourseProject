@@ -22,7 +22,7 @@
         {
             return this.ConditionalActionResult(
                 () => this.videoService
-                .All()
+                .GetAll()
                 .To<MediaBaseViewModel>(),
                 (content) => this.View(content));
         }
@@ -32,7 +32,7 @@
         {
             return this.ConditionalActionResult(
                 () => this.videoService
-                .All(search)
+                .GetAll(search)
                 .To<MediaBaseViewModel>(),
                 (content) => this.View("Index", content));
         }

@@ -3,23 +3,22 @@
 
 <section id="MainContent">
     <div class="container">
-        <h1 class="pull-left">@Model.Title</h1>
-        <hr>
-        <div class="container">
+        <h1 class="text-left">@Model.Title</h1>
+        <hr />
+        <div class="es-forum-post-comments container">
             <div class="row" id="forum-post-@Model.Id">
-                <div class="col-xs-2 forum-vote">
-                    <div class="well text-center forum-vote-well forum-vote-possible marginBottom10" data-answer-id="203370">
-
-                        <div class="forum-vote-detail forum-vote-margin"><strong id="vote-count-203370">@Model.Votes</strong></div>
+                <div class="col-xs-12 col-sm-2 forum-vote">
+                    <div class="well text-center forum-vote-well" data-answer-id="203370">
+                        <div class="forum-vote-detail forum-vote-margin">
+                            <strong id="vote-count-203370">@Model.Votes</strong>
+                        </div>
                     </div>
-
-
                 </div>
-                <div class="col-xs-10 forum-topic">
-                    <div class="post-content">
-                        <div class="row">@Model.Content</div>
-                        <hr class="horizontal-line-question">
-                        <div class="row">
+                <div class="col-xs-12 col-sm-10 forum-topic">
+                    <div class="es-forum-post-content">
+                        <div class="row es-forum-post-row-margin-zero">@Model.Content</div>
+                        <hr class="es-forum-hr-in">
+                        <div class="row es-forum-post-row-margin-zero">
                             <p class="es-forum-post-info-color">
                                 <span>posted</span>
                                 <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
@@ -28,12 +27,12 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="horizontal-line-question">
-                    <div class="row">
+                    <hr class="es-forum-hr-in">
+                    <div class="row es-forum-post-row-margin-zero">
                         @foreach (var tag in Model.Tags)
                         {
                             // TODO: change hrefs
-                            <a href="Forum/Tag/@tag.Id" class="label label-default">#@tag.Name</a>
+                            <a href="Forum/Tag/@tag.Id" class="label label-default">@tag.Name</a>
                         }
                     </div>
                 </div>
@@ -41,11 +40,11 @@
 
             <br>
             <h3>Comments</h3>
-            <hr>
+            <hr />
 
             @foreach (var answer in Model.Comments)
             {
-                @Html.Partial("_PostComment")
+                @Html.Partial("_PostCommentPartial", answer)
             }
 
         </div>

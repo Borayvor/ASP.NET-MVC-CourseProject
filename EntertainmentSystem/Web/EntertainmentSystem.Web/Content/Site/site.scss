@@ -16,7 +16,7 @@ body {
 
     #RememberMe {
         margin-left: 0 !important;
-    }
+    }        
 
     a {
         -webkit-transition: color 0.2s ease-in-out;
@@ -96,21 +96,13 @@ body {
         width: 85%;
         padding-left: 15px;
         padding-right: 15px;
-    }
-
-    .es-forum-post-info-color {
-        color: #005fb2;
-
-        .es-forum-post-info-data-color {
-            color: #a72af3;
-        }
-    }
+    }        
 
     @import "site-loading";
 
     @import "site-home";
 
-    @import "site-forum-home";
+    @import "_site-forum";    
 
     @import "site-media-home";
 
