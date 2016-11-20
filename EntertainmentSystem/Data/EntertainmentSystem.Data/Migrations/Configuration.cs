@@ -26,7 +26,6 @@
             StaticDataSeeder.SeedTags(context);
             StaticDataSeeder.SeedPostComments(context);
             StaticDataSeeder.SeedPostVotes(context);
-            StaticDataSeeder.SeedCommentVotes(context);
 
             StaticDataSeeder.SeedMediaCategory(context);
             StaticDataSeeder.SeedMediaCollection(context);

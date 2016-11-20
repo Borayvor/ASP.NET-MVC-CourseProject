@@ -237,6 +237,7 @@
     <Compile Include="Controllers\Partials\BasePartialController.cs" />
     <Compile Include="Areas\Media\Controllers\MediaPartialController.cs" />
     <Compile Include="Areas\Media\Controllers\Search\SearchController.cs" />
+    <Compile Include="Controllers\Users\UsersController.cs" />
     <Compile Include="ViewModels\BaseViewModel{T}.cs" />
     <Compile Include="ViewModels\Media\MediaCategoriesViewModel.cs" />
     <Compile Include="ViewModels\Media\MediaCategoryCreateViewModel.cs" />
@@ -249,6 +250,7 @@
     <Compile Include="ViewModels\Media\MediaContentViewModel.cs" />
     <Compile Include="ViewModels\Upload\UploadFileInfoViewModel.cs" />
     <Compile Include="ViewModels\User\UserEditViewModel.cs" />
+    <Compile Include="ViewModels\User\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\User\UserViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\ForumHomeController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
@@ -468,6 +470,7 @@
     <Content Include="Areas\Forum\Views\Post\Index.cshtml" />
     <Content Include="Areas\Forum\Views\Post\_PostCommentPartial.cshtml" />
     <Content Include="Content\Site\_site-forum.scss" />
+    <Content Include="Content\Site\_site-user-profile.scss" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -618,6 +621,7 @@
     <Content Include="Views\Shared\EditorTemplates\MediaContentViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MediaCategoryViewModel.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\MediaCollectionViewModel.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

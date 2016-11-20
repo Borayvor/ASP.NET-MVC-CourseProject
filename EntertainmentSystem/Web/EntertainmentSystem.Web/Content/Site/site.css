@@ -95,6 +95,10 @@
   body #es-home #es-home-carousel-videos .carousel-inner .item .video {
     display: inline-flex;
     height: 30em; }
+  @media (min-width: 768px) {
+    body #es-forum .well {
+      padding-left: 1vw;
+      padding-right: 1vw; } }
   body #es-forum {
     font-size: 1.2em; }
     body #es-forum h3 {
@@ -120,16 +124,14 @@
       font-weight: bold;
       padding: 0 !important;
       margin: 0px !important;
-      margin-right: 10px !important; }
+      margin-right: 25px !important; }
       body #es-forum .forum-well .forum-well-inside {
         position: absolute;
         margin: 0; }
     body #es-forum .well {
       margin-bottom: 5px !important;
       margin-right: 10px;
-      padding: 20px;
-      padding-left: 1.8vw;
-      padding-right: 1.8vw; }
+      padding: 20px; }
     body #es-forum .forum-vote {
       width: 15%; }
     body #es-forum .forum-vote-well {
@@ -655,4 +657,10 @@
   body .es-item-player .es-picture-show {
     width: auto !important;
     margin: auto !important; }
+  body #es-user-profile-details {
+    position: relative;
+    margin-top: 30px; }
+    body #es-user-profile-details .profileNames {
+      text-align: center;
+      margin-bottom: 5px; }
 

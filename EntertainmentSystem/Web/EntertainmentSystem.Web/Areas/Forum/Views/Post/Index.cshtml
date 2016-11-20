@@ -1,4 +1,5 @@
-﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+﻿@using EntertainmentSystem.Web.Controllers.Users
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model PostViewModel
 
 <section id="MainContent">
@@ -8,9 +9,9 @@
         <div class="es-forum-post-comments container">
             <div class="row" id="forum-post-@Model.Id">
                 <div class="col-xs-12 col-sm-2 forum-vote">
-                    <div class="well text-center forum-vote-well" data-answer-id="203370">
+                    <div class="well text-center forum-vote-well">
                         <div class="forum-vote-detail forum-vote-margin">
-                            <strong id="vote-count-203370">@Model.Votes</strong>
+                            <strong id="vote-count-id">@Model.Votes</strong>
                         </div>
                     </div>
                 </div>
@@ -23,7 +24,7 @@
                                 <span>posted</span>
                                 <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
                                 at <a href="/Forum/Category/@Model.Category.Id" class="es-forum-post-info-data-color">@Model.Category.Name</a>
-                                from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserName</a>
+                                from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
                             </p>
                         </div>
                     </div>

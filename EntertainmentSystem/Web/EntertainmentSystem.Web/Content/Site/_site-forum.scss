@@ -1,4 +1,12 @@
-﻿
+﻿@media (min-width: 768px) {
+    #es-forum {
+        .well {
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+    }
+}
+
 #es-forum {
     font-size: 1.2em;
 
@@ -39,7 +47,7 @@
         font-weight: bold;
         padding: 0 !important;
         margin: 0px !important;
-        margin-right: 10px !important;
+        margin-right: 25px !important;
 
         .forum-well-inside {
             position: absolute;
@@ -51,8 +59,6 @@
         margin-bottom: 5px !important;
         margin-right: 10px;
         padding: 20px;
-        padding-left: 1.8vw;
-        padding-right: 1.8vw;
     }
 
     .forum-vote {

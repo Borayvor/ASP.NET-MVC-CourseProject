@@ -3,7 +3,8 @@
     using Common;
     using Data.Models;
 
-    public interface IUserProfileService : IBaseUpdateService<ApplicationUser>
+    public interface IUserProfileService : IBaseGetService<ApplicationUser, string>,
+        IBaseUpdateService<ApplicationUser>
     {
     }
 }

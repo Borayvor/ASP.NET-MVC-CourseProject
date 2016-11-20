@@ -102,7 +102,7 @@ body {
 
     @import "site-home";
 
-    @import "_site-forum";    
+    @import "site-forum";    
 
     @import "site-media-home";
 
@@ -117,4 +117,6 @@ body {
     @import "site-media-music-play";
 
     @import "site-media-picture-play";
+
+    @import "site-user-profile";
 }

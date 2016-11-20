@@ -1,0 +1,93 @@
+﻿@using EntertainmentSystem.Web.ViewModels.User
+@model UserProfileViewModel
+
+<section id="es-user-profile-details">
+    <div class="panel panel-success">
+        <div class="panel-heading">
+            <h1 class="profileNames">
+                <strong>Profile of @Model.UserName - @Model.FirstName @Model.LastName</strong>
+            </h1>
+        </div>
+        <div class="panel-body">
+            <div class="row">
+            </div>
+            <div class="row">
+                <div class="col-sm-3">
+                    <div id="AvatarSection">
+                        <img alt="Avatar image" class="img img-responsive" src="@Model.AvatarImageUrl">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h5>General information</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>Username:</label>
+                                </span>
+                                <span>@Model.UserName</span>
+                            </div>
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>First name:</label>
+                                </span>
+                                <span>@Model.FirstName</span>
+                            </div>
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>Last name:</label>
+                                </span>
+                                <span>@Model.LastName</span>
+                            </div>
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>E-mail:</label>
+                                </span>
+                                <span>
+                                    <a href="mailto:@Model.Email" target="_blank">
+                                        @Model.Email
+                                    </a>
+                                </span>
+                            </div>
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>Date of registration:</label>
+                                </span>
+                                <span>@Model.CreatedOn.ToShortDateString()</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4">
+                    <div class="panel panel-success">
+                        <div class="panel-heading">
+                            <h5 class="profilePanelHeading">Forum activity</h5>
+                        </div>
+                        <div class="panel-body">
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>Forum points:</label>
+                                </span>
+                                <span>@Model.Votes</span>
+                            </div>
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>Posts:</label>
+                                </span>
+                                <span>@Model.Posts</span>
+                            </div>
+                            <div class="profileInfoGroup">
+                                <span>
+                                    <label>Comments:</label>
+                                </span>
+                                <span>@Model.Comments</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

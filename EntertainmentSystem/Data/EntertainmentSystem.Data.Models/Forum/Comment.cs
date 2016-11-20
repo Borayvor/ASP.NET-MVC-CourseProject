@@ -8,11 +8,11 @@
 
     public class Comment : BaseModelGuid
     {
-        private ICollection<VoteComment> votes;
+        private ICollection<Vote> votes;
 
         public Comment()
         {
-            this.votes = new HashSet<VoteComment>();
+            this.votes = new HashSet<Vote>();
         }
 
         [Required]
@@ -29,7 +29,7 @@
 
         public virtual Post Post { get; set; }
 
-        public virtual ICollection<VoteComment> Votes
+        public virtual ICollection<Vote> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }

@@ -191,31 +191,21 @@
 
         internal static void SeedPostVotes(EntertainmentSystemDbContext context)
         {
-            if (context.ForumPostVotes.Any())
+            if (context.ForumVotes.Any())
             {
                 return;
             }
 
             for (int i = 0; i < 5; i++)
             {
-                var vote = new VotePost
+                var vote = new Vote
                 {
                     AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
                     PostId = context.ForumPosts.FirstOrDefault().Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
 
-                context.ForumPostVotes.Add(vote);
-            }
-
-            context.SaveChanges();
-        }
-
-        internal static void SeedCommentVotes(EntertainmentSystemDbContext context)
-        {
-            if (context.ForumCommentVotes.Any())
-            {
-                return;
+                context.ForumVotes.Add(vote);
             }
 
             var commentIds = context.ForumComments.Select(x => x.Id).ToList();
@@ -224,14 +214,14 @@
             {
                 var commentId = commentIds[RandomGenerator.RandomNumber(0, commentIds.Count - 1)];
 
-                var vote = new VoteComment
+                var vote = new Vote
                 {
                     AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
                     CommentId = context.ForumComments.FirstOrDefault(c => c.Id == commentId).Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
 
-                context.ForumCommentVotes.Add(vote);
+                context.ForumVotes.Add(vote);
             }
 
             context.SaveChanges();

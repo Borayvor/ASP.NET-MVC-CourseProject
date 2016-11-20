@@ -1,12 +1,13 @@
-﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+﻿@using EntertainmentSystem.Web.Controllers.Users
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model CommentViewModel
 
 <div id="answers-203370">
-    <div class="row forum-post-voting-parent" id="forum-post-203372">
+    <div class="row" id="forum-post-id">
         <div class="col-xs-12 col-sm-2 forum-vote">
-            <div class="well forum-vote-well forum-vote-possible text-center" data-answer-id="203372">
-                <div class="forum-vote-detail forum-vote-margin">
-                    <strong id="vote-count-203372">@Model.Votes</strong>
+            <div class="well forum-vote-well text-center">
+                <div class="forum-vote-detail">
+                    <strong id="vote-count-id">@Model.Votes</strong>
                 </div>
             </div>
         </div>
@@ -20,7 +21,7 @@
                     <p class="es-forum-post-info-color">
                         <span>posted</span>
                         <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
-                        from <a href="/Users/@Model.Author.Id" class="es-forum-post-info-data-color">@Model.Author.UserName</a>
+                        from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
                     </p>
                 </div>
             </div>
