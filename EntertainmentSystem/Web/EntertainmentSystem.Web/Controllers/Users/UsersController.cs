@@ -21,5 +21,10 @@
 
             return result;
         }
+
+        public ActionResult UserProfile(string id)
+        {
+            return this.View();
+        }
     }
 }

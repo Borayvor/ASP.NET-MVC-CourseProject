@@ -9,14 +9,13 @@
     public class PostController : BaseController
     {
         private readonly IForumPostService postService;
-        private readonly IForumCommentService commentService;
 
-        public PostController(IForumPostService postService, IForumCommentService commentService)
+        public PostController(IForumPostService postService)
         {
             this.postService = postService;
-            this.commentService = commentService;
         }
 
+        [HttpGet]
         public ActionResult Index(Guid id)
         {
             var result = this.ConditionalActionResult(

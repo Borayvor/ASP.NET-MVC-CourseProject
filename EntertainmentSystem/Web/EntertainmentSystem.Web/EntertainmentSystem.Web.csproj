@@ -223,10 +223,14 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaCollectionEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
+    <Compile Include="Areas\Forum\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostController.cs" />
+    <Compile Include="Areas\Forum\Controllers\TagController.cs" />
+    <Compile Include="Areas\Forum\ViewModels\CategoryPostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\CommentViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\TagPostsHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\TagViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\VoteViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBasePictureViewModel.cs" />
@@ -464,7 +468,7 @@
     <Content Include="Content\Site\_site-media-picture-details.scss" />
     <Content Include="Content\Site\_site-media-picture-play.scss" />
     <Content Include="Content\Site\_site-media-music-play.scss" />
-    <Content Include="Areas\Forum\Views\ForumHome\_PostHomePartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_PostHomePartial.cshtml" />
     <Content Include="Content\KendoUI\kendo.bootstrap.min.css.map" />
     <Content Include="Content\KendoUI\kendo.common-bootstrap.min.css.map" />
     <Content Include="Content\KendoUI\kendo.common.min.css.map" />
@@ -473,6 +477,7 @@
     <Content Include="Areas\Forum\Views\Post\_PostCommentPartial.cshtml" />
     <Content Include="Content\Site\_site-forum.scss" />
     <Content Include="Content\Site\_site-user-profile.scss" />
+    <Content Include="Areas\Forum\Views\Tag\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -629,6 +634,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\Forum\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Forum\Views\Category\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Moderators\Controllers\Forum\" />

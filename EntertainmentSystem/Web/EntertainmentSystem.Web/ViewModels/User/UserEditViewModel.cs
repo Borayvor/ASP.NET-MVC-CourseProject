@@ -11,6 +11,12 @@
         [HiddenInput(DisplayValue = false)]
         public string Id { get; set; }
 
+        [Required]
+        [MaxLength(GlobalConstants.UserUserNameMaxLength)]
+        [MinLength(GlobalConstants.UserUserNameMinLength)]
+        [Display(Name = "User name")]
+        public string UserName { get; set; }
+
         [Display(Name = "First name")]
         [Required]
         [MaxLength(GlobalConstants.UserFirstNameMaxLength)]

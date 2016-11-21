@@ -34,5 +34,7 @@
         [EmailAddress]
         [MaxLength(GlobalConstants.UserEmailMaxLength)]
         public string Email { get; set; }
+
+        public int VotePoints { get; set; }
     }
 }

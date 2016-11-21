@@ -1,5 +1,6 @@
 ﻿@using EntertainmentSystem.Web.Controllers.Users
 @using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.Controllers
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model PostHomeViewModel
 
@@ -37,15 +38,14 @@
                 <p class="es-forum-post-info-color">
                     <span>posted</span>
                     <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
-                    at <a href="/Forum/Category/@Model.Category.Id" class="es-forum-post-info-data-color">@Model.Category.Name</a>
+                    at @(Html.ActionLink<CategoryController>(@Model.Category.Name, c => c.Index(@Model.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
                     from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
                 </p>
             </div>
             <div class="row es-forum-post-row-margin-zero">
                 @foreach (var tag in Model.Tags)
                 {
-                    // TODO: change hrefs
-                    <a href="Forum/Tag/@tag.Id" class="label label-default">@tag.Name</a>
+                    @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(@tag.Name), null, new { @class = "label label-default" }))
                 }
             </div>
         </div>
