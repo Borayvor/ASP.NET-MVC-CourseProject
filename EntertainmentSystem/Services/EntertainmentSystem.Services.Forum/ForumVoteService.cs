@@ -16,7 +16,7 @@
 
         public IQueryable<Vote> GetAll()
         {
-            return this.votes.All();
+            return this.votes.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public Vote GetById(int id)

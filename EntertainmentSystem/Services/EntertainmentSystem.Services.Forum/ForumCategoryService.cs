@@ -17,7 +17,7 @@
 
         public IQueryable<ForumCategory> GetAll()
         {
-            return this.categories.All();
+            return this.categories.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public ForumCategory GetById(Guid id)

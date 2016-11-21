@@ -17,7 +17,7 @@
 
         public IQueryable<Comment> GetAll()
         {
-            return this.comments.All();
+            return this.comments.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public Comment GetById(Guid id)

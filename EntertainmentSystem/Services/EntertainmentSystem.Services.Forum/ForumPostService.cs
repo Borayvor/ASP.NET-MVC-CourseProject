@@ -17,7 +17,7 @@
 
         public IQueryable<Post> GetAll()
         {
-            return this.posts.All();
+            return this.posts.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public Post GetById(Guid id)

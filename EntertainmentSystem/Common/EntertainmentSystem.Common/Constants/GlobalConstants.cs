@@ -18,6 +18,9 @@
 
         public const int HomeLastContentCount = 3;
 
+        public const int ForumPostsStartPage = 1;
+        public const int ForumPostsPerPage = 5;
+
         public const int CacheMediaHomeDuration = 60 * 5; // 5 min.
 
         public const int UserUserNameMinLength = 2;

@@ -16,7 +16,7 @@
 
         public IQueryable<Tag> GetAll()
         {
-            return this.tags.All();
+            return this.tags.All().OrderByDescending(x => x.CreatedOn);
         }
 
         public Tag GetById(int id)

@@ -15,7 +15,7 @@
         @(Html.ActionLink<HomeController>(HtmlConstants.HomeLinkName, c => c.Index(), new { area = string.Empty }))
     </li>
     <li>
-        @(Html.ActionLink<AllPostsController>(HtmlConstants.ForumLinkName, c => c.Index(), new { area = GlobalConstants.ForumAreaName }))
+        @(Html.ActionLink<AllPostsController>(HtmlConstants.ForumLinkName, c => c.Index(GlobalConstants.ForumPostsStartPage, GlobalConstants.StringEmpty), new { area = GlobalConstants.ForumAreaName }))
     </li>
 
     @if (Request.IsAuthenticated)
