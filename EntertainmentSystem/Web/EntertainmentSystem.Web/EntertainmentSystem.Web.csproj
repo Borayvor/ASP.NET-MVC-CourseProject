@@ -258,7 +258,7 @@
     <Compile Include="ViewModels\User\UserEditViewModel.cs" />
     <Compile Include="ViewModels\User\UserProfileViewModel.cs" />
     <Compile Include="ViewModels\User\UserViewModel.cs" />
-    <Compile Include="Areas\Forum\Controllers\ForumHomeController.cs" />
+    <Compile Include="Areas\Forum\Controllers\AllPostsController.cs" />
     <Compile Include="Areas\Forum\ForumAreaRegistration.cs" />
     <Compile Include="Areas\Media\Controllers\MediaController.cs" />
     <Compile Include="Areas\Media\MediaAreaRegistration.cs" />
@@ -478,6 +478,7 @@
     <Content Include="Content\Site\_site-forum.scss" />
     <Content Include="Content\Site\_site-user-profile.scss" />
     <Content Include="Areas\Forum\Views\Tag\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\Category\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -500,7 +501,7 @@
     <Content Include="Areas\Forum\Views\web.config" />
     <Content Include="Areas\Forum\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Forum\Views\_ViewStart.cshtml" />
-    <Content Include="Areas\Forum\Views\ForumHome\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\AllPosts\Index.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_VideoPartial.cshtml" />
     <Content Include="Areas\Media\Views\Videos\VideoDetails.cshtml" />
     <Content Include="Areas\Media\Views\Shared\_PicturePartial.cshtml" />
@@ -634,7 +635,6 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\Forum\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
-    <Folder Include="Areas\Forum\Views\Category\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Moderators\Controllers\Forum\" />

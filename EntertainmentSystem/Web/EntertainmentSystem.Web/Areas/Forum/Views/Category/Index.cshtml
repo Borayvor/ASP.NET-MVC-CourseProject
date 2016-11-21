@@ -1,0 +1,13 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model CategoryPostHomeViewModel
+
+<section id="es-forum-home">
+    <h1 class="text-left">Category "@Model.CategoryName"</h1>
+    <hr />
+    <div class="container">
+        @foreach (var post in Model.Posts)
+        {
+            @Html.Partial("_PostHomePartial", post)
+        }
+    </div>
+</section>

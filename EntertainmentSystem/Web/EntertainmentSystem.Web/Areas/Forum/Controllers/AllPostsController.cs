@@ -6,11 +6,11 @@
     using ViewModels;
     using Web.Controllers;
 
-    public class ForumHomeController : BaseController
+    public class AllPostsController : BaseController
     {
         private readonly IForumPostService postService;
 
-        public ForumHomeController(IForumPostService postService)
+        public AllPostsController(IForumPostService postService)
         {
             this.postService = postService;
         }

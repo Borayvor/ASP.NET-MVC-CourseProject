@@ -11,8 +11,12 @@
 @using EntertainmentSystem.Web.Areas.Media.Controllers.Video
 
 <ul class="nav navbar-nav">
-    <li>@(Html.ActionLink<HomeController>(HtmlConstants.HomeLinkName, c => c.Index()))</li>
-    <li>@(Html.ActionLink<ForumHomeController>(HtmlConstants.ForumLinkName, c => c.Index()))</li>
+    <li>
+        @(Html.ActionLink<HomeController>(HtmlConstants.HomeLinkName, c => c.Index(), new { area = string.Empty }))
+    </li>
+    <li>
+        @(Html.ActionLink<AllPostsController>(HtmlConstants.ForumLinkName, c => c.Index(), new { area = GlobalConstants.ForumAreaName }))
+    </li>
 
     @if (Request.IsAuthenticated)
     {
@@ -26,10 +30,10 @@
                     @(Html.ActionLink<MusicController>(HtmlConstants.MediaMusicLinkName, c => c.Index()))
                 </li>
                 <li>
-                    @(Html.ActionLink<PicturesController>(HtmlConstants.MediaPicturesLinkName, c => c.Index()))
+                    @(Html.ActionLink<PicturesController>(HtmlConstants.MediaPicturesLinkName, c => c.Index(), new { area = GlobalConstants.MediaAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<VideosController>(HtmlConstants.MediaVideosLinkName, c => c.Index()))
+                    @(Html.ActionLink<VideosController>(HtmlConstants.MediaVideosLinkName, c => c.Index(), new { area = GlobalConstants.MediaAreaName }))
                 </li>
             </ul>
         </li>
@@ -42,18 +46,18 @@
                 @GlobalConstants.AdministratorAreaName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AdministratorAreaName">                
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.AdministratorAreaName">
                 <li>
-                    @(Html.ActionLink<AdminMediaCategoryController>(HtmlConstants.AdminModeratorMediaCategoriesLinkName, c => c.Index()))
+                    @(Html.ActionLink<AdminMediaCategoryController>(HtmlConstants.AdminModeratorMediaCategoriesLinkName, c => c.Index(), new { area = GlobalConstants.AdministratorAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<AdminMediaCollectionController>(HtmlConstants.AdminModeratorMediaCollectionsLinkName, c => c.Index()))
+                    @(Html.ActionLink<AdminMediaCollectionController>(HtmlConstants.AdminModeratorMediaCollectionsLinkName, c => c.Index(), new { area = GlobalConstants.AdministratorAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<AdminMediaContentController>(HtmlConstants.AdminModeratorMediaContentsLinkName, c => c.Index()))
+                    @(Html.ActionLink<AdminMediaContentController>(HtmlConstants.AdminModeratorMediaContentsLinkName, c => c.Index(), new { area = GlobalConstants.AdministratorAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<AdminUsersController>(HtmlConstants.AdminModeratorUsersLinkName, c => c.Index()))
+                    @(Html.ActionLink<AdminUsersController>(HtmlConstants.AdminModeratorUsersLinkName, c => c.Index(), new { area = GlobalConstants.AdministratorAreaName }))
                 </li>
             </ul>
         </li>
@@ -66,18 +70,18 @@
                 @GlobalConstants.ModeratorAreaName
                 <span class="caret"></span>
             </a>
-            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.ModeratorAreaName">               
+            <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.ModeratorAreaName">
                 <li>
-                    @(Html.ActionLink<ModeratorMediaCategoryController>(HtmlConstants.AdminModeratorMediaCategoriesLinkName, c => c.Index()))
+                    @(Html.ActionLink<ModeratorMediaCategoryController>(HtmlConstants.AdminModeratorMediaCategoriesLinkName, c => c.Index(), new { area = GlobalConstants.ModeratorAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<ModeratorMediaCollectionController>(HtmlConstants.AdminModeratorMediaCollectionsLinkName, c => c.Index()))
+                    @(Html.ActionLink<ModeratorMediaCollectionController>(HtmlConstants.AdminModeratorMediaCollectionsLinkName, c => c.Index(), new { area = GlobalConstants.ModeratorAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<ModeratorMediaContentController>(HtmlConstants.AdminModeratorMediaContentsLinkName, c => c.Index()))
+                    @(Html.ActionLink<ModeratorMediaContentController>(HtmlConstants.AdminModeratorMediaContentsLinkName, c => c.Index(), new { area = GlobalConstants.ModeratorAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<ModeratorUsersController>(HtmlConstants.AdminModeratorUsersLinkName, c => c.Index()))
+                    @(Html.ActionLink<ModeratorUsersController>(HtmlConstants.AdminModeratorUsersLinkName, c => c.Index(), new { area = GlobalConstants.ModeratorAreaName }))
                 </li>
             </ul>
         </li>

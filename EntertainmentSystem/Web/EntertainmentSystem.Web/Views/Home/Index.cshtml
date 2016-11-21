@@ -11,15 +11,15 @@
 
     <div class="row">
         <section class="col-md-4">
-            @(Html.Action<HomeController>(c => c.GetMusic()))
+            @(Html.Action<HomeController>(c => c.GetMusic(), new { area = string.Empty }))
         </section>
         <section class="col-md-8">
-            @(Html.Action<HomeController>(c => c.GetPictures()))
+            @(Html.Action<HomeController>(c => c.GetPictures(), new { area = string.Empty }))
         </section>
     </div>
     <div class="row">
         <section class="col-xs-12">
-            @(Html.Action<HomeController>(c => c.GetVideos()))
+            @(Html.Action<HomeController>(c => c.GetVideos(), new { area = string.Empty }))
         </section>
     </div>
 </div>
