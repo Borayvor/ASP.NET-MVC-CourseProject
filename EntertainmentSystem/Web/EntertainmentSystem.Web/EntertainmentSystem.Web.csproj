@@ -227,6 +227,8 @@
     <Compile Include="Areas\Forum\ViewModels\CommentViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\TagViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\VoteViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBasePictureViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBaseViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaDetailsViewModel.cs" />

@@ -19,7 +19,7 @@
 
         public ForumCategory Category { get; set; }
 
-        public IEnumerable<Tag> Tags { get; set; }
+        public IEnumerable<TagViewModel> Tags { get; set; }
 
         public IEnumerable<CommentViewModel> Comments { get; set; }
 
@@ -29,7 +29,6 @@
         {
             configuration.CreateMap<Post, PostViewModel>()
                 .ForMember(m => m.Category, opt => opt.MapFrom(x => x.PostCategory))
-                .ForMember(m => m.Comments, opt => opt.MapFrom(x => x.Comments.AsQueryable().To<CommentViewModel>()))
                 .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int)v.Value)))
                 .ReverseMap();
         }

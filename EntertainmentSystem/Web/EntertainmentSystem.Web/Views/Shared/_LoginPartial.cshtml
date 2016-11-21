@@ -1,4 +1,5 @@
 ﻿@using Microsoft.AspNet.Identity
+@using EntertainmentSystem.Web.Controllers.Users
 
 @if (Request.IsAuthenticated)
 {
@@ -8,7 +9,7 @@
 
     <ul class="nav navbar-nav navbar-right">
         <li>
-            @Html.ActionLink("Hello " + User.Identity.GetUserName() + "!", "Index", "Manage", routeValues: new { area = string.Empty }, htmlAttributes: new { title = "Manage" })
+            @(Html.ActionLink<UsersController>("Hello " + User.Identity.GetUserName() + "!", c => c.Index(User.Identity.GetUserId()), null, new { title = "Manage" }))
         </li>
         <li><a href="javascript:document.getElementById('logoutForm').submit()">Log off</a></li>
     </ul>

@@ -27,14 +27,13 @@
 
         public int Comments { get; set; }
 
-        public int Votes { get; set; }
+        public int VotePoints { get; set; }
 
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<ApplicationUser, UserProfileViewModel>()
                 .ForMember(m => m.Posts, opt => opt.MapFrom(x => x.Posts.Count()))
                 .ForMember(m => m.Comments, opt => opt.MapFrom(x => x.Comments.Count()))
-                .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int)v.Value)))
                 .ReverseMap();
         }
     }

@@ -15,6 +15,7 @@
         private const string AdministratorUserName = "Admin";
         private const string ModeratorUserName = "Moderator";
         private const string UserOrdinaryUserName = "TestUser";
+        private const int VotePointsInit = 0;
 
         private static readonly List<int> MediaCetegoriesId = new List<int>();
 
@@ -76,7 +77,8 @@
                 UserName = AdministratorUserName,
                 FirstName = AdministratorFirstName,
                 LastName = AdministratorLastName,
-                AvatarImageUrl = AdministratorImageUrl
+                AvatarImageUrl = AdministratorImageUrl,
+                VotePoints = VotePointsInit
             };
 
             userManager.Create(userAdmin, AdministratorPassword);
@@ -91,7 +93,8 @@
                 UserName = ModeratorUserName,
                 FirstName = ModeratorFirstName,
                 LastName = ModeratorLastName,
-                AvatarImageUrl = ModeratorImageUrl
+                AvatarImageUrl = ModeratorImageUrl,
+                VotePoints = VotePointsInit
             };
 
             userManager.Create(userModerator, ModeratorPassword);
@@ -106,7 +109,8 @@
                 UserName = UserOrdinaryUserName,
                 FirstName = UserOrdinaryFirstName,
                 LastName = UserOrdinaryLastName,
-                AvatarImageUrl = UserOrdinaryImageUrl
+                AvatarImageUrl = UserOrdinaryImageUrl,
+                VotePoints = VotePointsInit
             };
 
             userManager.Create(userOrdinary, UserOrdinaryPassword);
@@ -196,32 +200,36 @@
                 return;
             }
 
-            for (int i = 0; i < 5; i++)
+            // post votes
+            var user = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName);
+
+            var vote = new Vote
             {
-                var vote = new Vote
-                {
-                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
-                    PostId = context.ForumPosts.FirstOrDefault().Id,
-                    Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
-                };
+                AuthorId = user.Id,
+                PostId = context.ForumPosts.FirstOrDefault().Id,
+                Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
+            };
 
-                context.ForumVotes.Add(vote);
-            }
+            context.ForumVotes.Add(vote);
+            user.VotePoints += (int)vote.Value;
 
+            // comment votes
             var commentIds = context.ForumComments.Select(x => x.Id).ToList();
+            user = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName);
 
             for (int i = 0; i < 30; i++)
             {
                 var commentId = commentIds[RandomGenerator.RandomNumber(0, commentIds.Count - 1)];
 
-                var vote = new Vote
+                vote = new Vote
                 {
-                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
+                    AuthorId = user.Id,
                     CommentId = context.ForumComments.FirstOrDefault(c => c.Id == commentId).Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
 
                 context.ForumVotes.Add(vote);
+                user.VotePoints += (int)vote.Value;
             }
 
             context.SaveChanges();

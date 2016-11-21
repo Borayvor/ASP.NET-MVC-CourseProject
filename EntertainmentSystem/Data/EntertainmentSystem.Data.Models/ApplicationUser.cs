@@ -44,6 +44,8 @@
         [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
         public string AvatarImageUrl { get; set; }
 
+        public int VotePoints { get; set; }
+
         public virtual ICollection<MediaContent> MaediaContentCollections
         {
             get { return this.mediaContentCollections; }
