@@ -2,7 +2,6 @@
 {
     using System;
     using System.Linq;
-    using System.Web.Mvc;
     using AutoMapper;
     using Data.Models;
     using Data.Models.Forum;
@@ -11,9 +10,6 @@
 
     public class CommentViewModel : BaseViewModel<Guid>, IMapFrom<Comment>, IHaveCustomMappings
     {
-        [HiddenInput(DisplayValue = false)]
-        public Guid PostId { get; set; }
-
         public string Content { get; set; }
 
         public ApplicationUser Author { get; set; }

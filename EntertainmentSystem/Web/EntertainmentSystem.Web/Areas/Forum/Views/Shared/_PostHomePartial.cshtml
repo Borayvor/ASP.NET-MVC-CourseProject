@@ -31,7 +31,7 @@
         <div class="col-sm-8 col-xs-12 es-forum-home-post-content">
             <div class="row es-forum-post-row-margin-zero">
                 <h3 class="es-post-title">
-                    @(Html.ActionLink<PostController>(Model.Title, c => c.Index(Model.Id)))
+                    @(Html.ActionLink<PostController>(Model.Title, c => c.Index(Model.Id, GlobalConstants.ForumStartPage)))
                 </h3>
             </div>
             <div class="row es-forum-post-row-margin-zero">

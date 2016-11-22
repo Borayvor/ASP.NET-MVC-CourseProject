@@ -1,39 +1,39 @@
 ﻿@using EntertainmentSystem.Web.Controllers.Users
 @using EntertainmentSystem.Web.Areas.Forum.Controllers
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
-@model PostViewModel
+@model PostCommentsPageViewModel
 
 <section>
     <div class="container">
-        <h1 class="text-left">@Model.Title</h1>
+        <h1 class="text-left">@Model.Post.Title</h1>
         <hr />
         <div class="es-forum-post-comments container">
-            <div class="row" id="forum-post-@Model.Id">
+            <div class="row" id="forum-post-@Model.Post.Id">
                 <div class="col-xs-12 col-sm-2 forum-vote">
                     <div class="well text-center forum-vote-well">
                         <div class="forum-vote-detail forum-vote-margin">
-                            <strong id="vote-count-id">@Model.Votes</strong>
+                            <strong id="vote-count-id">@Model.Post.Votes</strong>
                         </div>
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-10 forum-topic">
                     <div class="es-forum-post-content">
-                        <div class="row es-forum-post-row-margin-zero">@Model.Content</div>
+                        <div class="row es-forum-post-row-margin-zero">@Model.Post.Content</div>
                         <hr class="es-forum-hr-in">
                         <div class="row es-forum-post-row-margin-zero">
                             <p class="es-forum-post-info-color">
                                 <span>posted</span>
-                                <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
-                                at @(Html.ActionLink<CategoryController>(@Model.Category.Name, c => c.Index(@Model.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
-                                from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
+                                <time class="es-forum-post-info-data-color">@Model.Post.CreatedOn</time>
+                                at @(Html.ActionLink<CategoryController>(@Model.Post.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Post.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
+                                from @(Html.ActionLink<UsersController>(@Model.Post.Author.UserName, c => c.Index(@Model.Post.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
                             </p>
                         </div>
                     </div>
                     <hr class="es-forum-hr-in">
                     <div class="row es-forum-post-row-margin-zero">
-                        @foreach (var tag in Model.Tags)
+                        @foreach (var tag in Model.Post.Tags)
                         {
-                           @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
+                            @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
                         }
                     </div>
                 </div>
@@ -43,46 +43,51 @@
             <h3>Comments</h3>
             <hr />
 
-            @foreach (var comment in Model.Comments)
-            {
-                @Html.Partial("_PostCommentPartial", comment)
-            }
+            <div id="es-forum-post-comments">
+                @foreach (var comment in Model.Post.Comments)
+                {
+                    @Html.Partial("_PostCommentPartial", comment)
+                }
 
-        </div>
+                <div class="text-center">
+                    <nav>
+                        <ul class="pagination pagination-sm">
+                            @if (Model.CurrentPage != 1)
+                            {
+                                <li>
+                                    <a href="@(Url.Action<PostController>(c => c.Index(@Model.Post.Id, Model.CurrentPage - 1)))" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                            }
 
-        <div class="text-center">
-            <nav>
-                <ul class="pagination pagination-sm">
-                    @if (Model.CurrentPage != 1)
-            {
-                        <li>
-                            <a href="@(Url.Action<PostController>(c => c.Index(Model.CurrentPage - 1)))" aria-label="Previous">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                    }
+                            @for (int i = 1; i <= Model.TotalPages; i++)
+                            {
+                                var className = string.Empty;
 
-                    @for (int i = 1; i <= Model.TotalPages; i++)
-                    {
-                        var className = string.Empty;
-                        if (Model.CurrentPage == i)
-                        {
-                            className = "active";
-                        }
-                        <li class="@className"><a href="@(Url.Action<PostController>(c => c.Index(i)))">@(i)</a></li>
-                    }
+                                if (@Model.CurrentPage == @i)
+                                {
+                                    className = "active";
+                                }
 
-                    @if (Model.CurrentPage != Model.TotalPages)
-            {
-                        <li>
+                                <li class="@className">
+                                    <a href="@(Url.Action<PostController>(c => c.Index(@Model.Post.Id, @i)))">@(i)</a>
+                                </li>
+                            }
 
-                            <a href="@(Url.Action<PostController>(c => c.Index(Model.CurrentPage + 1)))" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    }
-                </ul>
-            </nav>
+                            @if (Model.CurrentPage != Model.TotalPages)
+                            {
+                                <li>
+                                    <a href="@(Url.Action<PostController>(c => c.Index(@Model.Post.Id, @Model.CurrentPage + 1)))" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            }
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+
         </div>
     </div>
 </section>
