@@ -49,5 +49,40 @@
             }
 
         </div>
+
+        <div class="text-center">
+            <nav>
+                <ul class="pagination pagination-sm">
+                    @if (Model.CurrentPage != 1)
+            {
+                        <li>
+                            <a href="@(Url.Action<PostController>(c => c.Index(Model.CurrentPage - 1)))" aria-label="Previous">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                    }
+
+                    @for (int i = 1; i <= Model.TotalPages; i++)
+                    {
+                        var className = string.Empty;
+                        if (Model.CurrentPage == i)
+                        {
+                            className = "active";
+                        }
+                        <li class="@className"><a href="@(Url.Action<PostController>(c => c.Index(i)))">@(i)</a></li>
+                    }
+
+                    @if (Model.CurrentPage != Model.TotalPages)
+            {
+                        <li>
+
+                            <a href="@(Url.Action<PostController>(c => c.Index(Model.CurrentPage + 1)))" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    }
+                </ul>
+            </nav>
+        </div>
     </div>
 </section>

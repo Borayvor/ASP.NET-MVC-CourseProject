@@ -224,10 +224,12 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Forum\Controllers\CommentsController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostsBaseController.cs" />
     <Compile Include="Areas\Forum\Controllers\TagController.cs" />
     <Compile Include="Areas\Forum\ViewModels\CategoryPostHomeViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\PostCommentsPageViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\CommentViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostsPageViewModel.cs" />
@@ -637,6 +639,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Administration\Controllers\Forum\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
+    <Folder Include="Areas\Forum\Views\Comments\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Moderators\Controllers\Forum\" />
