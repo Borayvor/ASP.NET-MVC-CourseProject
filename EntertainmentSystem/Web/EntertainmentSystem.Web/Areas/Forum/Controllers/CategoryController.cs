@@ -2,35 +2,35 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using Infrastructure.Mapping;
+    using Common.Constants;
     using Services.Contracts.Forum;
-    using ViewModels;
-    using Web.Controllers;
 
-    public class CategoryController : BaseController
+    public class CategoryController : PostsBaseController
     {
-        private readonly IForumPostService postService;
         private readonly IForumCategoryService categoryService;
 
         public CategoryController(IForumPostService postService, IForumCategoryService categoryService)
+            : base(postService)
         {
-            this.postService = postService;
             this.categoryService = categoryService;
         }
 
         [HttpGet]
-        public ActionResult Index(string name)
+        public ActionResult Index(
+            int page = GlobalConstants.ForumStartPage,
+            string search = GlobalConstants.StringEmpty,
+            string name = GlobalConstants.StringEmpty)
         {
+            this.ViewBag.Title = "Category \"" + name + "\"";
+
             var result = this.ConditionalActionResult(
-                () => this.postService
-                .GetAll()
-                .Where(p => p.PostCategory.Name == name)
-                .To<PostHomeViewModel>(),
-                (content) => this.View(new CategoryPostHomeViewModel
-                {
-                    CategoryName = name,
-                    Posts = content
-                }));
+                () => this.GetPostsPage(
+                    this.PostServise.GetAll()
+                    .Where(p => p.PostCategory.Name == name),
+                    page,
+                    search,
+                    name),
+                (content) => this.View(content));
 
             return result;
         }

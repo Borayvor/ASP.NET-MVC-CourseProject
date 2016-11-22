@@ -11,5 +11,7 @@
         public int CurrentPage { get; set; }
 
         public string Search { get; set; }
+
+        public string Option { get; set; }
     }
 }

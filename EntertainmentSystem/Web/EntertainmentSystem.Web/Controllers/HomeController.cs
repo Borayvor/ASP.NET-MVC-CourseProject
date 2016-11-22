@@ -24,7 +24,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
+        [OutputCache(Duration = GlobalConstants.MediaHomeCacheDuration)]
         public ActionResult GetMusic()
         {
             return this.ConditionalActionResult(
@@ -36,7 +36,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
+        [OutputCache(Duration = GlobalConstants.MediaHomeCacheDuration)]
         public ActionResult GetPictures()
         {
             return this.ConditionalActionResult(
@@ -48,7 +48,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
+        [OutputCache(Duration = GlobalConstants.MediaHomeCacheDuration)]
         public ActionResult GetVideos()
         {
             return this.ConditionalActionResult(

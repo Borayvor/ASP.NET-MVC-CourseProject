@@ -225,6 +225,7 @@
     <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\CategoryController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostController.cs" />
+    <Compile Include="Areas\Forum\Controllers\PostsBaseController.cs" />
     <Compile Include="Areas\Forum\Controllers\TagController.cs" />
     <Compile Include="Areas\Forum\ViewModels\CategoryPostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\CommentViewModel.cs" />
@@ -478,8 +479,8 @@
     <Content Include="Areas\Forum\Views\Post\_PostCommentPartial.cshtml" />
     <Content Include="Content\Site\_site-forum.scss" />
     <Content Include="Content\Site\_site-user-profile.scss" />
-    <Content Include="Areas\Forum\Views\Tag\Index.cshtml" />
     <Content Include="Areas\Forum\Views\Category\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\Tag\Index.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

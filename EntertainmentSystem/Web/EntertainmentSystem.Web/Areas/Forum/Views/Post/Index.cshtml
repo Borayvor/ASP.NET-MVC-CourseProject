@@ -33,7 +33,7 @@
                     <div class="row es-forum-post-row-margin-zero">
                         @foreach (var tag in Model.Tags)
                         {
-                           @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(@tag.Name), null, new { @class = "label label-default" }))
+                           @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
                         }
                     </div>
                 </div>

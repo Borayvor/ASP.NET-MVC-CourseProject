@@ -2,35 +2,35 @@
 {
     using System.Linq;
     using System.Web.Mvc;
-    using Infrastructure.Mapping;
+    using Common.Constants;
     using Services.Contracts.Forum;
-    using ViewModels;
-    using Web.Controllers;
 
-    public class TagController : BaseController
+    public class TagController : PostsBaseController
     {
-        private readonly IForumPostService postService;
         private readonly IForumTagService tagService;
 
         public TagController(IForumPostService postService, IForumTagService tagService)
+            : base(postService)
         {
-            this.postService = postService;
             this.tagService = tagService;
         }
 
         [HttpGet]
-        public ActionResult Index(string name)
+        public ActionResult Index(
+            int page = GlobalConstants.ForumStartPage,
+            string search = GlobalConstants.StringEmpty,
+            string name = GlobalConstants.StringEmpty)
         {
+            this.ViewBag.Title = "Tag \"" + name + "\"";
+
             var result = this.ConditionalActionResult(
-                () => this.postService
-                .GetAll()
-                .Where(p => p.Tags.Where(x => x.Name == name).Any())
-                .To<PostHomeViewModel>(),
-                (content) => this.View(new TagPostsHomeViewModel
-                {
-                    TagName = name,
-                    Posts = content
-                }));
+                () => this.GetPostsPage(
+                    this.PostServise.GetAll()
+                    .Where(p => p.Tags.Where(x => x.Name == name).Any()),
+                page,
+                search,
+                name),
+                (content) => this.View(content));
 
             return result;
         }

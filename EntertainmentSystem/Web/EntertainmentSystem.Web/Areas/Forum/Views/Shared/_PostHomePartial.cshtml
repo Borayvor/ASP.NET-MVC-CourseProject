@@ -38,14 +38,14 @@
                 <p class="es-forum-post-info-color">
                     <span>posted</span>
                     <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
-                    at @(Html.ActionLink<CategoryController>(@Model.Category.Name, c => c.Index(@Model.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
+                    at @(Html.ActionLink<CategoryController>(@Model.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
                     from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
                 </p>
             </div>
             <div class="row es-forum-post-row-margin-zero">
                 @foreach (var tag in Model.Tags)
                 {
-                    @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(@tag.Name), null, new { @class = "label label-default" }))
+                    @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
                 }
             </div>
         </div>
