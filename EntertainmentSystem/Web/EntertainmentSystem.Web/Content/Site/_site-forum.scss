@@ -94,6 +94,15 @@
         .es-forum-post-info-data-color {
             color: #a72af3;
         }
+
+        a{
+            font-size: 1.1em;
+            color:chocolate;
+
+            &:hover{
+                color: #893900;
+            }
+        }
     }
 
     .row {

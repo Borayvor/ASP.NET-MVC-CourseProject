@@ -151,6 +151,11 @@
       color: #005fb2; }
       body #es-forum .es-forum-post-info-color .es-forum-post-info-data-color {
         color: #a72af3; }
+      body #es-forum .es-forum-post-info-color a {
+        font-size: 1.1em;
+        color: chocolate; }
+        body #es-forum .es-forum-post-info-color a:hover {
+          color: #893900; }
     body #es-forum .row.es-forum-post-row-margin-zero {
       margin-right: 0 !important;
       margin-left: 0 !important; }
