@@ -17,7 +17,7 @@
 
         public ApplicationUser Author { get; set; }
 
-        public ForumCategory Category { get; set; }
+        public PostCategory Category { get; set; }
 
         public IEnumerable<TagViewModel> Tags { get; set; }
 

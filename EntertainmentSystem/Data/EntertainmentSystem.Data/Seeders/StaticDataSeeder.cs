@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Data.Seeders
 {
+    using System;
     using System.Collections.Generic;
     using System.Linq;
     using EntertainmentSystem.Common.Constants;
@@ -17,7 +18,8 @@
         private const string UserOrdinaryUserName = "TestUser";
         private const int VotePointsInit = 0;
 
-        private static readonly List<int> MediaCetegoriesId = new List<int>();
+        private static List<Post> postList;
+        private static Guid theTestPostId;
 
         internal static void SeedRoles(EntertainmentSystemDbContext context)
         {
@@ -126,7 +128,7 @@
                 return;
             }
 
-            var category = new ForumCategory
+            var category = new PostCategory
             {
                 Name = "Unknown"
             };
@@ -142,16 +144,37 @@
                 return;
             }
 
-            var post = new Post
+            Post post;
+
+            for (int i = 0; i < 10; i++)
             {
-                Title = "Test Post",
+                post = new Post
+                {
+                    Title = "Test Post " + i,
+                    Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
+                    AuthorId = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName).Id,
+                    PostCategoryId = context.ForumCategories.FirstOrDefault().Id,
+                };
+
+                context.ForumPosts.Add(post);
+            }
+
+            context.SaveChanges();
+
+            post = new Post
+            {
+                Title = "The Test Post",
                 Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
                 AuthorId = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName).Id,
                 PostCategoryId = context.ForumCategories.FirstOrDefault().Id,
             };
 
+            theTestPostId = post.Id;
+
             context.ForumPosts.Add(post);
             context.SaveChanges();
+
+            postList = context.ForumPosts.OrderByDescending(x => x.CreatedOn).ToList();
         }
 
         internal static void SeedTags(EntertainmentSystemDbContext context)
@@ -161,13 +184,29 @@
                 return;
             }
 
-            var tag = new Tag
+            Tag tag;
+
+            for (int i = 0; i < 7; i++)
             {
-                Name = "Test Tag",
+                tag = new Tag
+                {
+                    Name = "Test Tag " + i,
+                    Posts = new List<Post> { postList[RandomGenerator.RandomNumber(0, postList.Count - 1)] }
+                };
+
+                context.ForumTags.Add(tag);
+            }
+
+            context.SaveChanges();
+
+            tag = new Tag
+            {
+                Name = "The Test Tag",
                 Posts = context.ForumPosts.ToList()
             };
 
             context.ForumTags.Add(tag);
+
             context.SaveChanges();
         }
 
@@ -184,7 +223,7 @@
                 {
                     Content = "Tincidunt integer eu augue augue nunc elit dolor, luctus placerat scelerisque euismod, iaculis eu lacus nunc mi elit, vehicula ut laoreet ac, aliquam sit amet justo nunc tempor, metus vel.",
                     AuthorId = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName).Id,
-                    PostId = context.ForumPosts.FirstOrDefault().Id
+                    PostId = theTestPostId
                 };
 
                 context.ForumComments.Add(postComment);
@@ -206,7 +245,7 @@
             var vote = new Vote
             {
                 AuthorId = user.Id,
-                PostId = context.ForumPosts.FirstOrDefault().Id,
+                PostId = theTestPostId,
                 Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
             };
 

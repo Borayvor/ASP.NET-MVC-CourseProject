@@ -146,6 +146,8 @@
     body #es-forum .row.es-forum-post-row-margin-zero {
       margin-right: 0 !important;
       margin-left: 0 !important; }
+      body #es-forum .row.es-forum-post-row-margin-zero .label {
+        margin-right: 5px; }
   @media (max-width: 400px) {
     body .es-card {
       width: 100% !important; } }

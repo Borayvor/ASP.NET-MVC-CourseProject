@@ -40,13 +40,14 @@
                 posts = posts.Where(x => x.Title.ToLower().Contains(search.ToLower()));
             }
 
-            totalpages = (int)Math.Ceiling(posts.Count() / (decimal)GlobalConstants.ForumPostsPerPage);
+            var postCount = posts.Count();
+            totalpages = (int)Math.Ceiling(postCount / (decimal)GlobalConstants.ForumPostsPerPage);
 
             var result = posts
-                .Skip(pagesToSkip)
-                .Take(GlobalConstants.ForumPostsPerPage)
-                .To<PostHomeViewModel>()
-                .ToList();
+             .Skip(pagesToSkip)
+             .Take(GlobalConstants.ForumPostsPerPage)
+             .To<PostHomeViewModel>()
+             .ToList();
 
             var newViewModel = new PostsPageViewModel
             {

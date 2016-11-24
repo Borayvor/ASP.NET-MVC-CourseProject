@@ -35,7 +35,7 @@
 
         public Guid PostCategoryId { get; set; }
 
-        public virtual ForumCategory PostCategory { get; set; }
+        public virtual PostCategory PostCategory { get; set; }
 
         public virtual ICollection<Tag> Tags
         {

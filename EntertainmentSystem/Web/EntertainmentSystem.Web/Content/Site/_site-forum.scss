@@ -84,6 +84,10 @@
         &.es-forum-post-row-margin-zero {
             margin-right: 0 !important;
             margin-left: 0 !important;
+
+            .label{
+                margin-right: 5px;
+            }
         }
     }
 

@@ -16,11 +16,14 @@
             int page = GlobalConstants.ForumStartPage,
             string search = GlobalConstants.StringEmpty)
         {
+            var name = string.Empty;
+
             var result = this.ConditionalActionResult(
                 () => this.GetPostsPage(
                     this.PostServise.GetAll(),
                     page,
-                    search),
+                    search,
+                    name),
                 (content) => this.View(content));
 
             return result;

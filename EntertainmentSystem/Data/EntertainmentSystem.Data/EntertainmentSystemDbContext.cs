@@ -24,7 +24,7 @@
 
         public IDbSet<Post> ForumPosts { get; set; }
 
-        public IDbSet<ForumCategory> ForumCategories { get; set; }
+        public IDbSet<PostCategory> ForumCategories { get; set; }
 
         public IDbSet<Comment> ForumComments { get; set; }
 

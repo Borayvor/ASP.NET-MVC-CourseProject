@@ -15,7 +15,7 @@
 
         public ApplicationUser Author { get; set; }
 
-        public ForumCategory Category { get; set; }
+        public PostCategory Category { get; set; }
 
         public IEnumerable<TagViewModel> Tags { get; set; }
 
@@ -28,7 +28,7 @@
             configuration.CreateMap<Post, PostHomeViewModel>()
                 .ForMember(m => m.Category, opt => opt.MapFrom(x => x.PostCategory))
                 .ForMember(m => m.CommentsCount, opt => opt.MapFrom(x => x.Comments.Count()))
-                .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int)v.Value)))
+                .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int?)v.Value) ?? 0))
                 .ReverseMap();
         }
     }

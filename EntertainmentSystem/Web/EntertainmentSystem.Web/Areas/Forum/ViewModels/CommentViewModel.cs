@@ -19,7 +19,7 @@
         public void CreateMappings(IMapperConfiguration configuration)
         {
             configuration.CreateMap<Comment, CommentViewModel>()
-                .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int)v.Value)))
+                .ForMember(m => m.Votes, opt => opt.MapFrom(x => x.Votes.Sum(v => (int?)v.Value) ?? 0))
                 .ReverseMap();
         }
     }
