@@ -1,4 +1,6 @@
 ﻿@using EntertainmentSystem.Web.Controllers.Users
+@using Microsoft.AspNet.Identity
+@using EntertainmentSystem.Data.Models
 @using EntertainmentSystem.Web.Areas.Forum.Controllers
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model PostCommentsPageViewModel
@@ -9,11 +11,28 @@
         <hr />
         <div class="es-forum-post-comments container">
             <div class="row" id="forum-post-@Model.Post.Id">
-                <div class="col-xs-12 col-sm-2 forum-vote">
-                    <div class="well text-center forum-vote-well">
-                        <div class="forum-vote-detail forum-vote-margin">
-                            <strong id="vote-count-id">@Model.Post.Votes</strong>
-                        </div>
+                <div class="col-xs-2 forum-vote">
+                    <div class="row well text-center forum-vote-well">                        
+
+                        @if (Request.IsAuthenticated)
+                        {
+                            <div class="col-xs-3 forum-vote-detail forum-vote-margin">
+                                <strong id="es-forum-post-votes">@Model.Post.Votes</strong>
+                            </div>
+                            <div data-value="@VoteType.Positive" data-authorId="@User.Identity.GetUserId()" data-post="@Model.Post" class="pointer col-xs-3">
+                                <strong class="glyphicon glyphicon-thumbs-up forum-vote-detail forum-vote-detail-up"></strong>
+                            </div>
+                            <div data-value="@VoteType.Negative" data-authorId="@User.Identity.GetUserId()" data-post="@Model.Post" class="pointer col-xs-3">
+                                <strong class="glyphicon glyphicon-thumbs-down forum-vote-detail forum-vote-detail-down"></strong>
+                            </div>
+                        }
+                        else
+                        {
+                            <div class="forum-vote-detail forum-vote-margin">
+                                <strong id="es-forum-post-votes">@Model.Post.Votes</strong>
+                            </div>
+                        }
+
                     </div>
                 </div>
                 <div class="col-xs-12 col-sm-10 forum-topic">
@@ -26,6 +45,12 @@
                                 <time class="es-forum-post-info-data-color">@Model.Post.CreatedOn</time>
                                 at @(Html.ActionLink<CategoryController>(@Model.Post.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Post.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
                                 from @(Html.ActionLink<UsersController>(@Model.Post.Author.UserName, c => c.Index(@Model.Post.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
+
+                                @if (Request.IsAuthenticated)
+                                {
+                                    <a class="pull-right" data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-success="showAnswerForm(203549)" data-ajax-update="#answer-form-203549" href="/Forum/Ajax/AnswerPartial/203549?isAnswer=True">Comment</a>
+                                }
+
                             </p>
                         </div>
                     </div>

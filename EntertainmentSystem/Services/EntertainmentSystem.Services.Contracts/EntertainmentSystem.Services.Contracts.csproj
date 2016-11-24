@@ -72,7 +72,6 @@
     <Compile Include="Users\IUserAdminService.cs" />
     <Compile Include="Users\IUserModeratorService.cs" />
     <Compile Include="Users\IUserProfileService.cs" />
-    <Compile Include="Users\IUserService.cs" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

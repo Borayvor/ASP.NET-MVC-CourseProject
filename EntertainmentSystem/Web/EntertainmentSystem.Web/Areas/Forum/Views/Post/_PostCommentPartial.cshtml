@@ -1,14 +1,32 @@
 ﻿@using EntertainmentSystem.Web.Controllers.Users
+@using Microsoft.AspNet.Identity
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model CommentViewModel
 
 <div>
     <div class="row">
-        <div class="col-xs-12 col-sm-2 forum-vote">
-            <div class="well forum-vote-well text-center">
-                <div class="forum-vote-detail">
-                    <strong id="vote-count-id">@Model.Votes</strong>
-                </div>
+        <div class="col-xs-2 forum-vote">
+            <div class="row well forum-vote-well text-center">                
+
+                @if (Request.IsAuthenticated)
+                {
+                    <div class="col-xs-3 forum-vote-detail forum-vote-margin">
+                        <strong id="vote-count-id">@Model.Votes</strong>
+                    </div>
+                    <div data-value="" data-authorId="@User.Identity.GetUserId()" data-post="" class="pointer col-xs-3">
+                        <strong class="glyphicon glyphicon-thumbs-up forum-vote-detail forum-vote-detail-up"></strong>
+                    </div>
+                    <div data-value="" data-authorId="@User.Identity.GetUserId()" data-post="" class="pointer col-xs-3">
+                        <strong class="glyphicon glyphicon-thumbs-down forum-vote-detail forum-vote-detail-down"></strong>
+                    </div>
+                }
+                else
+                {
+                    <div class="forum-vote-detail forum-vote-margin">
+                        <strong id="vote-count-id">@Model.Votes</strong>
+                    </div>
+                }
+
             </div>
         </div>
         <div class="col-xs-12 col-sm-10">
@@ -16,7 +34,7 @@
                 <div class="row es-forum-post-row-margin-zero">
                     <p>@Model.Content</p>
                 </div>
-                <hr class="es-forum-hr-in"/>
+                <hr class="es-forum-hr-in" />
                 <div class="row es-forum-post-row-margin-zero">
                     <p class="es-forum-post-info-color">
                         <span>posted</span>
@@ -25,7 +43,7 @@
                     </p>
                 </div>
             </div>
-            <hr class="es-forum-hr-in"/>            
+            <hr class="es-forum-hr-in" />
         </div>
     </div>
 </div>

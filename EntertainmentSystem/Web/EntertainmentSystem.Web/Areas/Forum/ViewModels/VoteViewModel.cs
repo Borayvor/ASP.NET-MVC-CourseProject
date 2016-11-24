@@ -1,5 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Forum.ViewModels
 {
+    using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
     using Data.Models;
     using Data.Models.Forum;
@@ -10,8 +11,9 @@
     {
         public VoteType Value { get; set; }
 
+        [Required]
         [HiddenInput(DisplayValue = false)]
-        public ApplicationUser Author { get; set; }
+        public string AuthorId { get; set; }
 
         [HiddenInput(DisplayValue = false)]
         public Post Post { get; set; }
