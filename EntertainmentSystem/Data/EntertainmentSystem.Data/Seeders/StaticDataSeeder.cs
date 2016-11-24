@@ -188,10 +188,18 @@
 
             for (int i = 0; i < 7; i++)
             {
+                var tagPostList = new List<Post>();
+                var len = RandomGenerator.RandomNumber(1, 3);
+
+                for (int j = 0; j < len; j++)
+                {
+                    tagPostList.Add(postList[RandomGenerator.RandomNumber(0, postList.Count - 1)]);
+                }
+
                 tag = new Tag
                 {
                     Name = "Test Tag " + i,
-                    Posts = new List<Post> { postList[RandomGenerator.RandomNumber(0, postList.Count - 1)] }
+                    Posts = tagPostList
                 };
 
                 context.ForumTags.Add(tag);
@@ -239,22 +247,22 @@
                 return;
             }
 
-            // post votes
-            var user = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName);
+            var userOrdinary = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName);
+            var userModerator = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName);
 
+            // post votes
             var vote = new Vote
             {
-                AuthorId = user.Id,
+                AuthorId = userOrdinary.Id,
                 PostId = theTestPostId,
                 Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
             };
 
             context.ForumVotes.Add(vote);
-            user.VotePoints += (int)vote.Value;
+            userModerator.VotePoints += (int)vote.Value;
 
             // comment votes
             var commentIds = context.ForumComments.Select(x => x.Id).ToList();
-            user = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName);
 
             for (int i = 0; i < 30; i++)
             {
@@ -262,13 +270,13 @@
 
                 vote = new Vote
                 {
-                    AuthorId = user.Id,
+                    AuthorId = userModerator.Id,
                     CommentId = context.ForumComments.FirstOrDefault(c => c.Id == commentId).Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
 
                 context.ForumVotes.Add(vote);
-                user.VotePoints += (int)vote.Value;
+                userOrdinary.VotePoints += (int)vote.Value;
             }
 
             context.SaveChanges();

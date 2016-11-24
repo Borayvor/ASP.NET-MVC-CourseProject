@@ -23,7 +23,6 @@
             this.authors = authors;
         }
 
-
         [ValidateAntiForgeryToken]
         public ActionResult Vote(VoteViewModel model)
         {
