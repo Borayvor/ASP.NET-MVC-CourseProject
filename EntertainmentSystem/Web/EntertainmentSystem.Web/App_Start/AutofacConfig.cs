@@ -61,7 +61,7 @@
                 .As<IIdentifierProvider>()
                 .InstancePerRequest();
 
-            var usersServicesAssembly = Assembly.GetAssembly(typeof(UsersAdminService));
+            var usersServicesAssembly = Assembly.GetAssembly(typeof(UserAdminService));
             builder.RegisterAssemblyTypes(usersServicesAssembly).AsImplementedInterfaces();
 
             var mediaServicesAssembly = Assembly.GetAssembly(typeof(MediaCategoryService));

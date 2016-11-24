@@ -5,9 +5,9 @@
     using Data.Common.Repositories;
     using Data.Models;
 
-    public class UsersAdminService : UserModeratorService, IUserAdminService
+    public class UserAdminService : UserModeratorService, IUserAdminService
     {
-        public UsersAdminService(IDbRepository<ApplicationUser> users)
+        public UserAdminService(IDbRepository<ApplicationUser> users)
             : base(users)
         {
         }

@@ -227,6 +227,7 @@
     <Compile Include="Areas\Forum\Controllers\PostController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostsBaseController.cs" />
     <Compile Include="Areas\Forum\Controllers\TagController.cs" />
+    <Compile Include="Areas\Forum\Controllers\VotesController.cs" />
     <Compile Include="Areas\Forum\ViewModels\CategoryPostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostCommentsPageViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\CommentViewModel.cs" />
@@ -639,6 +640,7 @@
     <Folder Include="Areas\Administration\Controllers\Forum\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Forum\Views\Comments\" />
+    <Folder Include="Areas\Forum\Views\Votes\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
     <Folder Include="Areas\Moderators\Controllers\Forum\" />
