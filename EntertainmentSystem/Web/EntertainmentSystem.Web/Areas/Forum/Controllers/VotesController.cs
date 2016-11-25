@@ -32,11 +32,12 @@
         [HttpPost]
         public ActionResult PostVote(VoteViewModel model)
         {
-            if (model != null && this.ModelState.IsValid)
+            Guid postId = model.ModelId == null ? Guid.Empty : Guid.Parse(model.ModelId);
+
+            if (model != null && this.ModelState.IsValid && postId != Guid.Empty)
             {
                 var userId = this.User.Identity.GetUserId();
                 var postAuthor = this.userService.GetById(model.AuthorId);
-                Guid postId = model.ModelId == null ? Guid.Empty : Guid.Parse(model.ModelId);
                 var votePointsToAdd = (int)model.Value;
 
                 var vote = this.postVoteService.GetAll()
@@ -92,11 +93,12 @@
         [HttpPost]
         public ActionResult CommentVote(VoteViewModel model)
         {
-            if (model != null && this.ModelState.IsValid)
+            Guid commentId = model.ModelId == null ? Guid.Empty : Guid.Parse(model.ModelId);
+
+            if (model != null && this.ModelState.IsValid && commentId != Guid.Empty)
             {
                 var userId = this.User.Identity.GetUserId();
                 var postAuthor = this.userService.GetById(model.AuthorId);
-                Guid commentId = model.ModelId == null ? Guid.Empty : Guid.Parse(model.ModelId);
                 var votePointsToAdd = (int)model.Value;
 
                 var vote = this.commentVoteService.GetAll()
