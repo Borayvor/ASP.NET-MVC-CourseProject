@@ -125,6 +125,10 @@
                         model.Value = VoteType.Neutral;
                         votePointsToAdd = (int)VoteType.Negative;
                     }
+                    else if (model.Value != vote.Value)
+                    {
+                        votePointsToAdd += (int)model.Value;
+                    }
 
                     vote.Value = model.Value;
 
