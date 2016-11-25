@@ -1,37 +1,18 @@
 ﻿@using EntertainmentSystem.Web.Controllers.Users
-@using Microsoft.AspNet.Identity
-@using EntertainmentSystem.Data.Models
 @using EntertainmentSystem.Web.Areas.Forum.Controllers
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model PostCommentsPageViewModel
 
-<section>
+<section id="es-form-posts">
     <div class="container">
         <h1 class="text-left">@Model.Post.Title</h1>
         <hr />
         <div class="es-forum-post-comments container">
-            <div class="row" id="forum-post-@Model.Post.Id">
+            <div class="row" data-id="@Model.Post.Id">
                 <div class="col-xs-2 forum-vote">
-                    <div class="row well text-center forum-vote-well">                        
+                    <div class="row well text-center forum-vote-well es-forum-model-vote">                        
 
-                        @if (Request.IsAuthenticated)
-                        {
-                            <div class="col-xs-3 forum-vote-detail forum-vote-margin">
-                                <strong id="es-forum-post-votes">@Model.Post.Votes</strong>
-                            </div>
-                            <div data-value="@VoteType.Positive" data-authorId="@User.Identity.GetUserId()" data-post="@Model.Post" class="pointer col-xs-3">
-                                <strong class="glyphicon glyphicon-thumbs-up forum-vote-detail forum-vote-detail-up"></strong>
-                            </div>
-                            <div data-value="@VoteType.Negative" data-authorId="@User.Identity.GetUserId()" data-post="@Model.Post" class="pointer col-xs-3">
-                                <strong class="glyphicon glyphicon-thumbs-down forum-vote-detail forum-vote-detail-down"></strong>
-                            </div>
-                        }
-                        else
-                        {
-                            <div class="forum-vote-detail forum-vote-margin">
-                                <strong id="es-forum-post-votes">@Model.Post.Votes</strong>
-                            </div>
-                        }
+                        @Html.Partial("_VotesPostPartial", @Model.Post)
 
                     </div>
                 </div>
@@ -69,48 +50,9 @@
             <hr />
 
             <div id="es-forum-post-comments">
-                @foreach (var comment in Model.Post.Comments)
-                {
-                    @Html.Partial("_PostCommentPartial", comment)
-                }
+                
+                @Html.Partial("_PostCommentsListPartial", @Model)
 
-                <div class="text-center">
-                    <nav>
-                        <ul class="pagination pagination-sm">
-                            @if (Model.CurrentPage != 1)
-                            {
-                                <li>
-                                    <a href="@(Url.Action<PostController>(c => c.Index(@Model.Post.Id, Model.CurrentPage - 1)))" aria-label="Previous">
-                                        <span aria-hidden="true">&laquo;</span>
-                                    </a>
-                                </li>
-                            }
-
-                            @for (int i = 1; i <= Model.TotalPages; i++)
-                            {
-                                var className = string.Empty;
-
-                                if (@Model.CurrentPage == @i)
-                                {
-                                    className = "active";
-                                }
-
-                                <li class="@className">
-                                    <a href="@(Url.Action<PostController>(c => c.Index(@Model.Post.Id, @i)))">@(i)</a>
-                                </li>
-                            }
-
-                            @if (Model.CurrentPage != Model.TotalPages)
-                            {
-                                <li>
-                                    <a href="@(Url.Action<PostController>(c => c.Index(@Model.Post.Id, @Model.CurrentPage + 1)))" aria-label="Next">
-                                        <span aria-hidden="true">&raquo;</span>
-                                    </a>
-                                </li>
-                            }
-                        </ul>
-                    </nav>
-                </div>
             </div>
 
         </div>

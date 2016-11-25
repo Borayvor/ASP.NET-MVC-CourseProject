@@ -483,6 +483,9 @@
     <Content Include="Content\Site\_site-user-profile.scss" />
     <Content Include="Areas\Forum\Views\Category\Index.cshtml" />
     <Content Include="Areas\Forum\Views\Tag\Index.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_VotesPostPartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Post\_PostCommentsListPartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_VotesCommentPartial.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

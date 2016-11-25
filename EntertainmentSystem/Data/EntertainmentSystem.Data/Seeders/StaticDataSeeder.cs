@@ -242,7 +242,7 @@
 
         internal static void SeedPostVotes(EntertainmentSystemDbContext context)
         {
-            if (context.ForumVotes.Any())
+            if (context.ForumPostVotes.Any())
             {
                 return;
             }
@@ -250,33 +250,43 @@
             var userOrdinary = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName);
             var userModerator = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName);
 
-            // post votes
-            var vote = new Vote
+            var postVote = new PostVote
             {
                 AuthorId = userOrdinary.Id,
                 PostId = theTestPostId,
                 Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
             };
 
-            context.ForumVotes.Add(vote);
-            userModerator.VotePoints += (int)vote.Value;
+            context.ForumPostVotes.Add(postVote);
+            userModerator.VotePoints += (int)postVote.Value;
 
-            // comment votes
+            context.SaveChanges();
+        }
+
+        internal static void SeedCommentVotes(EntertainmentSystemDbContext context)
+        {
+            if (context.ForumCommentVotes.Any())
+            {
+                return;
+            }
+
+            var userOrdinary = context.Users.FirstOrDefault(a => a.UserName == UserOrdinaryUserName);
+            var userModerator = context.Users.FirstOrDefault(a => a.UserName == ModeratorUserName);
             var commentIds = context.ForumComments.Select(x => x.Id).ToList();
 
             for (int i = 0; i < 30; i++)
             {
                 var commentId = commentIds[RandomGenerator.RandomNumber(0, commentIds.Count - 1)];
 
-                vote = new Vote
+                var commentVote = new CommentVote
                 {
                     AuthorId = userModerator.Id,
                     CommentId = context.ForumComments.FirstOrDefault(c => c.Id == commentId).Id,
                     Value = (VoteType)RandomGenerator.RandomNumber(-1, 1)
                 };
 
-                context.ForumVotes.Add(vote);
-                userOrdinary.VotePoints += (int)vote.Value;
+                context.ForumCommentVotes.Add(commentVote);
+                userOrdinary.VotePoints += (int)commentVote.Value;
             }
 
             context.SaveChanges();

@@ -30,7 +30,9 @@
 
         public IDbSet<Tag> ForumTags { get; set; }
 
-        public IDbSet<Vote> ForumVotes { get; set; }
+        public IDbSet<PostVote> ForumPostVotes { get; set; }
+
+        public IDbSet<CommentVote> ForumCommentVotes { get; set; }
 
         public static EntertainmentSystemDbContext Create()
         {

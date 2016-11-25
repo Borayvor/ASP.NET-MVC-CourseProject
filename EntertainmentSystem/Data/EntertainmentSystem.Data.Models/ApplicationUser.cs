@@ -18,7 +18,8 @@
         private ICollection<MediaContent> mediaContentCollections;
         private ICollection<Post> posts;
         private ICollection<Comment> comments;
-        private ICollection<Vote> votes;
+        private ICollection<PostVote> postVotes;
+        private ICollection<CommentVote> commentVotes;
 
         public ApplicationUser()
         {
@@ -28,7 +29,8 @@
             this.mediaContentCollections = new HashSet<MediaContent>();
             this.posts = new HashSet<Post>();
             this.comments = new HashSet<Comment>();
-            this.votes = new HashSet<Vote>();
+            this.postVotes = new HashSet<PostVote>();
+            this.commentVotes = new HashSet<CommentVote>();
         }
 
         [Required]
@@ -64,10 +66,16 @@
             set { this.comments = value; }
         }
 
-        public virtual ICollection<Vote> Votes
+        public virtual ICollection<PostVote> PostVotes
         {
-            get { return this.votes; }
-            set { this.votes = value; }
+            get { return this.postVotes; }
+            set { this.postVotes = value; }
+        }
+
+        public virtual ICollection<CommentVote> CommentVotes
+        {
+            get { return this.commentVotes; }
+            set { this.commentVotes = value; }
         }
 
         public DateTime CreatedOn { get; set; }

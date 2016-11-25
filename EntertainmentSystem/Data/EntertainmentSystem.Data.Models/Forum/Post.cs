@@ -10,13 +10,13 @@
     {
         private ICollection<Tag> tags;
         private ICollection<Comment> comments;
-        private ICollection<Vote> votes;
+        private ICollection<PostVote> votes;
 
         public Post()
         {
             this.tags = new HashSet<Tag>();
             this.comments = new HashSet<Comment>();
-            this.votes = new HashSet<Vote>();
+            this.votes = new HashSet<PostVote>();
         }
 
         [Required]
@@ -49,7 +49,7 @@
             set { this.comments = value; }
         }
 
-        public virtual ICollection<Vote> Votes
+        public virtual ICollection<PostVote> Votes
         {
             get { return this.votes; }
             set { this.votes = value; }

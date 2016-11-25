@@ -9,4 +9,34 @@
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
+
+    <script>
+        function vote(self) {
+            var voteValue = self.attr("data-vote-value");
+            var authorId = self.attr("data-authorId");
+            var forumModelId = self.attr("data-forum-model-id");
+
+            var newModel = {
+                Value: voteValue,
+                AuthorId: authorId,
+                ModelId: forumModelId
+            };
+
+            $.post("Votes/PostVote", newModel, function (data) {
+                var newVoteValue = data.VotesValue;
+                var element = $('[data-id="' + forumModelId + '"] .es-forum-votes');
+                element.html(newVoteValue);
+            });
+        };
+
+        $(".forum-post-vote-detail-up").click(function () {
+            var self = $(this);
+            vote(self);
+        });
+
+        $(".forum-post-vote-detail-down").click(function () {
+            var self = $(this);
+            vote(self);
+        });
+    </script>
 }

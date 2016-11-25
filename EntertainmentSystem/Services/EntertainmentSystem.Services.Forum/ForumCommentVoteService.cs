@@ -1,42 +1,43 @@
 ﻿namespace EntertainmentSystem.Services.Forum
 {
+    using System;
     using System.Linq;
     using Contracts.Forum;
     using Data.Common.Repositories;
     using Data.Models.Forum;
 
-    public class ForumVoteService : IForumVoteService
+    public class ForumCommentVoteService : IForumCommentVoteService
     {
-        private readonly IDbRepository<Vote> votes;
+        private readonly IDbRepository<CommentVote> votes;
 
-        public ForumVoteService(IDbRepository<Vote> votes)
+        public ForumCommentVoteService(IDbRepository<CommentVote> votes)
         {
             this.votes = votes;
         }
 
-        public IQueryable<Vote> GetAll()
+        public IQueryable<CommentVote> GetAll()
         {
             return this.votes.All().OrderByDescending(x => x.CreatedOn);
         }
 
-        public Vote GetById(int id)
+        public CommentVote GetById(int id)
         {
-            return this.votes.GetById(id);
+            throw new NotImplementedException();
         }
 
-        public void Create(Vote entity)
+        public void Create(CommentVote entity)
         {
             this.votes.Create(entity);
             this.votes.Save();
         }
 
-        public void Update(Vote entity)
+        public void Update(CommentVote entity)
         {
             this.votes.Update(entity);
             this.votes.Save();
         }
 
-        public void Delete(Vote entity)
+        public void Delete(CommentVote entity)
         {
             this.votes.Delete(entity);
             this.votes.Save();
