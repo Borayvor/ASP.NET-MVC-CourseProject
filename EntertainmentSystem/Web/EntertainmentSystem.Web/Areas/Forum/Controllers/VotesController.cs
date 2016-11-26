@@ -6,6 +6,7 @@
     using System.Web.Mvc;
     using Data.Models;
     using Data.Models.Forum;
+    using Infrastructure.Filters;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Forum;
     using Services.Contracts.Users;
@@ -13,8 +14,12 @@
     using Web.Controllers;
 
     [Authorize]
+    [ValidateAntiForgeryToken]
     public class VotesController : BaseController
     {
+        private const string PostVoteNotFound = "Post vote model not found !";
+        private const string CommentVoteNotFound = "Comment vote model not found !";
+
         private readonly IForumPostVoteService postVoteService;
         private readonly IForumCommentVoteService commentVoteService;
         private readonly IUserProfileService userService;
@@ -29,7 +34,7 @@
             this.userService = userService;
         }
 
-        [HttpPost]
+        [AjaxPost]
         public ActionResult PostVote(VoteViewModel model)
         {
             Guid postId = model.ModelId == null ? Guid.Empty : Guid.Parse(model.ModelId);
@@ -87,10 +92,10 @@
                 return this.Json(new { VotesValue = newVotes });
             }
 
-            throw new HttpException(404, "Post vote model not found !");
+            throw new HttpException(404, PostVoteNotFound);
         }
 
-        [HttpPost]
+        [AjaxPost]
         public ActionResult CommentVote(VoteViewModel model)
         {
             Guid commentId = model.ModelId == null ? Guid.Empty : Guid.Parse(model.ModelId);
@@ -148,7 +153,7 @@
                 return this.Json(new { VotesValue = newVotes });
             }
 
-            throw new HttpException(404, "Comment vote model not found !");
+            throw new HttpException(404, CommentVoteNotFound);
         }
     }
 }

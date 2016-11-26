@@ -4,6 +4,12 @@
 @model PostCommentsPageViewModel
 
 <section id="es-form-posts">
+
+    @using (Ajax.BeginForm("action", "controller", FormMethod.Post, new AjaxOptions() { }, new { hidden = "hidden", id = "hiddenAjaxPostForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+
     <div class="container">
         <h1 class="text-left">@Model.Post.Title</h1>
         <hr />

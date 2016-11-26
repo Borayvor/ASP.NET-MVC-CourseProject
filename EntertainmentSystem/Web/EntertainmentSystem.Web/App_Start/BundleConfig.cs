@@ -43,6 +43,12 @@
                 .Include(
                 "~/Scripts/App/EntertainmentSystemApp.js",
                 "~/Scripts/App/EntertainmentSystem-media.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appMediaJs")
+                .Include("~/Scripts/App/EntertainmentSystem-media.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appForumJs")
+                .Include("~/Scripts/App/EntertainmentSystem-forum.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
