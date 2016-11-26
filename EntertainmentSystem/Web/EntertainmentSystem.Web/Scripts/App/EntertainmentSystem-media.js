@@ -65,7 +65,7 @@
     function updateProgressBar() {
         if (isAudioVideoPlayer()) {
             var progressBar = $('.es-progress-bar');
-            var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
+            var percentage = Math.floor(100 / mediaPlayer.duration * mediaPlayer.currentTime);
             var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
 
             progressBar.attr("aria-valuenow", percentage);

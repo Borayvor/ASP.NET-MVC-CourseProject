@@ -17,36 +17,26 @@
         [HttpPost]
         public ActionResult SearchMedia(string controllerName, SearchViewModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                throw new ArgumentException("Invalid search data !");
+            }
+
             switch (controllerName)
             {
                 case HtmlConstants.MediaMusicControllerName:
                     {
-                        if (!this.ModelState.IsValid)
-                        {
-                            return this.RedirectToAction<MusicController>(c => c.Index());
-                        }
-
-                        return this.RedirectToAction<MusicController>(c => c.SearchByTitle(model.SearchText));
+                        return this.RedirectToAction<MusicController>(c => c.Index(null, model.SearchText, null, null));
                     }
 
                 case HtmlConstants.MediaPicturesControllerName:
                     {
-                        if (!this.ModelState.IsValid)
-                        {
-                            return this.RedirectToAction<PicturesController>(c => c.Index());
-                        }
-
-                        return this.RedirectToAction<PicturesController>(c => c.SearchByTitle(model.SearchText));
+                        return this.RedirectToAction<PicturesController>(c => c.Index(null, model.SearchText, null, null));
                     }
 
                 case HtmlConstants.MediaVideosControllerName:
                     {
-                        if (!this.ModelState.IsValid)
-                        {
-                            return this.RedirectToAction<VideosController>(c => c.Index());
-                        }
-
-                        return this.RedirectToAction<VideosController>(c => c.SearchByTitle(model.SearchText));
+                        return this.RedirectToAction<VideosController>(c => c.Index(null, model.SearchText, null, null));
                     }
 
                 default:

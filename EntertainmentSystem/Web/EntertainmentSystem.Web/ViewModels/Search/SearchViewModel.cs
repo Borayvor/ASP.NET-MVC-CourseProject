@@ -4,9 +4,7 @@
 
     public class SearchViewModel
     {
-        [Required]
         [DataType(DataType.Text)]
-        [MinLength(1)]
         [MaxLength(250)]
         public string SearchText { get; set; }
     }

@@ -18,12 +18,21 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(
+            int? page,
+            string search = GlobalConstants.StringEmpty,
+            string collectionName = GlobalConstants.StringEmpty,
+            string categoryName = GlobalConstants.StringEmpty)
         {
+            int currentPage = page ?? GlobalConstants.MediaStartPage;
+
             return this.ConditionalActionResult(
-                () => this.musicService
-                .GetAll()
-                .To<MediaBaseViewModel>(),
+                () => this.GetMediaFilesPage<MediaBaseViewModel>(
+                    this.musicService,
+                    currentPage,
+                    search,
+                    collectionName,
+                    categoryName),
                 (content) => this.View(content));
         }
 

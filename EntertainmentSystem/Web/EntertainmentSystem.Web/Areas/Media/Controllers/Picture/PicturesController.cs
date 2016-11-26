@@ -18,12 +18,21 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(
+            int? page,
+            string search = GlobalConstants.StringEmpty,
+            string collectionName = GlobalConstants.StringEmpty,
+            string categoryName = GlobalConstants.StringEmpty)
         {
+            int currentPage = page ?? GlobalConstants.MediaStartPage;
+
             return this.ConditionalActionResult(
-                () => this.pictureService
-                .GetAll()
-                .To<MediaBasePictureViewModel>(),
+                () => this.GetMediaFilesPage<MediaBasePictureViewModel>(
+                    this.pictureService,
+                    currentPage,
+                    search,
+                    collectionName,
+                    categoryName),
                 (content) => this.View(content));
         }
 

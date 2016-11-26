@@ -27,13 +27,13 @@
             </a>
             <ul class="dropdown-menu" aria-labelledby="@GlobalConstants.MediaAreaName">
                 <li>
-                    @(Html.ActionLink<MusicController>(HtmlConstants.MediaMusicLinkName, c => c.Index()))
+                    @(Html.ActionLink<MusicController>(HtmlConstants.MediaMusicLinkName, c => c.Index(null, null, null, null)))
                 </li>
                 <li>
-                    @(Html.ActionLink<PicturesController>(HtmlConstants.MediaPicturesLinkName, c => c.Index(), new { area = GlobalConstants.MediaAreaName }))
+                    @(Html.ActionLink<PicturesController>(HtmlConstants.MediaPicturesLinkName, c => c.Index(null, null, null, null), new { area = GlobalConstants.MediaAreaName }))
                 </li>
                 <li>
-                    @(Html.ActionLink<VideosController>(HtmlConstants.MediaVideosLinkName, c => c.Index(), new { area = GlobalConstants.MediaAreaName }))
+                    @(Html.ActionLink<VideosController>(HtmlConstants.MediaVideosLinkName, c => c.Index(null, null, null, null), new { area = GlobalConstants.MediaAreaName }))
                 </li>
             </ul>
         </li>

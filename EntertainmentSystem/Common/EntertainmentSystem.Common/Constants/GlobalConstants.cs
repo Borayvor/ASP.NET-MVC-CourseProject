@@ -23,6 +23,8 @@
         public const int ForumCommentsPerPage = 4;
         public const int ForumItemCacheDuration = 60 * 1; // 1 min.
 
+        public const int MediaStartPage = 1;
+        public const int MediaFilesPerPage = 2;
         public const int MediaHomeCacheDuration = 60 * 5; // 5 min.
 
         public const int UserUserNameMinLength = 2;

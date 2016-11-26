@@ -237,9 +237,11 @@
     <Compile Include="Areas\Forum\ViewModels\TagPostsHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\TagViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\VoteViewModel.cs" />
+    <Compile Include="Areas\Media\ViewModels\Contracts\IMediaPageViewModel{T}.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBasePictureViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaBaseViewModel.cs" />
     <Compile Include="Areas\Media\ViewModels\MediaDetailsViewModel.cs" />
+    <Compile Include="Areas\Media\ViewModels\MediaPageViewModel{T}.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCategoryController.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaCollectionController.cs" />
     <Compile Include="Areas\Moderators\Controllers\Media\ModeratorMediaContentController.cs" />
