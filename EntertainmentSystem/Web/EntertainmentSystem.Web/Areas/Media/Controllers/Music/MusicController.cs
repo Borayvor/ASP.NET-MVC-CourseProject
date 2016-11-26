@@ -3,7 +3,6 @@
     using System;
     using System.Web.Mvc;
     using Common.Constants;
-    using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
     using ViewModels;
 
@@ -34,16 +33,6 @@
                     collectionName,
                     categoryName),
                 (content) => this.View(content));
-        }
-
-        [HttpGet]
-        public ActionResult SearchByTitle(string search)
-        {
-            return this.ConditionalActionResult(
-                () => this.musicService
-                .GetAll(search)
-                .To<MediaBaseViewModel>(),
-                (content) => this.View("Index", content));
         }
 
         [HttpGet]
