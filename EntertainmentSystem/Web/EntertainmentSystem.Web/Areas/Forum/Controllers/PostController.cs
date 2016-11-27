@@ -29,6 +29,12 @@
             return result;
         }
 
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return this.View();
+        }
+
         private PostCommentsPageViewModel GetPostWithCommentsPage(
             Guid postId,
             int page)

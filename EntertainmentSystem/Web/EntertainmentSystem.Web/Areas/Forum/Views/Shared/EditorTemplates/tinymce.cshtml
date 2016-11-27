@@ -1,0 +1,18 @@
+﻿@model string
+@* TINYMCE *@
+<script type="text/javascript" src='@Url.Content("~/Scripts/tinymce/tinymce.min.js")'></script>
+<script type="text/javascript">
+  tinymce.init({
+    selector: '#es-forum-content-textarea',
+    theme: 'modern',
+    height: 150,
+    plugins: [
+      'advlist autolink link lists charmap hr anchor pagebreak spellchecker',
+      'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime nonbreaking',
+      'save table contextmenu directionality emoticons template paste textcolor'
+    ],
+    toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | forecolor backcolor emoticons'
+  });
+</script>
+
+<textarea id="es-forum-content-textarea" class="col-xs-12"></textarea>

@@ -161,6 +161,13 @@
       margin-left: 0 !important; }
       body #es-forum .row.es-forum-post-row-margin-zero .label {
         margin-right: 5px; }
+    body #es-forum .es-forum-comment-add {
+      padding-left: 15px;
+      padding-right: 15px; }
+      body #es-forum .es-forum-comment-add .es-forum-comment-add-head {
+        margin-bottom: 10px; }
+      body #es-forum .es-forum-comment-add .es-forum-comment-add-footer {
+        margin-top: 10px; }
   @media (max-width: 400px) {
     body .es-card {
       width: 100% !important; } }

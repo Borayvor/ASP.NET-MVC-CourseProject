@@ -5,7 +5,8 @@
 
     public class CommentController : BaseController
     {
-        public ActionResult Index()
+        [HttpGet]
+        public ActionResult Create()
         {
             return this.View();
         }

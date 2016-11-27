@@ -33,6 +33,9 @@
                     "~/Scripts/KendoUI/kendo.all.min.js",
                     "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
 
+            bundles.Add(new ScriptBundle("~/bundles/tinymce")
+               .Include("~/Scripts/tinymce/tinymce.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/tools")
                 .Include(
                 "~/Scripts/bootstrap.js",

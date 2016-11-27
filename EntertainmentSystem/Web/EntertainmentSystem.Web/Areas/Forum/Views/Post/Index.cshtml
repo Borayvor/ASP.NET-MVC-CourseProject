@@ -16,7 +16,7 @@
         <div class="es-forum-post-comments container">
             <div class="row" data-id="@Model.Post.Id">
                 <div class="col-xs-2 forum-vote">
-                    <div class="row well text-center forum-vote-well es-forum-model-vote">                        
+                    <div class="row well text-center forum-vote-well es-forum-model-vote">
 
                         @Html.Partial("_VotesPostPartial", @Model.Post)
 
@@ -35,7 +35,7 @@
 
                                 @if (Request.IsAuthenticated)
                                 {
-                                    <a class="pull-right" data-ajax="true" data-ajax-method="Get" data-ajax-mode="replace" data-ajax-success="showAnswerForm(203549)" data-ajax-update="#answer-form-203549" href="/Forum/Ajax/AnswerPartial/203549?isAnswer=True">Comment</a>
+                                    <a class="pull-right es-forum-comment-add-link" data-model-id="@Model.Post.Id" href="#es-forum-comment-add" aria-expanded="false" aria-controls="es-forum-comment-add">Comment</a>
                                 }
 
                             </p>
@@ -48,6 +48,9 @@
                             @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
                         }
                     </div>
+
+                   @Html.Partial("_AddCommentPartial", Model.Post)
+
                 </div>
             </div>
 
@@ -56,7 +59,7 @@
             <hr />
 
             <div id="es-forum-post-comments">
-                
+
                 @Html.Partial("_PostCommentsListPartial", @Model)
 
             </div>
@@ -64,3 +67,4 @@
         </div>
     </div>
 </section>
+
