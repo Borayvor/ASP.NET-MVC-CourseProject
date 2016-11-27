@@ -12,6 +12,7 @@
     using Data;
     using Data.Common;
     using Data.Common.Repositories;
+    using Infrastructure.Sanitizer;
     using Services.Forum;
     using Services.Media;
     using Services.Users;
@@ -59,6 +60,10 @@
 
             builder.Register(x => new IdentifierProvider())
                 .As<IIdentifierProvider>()
+                .InstancePerRequest();
+
+            builder.Register(x => new HtmlSanitizerAdapter())
+                .As<ISanitizer>()
                 .InstancePerRequest();
 
             var usersServicesAssembly = Assembly.GetAssembly(typeof(UserAdminService));

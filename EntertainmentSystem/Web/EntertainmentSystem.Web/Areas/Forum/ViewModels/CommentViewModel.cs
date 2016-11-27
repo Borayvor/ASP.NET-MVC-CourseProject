@@ -8,7 +8,8 @@
     using Infrastructure.Mapping;
     using Web.ViewModels;
 
-    public class CommentViewModel : BaseViewModel<Guid>, IMapFrom<Comment>, IHaveCustomMappings
+    public class CommentViewModel : BaseViewModel<Guid>,
+        IMapFrom<Comment>, IMapTo<Comment>, IHaveCustomMappings
     {
         public string Content { get; set; }
 

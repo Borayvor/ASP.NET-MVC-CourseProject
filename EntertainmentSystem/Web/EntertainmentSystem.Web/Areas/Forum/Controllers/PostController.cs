@@ -45,7 +45,9 @@
 
             int totalpages = (int)Math.Ceiling(post.Comments.Count() / (decimal)GlobalConstants.ForumCommentsPerPage);
 
+            // TODO: refactor -> use commentService
             var result = post.Comments
+                .OrderByDescending(c => c.CreatedOn)
                 .Skip(pagesToSkip)
                 .Take(GlobalConstants.ForumCommentsPerPage)
                 .ToList();

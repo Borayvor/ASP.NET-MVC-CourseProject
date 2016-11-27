@@ -5,7 +5,7 @@
 
 <section id="es-form-posts">
 
-    @using (Ajax.BeginForm("action", "controller", FormMethod.Post, new AjaxOptions() { }, new { hidden = "hidden", id = "hiddenAjaxPostForm" }))
+    @using (Ajax.BeginForm(null, null, null, null, new { hidden = "hidden", id = "hiddenAjaxPostForm" }))
     {
         @Html.AntiForgeryToken()
     }
@@ -49,7 +49,7 @@
                         }
                     </div>
 
-                   @Html.Partial("_AddCommentPartial", Model.Post)
+                   @Html.Partial("_AddCommentPartial", new ComentCreateViewModel())
 
                 </div>
             </div>

@@ -1,4 +1,17 @@
 ﻿$(function () {
+
+    tinymce.init({
+        mode: "textareas",
+        theme: 'modern',
+        height: 150,
+        plugins: [
+          'advlist autolink link lists charmap hr anchor pagebreak spellchecker',
+          'searchreplace wordcount visualblocks visualchars code fullscreen insertdatetime nonbreaking',
+          'save table contextmenu directionality emoticons template paste textcolor'
+        ],
+        toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | forecolor backcolor emoticons'
+    });
+
     // votes
     function postVote(self, voteMethod) {
         var voteValue = self.attr("data-vote-value");
@@ -8,7 +21,7 @@
         var verificationToken = $('input[name="__RequestVerificationToken"]', form).val();
 
         var error = "Invalid vote data !";
-        
+
         $.ajax({
             type: 'POST',
             url: "Votes/" + voteMethod,
@@ -50,7 +63,7 @@
     $(".es-forum-comment-add-link").click(function (e) {
         e.preventDefault();
         var self = $(this);
-        var targetId = "#es-forum-comment-add-" + self.attr("data-model-id");
+        var targetId = "#es-forum-comment-add";
 
         $(targetId).collapse('show');
     });
@@ -58,15 +71,14 @@
     $(".es-forum-comment-add-close").click(function (e) {
         e.preventDefault();
         var self = $(this);
-        var targetId = "#es-forum-comment-add-" + self.attr("data-model-id");
+        var targetId = "#es-forum-comment-add";
 
         $(targetId).collapse('hide');
     });
 
     $(".es-forum-comment-add-save").click(function (e) {
-        e.preventDefault();
         var self = $(this);
-        var targetId = "#es-forum-comment-add-" + self.attr("data-model-id");
+        var targetId = "#es-forum-comment-add";
 
         $(targetId).collapse('hide');
     });

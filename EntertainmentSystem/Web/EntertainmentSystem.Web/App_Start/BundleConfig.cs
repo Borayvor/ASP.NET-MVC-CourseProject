@@ -33,9 +33,6 @@
                     "~/Scripts/KendoUI/kendo.all.min.js",
                     "~/Scripts/KendoUI/kendo.aspnetmvc.min.js"));
 
-            bundles.Add(new ScriptBundle("~/bundles/tinymce")
-               .Include("~/Scripts/tinymce/tinymce.min.js"));
-
             bundles.Add(new ScriptBundle("~/bundles/tools")
                 .Include(
                 "~/Scripts/bootstrap.js",
@@ -51,7 +48,9 @@
                 .Include("~/Scripts/App/EntertainmentSystem-media.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appForumJs")
-                .Include("~/Scripts/App/EntertainmentSystem-forum.js"));
+                .Include(
+                "~/Scripts/tinymce/tinymce.min.js",
+                "~/Scripts/App/EntertainmentSystem-forum.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)

@@ -2,7 +2,6 @@
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
     using System.Linq;
     using AutoMapper;
     using Data.Models;
@@ -14,7 +13,6 @@
     {
         public string Title { get; set; }
 
-        [UIHint("tinymce")]
         public string Content { get; set; }
 
         public ApplicationUser Author { get; set; }
