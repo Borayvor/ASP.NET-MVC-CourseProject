@@ -6,12 +6,7 @@
 <section id="es-forum-home">
     <h1 class="text-left">@ViewBag.Title</h1>
     <hr />
-    <div class="container">
-        @foreach (var post in Model.Posts)
-        {
-            @Html.Partial("_PostHomePartial", post)
-        }
-    </div>
+    @Html.Partial("_PostsListContainerPartial", Model)
 
     <div class="text-center">
         <nav>

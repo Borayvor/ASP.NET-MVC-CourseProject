@@ -224,6 +224,8 @@
     <Compile Include="Areas\Administration\ViewModels\AdminMediaContentEditViewModel.cs" />
     <Compile Include="Areas\Administration\ViewModels\AdminUserEditViewModel.cs" />
     <Compile Include="Areas\Forum\Controllers\CategoryController.cs" />
+    <Compile Include="Areas\Forum\Controllers\CommentController.cs" />
+    <Compile Include="Areas\Forum\Controllers\ForumPostPartialController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostController.cs" />
     <Compile Include="Areas\Forum\Controllers\PostsBaseController.cs" />
     <Compile Include="Areas\Forum\Controllers\TagController.cs" />
@@ -489,6 +491,7 @@
     <Content Include="Areas\Forum\Views\Shared\_VotesPostPartial.cshtml" />
     <Content Include="Areas\Forum\Views\Post\_PostCommentsListPartial.cshtml" />
     <Content Include="Areas\Forum\Views\Shared\_VotesCommentPartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_PostsListContainerPartial.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />
@@ -646,6 +649,8 @@
     <Folder Include="Areas\Administration\Controllers\Forum\" />
     <Folder Include="Areas\Administration\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Forum\Views\Comments\" />
+    <Folder Include="Areas\Forum\Views\Comment\" />
+    <Folder Include="Areas\Forum\Views\ForumPartial\" />
     <Folder Include="Areas\Forum\Views\Votes\" />
     <Folder Include="Areas\Media\Views\Shared\DisplayTemplates\" />
     <Folder Include="Areas\Media\Views\Shared\EditorTemplates\" />
