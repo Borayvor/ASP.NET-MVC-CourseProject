@@ -1,14 +1,12 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Forum.ViewModels
 {
     using System.Collections.Generic;
+    using System.Web.Mvc;
     using Data.Models.Forum;
 
-    public class PostCreateDataViewModel
+    public class PostCategoryListViewModel
     {
-        public PostCreateViewModel Post { get; set; }
-
+        [HiddenInput(DisplayValue = false)]
         public IEnumerable<PostCategory> Categories { get; set; }
-
-        public IEnumerable<Tag> Tags { get; set; }
     }
 }

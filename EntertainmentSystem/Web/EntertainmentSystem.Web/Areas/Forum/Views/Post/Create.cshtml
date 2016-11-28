@@ -1,6 +1,6 @@
 ﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
-@model PostCreateDataViewModel
+@model PostCreateViewModel
 
 @{
     ViewBag.Title = "Create new post";
@@ -19,40 +19,40 @@
 
                 <div class="row es-forum-post-add-title">
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Post.Title)
-                        @Html.TextBoxFor(m => m.Post.Title, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Post.Title, string.Empty, new { @class = "text-danger" })
+                        @Html.LabelFor(m => m.Title)
+                        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, string.Empty, new { @class = "text-danger" })
 
                     </div>
                 </div>
                 
                 <div class="row">
-                    @Html.TextAreaFor(model => model.Post.Content, new { id = "es-forum-post-add-texarea" })
+                    @Html.TextAreaFor(model => model.Content, new { id = "es-forum-post-add-texarea" })
                 </div>
 
                 <div class="row es-forum-post-add-category">
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Post.Category)
-                        @Html.EditorFor(m => m.Post.Category)
-                        @Html.ValidationMessageFor(m => m.Post.Category, string.Empty, new { @class = "text-danger" })
+                        @Html.LabelFor(m => m.Category)
+                        @Html.EditorFor(m => m.Category)
+                        @Html.ValidationMessageFor(m => m.Category, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
 
                 <div class="row es-forum-post-add-tags">
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Post.Tags)
-                        @Html.EditorFor(m => m.Post.Tags)
-                        @Html.ValidationMessageFor(m => m.Post.Tags, string.Empty, new { @class = "text-danger" })
+                        @Html.LabelFor(m => m.Tags)
+                        @Html.EditorFor(m => m.Tags)
+                        @Html.ValidationMessageFor(m => m.Tags, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
-
+                
                 <div class="row es-forum-post-add-footer">
-                    <button type="submit" class="es-forum-comment-add-save btn btn-success pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
-                        <span>Save</span>
-                    </button>
                     <button type="button" class="es-forum-comment-add-close btn btn-danger pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
                         <span>Cancel</span>
                     </button>
+                    <button type="submit" class="es-forum-comment-add-save btn btn-success pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                        <span>Save</span>
+                    </button>                    
                 </div>
             }
         </div>

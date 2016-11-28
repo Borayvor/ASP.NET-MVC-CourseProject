@@ -5,14 +5,14 @@
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
     using Common.Constants;
-    using Data.Models;
     using Data.Models.Forum;
     using Infrastructure.Mapping;
-    using Web.ViewModels;
 
-    public class PostCreateViewModel : BaseViewModel<Guid>,
-        IMapFrom<Post>, IMapTo<Post>
+    public class PostCreateViewModel : IMapFrom<Post>, IMapTo<Post>
     {
+        [HiddenInput(DisplayValue = false)]
+        public Guid Id { get; set; }
+
         [Required]
         [MinLength(GlobalConstants.PostTitleMinLength)]
         [MaxLength(GlobalConstants.PostTitleMaxLength)]
@@ -26,10 +26,9 @@
         [HiddenInput(DisplayValue = false)]
         public string Content { get; set; }
 
-        public ApplicationUser Author { get; set; }
-
+        [UIHint("DropDownListPostCategories")]
         public PostCategory Category { get; set; }
 
-        public IEnumerable<Tag> Tags { get; set; }
+        public IEnumerable<string> Tags { get; set; }
     }
 }

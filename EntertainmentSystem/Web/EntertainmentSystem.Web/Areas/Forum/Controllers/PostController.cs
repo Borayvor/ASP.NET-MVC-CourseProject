@@ -12,11 +12,19 @@
     {
         private readonly IForumPostService postService;
         private readonly IForumCommentService commentService;
+        private readonly IForumCategoryService categoryService;
+        private readonly IForumTagService tagService;
 
-        public PostController(IForumPostService postService, IForumCommentService commentService)
+        public PostController(
+            IForumPostService postService,
+            IForumCommentService commentService,
+            IForumCategoryService categoryService,
+            IForumTagService tagService)
         {
             this.postService = postService;
             this.commentService = commentService;
+            this.categoryService = categoryService;
+            this.tagService = tagService;
         }
 
         [HttpGet]
@@ -33,6 +41,17 @@
         [Authorize]
         public ActionResult Create()
         {
+            var categories = this.categoryService
+                .GetAll()
+                .ToList();
+
+            var tags = this.tagService
+               .GetAll()
+               .ToList();
+
+            this.ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            this.ViewBag.Tags = new SelectList(tags, "Id", "Name");
+
             return this.View();
         }
 
