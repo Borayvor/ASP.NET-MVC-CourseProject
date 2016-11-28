@@ -1,0 +1,15 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+
+<div class="row es-forum-title-row">
+
+    <h1 class="pull-left">@ViewBag.Title</h1>
+
+    <div class="pull-right es-forum-title-menu">
+        @if (Request.IsAuthenticated)
+        {
+            @(Html.ActionLink<PostController>("Create Post", c => c.Create(null), null, new { @class = "btn btn-info" }))
+        }
+    </div>
+
+</div>
+<hr />

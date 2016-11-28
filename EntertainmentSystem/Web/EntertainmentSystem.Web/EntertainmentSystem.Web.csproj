@@ -234,6 +234,8 @@
     <Compile Include="Areas\Forum\ViewModels\ComentCreateViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostCommentsPageViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\CommentViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\PostCreateDataViewModel.cs" />
+    <Compile Include="Areas\Forum\ViewModels\PostCreateViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostHomeViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostsPageViewModel.cs" />
     <Compile Include="Areas\Forum\ViewModels\PostViewModel.cs" />
@@ -494,7 +496,9 @@
     <Content Include="Areas\Forum\Views\Shared\_VotesCommentPartial.cshtml" />
     <Content Include="Areas\Forum\Views\Shared\_PostsListContainerPartial.cshtml" />
     <Content Include="Areas\Forum\Views\Shared\EditorTemplates\tinymce.cshtml" />
-    <Content Include="Areas\Forum\Views\Shared\_AddCommentPartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_CreateCommentPartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\_PostsListTitleAndNavPartial.cshtml" />
+    <Content Include="Areas\Forum\Views\Post\Create.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

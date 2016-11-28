@@ -30,7 +30,16 @@
         }
 
         [HttpGet]
+        [Authorize]
         public ActionResult Create()
+        {
+            return this.View();
+        }
+
+        [HttpPost]
+        [Authorize]
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(PostCreateViewModel model)
         {
             return this.View();
         }

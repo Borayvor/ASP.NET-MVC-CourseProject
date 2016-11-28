@@ -1,0 +1,60 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model PostCreateDataViewModel
+
+@{
+    ViewBag.Title = "Create new post";
+}
+
+@if (Request.IsAuthenticated)
+{
+    <section id="es-forum-create-post" class="row">
+        <h2 class="text-left">@ViewBag.Title</h2>
+        <hr />
+
+        <div class="col-xs-12">
+            @using(Html.BeginForm<PostController>(c => c.Create(null), FormMethod.Post, null, new { }))
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="row es-forum-post-add-title">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Post.Title)
+                        @Html.TextBoxFor(m => m.Post.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Post.Title, string.Empty, new { @class = "text-danger" })
+
+                    </div>
+                </div>
+                
+                <div class="row">
+                    @Html.TextAreaFor(model => model.Post.Content, new { id = "es-forum-post-add-texarea" })
+                </div>
+
+                <div class="row es-forum-post-add-category">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Post.Category)
+                        @Html.EditorFor(m => m.Post.Category)
+                        @Html.ValidationMessageFor(m => m.Post.Category, string.Empty, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row es-forum-post-add-tags">
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Post.Tags)
+                        @Html.EditorFor(m => m.Post.Tags)
+                        @Html.ValidationMessageFor(m => m.Post.Tags, string.Empty, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row es-forum-post-add-footer">
+                    <button type="submit" class="es-forum-comment-add-save btn btn-success pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                        <span>Save</span>
+                    </button>
+                    <button type="button" class="es-forum-comment-add-close btn btn-danger pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                        <span>Cancel</span>
+                    </button>
+                </div>
+            }
+        </div>
+    </section>
+}

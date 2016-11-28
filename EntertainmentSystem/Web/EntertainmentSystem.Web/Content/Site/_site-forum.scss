@@ -25,6 +25,14 @@
         margin-top: 10px;
         margin-bottom: 10px;
     }
+    
+    .es-forum-title-row {
+        margin: 0 !important;  
+        
+        .es-forum-title-menu{            
+            margin-top: 25px;
+        } 
+    }
 
     .pointer {
         cursor: pointer;
@@ -95,11 +103,11 @@
             color: #a72af3;
         }
 
-        a{
+        a {
             font-size: 1.1em;
-            color:chocolate;
+            color: chocolate;
 
-            &:hover{
+            &:hover {
                 color: #893900;
             }
         }
@@ -115,6 +123,6 @@
             }
         }
     }
-    
+
     @import "site-forum-post";
 }

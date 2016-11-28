@@ -19,8 +19,8 @@
         public const int HomeLastContentCount = 3;
 
         public const int ForumStartPage = 1;
-        public const int ForumPostsPerPage = 5;
-        public const int ForumCommentsPerPage = 4;
+        public const int ForumPostsPerPage = 10;
+        public const int ForumCommentsPerPage = 10;
         public const int ForumPostsHomeCacheDuration = 60 * 1; // 1 min.
 
         public const int MediaStartPage = 1;
@@ -51,13 +51,14 @@
 
         public const int PostTitleMinLength = 2;
         public const int PostTitleMaxLength = 256;
-        public const int PostContentMinLength = 2;
+
+        public const int PostContentMinLength = 1;
         public const int PostContentMaxLength = 2000;
 
         public const int PostCategoryNameMinLength = 1;
         public const int PostCategoryNameMaxLength = 512;
 
-        public const int PostCommentContentMinLength = 2;
+        public const int PostCommentContentMinLength = 1;
         public const int PostCommentContentMaxLength = 2000;
 
         public const int PostTagNameMinLength = 2;

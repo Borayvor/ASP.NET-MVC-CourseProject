@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
     using Data.Models.Forum;
+    using Infrastructure.Filters;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Forum;
     using Services.Contracts.Users;
@@ -23,6 +24,7 @@
             this.userService = userService;
         }
 
+        [AjaxPost]
         public ActionResult Create(ComentCreateViewModel model)
         {
             var result = this.ConditionalActionResult(

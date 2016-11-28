@@ -9,7 +9,7 @@
     using Web.ViewModels;
 
     public class CommentViewModel : BaseViewModel<Guid>,
-        IMapFrom<Comment>, IMapTo<Comment>, IHaveCustomMappings
+        IMapFrom<Comment>, IHaveCustomMappings
     {
         public string Content { get; set; }
 
