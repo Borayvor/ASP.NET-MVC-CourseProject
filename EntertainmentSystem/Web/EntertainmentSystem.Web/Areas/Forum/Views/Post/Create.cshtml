@@ -1,4 +1,5 @@
-﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+﻿@using Kendo.Mvc.UI
+@using EntertainmentSystem.Web.Areas.Forum.Controllers
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model PostCreateViewModel
 
@@ -17,12 +18,11 @@
             {
                 @Html.AntiForgeryToken()
 
+                @Html.ValidationSummary(string.Empty, new { @class = "text-danger" })
                 <div class="row es-forum-post-add-title">
                     <div class="form-group">
                         @Html.LabelFor(m => m.Title)
                         @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
-                        @Html.ValidationMessageFor(m => m.Title, string.Empty, new { @class = "text-danger" })
-
                     </div>
                 </div>
                 
@@ -32,25 +32,30 @@
 
                 <div class="row es-forum-post-add-category">
                     <div class="form-group">
-                        @Html.LabelFor(m => m.Category)
-                        @Html.EditorFor(m => m.Category)
-                        @Html.ValidationMessageFor(m => m.Category, string.Empty, new { @class = "text-danger" })
+                        @Html.LabelFor(m => m.CategoryId)
+                        @Html.EditorFor(m => m.CategoryId)
                     </div>
                 </div>
 
                 <div class="row es-forum-post-add-tags">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.Tags)
-                        @Html.EditorFor(m => m.Tags)
-                        @Html.ValidationMessageFor(m => m.Tags, string.Empty, new { @class = "text-danger" })
+                    <div class="k-content">                      
+
+                        @(Html.Kendo().AutoCompleteFor(m => m.Tags)
+                                  .Filter("startswith")
+                                  .HtmlAttributes(new { @class = "form-control", style = "width:100%" })
+                                  .Placeholder("Select tag...")
+                                  .BindTo(ViewBag.Tags)
+                                  .Separator(" ")
+                        )
+
                     </div>
                 </div>
-                
+                <br />
                 <div class="row es-forum-post-add-footer">
-                    <button type="button" class="es-forum-comment-add-close btn btn-danger pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                    <a class="es-forum-post-add-close btn btn-danger pull-right" href="@(Url.Action<AllPostsController>(c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty)))">
                         <span>Cancel</span>
-                    </button>
-                    <button type="submit" class="es-forum-comment-add-save btn btn-success pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                    </a>
+                    <button type="submit" class="es-forum-post-add-save btn btn-success pull-right">
                         <span>Save</span>
                     </button>                    
                 </div>

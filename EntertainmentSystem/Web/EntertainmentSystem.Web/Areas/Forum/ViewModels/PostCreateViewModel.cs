@@ -1,7 +1,6 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Forum.ViewModels
 {
     using System;
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.Web.Mvc;
     using Common.Constants;
@@ -10,9 +9,6 @@
 
     public class PostCreateViewModel : IMapFrom<Post>, IMapTo<Post>
     {
-        [HiddenInput(DisplayValue = false)]
-        public Guid Id { get; set; }
-
         [Required]
         [MinLength(GlobalConstants.PostTitleMinLength)]
         [MaxLength(GlobalConstants.PostTitleMaxLength)]
@@ -27,8 +23,10 @@
         public string Content { get; set; }
 
         [UIHint("DropDownListPostCategories")]
-        public PostCategory Category { get; set; }
+        [Display(Name = "Category")]
+        public Guid CategoryId { get; set; }
 
-        public IEnumerable<string> Tags { get; set; }
+        [Required]
+        public string Tags { get; set; }
     }
 }

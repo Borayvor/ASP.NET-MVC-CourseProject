@@ -3,6 +3,7 @@
     using System;
     using System.Linq;
     using System.Web.Mvc;
+    using System.Web.Mvc.Expressions;
     using Common.Constants;
     using Services.Contracts.Forum;
     using ViewModels;
@@ -47,10 +48,11 @@
 
             var tags = this.tagService
                .GetAll()
-               .ToList();
+               .Select(x => x.Name)
+               .ToArray();
 
             this.ViewBag.Categories = new SelectList(categories, "Id", "Name");
-            this.ViewBag.Tags = new SelectList(tags, "Id", "Name");
+            this.ViewBag.Tags = tags;
 
             return this.View();
         }
@@ -60,7 +62,10 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(PostCreateViewModel model)
         {
-            return this.View();
+
+            return this.RedirectToAction<AllPostsController>(c => c.Index(
+                GlobalConstants.ForumStartPage,
+                GlobalConstants.StringEmpty));
         }
 
         private PostCommentsPageViewModel GetPostWithCommentsPage(

@@ -501,6 +501,7 @@
     <Content Include="Areas\Forum\Views\Shared\_PostsListTitleAndNavPartial.cshtml" />
     <Content Include="Areas\Forum\Views\Post\Create.cshtml" />
     <Content Include="Areas\Forum\Views\Shared\EditorTemplates\DropDownListPostCategories.cshtml" />
+    <Content Include="Areas\Forum\Views\Shared\EditorTemplates\DropDownListPostTags.cshtml" />
     <None Include="Scripts\jquery-3.1.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.1.js" />
     <Content Include="Scripts\jquery-3.1.1.min.js" />

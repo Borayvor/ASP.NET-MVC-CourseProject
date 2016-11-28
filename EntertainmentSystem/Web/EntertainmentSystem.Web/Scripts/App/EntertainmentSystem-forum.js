@@ -1,5 +1,5 @@
 ﻿$(function () {
-
+    // tinymce
     tinymce.init({
         mode: "textareas",
         theme: 'modern',
@@ -12,6 +12,10 @@
         toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link | forecolor backcolor emoticons'
     });
 
+    ////$("#es-forum-post-create-btn").click(function (e) {        
+    ////    tinymce.get("es-forum-post-add-texarea").setContent('');
+    ////});
+       
     // votes
     function postVote(self, voteMethod) {
         var voteValue = self.attr("data-vote-value");
