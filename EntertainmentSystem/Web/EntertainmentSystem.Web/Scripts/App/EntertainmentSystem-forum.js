@@ -64,7 +64,7 @@
         e.preventDefault();
         var self = $(this);
         var targetId = "#es-forum-comment-add";
-
+        tinymce.get("es-forum-comment-add-texarea").setContent('');
         $(targetId).collapse('show');
     });
 
@@ -79,7 +79,7 @@
     $(".es-forum-comment-add-save").click(function (e) {
         var self = $(this);
         var targetId = "#es-forum-comment-add";
-
-        $(targetId).collapse('hide');
+                
+        $(targetId).collapse('hide');        
     });
 });

@@ -1,8 +1,9 @@
-﻿@using EntertainmentSystem.Data.Models
+﻿@using Microsoft.AspNet.Identity;
+@using EntertainmentSystem.Data.Models
 @using EntertainmentSystem.Web.Areas.Forum.ViewModels
 @model CommentViewModel
 
-@if (Request.IsAuthenticated)
+@if (Request.IsAuthenticated && User.Identity.GetUserId() != @Model.Author.Id)
 {
     <div class="col-xs-3 forum-vote-detail forum-vote-margin">
         <strong class="es-forum-votes">@Model.Votes</strong>

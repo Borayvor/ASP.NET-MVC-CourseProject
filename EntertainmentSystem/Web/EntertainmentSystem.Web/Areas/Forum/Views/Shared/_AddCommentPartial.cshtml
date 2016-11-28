@@ -28,7 +28,7 @@
                 </button>
             </div>
             <div class="row">
-                @Html.TextAreaFor(model => model.Content)
+                @Html.TextAreaFor(model => model.Content, new { id = "es-forum-comment-add-texarea" })
             </div>
             <div class="row es-forum-comment-add-footer">
                 <button type="submit" class="es-forum-comment-add-save btn btn-success pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
