@@ -5,7 +5,7 @@
 <div data-id="@Model.Id">
     <div class="row">
         <div class="col-xs-2 forum-vote">
-            <div class="row well forum-vote-well text-center es-forum-model-vote">                
+            <div class="row well forum-vote-well text-center es-forum-model-vote">
 
                 @Html.Partial("_VotesCommentPartial", @Model)
 
@@ -14,7 +14,7 @@
         <div class="col-xs-12 col-sm-10">
             <div class="es-forum-post-content">
                 <div class="row es-forum-post-row-margin-zero">
-                    <p>@Model.Content</p>
+                    @Html.Raw(@Model.Content)
                 </div>
                 <hr class="es-forum-hr-in" />
                 <div class="row es-forum-post-row-margin-zero">

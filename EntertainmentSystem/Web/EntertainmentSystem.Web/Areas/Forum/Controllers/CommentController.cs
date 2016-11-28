@@ -2,7 +2,6 @@
 {
     using System.Web.Mvc;
     using Data.Models.Forum;
-    using Infrastructure.Sanitizer;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Forum;
     using Services.Contracts.Users;
@@ -16,16 +15,12 @@
         private readonly IForumCommentService commentService;
         private readonly IUserProfileService userService;
 
-        private ISanitizer sanitizer;
-
         public CommentController(
             IForumCommentService commentService,
-            IUserProfileService userService,
-            ISanitizer sanitizer)
+            IUserProfileService userService)
         {
             this.commentService = commentService;
             this.userService = userService;
-            this.sanitizer = sanitizer;
         }
 
         public ActionResult Create(ComentCreateViewModel model)
@@ -39,7 +34,6 @@
 
         private CommentViewModel CreateComment(ComentCreateViewModel model)
         {
-            ////var sanitizedCommentContent = this.sanitizer.Sanitize(model.Content);
             var currentUser = this.userService.GetById(this.User.Identity.GetUserId());
 
             var comment = new Comment
