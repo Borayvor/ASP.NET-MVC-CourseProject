@@ -5,6 +5,7 @@
     using Infrastructure.Sanitizer;
     using Microsoft.AspNet.Identity;
     using Services.Contracts.Forum;
+    using Services.Contracts.Users;
     using ViewModels;
     using Web.Controllers;
 
@@ -12,32 +13,39 @@
     [ValidateAntiForgeryToken]
     public class CommentController : BaseController
     {
-        private ISanitizer sanitizer;
-        private IForumCommentService commentService;
+        private readonly IForumCommentService commentService;
+        private readonly IUserProfileService userService;
 
-        public CommentController(ISanitizer sanitizer, IForumCommentService commentService)
+        private ISanitizer sanitizer;
+
+        public CommentController(
+            IForumCommentService commentService,
+            IUserProfileService userService,
+            ISanitizer sanitizer)
         {
-            this.sanitizer = sanitizer;
             this.commentService = commentService;
+            this.userService = userService;
+            this.sanitizer = sanitizer;
         }
 
         public ActionResult Create(ComentCreateViewModel model)
         {
             var result = this.ConditionalActionResult(
                 () => this.CreateComment(model),
-                (content) => this.PartialView(content));
+                (content) => this.PartialView("_PostCommentPartial", content));
 
             return result;
         }
 
         private CommentViewModel CreateComment(ComentCreateViewModel model)
         {
-            var sanitizedCommentContent = this.sanitizer.Sanitize(model.Content);
+            ////var sanitizedCommentContent = this.sanitizer.Sanitize(model.Content);
+            var currentUser = this.userService.GetById(this.User.Identity.GetUserId());
 
             var comment = new Comment
             {
-                AuthorId = this.User.Identity.GetUserId(),
-                Content = sanitizedCommentContent,
+                Author = currentUser,
+                Content = model.Content,
                 PostId = model.PostId
             };
 

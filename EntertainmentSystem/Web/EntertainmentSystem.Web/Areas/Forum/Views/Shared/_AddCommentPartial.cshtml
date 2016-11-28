@@ -7,7 +7,15 @@
     <div id="es-forum-comment-add" class="es-forum-comment-add collapse">
         <hr class="es-forum-hr-in">
 
-        @using (Ajax.BeginForm<CommentController>(c => c.Create(null), null, new AjaxOptions { HttpMethod = "POST",  UpdateTargetId = "es-forum-post-comments" }))
+        @using (Ajax.BeginForm<CommentController>(
+                                                    c => c.Create(null),
+                                                    null,
+                                                    new AjaxOptions
+                                                    {
+                                                        HttpMethod = "POST",
+                                                        UpdateTargetId = "es-forum-post-comments",
+                                                        InsertionMode = InsertionMode.InsertBefore
+                                                    }))
         {
             @Html.AntiForgeryToken()
 

@@ -28,6 +28,9 @@
             bundles.Add(new ScriptBundle("~/bundles/jqueryval")
                 .Include("~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryUnobtrusive")
+                .Include("~/Scripts/jquery.unobtrusive-ajax.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/kendo")
                 .Include(
                     "~/Scripts/KendoUI/kendo.all.min.js",

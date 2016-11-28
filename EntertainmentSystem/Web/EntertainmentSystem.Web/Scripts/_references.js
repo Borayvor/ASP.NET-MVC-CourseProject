@@ -9,6 +9,7 @@
 /// <reference path="jquery.fancybox-media.js" />
 /// <reference path="jquery.fancybox-thumbs.js" />
 /// <reference path="jquery.mousewheel-3.0.6.pack.js" />
+/// <reference path="jquery.unobtrusive-ajax.min.js" />
 /// <reference path="jquery.validate.min.js" />
 /// <reference path="jquery.validate.unobtrusive.js" />
 /// <reference path="jquery-2.2.0.js" />
