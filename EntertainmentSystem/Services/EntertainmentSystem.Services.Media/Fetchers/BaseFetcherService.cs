@@ -18,23 +18,38 @@
             this.type = this.GetContentType();
         }
 
-        public IQueryable<MediaContent> All(string title = GlobalConstants.StringEmpty)
+        public IQueryable<MediaContent> GetAll(
+            string title = GlobalConstants.StringEmpty,
+            string collectionName = GlobalConstants.StringEmpty,
+            string categoryName = GlobalConstants.StringEmpty)
         {
-            if (string.IsNullOrWhiteSpace(title))
+            var content = this.contentService.GetAll()
+                .Where(c => c.ContentType == this.type);
+
+            if (!string.IsNullOrWhiteSpace(title))
             {
-                return this.contentService.GetAll()
-                .Where(c => c.ContentType == this.type)
-                .OrderByDescending(x => x.CreatedOn);
+                content = content.Where(c => c.Title.ToLower().Contains(title.ToLower()));
+            }
+
+            if (!string.IsNullOrWhiteSpace(collectionName))
+            {
+                content = content.Where(c => c.MediaCollection.Name == collectionName);
             }
             else
             {
-                return this.contentService
-                .GetAll()
-                .Where(c => c.ContentType == this.type
-                && c.Title.ToLower().Contains(title.ToLower()))
-                .OrderByDescending(c => c.CreatedOn);
+                content = content.Where(c => c.MediaCollection.Name != collectionName);
             }
 
+            if (!string.IsNullOrWhiteSpace(categoryName))
+            {
+                content = content.Where(c => c.MediaCategory.Name == categoryName);
+            }
+            else
+            {
+                content = content.Where(c => c.MediaCategory.Name != categoryName);
+            }
+
+            return content.OrderByDescending(c => c.CreatedOn);
         }
 
         public MediaContent GetById(Guid id)

@@ -18,14 +18,21 @@
 
         public const int HomeLastContentCount = 3;
 
-        public const int CacheMediaHomeDuration = 60 * 5; // 5 min.
+        public const int ForumStartPage = 1;
+        public const int ForumPostsPerPage = 10;
+        public const int ForumCommentsPerPage = 10;
+        public const int ForumPostsHomeCacheDuration = 60 * 1; // 1 min.
 
+        public const int MediaStartPage = 1;
+        public const int MediaFilesPerPage = 4;
+        public const int MediaHomeCacheDuration = 60 * 5; // 5 min.
+
+        public const int UserUserNameMinLength = 2;
+        public const int UserUserNameMaxLength = 256;
         public const int UserFirstNameMinLength = 2;
         public const int UserFirstNameMaxLength = 100;
         public const int UserLastNameMinLength = 2;
         public const int UserLastNameMaxLength = 100;
-        public const int UserUsernameMinLength = 2;
-        public const int UserUsernameMaxLength = 256;
         public const int UserAvatarImageUrlMaxLength = 1024;
         public const int UserEmailMaxLength = 256;
 
@@ -44,13 +51,14 @@
 
         public const int PostTitleMinLength = 2;
         public const int PostTitleMaxLength = 256;
-        public const int PostContentMinLength = 2;
+
+        public const int PostContentMinLength = 1;
         public const int PostContentMaxLength = 2000;
 
         public const int PostCategoryNameMinLength = 1;
         public const int PostCategoryNameMaxLength = 512;
 
-        public const int PostCommentContentMinLength = 2;
+        public const int PostCommentContentMinLength = 1;
         public const int PostCommentContentMaxLength = 2000;
 
         public const int PostTagNameMinLength = 2;

@@ -28,6 +28,9 @@
             bundles.Add(new ScriptBundle("~/bundles/jqueryval")
                 .Include("~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/jqueryUnobtrusive")
+                .Include("~/Scripts/jquery.unobtrusive-ajax.min.js"));
+
             bundles.Add(new ScriptBundle("~/bundles/kendo")
                 .Include(
                     "~/Scripts/KendoUI/kendo.all.min.js",
@@ -43,6 +46,14 @@
                 .Include(
                 "~/Scripts/App/EntertainmentSystemApp.js",
                 "~/Scripts/App/EntertainmentSystem-media.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appMediaJs")
+                .Include("~/Scripts/App/EntertainmentSystem-media.js"));
+
+            bundles.Add(new ScriptBundle("~/bundles/appForumJs")
+                .Include(
+                "~/Scripts/tinymce/tinymce.min.js",
+                "~/Scripts/App/EntertainmentSystem-forum.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)

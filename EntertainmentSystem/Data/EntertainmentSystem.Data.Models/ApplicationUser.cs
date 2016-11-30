@@ -17,8 +17,9 @@
     {
         private ICollection<MediaContent> mediaContentCollections;
         private ICollection<Post> posts;
-        private ICollection<PostComment> comments;
-        private ICollection<PostVote> votes;
+        private ICollection<Comment> comments;
+        private ICollection<PostVote> postVotes;
+        private ICollection<CommentVote> commentVotes;
 
         public ApplicationUser()
         {
@@ -27,8 +28,9 @@
 
             this.mediaContentCollections = new HashSet<MediaContent>();
             this.posts = new HashSet<Post>();
-            this.comments = new HashSet<PostComment>();
-            this.votes = new HashSet<PostVote>();
+            this.comments = new HashSet<Comment>();
+            this.postVotes = new HashSet<PostVote>();
+            this.commentVotes = new HashSet<CommentVote>();
         }
 
         [Required]
@@ -44,6 +46,8 @@
         [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
         public string AvatarImageUrl { get; set; }
 
+        public int VotePoints { get; set; }
+
         public virtual ICollection<MediaContent> MaediaContentCollections
         {
             get { return this.mediaContentCollections; }
@@ -56,16 +60,22 @@
             set { this.posts = value; }
         }
 
-        public virtual ICollection<PostComment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }
         }
 
-        public virtual ICollection<PostVote> Votes
+        public virtual ICollection<PostVote> PostVotes
         {
-            get { return this.votes; }
-            set { this.votes = value; }
+            get { return this.postVotes; }
+            set { this.postVotes = value; }
+        }
+
+        public virtual ICollection<CommentVote> CommentVotes
+        {
+            get { return this.commentVotes; }
+            set { this.commentVotes = value; }
         }
 
         public DateTime CreatedOn { get; set; }

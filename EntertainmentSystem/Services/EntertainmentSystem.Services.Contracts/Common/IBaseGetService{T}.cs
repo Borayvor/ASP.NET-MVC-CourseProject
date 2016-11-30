@@ -2,6 +2,7 @@
 {
     using System.Linq;
     using Data.Common.Models;
+    using EntertainmentSystem.Common.Enums;
 
     public interface IBaseGetService<T, I> where T : IAuditInfo, IDeletableEntity
     {
@@ -9,7 +10,7 @@
         /// Get all <"T">. Without ordinary deleted.
         /// </summary>
         /// <returns><"T"> as queryable.</returns>
-        IQueryable<T> GetAll();
+        IQueryable<T> GetAll(EntityOrderBy orderBy = EntityOrderBy.CreateOn);
 
         /// <summary>
         /// Gets the <"T"> by id.

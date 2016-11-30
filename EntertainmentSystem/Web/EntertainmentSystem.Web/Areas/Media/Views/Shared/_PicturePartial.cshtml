@@ -1,12 +1,12 @@
 ﻿@using System.Web.Mvc.Expressions
 @using EntertainmentSystem.Web.Areas.Media.Controllers.Picture
 @using EntertainmentSystem.Web.Areas.Media.ViewModels
-@model MediaBaseViewModel
+@model MediaBasePictureViewModel
 
 <article class="es-card es-fade-in-animation col-md-3 col-sm-4 col-xs-6">
     <a class="content" href="@(Url.Action<PicturesController>(c => c.PictureDetails(@Model.Id)))">
         <div>
-            <div class="es-card-image" style="background-image: url(@Model.CoverImageUrl);"></div>
+            <div class="es-card-image" style="background-image: url(@Model.ContentUrl);"></div>
             <div class="es-card-text">
                 <p class="es-media-category">@Model.Category</p>
                 <p class="es-media-collection">@Model.Collection</p>

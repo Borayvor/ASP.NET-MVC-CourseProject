@@ -3,10 +3,13 @@
     using System;
     using System.IO;
     using Common.ExtensionMethods;
+    using Common.Validators;
     using Contracts;
     using DropNet;
 
-    public class DropboxCloudStorage : ICloudStorage, IPicturesCloudStorage, IVideosCloudStorage, ISoundsCloudStorage, IUserProfilePicturesCloudStorage
+    public class DropboxCloudStorage :
+        ICloudStorage, IPicturesCloudStorage,
+        IVideosCloudStorage, ISoundsCloudStorage, IUserProfilePicturesCloudStorage
     {
         private const string DropboxAppKey = "eg2iv6byv8sabfw";
         private const string DropboxAppSecret = "04ivc3lxrxfwmsc";
@@ -26,20 +29,9 @@
 
         public string UploadFile(Stream stream, string filename, string filetype, string path = "/")
         {
-            if (stream == null || !stream.CanRead)
-            {
-                throw new ArgumentException("stream");
-            }
-
-            if (string.IsNullOrEmpty(filename))
-            {
-                throw new ArgumentException("filename");
-            }
-
-            if (string.IsNullOrEmpty(filetype))
-            {
-                throw new ArgumentException("filetype");
-            }
+            UploadFileValidator.ValidateStream(stream);
+            UploadFileValidator.ValidateFileName(filename);
+            UploadFileValidator.ValidateFileType(filetype);
 
             var fullFileName = filename + filetype.GetFileExtension();
 
@@ -52,20 +44,14 @@
 
         public string UploadFile(byte[] bytes, string filename, string filetype, string path = "/")
         {
-            if (bytes == null || bytes.Length == 0)
-            {
-                throw new ArgumentException("bytes");
-            }
+            UploadFileValidator.ValidateByteArray(bytes);
 
             return this.UploadFile(new MemoryStream(bytes), filename, filetype, path);
         }
 
         public string UploadFile(string base64, string filename, string filetype, string path = "/")
         {
-            if (string.IsNullOrEmpty(base64))
-            {
-                throw new ArgumentException("base 64");
-            }
+            UploadFileValidator.ValidateBase64(base64);
 
             return this.UploadFile(Convert.FromBase64String(base64), filename, filetype, path);
         }

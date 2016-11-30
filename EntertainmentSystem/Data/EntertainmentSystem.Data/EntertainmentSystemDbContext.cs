@@ -22,15 +22,17 @@
 
         public IDbSet<MediaCollection> MediaCollections { get; set; }
 
-        public IDbSet<Post> Posts { get; set; }
+        public IDbSet<Post> ForumPosts { get; set; }
 
-        public IDbSet<PostCategory> PostCategories { get; set; }
+        public IDbSet<PostCategory> ForumCategories { get; set; }
 
-        public IDbSet<PostComment> PostComments { get; set; }
+        public IDbSet<Comment> ForumComments { get; set; }
 
-        public IDbSet<PostTag> PostTags { get; set; }
+        public IDbSet<Tag> ForumTags { get; set; }
 
-        public IDbSet<PostVote> PostVotes { get; set; }
+        public IDbSet<PostVote> ForumPostVotes { get; set; }
+
+        public IDbSet<CommentVote> ForumCommentVotes { get; set; }
 
         public static EntertainmentSystemDbContext Create()
         {

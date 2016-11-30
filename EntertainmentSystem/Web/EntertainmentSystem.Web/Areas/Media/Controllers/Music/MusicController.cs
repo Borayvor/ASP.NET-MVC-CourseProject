@@ -3,7 +3,6 @@
     using System;
     using System.Web.Mvc;
     using Common.Constants;
-    using Infrastructure.Mapping;
     using Services.Contracts.Media.Fetchers;
     using ViewModels;
 
@@ -18,23 +17,22 @@
         }
 
         [HttpGet]
-        public ActionResult Index()
+        public ActionResult Index(
+            int? page,
+            string search = GlobalConstants.StringEmpty,
+            string collectionName = GlobalConstants.StringEmpty,
+            string categoryName = GlobalConstants.StringEmpty)
         {
-            return this.ConditionalActionResult(
-                () => this.musicService
-                .All()
-                .To<MediaBaseViewModel>(),
-                (content) => this.View(content));
-        }
+            int currentPage = page ?? GlobalConstants.MediaStartPage;
 
-        [HttpGet]
-        public ActionResult SearchByTitle(string search)
-        {
             return this.ConditionalActionResult(
-                () => this.musicService
-                .All(search)
-                .To<MediaBaseViewModel>(),
-                (content) => this.View("Index", content));
+                () => this.GetMediaFilesPage<MediaBaseViewModel>(
+                    this.musicService,
+                    currentPage,
+                    search,
+                    collectionName,
+                    categoryName),
+                (content) => this.View(content));
         }
 
         [HttpGet]

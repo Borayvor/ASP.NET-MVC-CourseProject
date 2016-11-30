@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Common.Enums;
     using Contracts.Media;
     using Data.Common.Repositories;
     using Data.Models.Media;
@@ -15,7 +16,7 @@
             this.collections = collections;
         }
 
-        public IQueryable<MediaCollection> GetAll()
+        public IQueryable<MediaCollection> GetAll(EntityOrderBy orderBy = EntityOrderBy.CreateOn)
         {
             return this.collections.All().OrderByDescending(x => x.CreatedOn);
         }

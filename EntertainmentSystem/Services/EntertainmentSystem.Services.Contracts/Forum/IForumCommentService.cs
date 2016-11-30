@@ -4,8 +4,8 @@
     using Common;
     using Data.Models.Forum;
 
-    public interface IForumCommentService : IBaseGetService<PostComment, Guid>, IBaseCreateService<PostComment>,
-        IBaseUpdateService<PostComment>, IBaseDeleteService<PostComment>
+    public interface IForumCommentService : IBaseGetService<Comment, Guid>, IBaseCreateService<Comment>,
+        IBaseUpdateService<Comment>, IBaseDeleteService<Comment>
     {
     }
 }

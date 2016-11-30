@@ -1,0 +1,32 @@
+﻿@using EntertainmentSystem.Web.Controllers.Users
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model CommentViewModel
+
+<div data-id="@Model.Id">
+    <div class="row">
+        <div class="col-xs-2 forum-vote">
+            <div class="row well forum-vote-well text-center es-forum-model-vote">
+
+                @Html.Partial("_VotesCommentPartial", @Model)
+
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-10">
+            <div class="es-forum-post-content">
+                <div class="row es-forum-post-row-margin-zero">
+                    @Html.Raw(@Model.Content)
+                </div>
+                <hr class="es-forum-hr-in" />
+                <div class="row es-forum-post-row-margin-zero">
+                    <p class="es-forum-post-info-color">
+                        <span>posted</span>
+                        <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
+                        from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
+                    </p>
+                </div>
+            </div>
+            <hr class="es-forum-hr-in" />
+        </div>
+    </div>
+</div>
+<hr />

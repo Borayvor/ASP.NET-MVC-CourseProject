@@ -45,8 +45,11 @@
     <Compile Include="Constants\ExceptionMessages.cs" />
     <Compile Include="Constants\GlobalConstants.cs" />
     <Compile Include="Constants\HtmlConstants.cs" />
+    <Compile Include="Enums\EntityOrderBy.cs" />
     <Compile Include="ExtensionMethods\StringExtensions.cs" />
+    <Compile Include="Generators\RandomGenerator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Validators\UploadFileValidator.cs" />
   </ItemGroup>
   <ItemGroup>
     <AdditionalFiles Include="..\..\stylecop.json">

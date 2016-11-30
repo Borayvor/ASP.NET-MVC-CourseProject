@@ -95,28 +95,85 @@
   body #es-home #es-home-carousel-videos .carousel-inner .item .video {
     display: inline-flex;
     height: 30em; }
-  body #es-forum-home h3 {
-    margin-top: 3px !important;
-    margin-bottom: 3px !important; }
-    body #es-forum-home h3 a {
-      color: #454444; }
-  body #es-forum-home .es-forum-post-info-color {
-    color: #00b718; }
-    body #es-forum-home .es-forum-post-info-color .es-forum-post-info-data-color {
-      color: #a72af3; }
-  body #es-forum-home .forum-well {
-    font-weight: bold;
-    padding: 0 !important;
-    margin: 0px !important;
-    margin-right: 10px !important; }
-    body #es-forum-home .forum-well .forum-well-inside {
-      margin: 0; }
-  body #es-forum-home .well {
-    margin-bottom: 5px !important;
-    margin-right: 10px; }
-  body #es-forum-home .es-forum-home-post-content .row {
-    margin-right: 0;
-    margin-left: 0; }
+  @media (min-width: 768px) {
+    body #es-forum .well {
+      padding-left: 1vw;
+      padding-right: 1vw; } }
+  body #es-forum {
+    font-size: 1.2em; }
+    body #es-forum h3 {
+      margin-top: 3px !important;
+      margin-bottom: 3px !important; }
+      body #es-forum h3 a {
+        color: #454444; }
+    body #es-forum hr {
+      margin: 0;
+      padding: 0;
+      margin-top: 10px;
+      margin-bottom: 10px; }
+    body #es-forum .pointer {
+      cursor: pointer; }
+    body #es-forum .forum-well {
+      font-weight: bold;
+      padding: 0 !important;
+      margin: 0px !important;
+      margin-right: 25px !important; }
+      body #es-forum .forum-well .forum-well-inside {
+        position: absolute;
+        margin: 0; }
+    body #es-forum .well {
+      margin-bottom: 5px !important;
+      margin-right: 10px;
+      padding: 20px; }
+    body #es-forum .forum-vote {
+      width: 15%; }
+    body #es-forum .forum-vote-well {
+      min-width: 100px;
+      padding: 0;
+      padding-top: 20px;
+      padding-bottom: 20px; }
+    body #es-forum .forum-vote-detail {
+      font-size: 1.2em; }
+    body #es-forum .forum-vote-margin {
+      margin-top: -4px; }
+    body #es-forum .answer-vote-margin {
+      margin-left: 10px; }
+    body #es-forum .es-forum-title-row {
+      margin: 0 !important; }
+      body #es-forum .es-forum-title-row .es-forum-title-menu {
+        margin-top: 25px; }
+    body #es-forum .es-forum-post-add-save {
+      margin-right: 20px; }
+    body #es-forum .es-already-up-voted {
+      color: green; }
+    body #es-forum .es-already-down-voted {
+      color: red; }
+    body #es-forum .es-forum-hr-in {
+      margin-left: -15px; }
+    body #es-forum .es-post-title {
+      margin-left: 0; }
+    body #es-forum .es-forum-post-info-color {
+      font-size: 0.8em;
+      color: #005fb2; }
+      body #es-forum .es-forum-post-info-color .es-forum-post-info-data-color {
+        color: #a72af3; }
+      body #es-forum .es-forum-post-info-color a {
+        font-size: 1.1em;
+        color: chocolate; }
+        body #es-forum .es-forum-post-info-color a:hover {
+          color: #893900; }
+    body #es-forum .row.es-forum-post-row-margin-zero {
+      margin-right: 0 !important;
+      margin-left: 0 !important; }
+      body #es-forum .row.es-forum-post-row-margin-zero .label {
+        margin-right: 5px; }
+    body #es-forum .es-forum-comment-add {
+      padding-left: 15px;
+      padding-right: 15px; }
+      body #es-forum .es-forum-comment-add .es-forum-comment-add-head {
+        margin-bottom: 10px; }
+      body #es-forum .es-forum-comment-add .es-forum-comment-add-footer {
+        margin-top: 10px; }
   @media (max-width: 400px) {
     body .es-card {
       width: 100% !important; } }
@@ -201,7 +258,7 @@
         margin-top: 0.5vw;
         font-size: 2.3vw;
         line-height: 2.4vw;
-        height: 4.9vw;
+        height: 6vw;
         overflow: visible; }
       body .es-card .es-card-text .es-description-container {
         position: relative;
@@ -628,4 +685,10 @@
   body .es-item-player .es-picture-show {
     width: auto !important;
     margin: auto !important; }
+  body #es-user-profile-details {
+    position: relative;
+    margin-top: 30px; }
+    body #es-user-profile-details .profileNames {
+      text-align: center;
+      margin-bottom: 5px; }
 

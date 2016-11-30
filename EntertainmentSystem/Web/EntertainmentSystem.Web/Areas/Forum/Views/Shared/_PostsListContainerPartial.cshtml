@@ -1,0 +1,17 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model PostsPageViewModel
+
+
+<div class="container">  
+    @if (Model.Posts != null)
+    {
+        if (Model.Posts.Count() > 0)
+        {
+            foreach (var post in Model.Posts)
+            {                
+                @(Html.Action<ForumPostPartialController>(c => c.GetPostHomeFromViewModel(post, "_PostHomePartial", GlobalConstants.ForumPostsHomeCacheDuration)))
+            }
+        }
+    }
+</div>

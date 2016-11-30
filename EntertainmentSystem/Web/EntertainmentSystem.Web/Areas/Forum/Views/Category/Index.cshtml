@@ -1,0 +1,46 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model PostsPageViewModel
+
+
+<section id="es-forum-home">
+    @Html.Partial("_PostsListTitleAndNavPartial")
+
+    @Html.Partial("_PostsListContainerPartial", Model)
+
+    <div class="text-center">
+        <nav>
+            <ul class="pagination pagination-sm">
+                @if (Model.CurrentPage != 1)
+            {
+                    <li>
+                        <a href="@(Url.Action<PostCategoryController>(c => c.Index(Model.CurrentPage - 1, Model.Search, Model.Option)))" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                }
+
+                @for (int i = 1; i <= Model.TotalPages; i++)
+            {
+                var className = string.Empty;
+                if (Model.CurrentPage == i)
+                {
+                    className = "active"; 
+                    }
+                <li class="@className"><a href="@(Url.Action<PostCategoryController>(c => c.Index(i, Model.Search, Model.Option)))">@(i)</a></li>
+                }
+
+                @if (Model.CurrentPage != Model.TotalPages)
+            {
+                    <li>
+                        
+                        <a href="@(Url.Action<PostCategoryController>(c => c.Index(Model.CurrentPage + 1, Model.Search, Model.Option)))" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                }
+            </ul>
+        </nav>
+    </div>
+
+</section>

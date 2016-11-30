@@ -1,0 +1,132 @@
+﻿@media (min-width: 768px) {
+    #es-forum {
+        .well {
+            padding-left: 1vw;
+            padding-right: 1vw;
+        }
+    }
+}
+
+#es-forum {
+    font-size: 1.2em;
+
+    h3 {
+        margin-top: 3px !important;
+        margin-bottom: 3px !important;
+
+        a {
+            color: #454444;
+        }
+    }
+
+    hr {
+        margin: 0;
+        padding: 0;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }    
+    
+    .pointer {
+        cursor: pointer;
+    }
+
+    .forum-well {
+        font-weight: bold;
+        padding: 0 !important;
+        margin: 0px !important;
+        margin-right: 25px !important;
+
+        .forum-well-inside {
+            position: absolute;
+            margin: 0;
+        }
+    }
+
+    .well {
+        margin-bottom: 5px !important;
+        margin-right: 10px;
+        padding: 20px;
+    }
+
+    .forum-vote {
+        width: 15%;
+    }
+
+    .forum-vote-well {
+        min-width: 100px;
+        padding: 0;
+        padding-top: 20px;
+        padding-bottom: 20px;
+    }
+
+    .forum-vote-detail {
+        font-size: 1.2em;
+    }
+
+    .forum-vote-margin {
+        margin-top: -4px;
+    }
+
+    .answer-vote-margin {
+        margin-left: 10px;
+    }
+
+    .es-forum-title-row {
+        margin: 0 !important;  
+        
+        .es-forum-title-menu{            
+            margin-top: 25px;
+        } 
+    }
+
+    .es-forum-post-add-save{
+        margin-right: 20px;
+    }
+
+    .es-already-up-voted {
+        color: green;
+    }
+
+    .es-already-down-voted {
+        color: red;
+    }
+
+    .es-forum-hr-in {
+        margin-left: -15px;
+    }
+
+    .es-post-title {
+        margin-left: 0;
+    }
+
+    .es-forum-post-info-color {
+        font-size: 0.8em;
+        color: #005fb2;
+
+        .es-forum-post-info-data-color {
+            color: #a72af3;
+        }
+
+        a {
+            font-size: 1.1em;
+            color: chocolate;
+
+            &:hover {
+                color: #893900;
+            }
+        }
+    }
+
+    .row {
+        &.es-forum-post-row-margin-zero {
+            margin-right: 0 !important;
+            margin-left: 0 !important;
+
+            .label {
+                margin-right: 5px;
+            }
+        }
+    }
+
+    @import "site-forum-post";
+}

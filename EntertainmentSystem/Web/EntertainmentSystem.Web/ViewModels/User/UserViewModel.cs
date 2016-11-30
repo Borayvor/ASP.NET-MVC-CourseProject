@@ -21,8 +21,9 @@
         public string LastName { get; set; }
 
         [Required]
-        [MaxLength(GlobalConstants.UserUsernameMaxLength)]
-        [MinLength(GlobalConstants.UserUsernameMinLength)]
+        [MaxLength(GlobalConstants.UserUserNameMaxLength)]
+        [MinLength(GlobalConstants.UserUserNameMinLength)]
+        [Display(Name = "User name")]
         public string UserName { get; set; }
 
         [Display(Name = "Avatar")]
@@ -33,5 +34,7 @@
         [EmailAddress]
         [MaxLength(GlobalConstants.UserEmailMaxLength)]
         public string Email { get; set; }
+
+        public int VotePoints { get; set; }
     }
 }

@@ -77,15 +77,25 @@
                 return this.View(model);
             }
 
+            var user = await this.UserManager.FindByEmailAsync(model.Email);
+
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result =
-                await
-                this.SignInManager.PasswordSignInAsync(
-                    model.Email,
+            var result = user == null ? SignInStatus.Failure :
+                await this.SignInManager.PasswordSignInAsync(
+                    user.UserName,
                     model.Password,
                     model.RememberMe,
                     shouldLockout: false);
+
+            ////var result =
+            ////    await
+            ////    this.SignInManager.PasswordSignInAsync(
+            ////        model.Email,
+            ////        model.Password,
+            ////        model.RememberMe,
+            ////        shouldLockout: false);
+
             switch (result)
             {
                 case SignInStatus.Success:
@@ -170,8 +180,8 @@
             {
                 var user = new ApplicationUser
                 {
-                    UserName = model.UserName,
                     Email = model.Email,
+                    UserName = model.UserName,
                     FirstName = model.FirstName,
                     LastName = model.LastName,
                     AvatarImageUrl = model.ImageUrl

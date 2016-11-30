@@ -60,17 +60,18 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Forum\CommentVote.cs" />
     <Compile Include="Media\MediaCategory.cs" />
     <Compile Include="Media\MediaCollection.cs" />
     <Compile Include="Media\MediaContent.cs" />
     <Compile Include="Media\ContentType.cs" />
     <Compile Include="Forum\PostCategory.cs" />
     <Compile Include="Forum\VoteType.cs" />
-    <Compile Include="Forum\PostComment.cs" />
+    <Compile Include="Forum\Comment.cs" />
     <Compile Include="Forum\Post.cs" />
     <Compile Include="Forum\PostVote.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Forum\PostTag.cs" />
+    <Compile Include="Forum\Tag.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

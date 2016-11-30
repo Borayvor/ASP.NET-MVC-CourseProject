@@ -1,0 +1,54 @@
+﻿@using EntertainmentSystem.Web.Controllers.Users
+@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model PostHomeViewModel
+
+<div>
+    <div class="row hidden-lg hidden-md hidden-sm forum-well">
+        <div class="well text-center pull-left">
+            @Model.Votes
+            votes
+        </div>
+        <div class="well text-center pull-left">
+            @Model.CommentsCount
+            answers
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-1 hidden-xs forum-well">
+            <div class="well text-center forum-well-inside">
+                <div>@Model.Votes</div>
+                <div>votes</div>
+            </div>
+        </div>
+        <div class="col-sm-2 hidden-xs forum-well">
+            <div class="well text-center forum-well-inside">
+                <div>@Model.CommentsCount</div>
+                <div>comments</div>
+            </div>
+        </div>
+        <div class="col-sm-8 col-xs-12 es-forum-home-post-content">
+            <div class="row es-forum-post-row-margin-zero">
+                <h3 class="es-post-title">
+                    @(Html.ActionLink<PostController>(Model.Title, c => c.Index(Model.Id, GlobalConstants.ForumStartPage)))
+                </h3>
+            </div>
+            <div class="row es-forum-post-row-margin-zero">
+                <p class="es-forum-post-info-color">
+                    <span>posted</span>
+                    <time class="es-forum-post-info-data-color">@Model.CreatedOn</time>
+                    at @(Html.ActionLink<PostCategoryController>(@Model.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
+                    from @(Html.ActionLink<UsersController>(@Model.Author.UserName, c => c.Index(@Model.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
+                </p>
+            </div>
+            <div class="row es-forum-post-row-margin-zero">
+                @foreach (var tag in Model.Tags)
+                {
+                    @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<hr class="es-forum-hr-in" />

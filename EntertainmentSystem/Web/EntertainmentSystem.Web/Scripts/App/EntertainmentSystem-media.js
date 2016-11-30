@@ -4,8 +4,8 @@
     var isPlay = false;
 
     function isAudioVideoPlayer() {
-        var result = (mediaPlayer !== undefined && mediaPlayer !== null &&
-            mediaPlayer.volume !== undefined && mediaPlayer.volume !== null);
+        var result = mediaPlayer !== undefined && mediaPlayer !== null &&
+            mediaPlayer.volume !== undefined && mediaPlayer.volume !== null;
 
         return result;
     }
@@ -16,9 +16,9 @@
 
     function formatTime(seconds) {
         minutes = Math.floor(seconds / 60);
-        minutes = (minutes >= 10) ? minutes : "0" + minutes;
+        minutes = minutes >= 10 ? minutes : "0" + minutes;
         seconds = Math.floor(seconds % 60);
-        seconds = (seconds >= 10) ? seconds : "0" + seconds;
+        seconds = seconds >= 10 ? seconds : "0" + seconds;
         return minutes + ":" + seconds;
     }
 
@@ -52,7 +52,7 @@
                 mediaPlayer.volume += mediaPlayer.volume === 1 ? 0 : 0.1;
             }
             else if (direction === '-') {
-                mediaPlayer.volume -= (mediaPlayer.volume === 0 ? 0 : 0.1);
+                mediaPlayer.volume -= mediaPlayer.volume === 0 ? 0 : 0.1;
             }
 
             mediaPlayer.volume = parseFloat(mediaPlayer.volume).toFixed(1);
@@ -65,7 +65,7 @@
     function updateProgressBar() {
         if (isAudioVideoPlayer()) {
             var progressBar = $('.es-progress-bar');
-            var percentage = Math.floor((100 / mediaPlayer.duration) * mediaPlayer.currentTime);
+            var percentage = Math.floor(100 / mediaPlayer.duration * mediaPlayer.currentTime);
             var remainingTimeConverted = formatTime(mediaPlayer.duration - mediaPlayer.currentTime);
 
             progressBar.attr("aria-valuenow", percentage);

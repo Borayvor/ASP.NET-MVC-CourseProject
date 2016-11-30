@@ -1,0 +1,42 @@
+﻿@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model ComentCreateViewModel
+
+@if (Request.IsAuthenticated)
+{
+    <div id="es-forum-comment-add" class="es-forum-comment-add collapse">
+        <hr class="es-forum-hr-in">
+
+        @using (Ajax.BeginForm<CommentController>(
+                                                    c => c.Create(null),
+                                                    null,
+                                                    new AjaxOptions
+                                                    {
+                                                        HttpMethod = "POST",
+                                                        UpdateTargetId = "es-forum-post-comments",
+                                                        InsertionMode = InsertionMode.InsertBefore
+                                                    }))
+        {
+            @Html.AntiForgeryToken()
+
+            @Html.EditorFor(m => m.PostId)
+
+            <div class="row es-forum-comment-add-head">
+                <h4 class="pull-left">Add Comment</h4>
+                <button type="button" class="es-forum-comment-add-close btn btn-danger pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                    <span class="fa fa-close"></span>
+                </button>
+            </div>
+            <div class="row">
+                @Html.TextAreaFor(model => model.Content, new { id = "es-forum-comment-add-texarea" })
+            </div>
+            <div class="row es-forum-comment-add-footer">
+                <button type="submit" class="es-forum-comment-add-save btn btn-success pull-right" data-target="#es-forum-comment-add" aria-expanded="true" aria-controls="es-forum-comment-add">
+                    <span>Save</span>
+                </button>
+            </div>
+
+        }
+
+    </div>
+}

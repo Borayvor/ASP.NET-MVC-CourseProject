@@ -46,13 +46,15 @@
     <Compile Include="Common\IBaseAdminService{T}.cs" />
     <Compile Include="Common\IBaseCreateService{T}.cs" />
     <Compile Include="Common\IBaseDeleteService{T}.cs" />
+    <Compile Include="Common\IBaseGetByNameService{T}.cs" />
     <Compile Include="Common\IBaseGetService{T}.cs" />
     <Compile Include="Common\IBaseUpdateService{T}.cs" />
     <Compile Include="Forum\IForumCategoryService.cs" />
     <Compile Include="Forum\IForumCommentService.cs" />
+    <Compile Include="Forum\IForumCommentVoteService.cs" />
     <Compile Include="Forum\IForumPostService.cs" />
     <Compile Include="Forum\IForumTagService.cs" />
-    <Compile Include="Forum\IForumVoteService.cs" />
+    <Compile Include="Forum\IForumPostVoteService.cs" />
     <Compile Include="Media\Admin\IAdminMediaCategoryService.cs" />
     <Compile Include="Media\Admin\IAdminMediaCollectionService.cs" />
     <Compile Include="Media\Admin\IAdminMediaContentService.cs" />

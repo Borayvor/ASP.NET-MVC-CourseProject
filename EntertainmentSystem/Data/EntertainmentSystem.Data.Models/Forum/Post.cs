@@ -8,14 +8,14 @@
 
     public class Post : BaseModelGuid
     {
-        private ICollection<PostTag> tags;
-        private ICollection<PostComment> comments;
+        private ICollection<Tag> tags;
+        private ICollection<Comment> comments;
         private ICollection<PostVote> votes;
 
         public Post()
         {
-            this.tags = new HashSet<PostTag>();
-            this.comments = new HashSet<PostComment>();
+            this.tags = new HashSet<Tag>();
+            this.comments = new HashSet<Comment>();
             this.votes = new HashSet<PostVote>();
         }
 
@@ -37,13 +37,13 @@
 
         public virtual PostCategory PostCategory { get; set; }
 
-        public virtual ICollection<PostTag> PostTags
+        public virtual ICollection<Tag> Tags
         {
             get { return this.tags; }
             set { this.tags = value; }
         }
 
-        public virtual ICollection<PostComment> Comments
+        public virtual ICollection<Comment> Comments
         {
             get { return this.comments; }
             set { this.comments = value; }

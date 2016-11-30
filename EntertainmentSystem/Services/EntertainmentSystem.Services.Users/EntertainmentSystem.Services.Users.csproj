@@ -45,7 +45,8 @@
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UserModeratorService.cs" />
-    <Compile Include="UsersAdminService.cs" />
+    <Compile Include="UserProfileService.cs" />
+    <Compile Include="UserAdminService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\CloudStorages\EntertainmentSystem.CloudStorage.Contracts\EntertainmentSystem.CloudStorage.Contracts.csproj">

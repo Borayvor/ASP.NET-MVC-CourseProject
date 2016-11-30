@@ -1,0 +1,24 @@
+﻿@using Microsoft.AspNet.Identity;
+@using EntertainmentSystem.Data.Models
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model CommentViewModel
+
+@if (Request.IsAuthenticated && User.Identity.GetUserId() != @Model.Author.Id)
+{
+    <div class="col-xs-3 forum-vote-detail forum-vote-margin">
+        <strong class="es-forum-votes">@Model.Votes</strong>
+    </div>
+    <div data-vote-value="@VoteType.Positive" data-authorId="@Model.Author.Id" data-forum-model-id="@Model.Id" class="forum-comment-vote-detail-up pointer col-xs-3">
+        <strong class="glyphicon glyphicon-thumbs-up forum-vote-detail"></strong>
+    </div>
+    <div data-vote-value="@VoteType.Negative" data-authorId="@Model.Author.Id" data-forum-model-id="@Model.Id" class="forum-comment-vote-detail-down pointer col-xs-3">
+        <strong class="glyphicon glyphicon-thumbs-down forum-vote-detail"></strong>
+    </div>
+}
+else
+{
+    <div class="forum-vote-detail forum-vote-margin">
+        <strong class="es-forum-votes">@Model.Votes</strong>
+    </div>
+}
+

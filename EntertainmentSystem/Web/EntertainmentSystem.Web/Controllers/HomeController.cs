@@ -19,13 +19,12 @@
         [HttpGet]
         public ActionResult Index()
         {
-            // TODO: check bug where wrong upload file
             return this.View();
         }
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
+        [OutputCache(Duration = GlobalConstants.MediaHomeCacheDuration)]
         public ActionResult GetMusic()
         {
             return this.ConditionalActionResult(
@@ -37,7 +36,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
+        [OutputCache(Duration = GlobalConstants.MediaHomeCacheDuration)]
         public ActionResult GetPictures()
         {
             return this.ConditionalActionResult(
@@ -49,7 +48,7 @@
 
         [HttpGet]
         [ChildActionOnly]
-        [OutputCache(Duration = GlobalConstants.CacheMediaHomeDuration)]
+        [OutputCache(Duration = GlobalConstants.MediaHomeCacheDuration)]
         public ActionResult GetVideos()
         {
             return this.ConditionalActionResult(

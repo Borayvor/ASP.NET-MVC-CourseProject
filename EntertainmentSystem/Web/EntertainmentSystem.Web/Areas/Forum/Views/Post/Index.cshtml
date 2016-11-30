@@ -1,0 +1,71 @@
+﻿@using EntertainmentSystem.Web.Controllers.Users
+@using EntertainmentSystem.Web.Areas.Forum.Controllers
+@using EntertainmentSystem.Web.Areas.Forum.ViewModels
+@model PostCommentsPageViewModel
+
+<section id="es-form-posts">
+
+    @using (Ajax.BeginForm(null, null, null, null, new { hidden = "hidden", id = "hiddenAjaxPostForm" }))
+    {
+        @Html.AntiForgeryToken()
+    }
+
+    <div class="container">
+        <h1 class="text-left">@Model.Post.Title</h1>
+        <hr />
+        <div class="es-forum-post-comments container">
+            <div class="row" data-id="@Model.Post.Id">
+                <div class="col-xs-2 forum-vote">
+                    <div class="row well text-center forum-vote-well es-forum-model-vote">
+
+                        @Html.Partial("_VotesPostPartial", @Model.Post)
+
+                    </div>
+                </div>
+                <div class="col-xs-12 col-sm-10 forum-topic">
+                    <div class="es-forum-post-content">
+                        <div class="row es-forum-post-row-margin-zero">
+                            @Html.Raw(@Model.Post.Content)
+                        </div>
+                        <hr class="es-forum-hr-in">
+                        <div class="row es-forum-post-row-margin-zero">
+                            <p class="es-forum-post-info-color">
+                                <span>posted</span>
+                                <time class="es-forum-post-info-data-color">@Model.Post.CreatedOn</time>
+                                at @(Html.ActionLink<PostCategoryController>(@Model.Post.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Post.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
+                                from @(Html.ActionLink<UsersController>(@Model.Post.Author.UserName, c => c.Index(@Model.Post.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
+
+                                @if (Request.IsAuthenticated)
+                                {
+                                    <a class="pull-right es-forum-comment-add-link" data-model-id="@Model.Post.Id" href="#es-forum-comment-add" aria-expanded="false" aria-controls="es-forum-comment-add">Comment</a>
+                                }
+
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="es-forum-hr-in">
+                    <div class="row es-forum-post-row-margin-zero">
+                        @foreach (var tag in Model.Post.Tags)
+                        {
+                            @(Html.ActionLink<TagController>(@tag.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @tag.Name), null, new { @class = "label label-default" }))
+                        }
+                    </div>
+
+                    @Html.Partial("_CreateCommentPartial", new ComentCreateViewModel())
+
+                </div>
+            </div>
+
+            <br>
+            <h3>Comments</h3>
+            <hr />
+
+            <div id="es-forum-post-comments">
+
+                @Html.Partial("_PostCommentsListPartial", @Model)
+
+            </div>
+
+        </div>
+    </div>
+</section>

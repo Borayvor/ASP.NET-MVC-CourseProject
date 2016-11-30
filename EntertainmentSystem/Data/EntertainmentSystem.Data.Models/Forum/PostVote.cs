@@ -6,15 +6,15 @@
 
     public class PostVote : BaseModel<int>
     {
+        public VoteType Value { get; set; }
+
         [Required]
         public string AuthorId { get; set; }
 
         public virtual ApplicationUser Author { get; set; }
 
-        public Guid PostId { get; set; }
+        public Guid? PostId { get; set; }
 
         public virtual Post Post { get; set; }
-
-        public VoteType Value { get; set; }
     }
 }
