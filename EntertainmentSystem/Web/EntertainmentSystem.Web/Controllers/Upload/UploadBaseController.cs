@@ -48,7 +48,7 @@
             var contentId = this.uploadingGeneratorService.Create(
                 file.InputStream,
                 file.ContentType,
-                this.HttpContext.User.Identity.GetUserId(),
+                this.User.Identity.GetUserId(),
                 fileInfo.Title,
                 fileInfo.Description,
                 coverImageUrl,
