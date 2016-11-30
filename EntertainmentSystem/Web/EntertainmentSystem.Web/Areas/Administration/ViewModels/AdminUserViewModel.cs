@@ -23,8 +23,7 @@
         [Required]
         [MaxLength(GlobalConstants.UserUserNameMaxLength)]
         [MinLength(GlobalConstants.UserUserNameMinLength)]
-        [Display(Name = "User name")]
-        public string UserNameTrue { get; set; }
+        public string UserName { get; set; }
 
         [Display(Name = "Avatar")]
         [MaxLength(GlobalConstants.UserAvatarImageUrlMaxLength)]
