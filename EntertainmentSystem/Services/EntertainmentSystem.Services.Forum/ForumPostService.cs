@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Common.Enums;
     using Contracts.Forum;
     using Data.Common.Repositories;
     using Data.Models.Forum;
@@ -15,7 +16,7 @@
             this.posts = posts;
         }
 
-        public IQueryable<Post> GetAll()
+        public IQueryable<Post> GetAll(EntityOrderBy orderBy = EntityOrderBy.CreateOn)
         {
             return this.posts.All().OrderByDescending(x => x.CreatedOn);
         }

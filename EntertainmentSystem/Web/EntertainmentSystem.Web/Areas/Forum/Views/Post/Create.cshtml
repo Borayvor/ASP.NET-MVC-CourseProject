@@ -4,7 +4,7 @@
 @model PostCreateViewModel
 
 @{
-    ViewBag.Title = "Create new post";
+    ViewBag.Title = "Create new post";    
 }
 
 @if (Request.IsAuthenticated)
@@ -14,40 +14,43 @@
         <hr />
 
         <div class="col-xs-12">
-            @using(Html.BeginForm<PostController>(c => c.Create(null), FormMethod.Post, null, new { }))
+            @using (Html.BeginForm<PostController>(c => c.Create(null), FormMethod.Post, null, new { }))
             {
                 @Html.AntiForgeryToken()
-
-                @Html.ValidationSummary(string.Empty, new { @class = "text-danger" })
+                
                 <div class="row es-forum-post-add-title">
                     <div class="form-group">
                         @Html.LabelFor(m => m.Title)
                         @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(m => m.Title, string.Empty, new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="row">
+                    @Html.TextAreaFor(model => model.Content, new { id = "es-forum-post-add-texarea" })
+                    @Html.ValidationMessageFor(m => m.Content, string.Empty, new { @class = "text-danger" })
+                </div>
+                <br />
+                <div class="row es-forum-post-add-category">
+                    <div class="form-group">                       
+                        @Html.LabelFor(m => m.CategoryId)
+                        @Html.EditorFor(m => m.CategoryId)
+                        @Html.ValidationMessageFor(m => m.CategoryId, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
                 
-                <div class="row">
-                    @Html.TextAreaFor(model => model.Content, new { id = "es-forum-post-add-texarea" })
-                </div>
-
-                <div class="row es-forum-post-add-category">
-                    <div class="form-group">
-                        @Html.LabelFor(m => m.CategoryId)
-                        @Html.EditorFor(m => m.CategoryId)
-                    </div>
-                </div>
-
                 <div class="row es-forum-post-add-tags">
-                    <div class="k-content">                      
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.Tags)
 
-                        @(Html.Kendo().AutoCompleteFor(m => m.Tags)
+                        @(Html.Kendo().AutoCompleteFor(m => m.Tags)                                  
                                   .Filter("startswith")
                                   .HtmlAttributes(new { @class = "form-control", style = "width:100%" })
-                                  .Placeholder("Select tag...")
-                                  .BindTo(ViewBag.Tags)
-                                  .Separator(" ")
+                                  .Placeholder("-- Select tags --")
+                                  .BindTo(@ViewBag.Tags)
+                                  .Separator(", ")
                         )
-
+                        @Html.ValidationMessageFor(m => m.Tags, string.Empty, new { @class = "text-danger" })
                     </div>
                 </div>
                 <br />
@@ -57,7 +60,7 @@
                     </a>
                     <button type="submit" class="es-forum-post-add-save btn btn-success pull-right">
                         <span>Save</span>
-                    </button>                    
+                    </button>
                 </div>
             }
         </div>

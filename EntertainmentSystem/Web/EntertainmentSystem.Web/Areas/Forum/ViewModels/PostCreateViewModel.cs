@@ -5,6 +5,7 @@
     using System.Web.Mvc;
     using Common.Constants;
     using Data.Models.Forum;
+    using Infrastructure.Filters;
     using Infrastructure.Mapping;
 
     public class PostCreateViewModel : IMapFrom<Post>, IMapTo<Post>
@@ -27,6 +28,7 @@
         public Guid CategoryId { get; set; }
 
         [Required]
+        [ValidatePostTagsCount(2)]
         public string Tags { get; set; }
     }
 }

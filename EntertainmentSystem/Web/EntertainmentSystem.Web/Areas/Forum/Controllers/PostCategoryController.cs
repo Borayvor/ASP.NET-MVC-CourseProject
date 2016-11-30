@@ -5,11 +5,11 @@
     using Common.Constants;
     using Services.Contracts.Forum;
 
-    public class CategoryController : PostsBaseController
+    public class PostCategoryController : PostsBaseController
     {
         private readonly IForumCategoryService categoryService;
 
-        public CategoryController(IForumPostService postService, IForumCategoryService categoryService)
+        public PostCategoryController(IForumPostService postService, IForumCategoryService categoryService)
             : base(postService)
         {
             this.categoryService = categoryService;
@@ -31,6 +31,16 @@
                     search,
                     name),
                 (content) => this.View(content));
+
+            return result;
+        }
+
+        [Authorize]
+        [HttpGet]
+        public JsonResult GetCategories()
+        {
+            var categories = this.categoryService.GetAll().ToList();
+            var result = this.Json(categories, JsonRequestBehavior.AllowGet);
 
             return result;
         }

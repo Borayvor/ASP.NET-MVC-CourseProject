@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Common.Enums;
     using Contracts.Forum;
     using Data.Common.Repositories;
     using Data.Models.Forum;
@@ -15,7 +16,7 @@
             this.votes = votes;
         }
 
-        public IQueryable<CommentVote> GetAll()
+        public IQueryable<CommentVote> GetAll(EntityOrderBy orderBy = EntityOrderBy.CreateOn)
         {
             return this.votes.All().OrderByDescending(x => x.CreatedOn);
         }

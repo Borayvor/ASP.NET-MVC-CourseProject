@@ -1,16 +1,24 @@
 ﻿namespace EntertainmentSystem.Web.Areas.Forum.Controllers
 {
     using System;
+    using System.Collections.Generic;
+    using System.Collections.ObjectModel;
     using System.Linq;
     using System.Web.Mvc;
     using System.Web.Mvc.Expressions;
     using Common.Constants;
+    using Common.Enums;
+    using Data.Models.Forum;
+    using Infrastructure.Mapping;
+    using Microsoft.AspNet.Identity;
     using Services.Contracts.Forum;
     using ViewModels;
     using Web.Controllers;
 
     public class PostController : BaseController
     {
+        private const string Separator = ", ";
+
         private readonly IForumPostService postService;
         private readonly IForumCommentService commentService;
         private readonly IForumCategoryService categoryService;
@@ -42,17 +50,7 @@
         [Authorize]
         public ActionResult Create()
         {
-            var categories = this.categoryService
-                .GetAll()
-                .ToList();
-
-            var tags = this.tagService
-               .GetAll()
-               .Select(x => x.Name)
-               .ToArray();
-
-            this.ViewBag.Categories = new SelectList(categories, "Id", "Name");
-            this.ViewBag.Tags = tags;
+            this.TagsAndPostCategorieViewBag();
 
             return this.View();
         }
@@ -62,6 +60,35 @@
         [ValidateAntiForgeryToken]
         public ActionResult Create(PostCreateViewModel model)
         {
+            if (!this.ModelState.IsValid)
+            {
+                this.TagsAndPostCategorieViewBag();
+
+                return this.View();
+            }
+
+            ICollection<Tag> tags = new Collection<Tag>();
+
+            if (!string.IsNullOrEmpty(model.Tags))
+            {
+                var modelTags = model.Tags.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+
+                foreach (var tagName in modelTags)
+                {
+                    tags.Add(this.tagService.GetByName(tagName));
+                }
+            }
+
+            var newPost = new Post
+            {
+                AuthorId = this.User.Identity.GetUserId(),
+                Title = model.Title,
+                Content = model.Content,
+                PostCategoryId = model.CategoryId,
+                Tags = tags
+            };
+
+            this.postService.Create(newPost);
 
             return this.RedirectToAction<AllPostsController>(c => c.Index(
                 GlobalConstants.ForumStartPage,
@@ -95,6 +122,22 @@
             };
 
             return newViewModel;
+        }
+
+        private void TagsAndPostCategorieViewBag()
+        {
+            var categories = this.categoryService
+                .GetAll(EntityOrderBy.NameProperty)
+                .To<PostCategoryViewModel>()
+                .ToList();
+
+            var tags = this.tagService
+               .GetAll(EntityOrderBy.NameProperty)
+               .Select(x => x.Name)
+               .ToArray();
+
+            this.ViewBag.Categories = new SelectList(categories, "Id", "Name");
+            this.ViewBag.Tags = tags;
         }
     }
 }

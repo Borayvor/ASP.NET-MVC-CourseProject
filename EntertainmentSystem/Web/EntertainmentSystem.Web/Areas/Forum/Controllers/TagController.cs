@@ -34,5 +34,15 @@
 
             return result;
         }
+
+        [Authorize]
+        [HttpGet]
+        public JsonResult GetTags()
+        {
+            var tags = this.tagService.GetAll().ToList();
+            var result = this.Json(tags, JsonRequestBehavior.AllowGet);
+
+            return result;
+        }
     }
 }

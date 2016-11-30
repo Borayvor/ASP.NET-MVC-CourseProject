@@ -2,6 +2,7 @@
 {
     using System;
     using System.Linq;
+    using Common.Enums;
     using Contracts.Forum;
     using Data.Common.Repositories;
     using Data.Models.Forum;
@@ -15,9 +16,16 @@
             this.categories = categories;
         }
 
-        public IQueryable<PostCategory> GetAll()
+        public IQueryable<PostCategory> GetAll(EntityOrderBy orderBy = EntityOrderBy.CreateOn)
         {
-            return this.categories.All().OrderByDescending(x => x.CreatedOn);
+            switch (orderBy)
+            {
+                case EntityOrderBy.NameProperty:
+                    return this.categories.All().OrderBy(x => x.Name);
+                default:
+                    return this.categories.All().OrderByDescending(x => x.CreatedOn);
+            }
+
         }
 
         public PostCategory GetById(Guid id)

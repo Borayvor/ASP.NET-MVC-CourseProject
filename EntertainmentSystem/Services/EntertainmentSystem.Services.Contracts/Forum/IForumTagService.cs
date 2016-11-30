@@ -4,7 +4,7 @@
     using Data.Models.Forum;
 
     public interface IForumTagService : IBaseGetService<Tag, int>, IBaseCreateService<Tag>,
-        IBaseUpdateService<Tag>, IBaseDeleteService<Tag>
+        IBaseUpdateService<Tag>, IBaseDeleteService<Tag>, IBaseGetByNameService<Tag>
     {
     }
 }

@@ -93,6 +93,7 @@
     <Compile Include="Filters\BaseValidateMediaFileAttribute.cs" />
     <Compile Include="Filters\ValidateMusicFileAttribute.cs" />
     <Compile Include="Filters\ValidatePictureFileAttribute.cs" />
+    <Compile Include="Filters\ValidatePostTagsCountAttribute.cs" />
     <Compile Include="Filters\ValidateVideoFileAttribute.cs" />
     <Compile Include="HtmlHelpers\FontAwesomeHelpers.cs" />
     <Compile Include="HtmlHelpers\KendoAdminHelpers.cs" />
@@ -119,7 +120,6 @@
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
     <Analyzer Include="..\..\packages\StyleCop.Analyzers.1.0.0\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

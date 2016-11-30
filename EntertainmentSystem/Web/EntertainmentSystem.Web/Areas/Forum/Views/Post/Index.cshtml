@@ -24,13 +24,15 @@
                 </div>
                 <div class="col-xs-12 col-sm-10 forum-topic">
                     <div class="es-forum-post-content">
-                        <div class="row es-forum-post-row-margin-zero">@Model.Post.Content</div>
+                        <div class="row es-forum-post-row-margin-zero">
+                            @Html.Raw(@Model.Post.Content)
+                        </div>
                         <hr class="es-forum-hr-in">
                         <div class="row es-forum-post-row-margin-zero">
                             <p class="es-forum-post-info-color">
                                 <span>posted</span>
                                 <time class="es-forum-post-info-data-color">@Model.Post.CreatedOn</time>
-                                at @(Html.ActionLink<CategoryController>(@Model.Post.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Post.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
+                                at @(Html.ActionLink<PostCategoryController>(@Model.Post.Category.Name, c => c.Index(GlobalConstants.ForumStartPage, GlobalConstants.StringEmpty, @Model.Post.Category.Name), new { area = GlobalConstants.ForumAreaName }, new { @class = "es-forum-post-info-data-color" }))
                                 from @(Html.ActionLink<UsersController>(@Model.Post.Author.UserName, c => c.Index(@Model.Post.Author.Id), null, new { @class = "es-forum-post-info-data-color" }))
 
                                 @if (Request.IsAuthenticated)
@@ -49,7 +51,7 @@
                         }
                     </div>
 
-                   @Html.Partial("_CreateCommentPartial", new ComentCreateViewModel())
+                    @Html.Partial("_CreateCommentPartial", new ComentCreateViewModel())
 
                 </div>
             </div>

@@ -1,6 +1,7 @@
 ﻿namespace EntertainmentSystem.Services.Forum
 {
     using System.Linq;
+    using Common.Enums;
     using Contracts.Forum;
     using Data.Common.Repositories;
     using Data.Models.Forum;
@@ -14,7 +15,7 @@
             this.votes = votes;
         }
 
-        public IQueryable<PostVote> GetAll()
+        public IQueryable<PostVote> GetAll(EntityOrderBy orderBy = EntityOrderBy.CreateOn)
         {
             return this.votes.All().OrderByDescending(x => x.CreatedOn);
         }
