@@ -51,9 +51,7 @@
                 .Include("~/Scripts/App/EntertainmentSystem-media.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/appForumJs")
-                .Include(
-                "~/Scripts/tinymce/tinymce.min.js",
-                "~/Scripts/App/EntertainmentSystem-forum.js"));
+                .Include("~/Scripts/App/EntertainmentSystem-forum.js"));
         }
 
         private static void RegisterStyles(BundleCollection bundles)
