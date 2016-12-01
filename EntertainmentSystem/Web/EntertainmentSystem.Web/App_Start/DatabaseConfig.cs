@@ -10,7 +10,7 @@
         {
             Database.SetInitializer(new MigrateDatabaseToLatestVersion<EntertainmentSystemDbContext, Configuration>());
 
-            EntertainmentSystemDbContext.Create().Database.Initialize(true);
+            ////EntertainmentSystemDbContext.Create().Database.Initialize(true);
         }
     }
 }

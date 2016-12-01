@@ -11,7 +11,6 @@
 
             var extensionIndex = filename.LastIndexOf(".");
 
-            // no . or . is the last symbol
             if (extensionIndex < 0 || extensionIndex == filename.Length - 1)
             {
                 return string.Empty;

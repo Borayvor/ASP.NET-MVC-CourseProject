@@ -21,7 +21,7 @@
         public const int ForumStartPage = 1;
         public const int ForumPostsPerPage = 10;
         public const int ForumCommentsPerPage = 10;
-        public const int ForumPostsHomeCacheDuration = 60 * 1; // 1 min.
+        public const int ForumPostsHomeCacheDuration = 5; // 5 sec.
 
         public const int MediaStartPage = 1;
         public const int MediaFilesPerPage = 4;

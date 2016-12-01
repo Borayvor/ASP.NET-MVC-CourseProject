@@ -15,7 +15,7 @@
     transition: color 0.2s ease-in-out;
     color: #919496;
     text-decoration: none; }
-  body .es-administration-wrapper {
+  body #es-administration-wrapper {
     margin: 0;
     padding: 0;
     padding-left: 10px;
@@ -96,83 +96,83 @@
     display: inline-flex;
     height: 30em; }
   @media (min-width: 768px) {
-    body #es-forum .well {
+    body #es-forum-wrapper .well {
       padding-left: 1vw;
       padding-right: 1vw; } }
-  body #es-forum {
+  body #es-forum-wrapper {
     font-size: 1.2em; }
-    body #es-forum h3 {
+    body #es-forum-wrapper h3 {
       margin-top: 3px !important;
       margin-bottom: 3px !important; }
-      body #es-forum h3 a {
+      body #es-forum-wrapper h3 a {
         color: #454444; }
-    body #es-forum hr {
+    body #es-forum-wrapper hr {
       margin: 0;
       padding: 0;
       margin-top: 10px;
       margin-bottom: 10px; }
-    body #es-forum .pointer {
+    body #es-forum-wrapper .pointer {
       cursor: pointer; }
-    body #es-forum .forum-well {
+    body #es-forum-wrapper .forum-well {
       font-weight: bold;
       padding: 0 !important;
       margin: 0px !important;
       margin-right: 25px !important; }
-      body #es-forum .forum-well .forum-well-inside {
+      body #es-forum-wrapper .forum-well .forum-well-inside {
         position: absolute;
         margin: 0; }
-    body #es-forum .well {
+    body #es-forum-wrapper .well {
       margin-bottom: 5px !important;
       margin-right: 10px;
       padding: 20px; }
-    body #es-forum .forum-vote {
+    body #es-forum-wrapper .forum-vote {
       width: 15%; }
-    body #es-forum .forum-vote-well {
+    body #es-forum-wrapper .forum-vote-well {
       min-width: 100px;
       padding: 0;
       padding-top: 20px;
       padding-bottom: 20px; }
-    body #es-forum .forum-vote-detail {
+    body #es-forum-wrapper .forum-vote-detail {
       font-size: 1.2em; }
-    body #es-forum .forum-vote-margin {
+    body #es-forum-wrapper .forum-vote-margin {
       margin-top: -4px; }
-    body #es-forum .answer-vote-margin {
+    body #es-forum-wrapper .answer-vote-margin {
       margin-left: 10px; }
-    body #es-forum .es-forum-title-row {
+    body #es-forum-wrapper .es-forum-title-row {
       margin: 0 !important; }
-      body #es-forum .es-forum-title-row .es-forum-title-menu {
+      body #es-forum-wrapper .es-forum-title-row .es-forum-title-menu {
         margin-top: 25px; }
-    body #es-forum .es-forum-post-add-save {
+    body #es-forum-wrapper .es-forum-post-add-save {
       margin-right: 20px; }
-    body #es-forum .es-already-up-voted {
+    body #es-forum-wrapper .es-already-up-voted {
       color: green; }
-    body #es-forum .es-already-down-voted {
+    body #es-forum-wrapper .es-already-down-voted {
       color: red; }
-    body #es-forum .es-forum-hr-in {
+    body #es-forum-wrapper .es-forum-hr-in {
       margin-left: -15px; }
-    body #es-forum .es-post-title {
+    body #es-forum-wrapper .es-post-title {
       margin-left: 0; }
-    body #es-forum .es-forum-post-info-color {
+    body #es-forum-wrapper .es-forum-post-info-color {
       font-size: 0.8em;
       color: #005fb2; }
-      body #es-forum .es-forum-post-info-color .es-forum-post-info-data-color {
+      body #es-forum-wrapper .es-forum-post-info-color .es-forum-post-info-data-color {
         color: #a72af3; }
-      body #es-forum .es-forum-post-info-color a {
+      body #es-forum-wrapper .es-forum-post-info-color a {
         font-size: 1.1em;
         color: chocolate; }
-        body #es-forum .es-forum-post-info-color a:hover {
+        body #es-forum-wrapper .es-forum-post-info-color a:hover {
           color: #893900; }
-    body #es-forum .row.es-forum-post-row-margin-zero {
+    body #es-forum-wrapper .row.es-forum-post-row-margin-zero {
       margin-right: 0 !important;
       margin-left: 0 !important; }
-      body #es-forum .row.es-forum-post-row-margin-zero .label {
+      body #es-forum-wrapper .row.es-forum-post-row-margin-zero .label {
         margin-right: 5px; }
-    body #es-forum .es-forum-comment-add {
+    body #es-forum-wrapper .es-forum-comment-add {
       padding-left: 15px;
       padding-right: 15px; }
-      body #es-forum .es-forum-comment-add .es-forum-comment-add-head {
+      body #es-forum-wrapper .es-forum-comment-add .es-forum-comment-add-head {
         margin-bottom: 10px; }
-      body #es-forum .es-forum-comment-add .es-forum-comment-add-footer {
+      body #es-forum-wrapper .es-forum-comment-add .es-forum-comment-add-footer {
         margin-top: 10px; }
   @media (max-width: 400px) {
     body .es-card {
