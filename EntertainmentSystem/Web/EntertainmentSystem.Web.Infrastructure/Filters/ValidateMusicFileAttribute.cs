@@ -2,6 +2,7 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations;
 
     public class ValidateMusicFileAttribute : BaseValidateMediaFileAttribute
     {
@@ -20,6 +21,16 @@
             }
 
             return true;
+        }
+
+        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
+        {
+            if (this.IsValid(value))
+            {
+                return ValidationResult.Success;
+            }
+
+            return new ValidationResult(this.ErrorMessage);
         }
     }
 }

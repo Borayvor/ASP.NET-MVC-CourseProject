@@ -32,15 +32,5 @@
                 throw new ValidationException("File type not supported !");
             }
         }
-
-        protected override ValidationResult IsValid(object value, ValidationContext validationContext)
-        {
-            if (this.IsValid(value))
-            {
-                return ValidationResult.Success;
-            }
-
-            return new ValidationResult(this.ErrorMessage);
-        }
     }
 }

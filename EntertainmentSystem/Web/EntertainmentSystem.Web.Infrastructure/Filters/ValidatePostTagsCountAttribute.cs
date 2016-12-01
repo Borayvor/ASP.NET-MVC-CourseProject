@@ -21,18 +21,13 @@
 
         public override bool IsValid(object value)
         {
-            if (value == null)
+            try
             {
-                this.ErrorMessage = "Tags count must be " + this.minTagsCount + " or more !";
-                return false;
+                this.Validate(value);
             }
-
-            var tagsAsString = value as string;
-            var tagsArray = tagsAsString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
-
-            if (tagsArray.Length < this.minTagsCount)
+            catch (Exception ex)
             {
-                this.ErrorMessage = "Tags count must be " + this.minTagsCount + " or more !";
+                this.ErrorMessage = ex.Message;
                 return false;
             }
 
@@ -47,6 +42,22 @@
             }
 
             return new ValidationResult(this.ErrorMessage);
+        }
+
+        private void Validate(object value)
+        {
+            if (value == null)
+            {
+                throw new ArgumentNullException(string.Format("Tags count must be {0} or more !", this.minTagsCount));
+            }
+
+            var tagsAsString = value as string;
+            var tagsArray = tagsAsString.Split(new string[] { ", " }, StringSplitOptions.RemoveEmptyEntries);
+
+            if (tagsArray.Length < this.minTagsCount)
+            {
+                throw new ValidationException(string.Format("Tags count must be {0} or more !", this.minTagsCount));
+            }
         }
     }
 }
