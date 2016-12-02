@@ -79,6 +79,11 @@
 
             var user = await this.UserManager.FindByEmailAsync(model.Email);
 
+            if (user.IsDeleted)
+            {
+                user = null;
+            }
+
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
             var result = user == null ? SignInStatus.Failure :
@@ -108,7 +113,7 @@
                         new { ReturnUrl = returnUrl, model.RememberMe });
                 case SignInStatus.Failure:
                 default:
-                    this.ModelState.AddModelError(string.Empty, "Invalid login attempt.");
+                    this.ModelState.AddModelError(string.Empty, "Invalid login attempt, or this user has no access.");
                     return this.View(model);
             }
         }

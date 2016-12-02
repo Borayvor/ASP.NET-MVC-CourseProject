@@ -3,7 +3,6 @@
     using System.Collections.Generic;
     using System.Web;
     using System.Web.Mvc;
-    using Common.Constants;
     using Infrastructure.Mapping;
     using Kendo.Mvc.Extensions;
     using Kendo.Mvc.UI;
@@ -43,23 +42,23 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminUserEditViewModel model)
         {
-            if (model != null && this.ModelState.IsValid)
-            {
-                var roles = this.GetUserRoles(model.Id);
+            ////if (model != null && this.ModelState.IsValid)
+            ////{
+            ////    var roles = this.GetUserRoles(model.Id);
 
-                if (roles == null || roles.Contains(GlobalConstants.AdministratorRoleName) == false)
-                {
-                    var entity = this.usersAdminService.GetById(model.Id);
+            ////    if (roles == null || roles.Contains(GlobalConstants.AdministratorRoleName) == false)
+            ////    {
+            ////        var entity = this.usersAdminService.GetById(model.Id);
 
-                    this.Mapper.Map(model, entity);
+            ////        this.Mapper.Map(model, entity);
 
-                    this.usersAdminService.Update(entity);
+            ////        this.usersAdminService.Update(entity);
 
-                    var viewModel = this.Mapper.Map<AdminUserViewModel>(entity);
+            ////        var viewModel = this.Mapper.Map<AdminUserViewModel>(entity);
 
-                    return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
-                }
-            }
+            ////        return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
+            ////    }
+            ////}
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
@@ -68,17 +67,17 @@
         [ValidateAntiForgeryToken]
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminUserViewModel model)
         {
-            if (model != null)
-            {
-                var roles = this.GetUserRoles(model.Id);
+            ////if (model != null)
+            ////{
+            ////    var roles = this.GetUserRoles(model.Id);
 
-                if (roles == null || roles.Contains(GlobalConstants.AdministratorRoleName) == false)
-                {
-                    var entity = this.usersAdminService.GetById(model.Id);
+            ////    if (roles == null || roles.Contains(GlobalConstants.AdministratorRoleName) == false)
+            ////    {
+            ////        var entity = this.usersAdminService.GetById(model.Id);
 
-                    this.usersAdminService.DeletePermanent(entity);
-                }
-            }
+            ////        this.usersAdminService.DeletePermanent(entity);
+            ////    }
+            ////}
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
