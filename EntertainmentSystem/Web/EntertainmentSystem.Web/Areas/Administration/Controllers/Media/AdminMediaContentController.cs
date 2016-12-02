@@ -65,18 +65,18 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaContentEditViewModel model)
         {
-            if (model != null && this.ModelState.IsValid)
-            {
-                var entity = this.adminContentService.GetById(model.Id);
+            ////if (model != null && this.ModelState.IsValid)
+            ////{
+            ////    var entity = this.adminContentService.GetById(model.Id);
 
-                this.Mapper.Map(model, entity);
+            ////    this.Mapper.Map(model, entity);
 
-                this.adminContentService.Update(entity);
+            ////    this.adminContentService.Update(entity);
 
-                var viewModel = this.Mapper.Map<AdminMediaContentViewModel>(entity);
+            ////    var viewModel = this.Mapper.Map<AdminMediaContentViewModel>(entity);
 
-                return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
-            }
+            ////    return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
+            ////}
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
@@ -86,12 +86,12 @@
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaContentViewModel model)
         {
             // TODO: implement - delete files from cdn
-            if (model != null)
-            {
-                var entity = this.adminContentService.GetById(model.Id);
+            ////if (model != null)
+            ////{
+            ////    var entity = this.adminContentService.GetById(model.Id);
 
-                this.adminContentService.DeletePermanent(entity);
-            }
+            ////    this.adminContentService.DeletePermanent(entity);
+            ////}
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }

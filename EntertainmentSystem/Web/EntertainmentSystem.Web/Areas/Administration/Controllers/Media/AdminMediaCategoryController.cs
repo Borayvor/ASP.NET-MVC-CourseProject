@@ -60,18 +60,18 @@
         [ValidateAntiForgeryToken]
         public ActionResult Update([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryEditViewModel model)
         {
-            if (model != null && this.ModelState.IsValid)
-            {
-                var entity = this.adminMediaService.GetById(model.Id);
+            ////if (model != null && this.ModelState.IsValid)
+            ////{
+            ////    var entity = this.adminMediaService.GetById(model.Id);
 
-                this.Mapper.Map(model, entity);
+            ////    this.Mapper.Map(model, entity);
 
-                this.adminMediaService.Update(entity);
+            ////    this.adminMediaService.Update(entity);
 
-                var viewModel = this.Mapper.Map<AdminMediaCategoryViewModel>(entity);
+            ////    var viewModel = this.Mapper.Map<AdminMediaCategoryViewModel>(entity);
 
-                return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
-            }
+            ////    return this.Json(new[] { viewModel }.ToDataSourceResult(request, this.ModelState));
+            ////}
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
@@ -80,12 +80,12 @@
         [ValidateAntiForgeryToken]
         public ActionResult DestroyPermanent([DataSourceRequest]DataSourceRequest request, AdminMediaCategoryViewModel model)
         {
-            if (model != null)
-            {
-                var entity = this.adminMediaService.GetById(model.Id);
+            ////if (model != null)
+            ////{
+            ////    var entity = this.adminMediaService.GetById(model.Id);
 
-                this.adminMediaService.DeletePermanent(entity);
-            }
+            ////    this.adminMediaService.DeletePermanent(entity);
+            ////}
 
             return this.Json(new[] { model }.ToDataSourceResult(request, this.ModelState));
         }
